@@ -1,0 +1,3559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Beeminder
+  </title>
+  <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="apple-touch-icon-precomposed" href="/images/small_logo_bee_256.png">
+  <meta name="msapplication-TileColor" content="#f5bd27">
+  <meta name="msapplication-TileImage" content="/images/small_logo_bee_256.png">
+  <meta content="akrasia, self-binding, goal tracking, incentives" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+  <meta property="fb:app_id" content="208127512622250">
+  <meta property="og:type"          content="website" />
+  <meta property="og:site_name"     content="Beeminder"/>
+
+  <meta name="apple-itunes-app" content="app-id=551869729">
+  
+  <script type="text/javascript"
+          src="https://www.google.com/jsapi?key=ABQIAAAAOa-RFkKAwduJA0bwi01kRBTCuJY-e-yhy9Frd0u60DKsVj9RQBSizo_DrtDPclb_pgY9C9HGVoizIw"></script>
+
+<!-- //! remember to correct link to css files -->
+
+<link rel="stylesheet" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="all" href="/assets/application-2b305ca7396c6645642908fe1cd7e7fc4b812713d1fb13386b06d8f2a9368df1.css" data-turbolinks-track="true" />
+
+<script>
+  window.beemApi = {};
+  // autod stuff called by other files
+  beemApi.stripePublishableKey = "pk_live_2EhbxY9XN4LejUgtuhrdF3ew";
+  beemApi.currentIsPayer = false;
+    beemApi.accessToken     = "31ra4szlotd5i5jfk0e0kzmjr";
+    beemApi.currentUsername = "happybee9494";
+    beemApi.currentEmail    = "happybee9494@gmail.com";
+    beemApi.currentUTCoff   = 28800;
+    beemApi.hasFreebees     = true;
+    beemApi.golCount        = 0;
+    /* tryanyway = try reloading graphs on not-mine goals */
+    beemApi.tryanyway       = false;
+</script>
+
+<script src="https://js.stripe.com/v1/"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+//<![CDATA[
+Stripe.setPublishableKey('pk_live_2EhbxY9XN4LejUgtuhrdF3ew');
+//]]>
+</script>
+<script src="https://js.braintreegateway.com/web/3.6.3/js/client.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.6.3/js/paypal.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.6.3/js/data-collector.min.js"></script>
+
+
+<script src="/assets/application-67dcc2f479665bd0485bf0fde9ff6b1733f9d1f1305ab3176522fb0f282dec0a.js" data-turbolinks-track="true"></script>
+
+
+
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Nkk2K3nubvZ2qkznbjdQ9N6IDHSwc10ByFmusuGrIFZxAk4qeUTJC/Rdu+EOQPjNeDaKbM/ven/9Xafh6XMHhg==" />
+  <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||
+[]);
+mixpanel.init("fcf247309f6907760126754500f885f6", {'loaded':function(){
+  $("#new_user #mixpanel_distinct_id").val(mixpanel.get_distinct_id());
+}});</script><!-- end Mixpanel -->
+
+  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1139630139405951');
+  //fbq('addPixel', '314586222206152');
+  fbq('track', "PageView");
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=314586222206152&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-54HKBK6');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54HKBK6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <div id="user-timezone-hours" style="display: none; width: 0px; height: 0px;">+0800</div>
+    <div id="user-timezone-offset" style="display: none; width: 0px; height: 0px;">28800</div>
+  <div id="flash-js" class="row no-gutters">
+    <a href="#" class="hide-flash col-1">
+      <div class="mega-octicon octicon-x"></div>
+    </a>
+    <div class="message col-10"></div>
+    <div class="col-1"></div>
+  </div>
+  <div id="fb-root"></div>
+
+  <div id="header">
+    <div class="row justify-content-around">
+      <div class="col-12 col-md-4 masthead">
+        <a href="/home"><div class="logo"></div></a>
+        <div class="tagline">Hyperrational goal tracking</div>
+      </div>
+      <div class="main-nav col-12 col-md-8">
+  <div class="row justify-content-end no-gutters">
+    <div class="col-12 col-sm-10 links">
+        <div class="link">
+          <a href="https://www.beeminder.com/happybee9494">happybee9494</a>
+        </div>
+      <div class="link"><a href="/premium">Premium</a></div>
+      <div class="link">
+      <a title="A gallery of things people are beeminding for you to be inspired by." href="https://www.beeminder.com/featured">Featured</a>
+      </div>
+      <div class="link">
+      <a title="Feature announcements, press roundups, PSAs, and guest posts. Even some fairly scientific articles on behavioral economics and the psychology of akrasia." href="http://blog.beeminder.com/">Blog</a>
+      </div>
+      <div class="link">
+      <a title="Includes a Newbee section for asking questions if you&#39;re confused." href="https://forum.beeminder.com">Forum</a>
+      </div>
+    </div>
+    <div class="main-nav user-nav">
+        <div class="menu">
+          <div class="drop-down-anchor">
+  <a href="#">
+    <img class="avatar" src="https://secure.gravatar.com/avatar/5d0b4d4df7869de76e520ab7f0e22d4f?size=256&amp;default=https%3A%2F%2Fbeeminder.com%2Fimages%2Ffallback%2F_avatar0.png" alt="5d0b4d4df7869de76e520ab7f0e22d4f?size=256&amp;default=https%3a%2f%2fbeeminder.com%2fimages%2ffallback%2f avatar0" />
+    <span class="octicon octicon-triangle-down"></span>
+</a></div>
+<div class="popup">
+  <a class="clear-elf" href="/new">New Goal</a>
+  <a href="/happybee9494/gallery">Gallery</a>
+  <a href="/settings/account">Account Settings</a>
+  <a href="/reminders/happybee9494">Reminders</a>
+  <a href="/breaks/happybee9494">Breaks</a>
+  <a href="/payment">Payments</a>
+  <a class="last signout" rel="nofollow" data-method="delete" href="/users/sign_out">Log out</a>
+</div>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+    <div class="trial-banner">
+    <span id="add-text">
+      Beeminder can't be a credible threat unless you
+      <a href="#" data-toggle="modal" data-target="#pick-payment">add a payment method</a>.
+    </span>
+    <span class="hidden" id="loading-text">Loading payment form...</span>
+  </div>
+  <div class="modal fade" id="pick-payment" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add payment method</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          Beeminder is a motivational tool that allows you to pledge money to stay
+          on track towards a goal.
+        </div>
+        <div class="form-row">
+          If you go off track, we charge you the amount you're pledging on that goal.
+        </div>
+        <div class="form-row buttons">
+          <button class="add-cc bbtn">
+            Add a credit card
+          </button>
+        </div>
+        <div class="form-row">
+          Can't use a credit card?
+          You can
+          <a class="add-paypal" 
+            role="button" href="#">use PayPal</a>,
+          if you must.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!--[if lt IE 9]>
+<div id="flash-ie" class="flash_container flash-error">
+  <a href="#" class="close" data-dismiss="alert">x</a>
+  <div>
+    <h2>Uh oh, you seem to be using an out-of-date Internet Explorer...</h2>
+    <p>
+    Beeminder is
+    pretty broken on IE&lt;9. Do you have Firefox or Chrome or Safari or
+    Opera or IE10+ or <a href="http://whatbrowser.org">anything else at all</a>?
+    </p><p>
+    As a token of our deep shame for being the kind of developers who don't
+    support IE, here's an ewok dressed like a bee!
+    </p>
+    <div id="kitteh">
+      <img src="/assets/beecat-5d0ab471e4a311e154596ec78ae9ff6e43fc231841b5521c39765d5dfbc770e2.jpg">
+    </div>
+  </div>
+</div>
+<![endif]-->
+
+<div class="clear"></div>
+
+
+      <div class="content container-fluid topshadow">
+        
+        <div class="panel ">
+            <div class="row justify-content-center">
+<div class="elf">
+  <div id="confwall" class="hidden">
+  <div class="center shadowboxed">
+    <h3>Please confirm your email address!</h3>
+    <br/>
+    <p>
+      Beeminder needs to be able to send you reminders, and contact you if you fall behind on your goals.
+    </p>
+    <p>
+      If you've already checked your inbox and don't see the message:
+    </p>
+    <p>
+  <a class="bbtn" href="/resend_confmail">Resend email confirmation</a>
+    </p>
+    <br/>
+    <p class="small">
+      Still having trouble? Email us at support@beeminder.com or send us a message in that handy little chat bubble in the lower right corner of this page.
+    </p>
+    <p class="small">
+      You could also 
+      <a class="dark" href="/settings/account#account-details">check the email address</a> 
+      you gave us for typos.
+    </p>
+  </div>
+</div>
+
+  <div id="paywall" class="hidden">
+  <div class="center shadowboxed">
+    <h3>You've used up your 3 goals!</h3>
+    <br/>
+
+    <h3>Unlimited goals is a premium perk
+      <img width="50px" style="vertical-align:middle;" src="/assets/carrot-347a730514363b6e4efab0100e86b9c0756d6d457c6c07b0e0cab5e8b971f77c.png" alt="Carrot" /></h3>
+
+    <p>
+      <a class="bbtn" href="/premium">Add a Premium Plan</a>
+    </p>
+    <br>
+    <br>
+    <p>
+      ..or have you not had enough time to experiment with Beeminder yet?
+    </p>
+    <button href="#"
+      class="bbtn gimmefree"
+      title="The first one&#39;s free, as they say"
+      data-gimme="more-free-goals">MORE FREE GOALS PLEASE</button>
+    <div class="modal fade" id="gimmefree-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header error">
+          <h4>Uh-oh. Something's wrong. Please email support@beeminder.com</h4>
+          <button type="button"
+                  class="right bbtn bbtn-downpop"
+                  data-dismiss="modal"
+                  aria-hidden="true">Dismiss</button>
+        </div>
+        <div class="success">
+          <div class="modal-header">
+            <h3 class="success">✨Boom✨ We emailed a human</h3>
+            <button type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p>Anything you want to add to that?</p>
+            <textarea name="gimmefree_comments" id="gimmefree_comments">
+</textarea>
+            <div class="modal-buttons">
+              <button type="button"
+                class="bbtn gimmefree-comments"
+                data-gimme="more-free-goals">Send</button>
+              <button type="button"
+                class="bbtn bbtn-downpop"
+                data-dismiss="modal"
+                aria-hidden="true">Dismiss</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  <div id="goal-type" class="elf-step hidden">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    Select goal type
+  </div>
+    <div class="choose-goal-type" data-goal-type="hustler">
+      <div class="left">
+        <div class="icon hexagon">
+          <span class="mega-octicon octicon-plus"></span>
+        </div>
+        <div class="name">
+          Do More
+        </div>
+      </div>
+      <div class="goal-description" id="hustler">
+        For habits you want to do more of. Things like running, going to bed on time, studying, or flossing.
+      </div>
+    </div>
+    <div class="choose-goal-type" data-goal-type="fatloser">
+      <div class="left">
+        <div class="icon hexagon">
+          <span class="mega-octicon octicon-person"></span>
+        </div>
+        <div class="name">
+          Lose Weight
+        </div>
+      </div>
+      <div class="goal-description" id="fatloser">
+        Weigh yourself every day. Also works for bodyfat percent or waist size.
+      </div>
+    </div>
+    <div class="choose-goal-type" data-goal-type="gainer">
+      <div class="left">
+        <div class="icon hexagon">
+          <span class="mega-octicon octicon-person"></span>
+        </div>
+        <div class="name">
+          Gain Weight
+        </div>
+      </div>
+      <div class="goal-description" id="gainer">
+        Weigh yourself every day. Also works for lean body mass or bicep diameter.
+      </div>
+    </div>
+    <div class="downpop">
+    (advanced goal types are a premium feature)
+    </div>
+
+
+</div>
+
+  <div class="elf-step hidden" id="name">
+  <div class="header">
+    <div class="name back" data-back-to="details">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    Give your goal a name
+  </div>
+  <div id="disallowed-slugs" data-slugs=""></div>
+  <div class="goal-slug">
+    <input type="text" id="goal-slug" placeholder="Enter a short goal name here. One word, no spaces" />
+    <div class="slug-url">
+      beeminder.com/happybee9494/
+    </div>
+    <div class="slug-explain">
+        Point anyone to that URL to see your goal. You can make a goal private any time.
+    </div>
+  </div>
+  <div class="goal-title">
+    <input type="text" id="goal-title" placeholder="Optional description of your goal" />
+    <div class="clear"></div>
+  </div>
+
+  <input type="button" name="name" value="Continue" class="bbtn" data-next="pledge" id="name-continue" />
+</div>
+
+  <div class="elf-step" id="entry">
+  <div class="header">
+    How will you track your progress?
+  </div>
+  <div class="manually">
+    <div class="icon next clear-elf" data-next="goal-type">
+      <div class="mega-octicon octicon-plus"></div>
+    </div>
+    <div>
+    Add progress manually to Beeminder<br>
+    (web, email, Slack, SMS, or mobile apps)
+    </div>
+  </div>
+  <div class="divider">
+    <h2>Or</h2>
+  </div>
+  <div class="autod">
+    <div>Connect to a service to have your progress sync automatically</div>
+      <a href="#" data-next="apple" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_apple_square_64@2-9cf5b13e17b30c883486874b8279a371cd80fe76b91454ca340622671f48d3cb.png" />
+        <span class="provider-name">Apple Health</span>
+      </a>
+      <a href="#" data-next="clozemaster" class="auth-provider next clear-elf clozemaster">
+        <img height="64" width="64" alt="" src="/assets/logo_clozemaster_square_64@2-5afdc6a322e272355bb452fd2644c671a1f150d837b68a3bbeeba8efed313b44.png" />
+        <span class="provider-name">Clozemaster</span>
+      </a>
+      <a href="#" data-next="draft" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_draft_square_64@2-2b93df0bc4c007ed1a479f23e9480464d0d25777822164a8e249133e8a8236be.png" />
+        <span class="provider-name">Draft</span>
+      </a>
+      <a href="#" data-next="duolingo" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_duolingo_square_64@2-df23a9f1cc28f5f14772baad461c3e42d6a4e3226cfac8daeb4c963fb7b2407d.png" />
+        <span class="provider-name">Duolingo</span>
+      </a>
+      <a href="#" data-next="epson" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_epson_square_64@2-2a93b4946262a697fd02e2b44ebedc2c3f690522e1c396c2bd11dd45caa832a5.png" />
+        <span class="provider-name">Epson</span>
+      </a>
+      <a href="#" data-next="fitbit" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_fitbit_square_64@2-b7400c7d9fe8720776b1791e6ebf4babad6b247f175212eb8cc29aec1ca86617.png" />
+        <span class="provider-name">Fitbit</span>
+      </a>
+      <a href="#" data-next="garmin" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_garmin_square_64@2-5f68c65f8ad5f4f7d0e4f1ef2dff86dbbf7650c5c71b21f0288d2679d47997b8.png" />
+        <span class="provider-name">Garmin</span>
+      </a>
+      <a href="#" data-next="github" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_github_square_64@2-740995461f31a986fcd466802809758bc97a3496f955ce57e9ff1a9fbb519645.png" />
+        <span class="provider-name">GitHub</span>
+      </a>
+      <a href="#" data-next="gmail" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_gmail_square_64@2-0793d8ef11e62aec05105e4e88bc11d929589a978d34fde67073c5ed0453eb77.png" />
+        <span class="provider-name">Gmail</span>
+      </a>
+      <a href="#" data-next="habitica" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_habitica_square_64@2-66683e94ce6f942475e1535007b6cbb534fb81c2e0906050d76027927afc112e.png" />
+        <span class="provider-name">Habitica</span>
+      </a>
+      <a href="#" data-next="ifttt" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_ifttt_square_64@2-d5280216c1ef6e3fe0045da6b2d198bfedf266b9ae0ee98dc1a1601c56399968.png" />
+        <span class="provider-name">IFTTT</span>
+      </a>
+      <a href="#" data-next="misfit" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_misfit_square_64@2-604bc3f2807c937efdb7760941b1dd9693c208ea9a1f0ce431f5f64b954f3084.png" />
+        <span class="provider-name">Misfit</span>
+      </a>
+      <a href="#" data-next="projecteuler" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_projecteuler_square_64@2-60439529669fe131ffbc7c572176cc60b2c2b813e0aa3162589dcfc1b053e2c1.png" />
+        <span class="provider-name">Project Euler</span>
+      </a>
+      <a href="#" data-next="rescuetime" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_rescuetime_square_64@2-8aa028feb8ae067a39d855c9e63966f676b62170f6ff034184022e3c6feb1d94.png" />
+        <span class="provider-name">RescueTime</span>
+      </a>
+      <a href="#" data-next="runkeeper" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_runkeeper_square_64@2-dceb0993b999e1de35e8e54a7747ed6e18eb264e0e8d7d2d603b6d3a14a81142.png" />
+        <span class="provider-name">Runkeeper</span>
+      </a>
+      <a href="#" data-next="skritter" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_skritter_square_64@2-007e8aae45ab8e68d16a9b5a6e9795935f438507e1d075b20d68414e5e09bf5d.png" />
+        <span class="provider-name">Skritter</span>
+      </a>
+      <a href="#" data-next="sleepminder" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_sleepminder_square_64@2-6bbcdce44661081a6a8e1135856806109acb351ee3aab310007b7c3a331da683.png" />
+        <span class="provider-name">Sleep as Android</span>
+      </a>
+      <a href="#" data-next="strava" class="auth-provider next clear-elf strava">
+        <img height="64" width="64" alt="" src="/assets/logo_strava_square_64@2-3589312f8e8abf972a10de54af579959cc93cbef964f45ff0d90d4bda41cffd5.png" />
+        <span class="provider-name">Strava</span>
+      </a>
+      <a href="#" data-next="todoist" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_todoist_square_64@2-5d324ccea1eee05c6a159184c81068e30af656bcb7dcdf6caf5dcde203800ffb.png" />
+        <span class="provider-name">Todoist</span>
+      </a>
+      <a href="#" data-next="toggl" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_toggl_square_64@2-b5b97b00e4abcd9cf7f1543ab5389675f7ef1e643d706028ae35dc25f35efac5.png" />
+        <span class="provider-name">Toggl</span>
+      </a>
+      <a href="#" data-next="trello" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_trello_square_64@2-e6d4c94264aea10f35b25604895607f1bba3a6cd06b496e2152ecfafad4532f2.png" />
+        <span class="provider-name">Trello</span>
+      </a>
+      <a href="#" data-next="twitter" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_twitter_square_64@2-a9ef76521db8606843bf0ac52b552251db49be94cea7b5b7dad8846cc3d63840.png" />
+        <span class="provider-name">Twitter</span>
+      </a>
+      <a href="#" data-next="urlminder" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_urlminder_square_64@2-e1fa20aa7366f610f2127d48a97e242c363b4529f2bee8f8edc4394d8293d31c.png" />
+        <span class="provider-name">URLminder</span>
+      </a>
+      <a href="#" data-next="withings" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_withings_square_64@2-e49c034b62d7d0013253603216c6c89526914d2051dc533fcbda842ca112069c.png" />
+        <span class="provider-name">Withings</span>
+      </a>
+      <a href="#" data-next="zapier" class="auth-provider next clear-elf">
+        <img height="64" width="64" alt="" src="/assets/logo_zapier_square_64@2-78d84aa2ea1aa0c540dcb1d1fe01ee77e02900545dd82e9a8da94ffbe21ff8f3.png" />
+        <span class="provider-name">Zapier</span>
+      </a>
+  </div>
+</div> 
+
+  <div class="elf-step hidden" id="details">
+  <div class="header">
+    <div class="back" data-back-to="goal-type">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <span class="commit-text">Commit to at least</span>
+  </div>
+  <div class="details-form">
+    <div class="form-row rate-row">
+      <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="1"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="units"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+    </div>
+    <div class="form-row runits-row">
+      <div class="octicon octicon-triangle-down"></div>
+      <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+    </div>
+    <div class="form-row">
+      What are your units for this goal?
+    </div>
+    <div class="form-row units-row">
+      <input type="text" class="gunits"
+        value="" placeholder="E.g. miles, books, runs, sessions..." />
+    </div>
+    <div class="form-row initval-row">
+      <input type="text" class="initval" placeholder="Today's value" />
+    </div>
+    <div class="variance-row">
+    <div class="form-row variance-label">
+      What is the <em>most</em> your weight can change in one day?
+    </div>
+    <div class="form-row variance-row">
+      <input type="text" class="variance" placeholder="E.g. 1.5" value="1"/>
+    </div>
+    </div>
+    <div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="details_safety_buffer_on" id="details_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="details_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+    <div class="form-row">
+      <input type="button" id="details-continue" class="bbtn" value="Continue" />
+    </div>
+  </div>
+</div>
+
+  <div class="elf-step hidden" id="pledge">
+  <div class="header">
+    <div class="back" data-back-to="name">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    Pledge Your Money 
+  </div>
+  <form action="#" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="6yvRgsdfaErRnA53eBcHJosFx7/b1VQoJzLVLop4HA+sYKmDx/XPt1Nr+XEYYK8fLbtBp6RJc1YSNtx9gqA73w==" />
+    <div class="form-row caps">
+      Starting stakes
+    </div>
+    <div class="form-row initial-pledge" data-minoldpledgeidx="0" data-minnewpledgeidx="1">
+      
+<div class="bradio" title="">
+  <input id="0-pledge"
+         class=""
+         type="radio"
+         name="pledge"
+         value="0"
+         data-del-prompt=""
+         
+          />
+  <label for="0-pledge" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">$0</div>
+</div>
+
+      
+<div class="bradio" title="">
+  <input id="5-pledge"
+         class=""
+         type="radio"
+         name="pledge"
+         value="5"
+         data-del-prompt=""
+         checked
+          />
+  <label for="5-pledge" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">$5</div>
+</div>
+
+    </div>
+    <div class="form-row pledge-note">
+      Your pledge will increase each time you derail until you reach your pledge cap 
+    </div>
+      <div class="schedge" data-fee="10">
+      <div class="form-row arrow-down">
+        <div class="mega-octicon octicon-arrow-down"></div>
+      </div>
+      <div class="form-row">
+        $10 
+      </div>
+      </div>
+      <div class="schedge" data-fee="30">
+      <div class="form-row arrow-down">
+        <div class="mega-octicon octicon-arrow-down"></div>
+      </div>
+      <div class="form-row">
+        $30 
+      </div>
+      </div>
+      <div class="schedge" data-fee="90">
+      <div class="form-row arrow-down">
+        <div class="mega-octicon octicon-arrow-down"></div>
+      </div>
+      <div class="form-row">
+        $90 
+      </div>
+      </div>
+    <div class="form-row arrow-down">
+      <div class="mega-octicon octicon-arrow-down"></div>
+    </div>
+    <div class="form-row caps">
+      Pledge cap
+    </div>
+    <div class="form-row pledge-cap"
+         data-defcapidx-oldschedge="5"
+         data-defcapidx-newschedge="7">
+      <strong>$270</strong>
+      <div class="octicon octicon-triangle-down"></div>
+    </div>
+    <div class="form-row pledge-cap-picker hidden"
+      data-lower-limit-oldschedge="$5"
+      data-lower-limit-newschedge="$5">
+      <div class="stepper-control pledge-cap"
+  data-schedge="old">
+  <div class="minus pledge-stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit="$5"
+       data-upper-limit="$7290">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      readonly=readonly
+      value="$270"
+      name="goal[pledge_cap]"
+      data-first-value="1"
+      class="stepper-value sole"
+       />
+  </div>
+  <div class="plus pledge-stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit="$5"
+      data-upper-limit="$7290">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+    </div>
+    <div class="form-row pledge-note">
+      We're trying out a new pledge schedule in case you'd like to try it. 
+    </div>
+    <div class="form-row">
+      <div class="bbox switch-schedge" title="">
+    <input type="checkbox" name="switcher-schedger" id="switcher-schedger" value="1" />
+    <label class="fancy-checkbox" for="switcher-schedger">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Use new schedule</div>
+</div>
+
+    </div>
+    <div class="form-row pledge-note">
+    </div>
+    <div class="form-row">
+      <button id="pledge-continue" class="bbtn" data-next="payment">
+      Continue
+      </button>
+    </div>
+</form></div>
+
+  <div class="elf-step hidden" id="payment">
+  <div class="header">
+    <div class="back" data-back-to="pledge">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    Add payment method
+  </div>
+  <div class="details-form">
+    <div class="step1">
+    <div class="form-row large">
+      To hold you accountable to your goal, we need to have a payment method juuuust in case you derail.
+    </div>
+    <div class="form-row">
+      <button class="add-cc bbtn" target="_blank">Add credit card</button>
+      <a class="why-cc" href="#" data-toggle="modal" data-target="#why-cc-modal" target="_blank">Why?</a>
+    </div>
+    <div class="form-row">
+      Can't use a credit card? You can 
+      <a class="add-paypal" 
+        role="button" href="#">use Paypal</a>,
+      if you must.
+    </div>
+    </div>
+    <div class="step2 hidden">
+    <div class="form-row large">
+      Thanks!
+    </div>
+    <div class="form-row center">
+      <button id="payment-continue" class="bbtn" data-next="final">
+        Finish 
+      </button> 
+    </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="why-cc-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>Why? Because credible threats! 💸</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <h2>What you should know</h2> 
+        <ol>
+          <li>You'll get charged each time you go off track</li>
+          <li>The pledge increases each time (until your pledge cap)</li>
+          <li>There's a one week delay for adjustments to the goal...</li>
+          <li>...including quitting it</li>
+        </ol>
+        <h2>But don't worry!</h2>
+        <ol>
+          <li><strong>We won't charge you if you keep your datapoints on track</strong></li>
+          <li>We email you before charging your card, in case anything went wrong (like any kind of technical problem or confusion or illness)</li>
+          <li>If you reply to that email, we believe you and cancel the charge</li>
+          <li>(Unless you <a href="https://blog.beeminder.com/glossary/#w" target="_blank">weaselproof</a> yourself!)</li>
+          <li>Deadman switch! If you stop using Beeminder altogether, we'll (eventually) stop charging you</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+  <div class="elf-step hidden" id="final">
+  <div class="header">
+    Saving your goal...
+  </div>
+  <div class="subheader hidden">
+    <label>You can view your goal on your 
+    <a href="https://www.beeminder.com/happybee9494">dashboard</a> 
+    and add progress on 
+    <a class="finalgoalpage" href="#">your goal page</a>.</label>
+
+    <input type="button" name="success" value="Go to goal" class="bbtn gotogoal" />
+  </div>
+
+</div>
+
+    <div class="elf-step hidden integration-step" id="clozemaster">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_clozemaster_square_64@2-5afdc6a322e272355bb452fd2644c671a1f150d837b68a3bbeeba8efed313b44.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  My Clozemaster username is
+</div>
+<div class="form-row">
+  <input type="text" class="clozemaster-username" placeholder="Enter username">
+  <input type="submit" class="clozemaster-check-username bbtn" value="Check" />
+</div>
+<div id="step-2" class="hidden">
+  <div class="form-row caps">
+    Tracking my progress in
+  </div>
+  <div class="form-row dropdown-row">
+    <div class="octicon octicon-triangle-down"></div>
+    <select class="clozemaster-language">
+      <option value="all">All languages</option>
+    </select>
+  </div>
+  <div class="form-row caps">
+    I pledge to average
+  </div>
+  <div class="form-row">
+    <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-10"
+       data-target-class="stepper-value"
+       data-lower-limit="0"
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="50"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="points"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="10"
+      data-target-class="stepper-value"
+      data-lower-limit="0"
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+  </div>
+  <div class="form-row runits-row">
+    <div class="octicon octicon-triangle-down"></div>
+    <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+  </div>
+  <div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="clozemaster_safety_buffer_on" id="clozemaster_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="clozemaster_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+  <div class="form-row">
+    <input type="submit" class="clozemaster-continue bbtn" value="Continue" />
+  </div>
+</div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="codeschool">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_codeschool_square_64@2-ae9a78d2bc3757d93dc7e257c341bbe92bb9d3d9dcd1b241a20a57dbbd78bb15.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-error"></div>
+<div class="form-row caps">
+  I pledge to get
+</div>
+<div class="form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1000"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="5000"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="points"
+         />
+  </div>
+  <div class="plus stepper"
+      data-delta="1000"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="form-row">
+  One lesson is roughly 5,000 points. The points are assigned per-question, so
+  the number of points varies with the length of the lesson.
+</div>
+<div class="form-row caps">
+  on Code school account 
+</div>
+<div class="form-row">
+  <input type="text"
+         id="codeschool-username"
+         placeholder="Code School username" />
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="codeschool_safety_buffer_on" id="codeschool_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="codeschool_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+<div class="form-row">
+  <input type="submit" class="bbtn continue" value="Continue" />
+</div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="draft">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_draft_square_64@2-2b93df0bc4c007ed1a479f23e9480464d0d25777822164a8e249133e8a8236be.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  I pledge to edit
+</div>
+<div class="form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-100"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="500"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="words"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="100"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="form-row">
+  Editing counts as words added + words deleted
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="draft_safety_buffer_on" id="draft_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="draft_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          <a href="/auth/draft"
+             class="bbtn autod-connect"
+             data-integration="draft">
+            Connect to Draft
+          </a>
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="duolingo">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_duolingo_square_64@2-df23a9f1cc28f5f14772baad461c3e42d6a4e3226cfac8daeb4c963fb7b2407d.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  My Duolingo username is
+</div>
+<div class="form-row">
+  <input type="text" class="duolingo-username" placeholder="Enter username">
+</div>
+<div class="form-row caps">
+  Tracking my progress in
+</div>
+<div class="form-row dropdown-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="duolingo-language">
+    <option value="ar">Arabic</option>
+<option value="zs">Chinese</option>
+<option value="cs">Czech</option>
+<option value="da">Danish</option>
+<option value="dn">Dutch</option>
+<option value="en">English</option>
+<option value="eo">Esperanto</option>
+<option value="fr">French</option>
+<option value="de">German</option>
+<option value="el">Greek</option>
+<option value="hw">Hawaiian</option>
+<option value="he">Hebrew</option>
+<option value="hv">High Valyrian</option>
+<option value="hi">Hindi</option>
+<option value="hu">Hungarian</option>
+<option value="id">Indonesian</option>
+<option value="ga">Irish</option>
+<option value="it">Italian</option>
+<option value="ja">Japanese</option>
+<option value="kl">Klingon</option>
+<option value="la">Latin</option>
+<option value="ko">Korean</option>
+<option value="nv">Navajo</option>
+<option value="nb">Norwegian (Bokmål)</option>
+<option value="pl">Polish</option>
+<option value="pt">Portuguese</option>
+<option value="ro">Romanian</option>
+<option value="ru">Russian</option>
+<option value="es">Spanish</option>
+<option value="sw">Swahili</option>
+<option value="sv">Swedish</option>
+<option value="tr">Turkish</option>
+<option value="uk">Ukrainian</option>
+<option value="vi">Vietnamese</option>
+<option value="cy">Welsh</option>
+  </select>
+</div>
+<div class="form-row caps">
+  I pledge to average
+</div>
+<div class="form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-10"
+       data-target-class="stepper-value"
+       data-lower-limit="0"
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="50"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="points"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="10"
+      data-target-class="stepper-value"
+      data-lower-limit="0"
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="duolingo_safety_buffer_on" id="duolingo_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="duolingo_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+<div class="form-row">
+  <input type="submit" class="duolingo-continue bbtn" value="Continue" />
+</div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="epson">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_epson_square_64@2-2a93b4946262a697fd02e2b44ebedc2c3f690522e1c396c2bd11dd45caa832a5.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  Choose Epson device
+</div>
+<div class="form-row device">
+  
+<div class="bradio" title="">
+  <input id="pulse-epson-device"
+         class=""
+         type="radio"
+         name="epson-device"
+         value="pulse"
+         data-del-prompt=""
+         checked
+          />
+  <label for="pulse-epson-device" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Pulsense</div>
+</div>
+
+  
+<div class="bradio" title="">
+  <input id="runse-epson-device"
+         class=""
+         type="radio"
+         name="epson-device"
+         value="runse"
+         data-del-prompt=""
+         
+          />
+  <label for="runse-epson-device" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Runsense</div>
+</div>
+
+</div>
+<div class="form-row caps">
+  Commit to
+</div>
+<div class="form-row rate-control">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="10000"
+      name=""
+      data-first-value="1"
+      class="stepper-value sole"
+       />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row dropdown-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select id="epson-metric">
+    <option value="steps" data-epson-metric="steps" data-epson-units="steps" data-gunits="steps" data-type="pulse">Steps</option>
+    <option data-epson-metric="duration" data-epson-units="hr" data-gunits="hours" data-type="pulse">Hours of sleep</option>
+    <option value="distance-miles" data-epson-metric="distance" data-epson-units="mi" data-gunits="miles" data-type="runse">Total Distance (miles)</option>
+    <option data-epson-metric="distance" data-epson-units="km" data-gunits="kilometers" data-type="runse">Total Distance (kilometers)</option>
+    <option data-epson-metric="duration" data-epson-units="hr" data-gunits="hours" data-type="runse">Total Time</option>
+  </select>
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="epson_safety_buffer_on" id="epson_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="epson_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          <a href="/auth/epson"
+             class="bbtn autod-connect"
+             data-integration="epson">
+            Connect to Epson
+          </a>
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="fitbit">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_fitbit_square_64@2-b7400c7d9fe8720776b1791e6ebf4babad6b247f175212eb8cc29aec1ca86617.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  I pledge to track
+</div>
+<div class="form-row dropdown-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select id="fitbit-metric">
+    <option value="steps">Steps</option>
+    <option value="fairly_active_time">Active Time</option>
+    <option value="activities"># of Activities</option>
+    <option value="floors">Floors</option>
+    <option value="hours_slept">Hours of Sleep</option>
+    <option value="calories_out">Total Calories Burned</option>
+    <option value="calories_in">Total Calories Eaten</option>
+    <option value="water">Water</option>
+    <option value="weight">Weight</option>
+    <option value="body_fat">Body Fat %</option>
+    <option value="netcalorie">Net Calories (Beeminder experts only!)</option>
+  </select>
+</div>
+<div class="initval-control">
+  <div class="form-row" id="todays-val-label">
+    Today's weight:
+  </div>
+  <div class="form-row initval-row">
+    <input type="text" class="initval" />
+    <select class="gunits">
+      <option value="kgs" selected="true">kgs</option>
+      <option value="lbs">lbs</option>
+      <option value="st">stones</option>
+    </select>
+    <label id="body-fat-gunits-label" class="hidden">percent</label>
+  </div>
+  <div class="form-row variance-label">
+    What's the <em>most</em> your weight changes in one day?
+  </div>
+  <div class="form-row variance-row">
+    <input type="text" class="variance" placeholder="E.g. 1.5" value="1"/>
+    <span class="var-row-gunits">kgs</span>
+  </div>
+</div>
+<div class="form-row rate-control">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="1"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="steps"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="fitbit_safety_buffer_on" id="fitbit_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="fitbit_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          You have connected to Fitbit
+          
+        </div>
+        <div class="form-row">
+          <input value="Next"
+                 type="submit"
+                 class="bbtn autod-continue"
+                 data-integration="fitbit" />
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="garmin">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_garmin_square_64@2-5f68c65f8ad5f4f7d0e4f1ef2dff86dbbf7650c5c71b21f0288d2679d47997b8.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  Choose Garmin device
+</div>
+<div class="form-row device">
+  
+<div class="bradio" title="">
+  <input id="vivo-garmin-device"
+         class=""
+         type="radio"
+         name="garmin-device"
+         value="vivo"
+         data-del-prompt=""
+         checked
+          />
+  <label for="vivo-garmin-device" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Vivoki / Vivofit</div>
+</div>
+
+  
+<div class="bradio" title="">
+  <input id="run-garmin-device"
+         class=""
+         type="radio"
+         name="garmin-device"
+         value="run"
+         data-del-prompt=""
+         
+          />
+  <label for="run-garmin-device" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Other Device</div>
+</div>
+
+</div>
+<div class="form-row rate-control">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="10000"
+      name=""
+      data-first-value="1"
+      class="stepper-value sole"
+       />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row dropdown-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select id="garmin-metric">
+    <option 
+      value="steps" 
+      data-garmin-metric="steps" 
+      data-garmin-units="steps" 
+      data-gunits="steps" 
+      data-type="vivo" 
+      data-collection="dailies">Steps</option>
+    <option 
+      value="sleep"
+      data-garmin-metric="sleep" 
+      data-garmin-units="hr" 
+      data-gunits="hours" 
+      data-type="vivo" 
+      data-collection="sleeps">Hours of sleep</option>
+    <option 
+      value="active_time"
+      data-garmin-metric="active_time" 
+      data-garmin-units="min" 
+      data-gunits="minutes" 
+      data-type="vivo" 
+      data-collection="dailies">Daily Active Time (in minutes)</option>
+    <option 
+      value="distance-miles" 
+      data-garmin-metric="distance" 
+      data-garmin-units="mi" 
+      data-gunits="miles" 
+      data-type="run" 
+      data-collection="activities">Total Distance (miles)</option>
+    <option 
+      data-garmin-metric="distance" 
+      data-garmin-units="km" 
+      data-gunits="kilometers" 
+      data-type="run" 
+      data-collection="activities">Total Distance (kilometers)</option>
+    <option 
+      data-garmin-metric="duration" 
+      data-garmin-units="hr" 
+      data-gunits="hours" 
+      data-type="run" 
+      data-collection="activities">Total Time (hours)</option>
+  </select>
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="garmin_safety_buffer_on" id="garmin_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="garmin_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          <a href="/auth/garmin"
+             class="bbtn autod-connect"
+             data-integration="garmin">
+            Connect to Garmin
+          </a>
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="github">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_github_square_64@2-740995461f31a986fcd466802809758bc97a3496f955ce57e9ff1a9fbb519645.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  I will track
+</div>
+<div class="form-row">
+  
+<div class="bradio" title="">
+  <input id="commits-gitmetric"
+         class=""
+         type="radio"
+         name="gitmetric"
+         value="commits"
+         data-del-prompt=""
+         checked
+          />
+  <label for="commits-gitmetric" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Commits</div>
+</div>
+
+  &nbsp; &nbsp;
+  
+<div class="bradio" title="">
+  <input id="issues-gitmetric"
+         class=""
+         type="radio"
+         name="gitmetric"
+         value="issues"
+         data-del-prompt=""
+         
+          />
+  <label for="issues-gitmetric" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Issues closed</div>
+</div>
+
+</div>
+<br>
+<div class="form-row caps" id="commitment-phrase">
+  I will push at least
+</div>
+<div class="form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit="0"
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="4"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="commits"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit="0"
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<br>
+<div class="form-row">
+  
+<div class="bradio" title="">
+  <input id="all-scope"
+         class=""
+         type="radio"
+         name="scope"
+         value="all"
+         data-del-prompt=""
+         checked
+          />
+  <label for="all-scope" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Across my GitHub</div>
+</div>
+
+  
+<div class="bradio" title="">
+  <input id="one-scope"
+         class=""
+         type="radio"
+         name="scope"
+         value="one"
+         data-del-prompt=""
+         
+          />
+  <label for="one-scope" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Just on this repo:</div>
+</div>
+
+</div>
+<div class="form-row">
+  <input type="text" name="repo" id="repo" placeholder="e.g., torvalds/linux" />
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="github_safety_buffer_on" id="github_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="github_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          <a href="/auth/github"
+             class="bbtn autod-connect"
+             data-integration="github">
+            Connect to Github
+          </a>
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="gmail">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_gmail_square_64@2-0793d8ef11e62aec05105e4e88bc11d929589a978d34fde67073c5ed0453eb77.png" />
+  </div>
+  <div class="autod-body">
+      <div class="form-row center">
+    <a href="/auth/gmail"
+       class="bbtn"
+       data-integration="gmail">
+      Connect to Gmail
+    </a>
+  </div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="habitica">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_habitica_square_64@2-66683e94ce6f942475e1535007b6cbb534fb81c2e0906050d76027927afc112e.png" />
+  </div>
+  <div class="autod-body">
+    <div class="step-1">
+  <div class="form-row caps">
+    I am using Habitica with these credentials:
+  </div>
+  <div class="form-row">
+    <input type="text" id="habitica_api_user" placeholder="User ID">
+  </div>
+  <div class="form-row">
+    <input type="text" id="habitica_api_key" placeholder="API Token">
+  </div>
+  <div class="form-row">
+    You can
+    <a href="https://habitica.com/user/settings/api"
+       title="Make sure you're logged in to Habitica before clicking this link"
+       target="_blank">find your Habitica credentials here</a>
+  </div>
+  <div class="form-row">
+    <input type="button" class="check-keys bbtn" value="Check keys" />
+  </div>
+</div>
+<div class="step-2 hidden">
+  <div class="form-row caps">
+    I pledge to have:
+  </div>
+  <div class="form-row pledge-goal-type-row">
+    <!-- WARNING: app/assets/javascripts/autod/habitica.js contains a CSS
+         selector for .pledge-goal-type-row
+         that expects this HTML code to remain unchanged. -->
+    
+<div class="bradio" title="">
+  <input id="more-habitica-gtype"
+         class=""
+         type="radio"
+         name="habitica-gtype"
+         value="more"
+         data-del-prompt=""
+         checked
+          />
+  <label for="more-habitica-gtype" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">more completed To-Dos and/or Dailies</div>
+</div>
+
+    
+<div class="bradio" title="If you object to using &#39;less&#39; to modify count nouns, this is a note to say that you are wrong. *ducks your flamethrower* But even if you were right, we have poetic license with the allusion to do-less goals. Ok, technically it&#39;s a whittle-down goal in this case.">
+  <input id="less-habitica-gtype"
+         class=""
+         type="radio"
+         name="habitica-gtype"
+         value="less"
+         data-del-prompt=""
+         
+          />
+  <label for="less-habitica-gtype" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">less remaining To-Dos</div>
+</div>
+
+  </div>
+
+  <div class="form-row task-type-row">
+    I want to track:
+  </div>
+  <div class="form-row task-type-row">
+    
+<div class="bradio" title="">
+  <input id="todos-habitica-task-types"
+         class=""
+         type="radio"
+         name="habitica-task-types"
+         value="todos"
+         data-del-prompt=""
+         
+          />
+  <label for="todos-habitica-task-types" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">To-Dos</div>
+</div>
+
+    
+<div class="bradio" title="">
+  <input id="dailys-habitica-task-types"
+         class=""
+         type="radio"
+         name="habitica-task-types"
+         value="dailys"
+         data-del-prompt=""
+         
+          />
+  <label for="dailys-habitica-task-types" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Dailies</div>
+</div>
+
+    
+<div class="bradio" title="">
+  <input id="todos_and_dailys-habitica-task-types"
+         class=""
+         type="radio"
+         name="habitica-task-types"
+         value="todos_and_dailys"
+         data-del-prompt=""
+         checked
+          />
+  <label for="todos_and_dailys-habitica-task-types" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">To-Dos and Dailies together</div>
+</div>
+
+  </div>
+  <div class="form-row habitica-dayStart"></div>
+
+  <div class="form-row">
+    I pledge to average:
+  </div>
+  <div class="form-row">
+    <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="10"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="tasks"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+  </div>
+  <div class="form-row runits-row">
+    <div class="octicon octicon-triangle-down"></div>
+    <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+  </div>
+  <div class="form-row habitica-tag dropdown-row">
+    <div class="bbox " title="">
+    <input type="checkbox" name="habitica_tasks_all_selection" id="habitica_tasks_all_selection" value="1" checked="checked" />
+    <label class="fancy-checkbox" for="habitica_tasks_all_selection">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">All tasks - or - </div>
+</div>
+ 
+    <div class="octicon octicon-triangle-down"></div>
+    <select id="habitica_tasks_tag_selection"></select>
+  </div>
+  <div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="habitica_safety_buffer_on" id="habitica_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="habitica_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+  <div class="form-row">
+    <input type="button" class="bbtn habitica-continue" value="Continue" />
+  </div>
+</div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="ifttt">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_ifttt_square_64@2-d5280216c1ef6e3fe0045da6b2d198bfedf266b9ae0ee98dc1a1601c56399968.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  Hi Newbee!
+</div>
+<div class="form-row">
+  To get started, we need to ask you a few questions about what you're beeminding.
+  Then you'll get to pick an IFTTT Applet to connect to your goal.
+</div>
+<div class="form-row">
+  <input type="submit" class="bbtn continue" value="Continue" />
+</div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="jawbone">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_jawbone_square_64@2-a6e760f0aaa66ef29d5148e35b707450373c2d9873367456250e0868e8e03f79.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  I pledge to track
+</div>
+<div class="form-row">
+  <select id="upmetric">
+    <option value="steps">Steps</option>
+    <option value="weight">Weight</option>
+    <option value="sleep">Sleep</option>
+    <option value="active_time">Active time</option>
+  </select>
+</div>
+<div class="form-row caps rate-row">
+  Commit to:
+</div>
+<div class="rate-row form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1000"
+       data-target-class="stepper-value"
+       data-lower-limit="0"
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="10000"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="steps"
+         />
+  </div>
+  <div class="plus stepper"
+      data-delta="1000"
+      data-target-class="stepper-value"
+      data-lower-limit="0"
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="jawbone_safety_buffer_on" id="jawbone_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="jawbone_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          <a href="/auth/jawbone"
+             class="bbtn autod-connect"
+             data-integration="jawbone">
+            Connect to Jawbone
+          </a>
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="misfit">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_misfit_square_64@2-604bc3f2807c937efdb7760941b1dd9693c208ea9a1f0ce431f5f64b954f3084.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+Wearing my Misfit to track
+</div>
+<div class="form-row">
+  
+<div class="bradio" title="">
+  <input id="steps-misfit-type"
+         class=""
+         type="radio"
+         name="misfit-type"
+         value="steps"
+         data-del-prompt=""
+         checked
+          />
+  <label for="steps-misfit-type" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Steps</div>
+</div>
+
+  
+<div class="bradio" title="">
+  <input id="sleep-misfit-type"
+         class=""
+         type="radio"
+         name="misfit-type"
+         value="sleep"
+         data-del-prompt=""
+         
+          />
+  <label for="sleep-misfit-type" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">hours of sleep</div>
+</div>
+
+</div>
+<div class="form-row caps">
+  I pledge to average
+</div>
+<div class="form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit="0"
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="10000"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="steps"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit="0"
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="form-row">
+  <div class="bbox " title="">
+    <input type="checkbox" name="misfit-import" id="misfit-import" value="1" />
+    <label class="fancy-checkbox" for="misfit-import">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Import the last month of Misfit data?</div>
+</div>
+
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="misfit_safety_buffer_on" id="misfit_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="misfit_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          <a href="/auth/misfit"
+             class="bbtn autod-connect"
+             data-integration="misfit">
+            Connect to Misfit
+          </a>
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="projecteuler">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_projecteuler_square_64@2-60439529669fe131ffbc7c572176cc60b2c2b813e0aa3162589dcfc1b053e2c1.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  My Project Euler username is
+</div>
+<div class="form-row">
+  <input type="text" class="projecteuler-username" placeholder="Enter username">
+</div>
+<div class="form-row caps">
+  I pledge to average
+</div>
+<div class="form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit="0"
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="1"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="problems"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit="0"
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="projecteuler_safety_buffer_on" id="projecteuler_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="projecteuler_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+<div class="form-row">
+  <input type="submit" class="projecteuler-continue bbtn" value="Continue" />
+</div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="rescuetime">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_rescuetime_square_64@2-8aa028feb8ae067a39d855c9e63966f676b62170f6ff034184022e3c6feb1d94.png" />
+  </div>
+  <div class="autod-body">
+      <div class="form-row center">
+    <a href="/auth/rescuetime"
+       class="bbtn"
+       data-integration="rescuetime">
+      Connect to RescueTime
+    </a>
+  </div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="runkeeper">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_runkeeper_square_64@2-dceb0993b999e1de35e8e54a7747ed6e18eb264e0e8d7d2d603b6d3a14a81142.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row">
+  I pledge to:
+</div>
+<div class="form-row">
+    <div class="bbox " title="">
+    <input type="checkbox" name="Run" id="Run" value="Running" checked="checked" />
+    <label class="fancy-checkbox" for="Run">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Run</div>
+</div>
+
+    <div class="bbox " title="">
+    <input type="checkbox" name="Walk" id="Walk" value="Walking" />
+    <label class="fancy-checkbox" for="Walk">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Walk</div>
+</div>
+
+    <div class="bbox " title="">
+    <input type="checkbox" name="Cycle" id="Cycle" value="Cycling" />
+    <label class="fancy-checkbox" for="Cycle">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Cycle</div>
+</div>
+
+    <div class="bbox " title="">
+    <input type="checkbox" name="Swim" id="Swim" value="Swimming" />
+    <label class="fancy-checkbox" for="Swim">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Swim</div>
+</div>
+
+    <div class="bbox " title="">
+    <input type="checkbox" name="All" id="All" value="All" />
+    <label class="fancy-checkbox" for="All">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">All</div>
+</div>
+
+</div>
+<div class="form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit="0"
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="5"
+      name=""
+      data-first-value="1"
+      class="stepper-value sole"
+       />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit="0"
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row dropdown-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="units">
+    <option value="mi">miles</option>
+<option value="km">kilometers</option>
+<option value="times">times</option>
+<option value="minutes">minutes</option>
+<option value="hours">hours</option>
+<option value="calories">calories</option>
+  </select>
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="runkeeper_safety_buffer_on" id="runkeeper_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="runkeeper_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          <a href="/auth/runkeeper"
+             class="bbtn autod-connect"
+             data-integration="runkeeper">
+            Connect to Runkeeper
+          </a>
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="skritter">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_skritter_square_64@2-007e8aae45ab8e68d16a9b5a6e9795935f438507e1d075b20d68414e5e09bf5d.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  Commit to
+</div>
+<div class="form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="1"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="hours"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="form-row caps">
+  of studying
+</div>
+<div class="form-row dropdown-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select name="language" id="language"><option value="zh">Chinese</option>
+<option value="ja">Japanese</option></select>
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="skritter_safety_buffer_on" id="skritter_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="skritter_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          <a href="/auth/skritter"
+             class="bbtn autod-connect"
+             data-integration="skritter">
+            Connect to Skritter
+          </a>
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="sleepminder">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_sleepminder_square_64@2-6bbcdce44661081a6a8e1135856806109acb351ee3aab310007b7c3a331da683.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  I Commit to Sleep
+</div>
+<div class="form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="8"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="hours"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row caps">
+  per night
+</div>
+<div class="form-row">
+  You'll need to pay for the 
+  <a href="https://play.google.com/store/apps/details?id=com.urbandroid.sleep.addon.port&amp;hl=en">SleepCloud Backup add-on</a>
+  so Beeminder can fetch your sleep data. 
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="sleepminder_safety_buffer_on" id="sleepminder_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="sleepminder_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          <a href="/auth/sleepminder"
+             class="bbtn autod-connect"
+             data-integration="sleepminder">
+            Connect to Sleepminder
+          </a>
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="strava">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_strava_square_64@2-3589312f8e8abf972a10de54af579959cc93cbef964f45ff0d90d4bda41cffd5.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  I want to track
+</div>
+<div class="form-row dropdown-row metric-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select id="strava-metric">
+    <option value="miles">Miles</option>
+    <option value="kilometers">Kilometers</option>
+    <option value="duration">Time</option>
+    <option value="number">Number of activities</option>
+    <option value="calories">Calories</option>
+    <option value="weighted_duration2">Effort-weighted time (walking counts as half-time)</option>
+    <option value="weighted_duration">Effort-weighted time (everything NOT walking counts double)</option>
+  </select>
+</div>
+<div class="form-row caps">for these activities:</div>
+<div class="form-row dropdown-row multiple-select-row">
+  <label>(Hold down the Ctrl key (&#8984; on Mac) for multiple activities)</label>
+  <select multiple id="strava-activity-types">
+    <option value="Ride">Cycling 🚴‍</option>
+    <option value="Run">Running 🏃</option>
+    <option value="Swim">Swimming 🏊🏻‍</option>
+    <option value="AlpineSki">Alpine Skiing 🏔⛷</option>
+    <option value="BackcountrySki">Backcountry Skiing ⛷</option>
+    <option value="Canoeing">Canoeing 🛶</option>
+    <option value="Crossfit">Crossfit 💪</option>
+    <option value="Elliptical">Elliptical …</option>
+    <option value="Handcycle">Handcycle 🤚🚴‍</option>
+    <option value="Hike">Hiking ⛰</option>
+    <option value="IceSkate">Ice Skating ⛸</option>
+    <option value="InlineSkate">Inline Skating ⎯⎯⛸</option>
+    <option value="Kayaking">Kayaking 🚣‍</option>
+    <option value="Kitesurf">Kitesurfing ⛵️</option>
+    <option value="NordicSki">Nordic Ski 🇳🇴⛷</option>
+    <option value="RockClimbing">Rock Climbing 🧗‍</option>
+    <option value="Rowing">Rowing 🚣‍</option>
+    <option value="Snowboard">Snowboarding 🏂</option>
+    <option value="Snowshoe">Snowshoeing ❄️</option>
+    <option value="StairStepper">Stair Stepper-ing 👟</option>
+    <option value="StandUpPaddling">Stand Up Paddling 🏓</option>
+    <option value="Surfing">Surfing 🏄‍</option>
+    <option value="Walk">Walking 🚶🏼‍</option>
+    <option value="WeightTraining">Weight Training 🏋️‍</option>
+    <option value="WheelChair">Wheelchairing ♿️</option>
+    <option value="Windsurf">Windsurfing 💨🏄‍</option>
+    <option value="Workout">Working Out 💪</option>
+    <option value="Yoga">Yoga 🧘‍</option>
+  </select>
+  <br>
+  <a href="#" id="strava-select-all">Select All</a>
+  -or-
+  <a href="#" id="strava-select-none">Select None</a>
+</div>
+<div class="form-row">
+<label>I pledge to <span id="strava-verb">cycle</span> </label>
+</div>
+<div class="form-row rate-control">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit="0"
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="50"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="miles"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit="0"
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="strava_safety_buffer_on" id="strava_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="strava_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+
+        <div class="form-row">
+          <a href="/auth/strava"
+             class="autod-connect"
+             data-integration="strava">
+            <img src="/assets/connect_with_strava@2x-7a8f1adef0031c86e23e1f70cc9a3a8af0e72b45ba8bc7e1eb3f3b023057b01a.png" alt="Connect with strava@2x" />
+          </a>
+        </div>
+        <div class="form-row">
+          <img src="/assets/powered_by_strava-4d1fae1af28d5efe3a47c1a3ff6ea62fc4f57ce98a3f3423eac33446c6a5aed1.png" alt="Powered by strava" />
+        </div>
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="todoist">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_todoist_square_64@2-5d324ccea1eee05c6a159184c81068e30af656bcb7dcdf6caf5dcde203800ffb.png" />
+  </div>
+  <div class="autod-body">
+      <div class="form-row center">
+    <a href="/auth/todoist"
+       class="bbtn"
+       data-integration="todoist">
+      Connect to Todoist
+    </a>
+  </div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="toggl">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_toggl_square_64@2-b5b97b00e4abcd9cf7f1543ab5389675f7ef1e643d706028ae35dc25f35efac5.png" />
+  </div>
+  <div class="autod-body">
+    <div class="step-1">
+  <div class="form-row caps">
+    Enter your Toggl API token
+  </div>
+  <div class="form-row">
+    <input type="text" id="toggl_api_token" placeholder="API Token">
+  </div>
+  <div class="form-row">
+    You can
+    <a href="https://toggl.com/app/profile"
+       title="Make sure you're logged in to Toggl before clicking this link"
+       target="_blank">find your Toggl API token here</a>
+  </div>
+  <div class="form-row">
+    <input type="button" class="check-token bbtn" value="Check token" />
+  </div>
+</div>
+<div class="step-2 hidden">
+  <div class="form-row">
+    I pledge to average:
+  </div>
+  <div class="form-row">
+    <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit="0"
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="10"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="hours"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit="0"
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+  </div>
+  <div class="form-row runits-row">
+    <div class="octicon octicon-triangle-down"></div>
+    <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+  </div>
+  <div class="form-row toggl-filters">
+    
+<div class="bradio" title="">
+  <input id="all-toggl_filters"
+         class=""
+         type="radio"
+         name="toggl_filters"
+         value="all"
+         data-del-prompt=""
+         checked
+          />
+  <label for="all-toggl_filters" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">All hours</div>
+</div>
+
+    <span class="filter-controls">
+    
+<div class="bradio" title="">
+  <input id="some-toggl_filters"
+         class=""
+         type="radio"
+         name="toggl_filters"
+         value="some"
+         data-del-prompt=""
+         
+          />
+  <label for="some-toggl_filters" class="fancy-radio">
+    <span class="octicon octicon-check"></span>
+  </label>
+  <div class="text">Only hours for these:</div>
+</div>
+
+    <br>
+    <label class="filter-label">
+      Any time entry that matches any of these tags OR projects OR clients will
+      be counted.
+    </label>
+    <br>
+      <label>Projects:</label>
+      <select multiple id="toggl_project_selection"></select>
+      <label>Tags:</label>
+      <select multiple id="toggl_tag_selection"></select>
+      <label>Clients:</label>
+      <select multiple id="toggl_client_selection"></select>
+      <label>Press the Control key to select multiple items.</label>
+    </span>
+  </div>
+  <div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="toggl_safety_buffer_on" id="toggl_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="toggl_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+  <div class="form-row">
+    <input type="button" class="bbtn toggl-continue" value="Continue" />
+  </div>
+</div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="trello">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_trello_square_64@2-e6d4c94264aea10f35b25604895607f1bba3a6cd06b496e2152ecfafad4532f2.png" />
+  </div>
+  <div class="autod-body">
+    <div class="hidden trello-token" data-token=""></div>
+<div class="step-1">
+  <div class="form-row caps">
+    Automatically track the number of cards you move to one or more of your trello lists
+  </div>
+  <div class="form-row">
+    <input type="text" class="board-url" placeholder="Paste the link to your Trello board" />
+  </div>
+  <div class="form-row">
+    <input type="submit" class="bbtn check-url" value="Check link" />
+  </div>
+</div>
+<div class="step-2 hidden">
+  <div class="form-row caps">
+    Each week I will move at least
+  </div>
+  <div class="form-row">
+    <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="10"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="cards"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+  </div>
+  <div class="form-row runits-row">
+    <div class="octicon octicon-triangle-down"></div>
+    <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+  </div>
+  <div class="form-row caps">
+    into these lists
+  </div>
+  <div class="form-row">
+    <select multiple="multiple" id="list-names">
+    </select>
+  </div>
+  <div class="form-row">
+    Current total: <span class="card-count">0</span>
+  </div>
+  <div class="form-row">
+    To select multiple lists, hold Command or Control as you click.
+  </div>
+  <div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="trello_safety_buffer_on" id="trello_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="trello_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+  <div class="form-row">
+    <input type="button" value="Continue" class="bbtn trello-continue" />
+  </div>
+</div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="twitter">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_twitter_square_64@2-a9ef76521db8606843bf0ac52b552251db49be94cea7b5b7dad8846cc3d63840.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row caps">
+  I pledge to tweet
+</div>
+<div class="form-row">
+  <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-1"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="7"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="tweets"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="1"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+</div>
+<div class="form-row runits-row">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+</div>
+<div class="form-row">
+  using the hashtag
+</div>
+<div class="form-row">
+  <input type="text" placeholder="leave blank to count all tweets" class="hashtag" />
+</div>
+<div class="form-row">
+  from the Twitter username
+</div>
+<div class="form-row">
+  <input type="text" placeholder="e.g. @bmndr" class="username" />
+</div>
+<div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="twitter_safety_buffer_on" id="twitter_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="twitter_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+<div class="form-row">
+  <input type="submit" class="twitter-continue bbtn" value="Continue" />
+</div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="urlminder">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_urlminder_square_64@2-e1fa20aa7366f610f2127d48a97e242c363b4529f2bee8f8edc4394d8293d31c.png" />
+  </div>
+  <div class="autod-body">
+    <div id="urlminder">
+  <div class="form-row url-list-row">
+    Enter the public URL(s) you want to count words from, one per line:
+  </div>
+  <div class="form-row urls-row">
+    <textarea name="urls" rows="10" cols="20"></textarea>
+  </div>
+  <div class="form-row">
+    Commit to adding:
+  </div>
+  <div class="form-row">
+    <div class="stepper-control "
+  data-schedge="">
+  <div class="minus stepper"
+       data-delta="-100"
+       data-target-class="stepper-value"
+       data-lower-limit=""
+       data-upper-limit="">
+    <div class="mega-octicon octicon-dash"></div>
+  </div>
+  <div class="stepper-value-wrapper">
+    <input type="text"
+      
+      
+      value="500"
+      name=""
+      data-first-value="1"
+      class="stepper-value"
+       />
+      <input type="text"
+        class="units"
+        value="words"
+        disabled=&#39;disabled&#39; />
+  </div>
+  <div class="plus stepper"
+      data-delta="100"
+      data-target-class="stepper-value"
+      data-lower-limit=""
+      data-upper-limit="">
+    <div class="mega-octicon octicon-plus"></div>
+  </div>
+</div>
+
+  </div>
+  <div class="form-row runits-row">
+    <div class="octicon octicon-triangle-down"></div>
+    <select class="bselect runits" 
+  >
+  <option value="d">per day</option>
+<option selected="selected" value="w">per week</option>
+<option value="m">per month</option>
+<option value="y">per year</option>
+</select>
+
+  </div>
+  <div class="leeway-control-group">
+  <div class="form-row safety-buffer-row">
+    <div class="bbox safety-buffer-on" title="">
+    <input type="checkbox" name="urlminder_safety_buffer_on" id="urlminder_safety_buffer_on" value="1" />
+    <label class="fancy-checkbox" for="urlminder_safety_buffer_on">
+      <span class="octicon octicon-check"></span>
+</label>  <div class="text">Start this goal with extra leeway (safety buffer)</div>
+</div>
+
+  </div>
+  <div class="form-row buffer-value hidden">
+    Start with
+    <input type="text" class="inline buffer-days" value="7" />
+    days until you have to make progress on this goal
+  </div>
+</div>
+
+  <div class="form-row">
+    <button type="button" class="urlminder-continue bbtn">Continue</button>
+  </div>
+</div>
+
+  </div>
+</div>
+
+    <div class="elf-step hidden integration-step" id="withings">
+  <div class="header">
+    <div class="back" data-back-to="entry">
+      <div class="mega-octicon octicon-arrow-left"></div>
+    </div>
+    <img height="64" width="64" alt="" src="/assets/small_logo_bee_128-d526dead3afe4fcf3a88284ce6645f8ba89e53c6dffa244abe9127169e1febd1.png" />
+    +
+    <img height="64" width="64" alt="" src="/assets/logo_withings_square_64@2-e49c034b62d7d0013253603216c6c89526914d2051dc533fcbda842ca112069c.png" />
+  </div>
+  <div class="autod-body">
+    <div class="form-row weight-alert">
+  Uh-oh, this is a pretty old weigh-in! Update this with a more accurate weight if your weight has likely changed since <span class="date">then</span>.
+</div>
+<div class="form-row form-alert"></div>
+<div class="form-row">
+  Current weight
+</div>
+<div class="form-row">
+</div>
+<div class="form-row dropdown-row">
+  <input class="input initval" type="text" value="">
+  <div class="octicon octicon-triangle-down"></div>
+  <select class="gunits">
+    <option value="kg" selected="true">kilograms</option>
+    <option value="lb">pounds</option>
+  </select>
+</div>
+<div class="form-row">
+  <a href="/auth/withings"
+     id="fetch-weight"
+     class="bbtn"
+     data-authed="false">
+    Fetch From Withings
+  </a>
+</div>
+<div class="variance-row">
+<div class="form-row variance-label">
+  What is the <em>most</em> your weight can change in one day?
+</div>
+<div class="form-row variance-row">
+  <input type="text" class="variance" placeholder="E.g. 1.5" value="1"/>
+</div>
+</div>
+
+        <div class="form-row">
+          <a href="/auth/withings"
+             class="bbtn autod-connect"
+             data-integration="withings">
+            Connect to Withings
+          </a>
+        </div>
+  </div>
+</div>
+
+  <script type="text/javascript">
+    $(".trial-banner").hide();
+  </script>
+</div>
+</div>
+
+          <div class="clear"></div>
+        </div>
+      </div>
+
+
+  <div id="footer_section">
+    <div class="footer">
+  <div class="help">
+      <a href="http://help.beeminder.com/">HELP DOCS</a>
+  </div>
+  <div class="links row">
+    <div class="link">
+      <a href="https://www.beeminder.com/overview">About</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/aboutus">team</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/contact">contact</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/jobs">jobs</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/faq">faq</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/money">pricing</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/api">api</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/changelog">changelog</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/terms">terms</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/donate">donate</a>
+    </div>
+  </div>
+  <div class="app-badges">
+    <a class="android" href='https://play.google.com/store/apps/details?id=com.beeminder.beeminder'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+    <a class="ios" href="https://itunes.apple.com/us/app/beeminder/id551869729"><img src="/assets/AppStore-25178aeef6eb6b83b96f5f2d004eda3bffbb37122de64afbaef7107b384a4132.svg" alt="Appstore" /></a>  </div>
+  <div class="social">
+    <a href="https://twitter.com/bmndr">
+      <img height="32px" width="32px" src="/assets/logo_twitter_square_32@2-5673ab86695ada32b20059c64d8665471ab2f3146c1f0725e0be2f1c0a49de01.png" alt="Logo twitter square 32@2" />
+    </a>
+    <a href="https://facebook.com/beeminder">
+      <img height="32px" width="32px" src="/assets/logo_facebook_square_32@2-2aa6cb00f83b9d60bfb26570827146746bc1e7872d20785a1db9017d9ed13f42.png" alt="Logo facebook square 32@2" />
+    </a>
+    <a href="https://www.instagram.com/beeminder/">
+      <img height="32px" width="32px" src="/assets/logo_instagram_64px-f8e3cfddebe72340990b08c596a6056147a4151a7953d185236c1556d5389822.png" alt="Logo instagram 64px" />
+    </a>
+    <a href="https://www.linkedin.com/company/beeminder?trk=recent-update_see-all#updates">
+      <img height="32px" src="/assets/logo_linkedin_34px-f13fc8de8d18741fcab086f7d6c40952e8d8f95073031d80046507250b50eeee.png" alt="Logo linkedin 34px" />
+    </a>
+
+  </div>
+  <div class="copyright">
+    &copy; Beeminder 2011&ndash;2020
+<!--
+Danny and Bee and Andy argue about automatically setting the copyright year to 2020:
+
+D: boo to automatically filling in copyright! that's how we prove we're still at the wheel :)
+A: it only proves that if it's publicly visible how the copyright is being created
+A: like if beeminder were open source. otherwise no one can tell the difference
+D: actually i think when the copyright changes at a random time in january, that's a good signal that you're at the wheel...
+D: if it changes at the stroke of midnight then obviously you cheated and could all be dead or on a beach somewhere
+B: but everyone cheats
+B: so it can only be an indicator in our absence
+D: boo to cheaters
+bystander: it's the best way to score GitHub points too: open `2017` -> `2018` pull requests
+A: but who is going around checking exactly when copyrights change??
+A: bots, that's who
+A: okay nevermind I'm on board with this as a precaution to confuse future overlords
+B: anyhow, it also makes us look stupid. like we don't know how to use string format, and causes people to write us emails like "Umm. so your copyright is out of date. I don't know what language you guys use, but in php it's really easy you.."
+A: maybe that's a positive, identify users who can write code
+A: "oh, thanks! here's another nerd sniping problem. can you rewrite beebrain?"
+D: clearly the optimal solution is to set it to `year(now-random(5,10)*86400)` :)
+D: (simulates a fairly attentive human at the wheel updating the copyright 5-10 days after new years)
+D: i can't tell what fraction serious i am about doing it manually. i guess if, counterfactually, we ever weren't at the wheel it would be lies and that feels icky
+D: like there's something inherently dishonest about literally being like "copyright... uh, whatever year it is when you're reading this!"
+B: ok, so part of the checklist for shuttering beeminder is "update footer copyright date"
+B: you clearly didn't understand my argument for why we're doing this, because you seem to remain unconvinced. go read my email again and then i'm putting you in timeout so you can think about what you've done.
+D: [pastes this in the html source so we can show it to people in 2021 who see "2020" and think we don't know how to insert a dynamic date]
+PS: Bee's argument in the email with the user who called us out:
+I think Danny had some convoluted reasoning for why we shouldn't just make that programmatic, like "it's a signal that the site is still active", but I think that's kind of incorrect -- anyone writing a website can make the copyright date be programmatically generated, so it doesn't actually serve as any indicator of currency, it can only serve as a anti-activity signal by going out of date.
+-->
+  </div>
+</div> 
+
+  </div>
+    
+
+
+<div class="modal fade" id="hook-check" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Goals review</h2>
+        <button type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-hidden="true">&times;</button>
+
+      </div>
+      <div class="modal-body">
+        <p>
+           Your payment method will be used for all of your active goals once you <a class="dark" title="Or click the blue New Goal button in your dashboard or gallery" href="https://www.beeminder.com/new">create some</a>!
+                  </p>
+
+        <div class="modal-buttons">
+          <p style="padding-bottom: 15px;"><em>You can archive a goal any time using the Archive button on the Stop/Pause tab</em><p>
+          <button type="button"
+                  class="bbtn"
+                  data-dismiss="modal">Sounds good</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    <script type="text/javascript">
+      $(document).ready(function() {
+        mixpanel.identify("happybee9494");
+        mixpanel.name_tag("happybee9494");
+        mixpanel.people.set({"username": "happybee9494"})
+      });
+    </script>
+
+  <script> // facebook js sdk
+    window.fbAsyncInit = function(){FB.init({appId:'362719670519679', xfbml:true, version:'v2.0'})}
+    ;(function(d,s,id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'))
+  </script>
+
+<script> // facebook js sdk
+  window.fbAsyncInit = function(){FB.init({appId:'208127512622250', xfbml:true, version:'v2.0'})}
+  ;(function(d,s,id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'))
+</script>
+
+ <!-- end /useronboard script block -->
+
+<!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o0ga1');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+
+</body>
+</html>

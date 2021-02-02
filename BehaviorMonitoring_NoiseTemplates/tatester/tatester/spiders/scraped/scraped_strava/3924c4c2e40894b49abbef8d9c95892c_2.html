@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html class='fonts-loaded' dir='ltr' lang='en-US' xmlns:fb='http://www.facebook.com/2008/fbml' xmlns:og='http://opengraphprotocol.org/schema/' xmlns='http://www.w3.org/TR/html5'>
+<!--
+layout website_v2
+-->
+<head>
+<meta charset='UTF-8'>
+<title>Strava Features | GPS Tracking, Maps, Analytics, Challenge Friends, Find Top Runs and Rides</title>
+<meta content='Track all of all your runs and rides with your GPS device. Get detailed stats and see maps of your routes. Compare your performance against friends and climb the leaderboards. Join challenges and set new personal records.' name='description'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/apple-touch-icon-180x180.png?v=dLlWydWlG8' rel='apple-touch-icon' sizes='180x180'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/apple-touch-icon-152x152.png?v=dLlWydWlG8' rel='apple-touch-icon' sizes='152x152'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/apple-touch-icon-144x144.png?v=dLlWydWlG8' rel='apple-touch-icon' sizes='144x144'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/apple-touch-icon-120x120.png?v=dLlWydWlG8' rel='apple-touch-icon' sizes='120x120'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/apple-touch-icon-114x114.png?v=dLlWydWlG8' rel='apple-touch-icon' sizes='114x114'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/apple-touch-icon-76x76.png?v=dLlWydWlG8' rel='apple-touch-icon' sizes='76x76'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/apple-touch-icon-72x72.png?v=dLlWydWlG8' rel='apple-touch-icon' sizes='72x72'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/apple-touch-icon-60x60.png?v=dLlWydWlG8' rel='apple-touch-icon' sizes='60x60'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/apple-touch-icon-57x57.png?v=dLlWydWlG8' rel='apple-touch-icon' sizes='57x57'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/favicon-32x32.png?v=dLlWydWlG8' rel='icon' sizes='32x32' type='image/png'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/icon-strava-chrome-192.png?v=dLlWydWlG8' rel='icon' sizes='192x192' type='image/png'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/favicon-96x96.png?v=dLlWydWlG8' rel='icon' sizes='96x96' type='image/png'>
+<link href='https://d3nn82uaxijpm6.cloudfront.net/favicon-16x16.png?v=dLlWydWlG8' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json?v=dLlWydWlG8' rel='manifest'>
+<meta content='#FC5200' name='msapplication-TileColor'>
+<meta content='https://d3nn82uaxijpm6.cloudfront.net/mstile-144x144.png?v=dLlWydWlG8' name='msapplication-TileImage'>
+<meta content='#FC5200' name='theme-color'>
+<meta content='Strava' name='apple-mobile-web-app-title'>
+<meta content='Strava' name='application-name'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='black' name='apple-mobile-web-app-status-bar-style'>
+
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='black' name='apple-mobile-web-app-status-bar-style'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable = yes' name='viewport'>
+<link rel="stylesheet" media="screen" href="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2-b491b68392596e5ee30c0263748dbbb030d251a25184686e29838913e632fc71.css" />
+<link rel="stylesheet" media="screen" href="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/fonts-f3ce0bc1fabf6e3b59b343501801d2c8f070a746dbc23a7a512221c1240c9f36.css" />
+
+<meta content='284597785309' property='fb:app_id'>
+<meta content='Strava | Run and Cycling Tracking on the Social Network for Athletes' property='og:title'>
+<meta content='Designed by athletes, for athletes, Strava’s mobile app and website connect millions of runners and cyclists through the sports they love.' property='og:description'>
+<meta content='https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/global/og-image-09071b646c63adf40788af35ec6e9eba50756671def1cd0d186ae3c3240bb7d4.jpg' property='og:image'>
+<meta content='https://www.strava.com/features' property='og:url'>
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+    {'gtm.start': new Date().getTime(),event:'gtm.js'}
+    );var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','googleTagManagerDataLayer', "GTM-TP845S");
+</script>
+
+<script>
+  !function(options){
+    window.Strava = window.Strava || {};
+    var _enabled = true;
+    var _snowplow = true;
+    var _options = options;
+    var _ready = null;
+    var _snowplowReady = null;
+  
+    window.Strava.ExternalAnalytics = window.Strava.ExternalAnalytics || (
+      {
+        isEnabled: function() {
+          return _enabled;
+        },
+        snowplowEnabled: function() {
+          return _snowplow;
+        },
+        isDebug: function() {
+          return _options.debug;
+        },
+        track: function() {
+          if(this.isEnabled()) {
+            analytics.track.apply(analytics, arguments)
+            this.log('%ctrack %O', arguments)
+          }
+        },
+        trackV2: function(event) {
+          var eventData = {
+            'category': event.category,
+            'page': event.page,
+            'action': event.action,
+            'element': event.element || null,
+            'properties': event.properties || {}
+          }
+          if (this.snowplowEnabled()) {
+            snowplow('trackSelfDescribingEvent', {
+              schema: 'iglu:com.strava/track/jsonschema/1-0-0',
+              data: eventData
+            });
+          } else {
+            !!console.table && console.table(eventData);
+          }
+          this.track(event.category, eventData);
+        },
+        page: function(category, name, properties, options) {
+          if(this.isEnabled()) {
+            var _category = category;
+            var _name = name;
+            if(!_name) {
+              _name = category;
+              _category = null;
+            }
+            var _properties = properties || {};
+            _properties.is_mobile = _options.is_mobile;
+            _properties.mobile_os = _options.os;
+            _properties.athlete_id = _options.athlete_id;
+            _properties.locale = _options.locale;
+            analytics.page(_category, _name, _properties, options)
+            this.log('%canalytics %O', [_category, _name, _properties, options])
+          }
+          if(this.snowplowEnabled()) {
+            snowplow('trackPageView');
+          }
+        },
+        trackLink: function() {
+          if(this.isEnabled()) {
+            analytics.trackLink.apply(analytics, arguments)
+            this.log('%cattaching to track link %O', arguments)
+          }
+        },
+        trackForm: function() {
+          if(this.isEnabled()) {
+            analytics.trackForm.apply(analytics, arguments);
+            this.log('%cattaching to track form %O', arguments);
+          }
+        },
+        identifyV2: function(athleteId, options, eventName) {
+          if (this.snowplowEnabled()) {
+            var properties = options || {}
+            properties.athlete_id = athleteId;
+            var eventData = {
+              'category': 'identify',
+              'page': null,
+              'action': eventName,
+              'element': null,
+              'properties': properties
+            };
+            snowplow('trackSelfDescribingEvent', {
+              schema: 'iglu:com.strava/track/jsonschema/1-0-0',
+              data: eventData
+            });
+          }
+          this.identify(athleteId, options);
+        },
+        identify: function() {
+          if(this.isEnabled()) {
+            analytics.identify.apply(analytics, arguments);
+            this.log('%cidentify(%O)', arguments);
+          }
+        },
+        reset: function() {
+          if(this.isEnabled()) {
+            analytics.reset.apply(analytics, arguments);
+            this.log('%creset(%O)', arguments);
+          }
+          if(this.snowplowEnabled()) {
+            snowplow('setUserId', null)
+            var spCookie = document.cookie.match('_sp_id\\.[a-f0-9]+')
+            if(spCookie != null) {
+              document.cookie = spCookie[0] + "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+            }
+          }
+        },
+        setupSnowplow: function(id) {
+          if(this.snowplowEnabled()) {
+            snowplow("newTracker", "cf", "c.strava.com", {
+              appId: "strava-web",
+              platform: "web"
+            });
+            snowplow('setUserId', id);
+          }
+        },
+        anonymousId: function() {
+          var d = jQuery.Deferred();
+          if (this.isEnabled()) {
+            if (!_ready) {
+              _ready = jQuery.Deferred();
+              analytics.ready(function(){
+                _ready.resolve(analytics.user().anonymousId());
+              });
+            }
+            _ready.always(function(anonymousId){
+              d.resolve(anonymousId);
+            });
+          } else {
+            d.reject(null);
+          }
+          return d;
+        },
+        getDomainUserId: function() {
+          var d = jQuery.Deferred();
+          if (this.snowplowEnabled()) {
+            if (!_snowplowReady) {
+              _snowplowReady = jQuery.Deferred();
+              snowplow(function(){
+                _snowplowReady.resolve(this.cf.getDomainUserId());
+              });
+            }
+            _snowplowReady.always(function(getDomainUserId){
+              d.resolve(getDomainUserId);
+            });
+          } else {
+            d.reject(null);
+          }
+          return d;
+        },
+        log: function(message, values) {
+          if(this.isDebug()) {
+            console.log(message, 'background-color: yellow; color: blue; font-size: medium;', values);
+          }
+        },
+        debug: function(value) {
+          _options.debug = value;
+        }
+      }
+    )
+  }({
+    is_mobile: false,
+    os: "",
+    debug: false,
+    athlete_id: 54333782,
+    locale: "en-US"
+  });
+</script>
+
+<script>
+  !function(){
+    var analytics = window.analytics = window.analytics || [];
+    if(!analytics.initialize) {
+      if(analytics.invoked) {
+        window.console && console.error && console.error("Segment snippet included twice.");
+      } else {
+        analytics.invoked = !0;
+        analytics.methods = ["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];
+        analytics.factory = function(t) {
+          return function() {
+            var e = Array.prototype.slice.call(arguments);
+            e.unshift(t);
+            analytics.push(e);
+            return analytics
+          }
+        };
+        for(var t = 0; t < analytics.methods.length; t++) {
+          var e = analytics.methods[t];
+          analytics[e] = analytics.factory(e)
+        }
+        analytics.load = function(t) {
+          var e = document.createElement("script");
+          e.type = "text/javascript";
+          e.async = !0;
+          e.src = ("https:" === document.location.protocol ? "https://" : "http://") + "cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js";
+          var n = document.getElementsByTagName("script")[0];
+          n.parentNode.insertBefore(e,n)
+        };
+        analytics.SNIPPET_VERSION = "4.0.0";
+        analytics.load("4U9hx9LX3VDSlP3o5AoG4vHoGdJY340J");
+  
+        if (true) {
+          (function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://dy9z4910shqac.cloudfront.net/1oG5icild0laCtJMi45LjA.js","snowplow"));
+          Strava.ExternalAnalytics.setupSnowplow(54333782);
+        }
+  
+        if(Strava.ExternalAnalytics.isDebug()) {
+          analytics.debug();
+        } else {
+          analytics.debug(false);
+        }
+  
+        Strava.ExternalAnalytics.page(null, null, null);
+      }
+    }
+  }();
+</script>
+
+<script>
+  !function(debug){
+    window.Strava = window.Strava || {};
+  
+    var _enabled = true;
+    var _debug = !!debug;
+    var _branchData = null;
+  
+    window.Strava.BranchIO = window.Strava.BranchIO || (
+      {
+        isEnabled: function() {
+          return _enabled;
+        },
+        isDebug: function() {
+          return _debug;
+        },
+        dataToLocalStorage: function() {
+          if (!_branchData) {
+            _branchData = new Strava.BranchAnalytics.BranchData();
+          }
+  
+          var d = this.data()
+          var that = this;
+          d.done(function(data) {
+            that.log('storing data %o to local storage', data)
+            _branchData.data(data)
+          });
+          d.fail(function(message) {
+            that.log('failed to retrieve data from branch');
+            _branchData.data({})
+          });
+          return d;
+        },
+        createLink: function(options) {
+          var d = jQuery.Deferred();
+          var data = null;
+          const that = this;
+          var callback = function(e, l) {
+            if (!e) {
+              d.resolve(l);
+            } else {
+              d.reject(e);
+            }
+          }
+          if (options.peek_data) {
+            data = this.dataFromLocalStorage();
+            if (data && data.data_parsed && data.data_parsed['~referring_link']) {
+              d.resolve(data.data_parsed['~referring_link']);
+            } else {
+              d.reject();
+            }
+          } else {
+  
+            Strava.ExternalAnalytics
+              .anonymousId()
+              .always(function(anonymousId){
+                if (anonymousId) {
+                  options.data['anonymousId'] = anonymousId;
+                }
+  
+                Strava.ExternalAnalytics
+                  .getDomainUserId()
+                  .always(function(domainUserId){
+                    if (domainUserId) {
+                      options.data['domainUserId'] = domainUserId;
+                    }
+  
+                    if(that.isEnabled()) {
+                      branch.link(options, callback);
+                    };
+                });
+            });
+          }
+          return d;
+        },
+        dataFromLocalStorage: function() {
+          if (!_branchData) {
+            _branchData = new Strava.BranchAnalytics.BranchData();
+          }
+          return _branchData.data();
+        },
+        clearLocalStorage: function() {
+          if (!_branchData) {
+            _branchData = new Strava.BranchAnalytics.BranchData();
+          }
+          _branchData.data({});
+        },
+        data: function(checkLocalStorage) {
+          var d = jQuery.Deferred();
+          var that = this;
+          var c = function(message, meta_data) {
+            var storedData = null;
+  
+            if(message) {
+              d.reject(message);
+            } else {
+              if (checkLocalStorage == true && (meta_data == null || meta_data.data == "" || meta_data.data == null)) {
+                storedData = that.dataFromLocalStorage();
+                that.clearLocalStorage();
+  
+                d.resolve(storedData);
+              } else {
+                d.resolve(meta_data);
+              }
+            }
+          };
+  
+          if(this.isEnabled()) {
+            branch.data(c);
+            this.log('%cdata (branch enabled)');
+          } else {
+            this.log('%cdata (branch disabled)');
+            d.resolve({});
+          }
+          return d;
+        },
+        identify: function(athleteId) {
+          var callback = function(error, data) {
+            if (error) {
+              console.log(error);
+            }
+          }
+          if(this.isEnabled()) {
+            branch.setIdentity(athleteId, callback);
+          }
+        },
+        track: function(eventName, metaData) {
+          var callback = function(error, data) {
+            if (error) {
+              console.log(error);
+            }
+          }
+          if(this.isEnabled()) {
+            branch.track(eventName, metaData, callback);
+          }
+        },
+        log: function(message, values) {
+          if(this.isDebug()) {
+            console.log(message, 'background-color: yellow; color: blue; font-size: medium;', values);
+          }
+        },
+        debug: function(value) {
+          _debug = value;
+        }
+      }
+    )
+  }(false);
+</script>
+
+<script>
+  (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
+  branch.init("key_live_lmpPsfj2DP8CflI4rmzfiemerte7sgwm", {});
+</script>
+
+<script src="https://d3nn82uaxijpm6.cloudfront.net/assets/utils/apptimize-js-client-1.0.0-71f129accb50740308b6a5a35aee32b67043b6013668d0d13390bab7cd69c1f4.js"></script>
+<script>
+  !function(){
+    window.Strava = window.Strava || {};
+  
+    var _enabled = true;
+  
+    window.Strava.Apptimize = window.Strava.Apptimize || (
+      {
+        isEnabled: function() {
+          return _enabled;
+        },
+        setup: function(appId) {
+          if(this.isEnabled()) {
+            Apptimize.setup(appId);
+          }
+        },
+        featureFlagEnabled: function(featureFlagName, defaultValue) {
+          if(this.isEnabled()) {
+            return Apptimize.isFeatureFlagEnabled(featureFlagName);
+          } else {
+            return defaultValue;
+          }
+        },
+        runCodeBlock: function(experimentName, methods) {
+          if(this.isEnabled()) {
+            Apptimize.runCodeBlock(experimentName, methods);
+          } else {
+            methods["baseline"]()
+          }
+        },
+        getBoolean: function(name, defaultValue) {
+          if(this.isEnabled()) {
+            return Apptimize.getBool(name, defaultValue);
+          } else {
+            return defaultValue;
+          }
+        },
+        getString: function(name, defaultValue) {
+          if(this.isEnabled()) {
+            return Apptimize.getString(name, defaultValue);
+          } else {
+            return defaultValue;
+          }
+        },
+        getInteger: function(name, defaultValue) {
+          if(this.isEnabled()) {
+            return Apptimize.getInt(name, defaultValue);
+          } else {
+            return defaultValue;
+          }
+        }
+      }
+    )
+  }();
+</script>
+
+<script>
+  Strava.Apptimize.setup("Bhvh38fmGCVL2baPqMe6fufk2aybWV4");
+</script>
+
+<script type='application/ld+json'>
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Strava",
+  "url": "https://www.strava.com/",
+  "logo": "https://d3nn82uaxijpm6.cloudfront.net/assets/brands/strava/logo-strava-lg-5671105ffddb86e437bb68503a4973e8bf07e2a41c0b332d3e3bced21d537e98.png",
+  "sameAs": [
+    "https://facebook.com/Strava",
+    "https://twitter.com/strava",
+    "https://instagram.com/strava",
+    "https://youtube.com/stravainc",
+    "https://blog.strava.com",
+    "https://github.com/strava",
+    "https://medium.com/strava-engineering"
+  ]
+}
+
+
+</script>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="iLuAGvJWrXenT0X8kLC2wZy+TevMucRkMyf0KW0J9eOFo3cHwDBic6O8nZWblEVANPJ4+PdEnCXbUg1tJlTEgg==" />
+<script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/chunking_runtime-607af9eb4369ccc03cfc.js"></script>
+<script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/global-4d6618f51b8656e5d99d.chunk.js"></script>
+<script src="https://d3nn82uaxijpm6.cloudfront.net/assets/strava-head-d0f4c1f1472bbfd71048d6bbbe5e3b9041ec1330343ab67cfc3a6099b8fee09e.js"></script>
+
+<script src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2-fbd659fdf52b9fc15bd53648496554c83a7374a4393b355d5a3ae26a03c15301.js"></script>
+<script>
+  document.documentElement.classList.add("js")
+</script>
+</head>
+<body class='logged-in responsive feed3p0 old-login  '>
+<noscript>
+<iframe height='0' src='//www.googletagmanager.com/ns.html?id=GTM-TP845S' style='display:none;visibility:hidden' width='0'></iframe>
+</noscript>
+
+<div class='page'>
+<div class='mobile-download-app-tout'>
+<div class='grid'>
+<div class='offset-sub-1 sub-1'>
+<div class='close'></div>
+</div>
+<a class='branch-button sub-20 grid' data-segioevent='{&quot;name&quot;:&quot;MobileWeb SmartBanner&quot;,&quot;source&quot;:&quot;global_banner&quot;}' href='/mobile'>
+<div class='android app-icon'></div>
+<div class='description'>
+<p>Strava for Android and iPhone.</p>
+<sub class='star-rating'>
+<span>(15,000+ Reviews)</span>
+</sub>
+</div>
+<div class='offset-sub-1 cta'>
+<h4 id='branch-install-text'>Install</h4>
+</div>
+</a>
+</div>
+</div>
+
+<div class='under-mobile-download-app-tout'>
+<nav class='mobile-nav'>
+<a class='menu-icon' href='#footer'>
+<span class='bar'></span>
+<span class='bar'></span>
+<span class='bar'></span>
+<span class='txt'>Menu</span>
+</a>
+<div class='menu'>
+<div class='content'>
+<a class='main-page' data-page='home' href='/'>
+<span class='txt'>Home</span>
+</a>
+<a class='is-active main-page' data-page='features' data-segioevent='{&quot;name&quot;:&quot;RegisterFlow ViewFeatures&quot;}' href='/features'>
+<span class='txt'>Features</span>
+</a>
+<a class='main-page' data-page='premium' data-segioevent='{&quot;name&quot;:&quot;PremiumFlow ViewFeatures&quot;}' href='/summit'>
+<span class='txt'>Summit</span>
+</a>
+<sub>More</sub>
+<a href='http://blog.strava.com/' target='_blank'>
+<span class='txt'>Blog</span>
+</a>
+<a href='https://support.strava.com/' target='_blank'>
+<span class='txt'>Support</span>
+</a>
+<a data-segioevent='{&quot;name&quot;:&quot;RegisterFlow ViewForm&quot;,&quot;source&quot;:&quot;mobile_nav&quot;}' href='/register/free?cta=sign-up&amp;element=mobile-nav&amp;source=website_features' id='mobile-reg-button'>
+<span class='txt'>Sign Up</span>
+</a>
+<a data-segioevent='{&quot;name&quot;:&quot;LoginFlow ViewForm&quot;}' href='/login' id='mobile-login-button'>
+<span class='txt'>Log In</span>
+</a>
+</div>
+</div>
+</nav>
+
+<nav class='global-nav'>
+<div class='grid'>
+<div class='offset-sub-1 sub-1 logo-container'>
+<a class='logo' href='/'>
+<img alt="Strava" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/svgs/strava-orange-a3c9bfaa22f46507cce22691708f53025737fa0271414f6522eb6c993e526998.svg" />
+</a>
+<div class='home'>
+<a class='menu-icon' href='#footer'>
+<span class='bar'></span>
+<span class='bar'></span>
+<span class='bar'></span>
+<span class='txt'>Menu</span>
+</a>
+</div>
+</div>
+<div class='offset-sub-1 sub-18 table-of-contents'>
+<div class='default'>
+<a data-segioevent='{&quot;name&quot;:&quot;RegisterFlow ViewFeatures&quot;}' href='/features'>
+Features
+</a>
+<a data-segioevent='{&quot;name&quot;:&quot;PremiumFlow ViewFeatures&quot;}' href='/summit'>
+Summit
+</a>
+</div>
+</div>
+<div class='sign-up-button'>
+<a class='desktop' data-segioevent='{&quot;name&quot;:&quot;RegisterFlow ViewForm&quot;,&quot;source&quot;:&quot;global_nav&quot;}' href='/register/free?cta=sign-up&amp;element=global-nav&amp;source=website_features'>
+<span>Sign Up</span>
+</a>
+<a class='branch-button mobile' href='/mobile'>
+<span>Get the App</span>
+</a>
+</div>
+</div>
+</nav>
+
+
+<div class='main-container features'>
+<div class='alt banner page-features'>
+<section>
+<div class='section-content'>
+<div class='grid'>
+<div class='sub-12 offset-sub-2'>
+<h1>Features for athletes, made by athletes.</h1>
+</div>
+<div class='sub-6 offset-sub-4'>
+<div class='cta'>
+<div class='container'>
+<h4>
+<a class='desktop' data-segioevent='{&quot;name&quot;:&quot;RegisterFlow ViewForm&quot;,&quot;method&quot;:&quot;email&quot;,&quot;source&quot;:&quot;banner&quot;}' href='/register/free?cta=sign-up&amp;element=banner&amp;source=website_features'>
+<span class='txt'>Join us for free.</span>
+</a>
+</h4>
+</div>
+</div>
+</div>
+<div class='explore-our-features-txt'>
+<div class='cta-mobile'>
+<a class='branch-button pill-button orange mobile' data-segioevent='{&quot;name&quot;:&quot;RegisterFlow ViewForm&quot;,&quot;source&quot;:&quot;banner&quot;}' href='/mobile'>
+<span>Get the App</span>
+</a>
+</div>
+<p>Explore our best features:</p>
+<div class='carrot'></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div class='everything-else'>
+<header class='global-header'>
+<div class='left'>
+<a class='header-logo' href='/'>
+<img alt="Strava" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/svgs/strava-white-38011fe0ba540de6b3bd08db73f47b50084f480f0880b881a7334505ab56429e.svg" />
+</a>
+</div>
+<div class='middle'>
+<a data-page="features" data-segioevent="{&quot;name&quot;:&quot;RegisterFlow ViewFeatures&quot;}" class="link current-page" href="/features">Features</a>
+<a data-page="premium" data-segioevent="{&quot;name&quot;:&quot;PremiumFlow ViewFeatures&quot;}" class="link " href="/summit">Summit</a>
+<a data-page="premium" data-segioevent="{&quot;name&quot;:&quot;PremiumFlow ViewFeatures&quot;}" class="link " href="/about">About Us</a>
+<a data-page="premium" data-segioevent="{&quot;name&quot;:&quot;PremiumFlow ViewFeatures&quot;}" class="link " href="/careers">Careers</a>
+</div>
+<div class='right'>
+<div class='sub-link login-button'>
+<div class='icon login-icon'></div>
+<a data-segioevent="{&quot;name&quot;:&quot;LoginFlow ViewForm&quot;}" href="/login">Log In</a>
+</div>
+<div class='sub-link'>
+<div class='icon'></div>
+<a data-segioevent="{&quot;name&quot;:&quot;RegisterFlow ViewForm&quot;,&quot;source&quot;:&quot;global_header&quot;}" href="/register/free?cta=sign-up&amp;element=global-header&amp;source=website_features">Sign Up</a>
+</div>
+</div>
+</header>
+
+<nav class='wayfinding'>
+<div class='grid no-center'>
+<div class='col-2'>
+<div class='item'>
+<div class='column-content'>
+<div class='icon icon-rollout icon-track-analyze'></div>
+<span class='desktop title'>
+Track &amp; Analyze
+</span>
+<span class='title mobile'>Track</span>
+<div class='icon icon-rollover icon-wayfinding'></div>
+</div>
+</div>
+</div>
+<div class='col-2'>
+<div class='item'>
+<div class='column-content'>
+<div class='icon icon-rollout icon-share-connect'></div>
+<span class='desktop title'>
+Share &amp; Connect
+</span>
+<span class='title mobile'>Connect</span>
+<div class='icon icon-rollover icon-wayfinding'></div>
+</div>
+</div>
+</div>
+<div class='col-2'>
+<div class='item'>
+<div class='column-content'>
+<div class='icon icon-explore-compete icon-rollout'></div>
+<span class='desktop title'>
+Explore &amp; Compete
+</span>
+<span class='title mobile'>Discover</span>
+<div class='icon icon-rollover icon-wayfinding'></div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+<div class='trigger-global-nav-in'></div>
+<a name='track-and-analyze'></a>
+<section class='poster'>
+<div class='bg-container'>
+<div class='bg parallax-bg-layer recording-poster' data-depth='1.1' data-offset='200'>
+<div class='grid'>
+<div class='sub-12 offset-sub-2'>
+<h1>Track and analyze every aspect of your activity.</h1>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class='hero-feature '>
+<div class='features-timer image-sequence' data-sequence-delay='0' data-sequence-frames='[&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/0-29a7418398db6aa0861fb3ea0f43ef49c6fe63e63113b8df0ae455a20e51c697.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/1-8035b018568ee5d4742729550dcce91da93b7b01040d00ae949d5782e26293c0.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/2-eb8c9e93da710fe18a578effd524987c6aed412069d5b065a9e06cec02bec30f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/3-d2e2630b30f7ff39e30e834e85deb9aaaa3a1a2d7f20e503f1902a4f0b42f89e.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/4-ccf9c98cd5404e5e603ab4cae999f5528b641b049b43159da5141d49fcd7e8f9.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/5-08bcd8970020f41e1ba7a1cba54def2555846617bdad61ab466c7079591b984a.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/6-d165677f63c0cc1074610305c4511e215f80a8aab22d358d0bab10c3f192c127.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/7-9a0f0d533d63a7a73b97960421d0a97463bf6e5f8c00226a3cb2fb5ac98e32ad.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/8-02809e63f85ae4295816c6befb3cfaa35aa4d7a067c06d75d8eec3605d1bb38c.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/9-8a7f4f6cef3e0b06a66bf0eb88bdd72e7eb511ee1d4b12e7157341a64e0a1fa1.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/10-9383fa28a2e04c6a52c50432fe01839486b0f1b839618415da28ca5b18d1b4e9.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/11-d49eebb72eafa3c8bc6291edf5e3e9f1bd89e45b2a3dad6f22e30425ba1ec09c.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/12-b9de066c8bd82f6cf968400270d3d4ea30a664adfc8bc08a9d4f0cef625d39d1.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/13-0064a8759b0e2b3ffdc864459070d937a80539bc9eb850d0ae50b6077f2d6b3f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/14-d37f8e0844cb78d9ab4f62df70eb99f7aaadb148bf4a6fb1e084d593bbf1aaff.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/15-540090212f69c355cac3bb8e986818bc57b49a7a35b25b69c72985d646ec337f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/16-3dd8a735c372b2384e8aa6354b7152a1c6bcb1b41c68b8e515088a00a5395f64.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/17-f800e6cb21860eb5ab20a7afcc1ab79a3707c75e8b026fd06e6ba3b50c359cd3.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/18-983ed0d5645a41c7972b17f8f82a8ea19b411f9ffffb9a88ab7718a47e923701.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/19-65e5a2e871e68fd364fa53f33add4b5382fd86cb3dc7d193db66fbf71d020bf6.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/20-efb7ab9790b141dec2b0e96efb15df6f9888b67e71dbc18f09b24869192e8562.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/21-d6e4c0c40d200309cc69c3ebb703d42854d870911492c43ae87cab9637081f36.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/22-86dd216a49d78f49924fd2ba0f9d05192a5869ce5ea03df0cc7d3bf618db301d.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/23-0588d3b13a8f1c61df44792234a2435c0348028dff957e5bfa963a3f55229a0e.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/24-36b7325e716f451d3b52fd42de803a0c59d472f8408ca4336c83a69742fbe4fc.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/25-20695de2a091e0eaf502b51c16a6cc1d17ed716f8e718b0c1b3d4cc47ef5260f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/26-bd9159e485fa2a4ac3273ba0340d94268b31ac3e8ff83246db1fd564b72f6b4d.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/27-6e298868a6f602cd19cb518c2d0958ccca658ed2cd0b76be95e6e353dd9c8650.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/28-a518c5cfc0d1b075d0a06eeac35173507a9511a11069c9dbc44f438fa930fa2e.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/29-270d2b201132b2633ccb43c76e7c6055a1df0bd022f2988ccce1d51b0dfd8962.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/30-946d5c4472c7babab1f8934c61d24146454165f942a9b2ceafa53dc471393fbb.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/31-1d0b7af80cfcca81b04e2738d16f7b08cc1adc5814a05168306e0b4945a1dc5b.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/32-4985a8c6436ed765fa3d590fc059fd670e0a3a1c480ac37acc37881937bca4cb.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/33-a5b38d720853ef82ab3c04351e6cbf8d48c51d3fd0afbe78aff70127517ec81b.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/34-3bde43512c0d433945114f324a6d5781e49899b531ed7fe6d45324dc4077d4d5.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/35-cfc72da5dce3de3c1225a55534801f7e0fc2d6218da2f55d365822aae9a81234.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/36-f3314fff35ec47c0b550a5d6495c1e1d3a5558364e9a5e37b898e4c8bf5f83be.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/37-b6302a68b39ab7340a20de2b3bca1d2f3bbc1611bc911b63a97cb46a5258848b.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/38-2502e365457f848f65381fc7fe4ba143ba2d57b93e229a335acbe9a79197fa0c.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/39-3d2265c50f1d6839317b039722c14f8cba9af1c06e0cc30c679c47bb20f3b35a.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/40-314d6cf3a7a95f4c9d71f583325c7525cc4545ed27b4d6dc3350a683c960a11e.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/41-b13e0f86cb8de4f44ab6b71c8e578a48fce28b79006102fc52271fd2cdbedb75.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/42-10eadee09279eab3f50e3d4057d6b80b35e3fe4772bdf5fb9746e871b358a2cd.png&quot;]' data-sequence-initial-delay='1.0' data-sequence-loop='false' data-sequence-speed='1.0' data-sequence-type='scroll-trigger'>
+<div class='sequence-static-layer'>
+<img alt="Activity Recording" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/static-layer-aa29ded3a6f40a61ef0c7f8a5c2109ed26b48e4cee83fea1329bf4ff96611a04.png" />
+</div>
+<div class='sequence'>
+<img class="poster-image" alt="Activity Recording" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/frames/42-10eadee09279eab3f50e3d4057d6b80b35e3fe4772bdf5fb9746e871b358a2cd.png" />
+</div>
+<div class='sequence-static-layer top-layer'>
+<img alt="Activity Recording" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/recording/static-layer-front-0e8fcf987014a0920bdc917cc05f1188f7dd961c72fe1784e9c3fb2056a0dd7f.gif" />
+</div>
+</div>
+
+</div>
+
+<section class='sell-me-on-it'>
+<div class='grid'>
+<div class='offset-sub-6 sub-12'>
+<h2>It all starts with the world&#39;s best tracking.</h2>
+<p>Strava turns every iPhone and Android into a sophisticated running and cycling computer (and we work with your GPS watches and head units, too). Start Strava before an activity and you can track your favorite performance stats, and afterwards, dive deep into your data.</p>
+</div>
+</div>
+</section>
+<section class='image-strip'>
+<div class='grid image-strip-wrap-outer'>
+<div class='offset-sub-0 sub-24 image-strip-wrap-main'>
+<div class='grid'>
+<div class='offset-sub-7 sub-10'>
+<ul class='images'>
+<li class='image'>
+<div>
+<img alt="Garmin" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/01-garmin-0a51abd246967ae3716f92d2700bf7f6e7eeecb4b85b07b94736e650cb5f5c07.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Suunto" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/02-suunto-4fa3a6c7070ead5c6781018494346d3857b49faf18bd106a96ffb8a53d1e19a5.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Fitbit" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/03-fitbit-cfa82bd6abac7f239fead1115524a047d782b6d1a2990e5d9d6d7e2a77c7632d.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Polar" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/04-polar-c81733ee693f6ced208db94f2c53d166e12fdb86a103060ab33e2629b3f88b67.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Wahoo" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/05-wahoo-ac9ac4e20ca0d23f9c1973f58cb7f6bff222819799bf3c1cd0c3cf6d880a5c60.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Timex" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/06-timex-249e1deb9d6c41ecab9399b8de710737cd0af987ee5fbb5096ea7957a2ab959a.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Sigma" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/07-sigma-64b1c0330db4c14b54bbffac305d4208015560aa05929682d120318e4731a131.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Soleus" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/08-soleus-9ffdc40c76a33e53be7f6a539b3c6202ffffc3cdb9914fdada7bcc643d4caa44.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Bryton" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/09-bryton-bf3bf0c4d77e76b045d6d90c83c13c2b9480c297fb5eadc38e6806c2cb6b5236.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Magellen" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/10-magellen-9118b3a2ade1e2e6477f5f2f73842ec7a5a98747076093ae886847302bbcd156.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Tomtom" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/11-tomtom-a5c5c64ce0c7569acb27302c9df77c9e64be3323121c1f828172d2a767e26129.png" />
+</div>
+</li>
+<li class='image'>
+<div>
+<img alt="Mio" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/gps-partner-logos/12-mio-41da0fa8c0c3ee5f38d5f3b529798f412099191337eb76f37ac4a52d753a07eb.png" />
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class='grid image-strip-txt'>
+<div class='offset-sub-7 sub-10'>
+<p>Love your GPS device? Strava is compatible with a continually growing list of popular devices. If you can export or record your activities, you're most likely compatible with Strava. <a href='https://support.strava.com/hc/en-us/articles/223297187-How-to-get-your-Activities-to-Strava#devices'>View compatible devices.</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class='parallax metrics'>
+<div class='grid grid-main'>
+<div class='offset-sub-2 sub-12 metrics-img'></div>
+<div class='offset-sub-3 sub-4 metrics-txt'>
+<h3>Measure your performance.</h3>
+<p>Strava syncs with most devices - your phone, GPS watch or head unit, heart rate monitor or power meter - and records just about any performance metric you can imagine, plus a few exclusive to Strava.</p>
+</div>
+</div>
+<div class='parallax-canvas'>
+<div class='parallax-layer' data-depth='1.0'>
+<div class='grid grid-parallax'>
+<div class='offset-sub-6 sub-10 metrics-chart bg'>
+<div class='image-sequence maps-metrics-chart-sequence' data-sequence-delay='0' data-sequence-frames='[&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/0-cf125c9a1e7644204b02095bf2fd95fe493445640c47a014e546aa5635e05b9d.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/1-dccd75fbf9a9c2511114fb10d09ab5ea2b9f99df053ecd474bc66bc3606c3369.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/2-5de123910735b5c5554b36ca9dca07ed12ed96b80ba9762c1f36fd9186e0600f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/3-2da77700c2c1932385eb6c029f8226e646c69558b36a1bce9b3f81fa5ecf083f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/4-9c78f296e80dd3be7bedfff145db34d5203ec7c89b1ef5f58d643cb400f5260a.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/5-dd2f31ddb38c421941dc14e2f432ec065f37f80b99b98510e42454854a24a501.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/6-4bbb6a7d666a3943828e4f4f09339bd5f7219a05fa670f20fb4fc27f4acf0991.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/7-7e91768abc721c3e173e6bb6057d739df2d65478cb6616975b0183977b31f585.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/8-ae96a79026798999017a87196f99ab74fc061c10520344175198613aa8c3ee67.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/9-b50e53fb36ece63280bdc76e16f08ef9a2b3bf38b2a2a2cf6149d50dc4ce8735.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/10-3a7739de4691f45152accb7f367e139fac271ad10e62f4ee67e561e15ed1c045.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/11-199c7d04f4c80f73aa4c7cbe8d431b93a5365e5757e019e2260161ffdda24c86.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/12-6c97cd1b255c4bb36589650d3d1aed41fc22af6aada03ca898db3711bb9e037f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/13-50f9fbfbc55d72bbb5df2b8b70c8dbbd238c81b65d32674f6d1acd17137d6cc0.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/14-669427880e77c7d1bd04aa5187134fcb33772f860afedb8ffb79062886a580a2.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/15-7e4e845f228acca4520871e609525fdc6fc0993516e67fe74a89b799f43d7eb7.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/16-51469b7b127eba684e5c8916ceac34fcb8bf790352bbae042e63187172b87d31.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/17-d2f1d775583263e964a01bb9354f7fc2b4622e21cab560607769c74686244cf8.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/18-ee0683d7a4842e94a54875cc2dc555855e19b10448cbbd904969066ecb799f98.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/19-e0bc2092ed8eefd026cde67d648aaf989feae5e721fd81ee1e5dc0f5113cba42.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/20-9903e99ffc74b4d97728b22f7074f1808c8cb910ed4a4d21b838f38914decd56.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/21-cd43ad3a9a5c4e0384cdc8bfe56662395f87f5ae4d0d83a628f165b25ec6cbd9.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/22-2b778c931ae3faad1b0a6fa7cc228aa42322d16b5080c9feb0f3b631a86891cc.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/23-136d321b701766efc0254a6b8d96a881152440cba8ee67ba5fde2fa58f36b2e3.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/24-1e74296ce9c5977e994cd610bff8ca4795bb2be982d3c66ae4d6a8ed19635a9a.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/25-e098eef4d5b663e7236148c458cdca236edfcc8087ac730f578e123a923fc604.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/26-00dd5513131014a60f0b897f9184201203032d2dd45f5d4de1b0443299b5c765.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/27-788e8b9e7ad7e857989ab1b5a9ae866b2f2f781ff668c6f12e59338c4fafd27b.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/28-b5ecf7cb8596c92ff42aea33c4fca8f188860342b43b89ad23db4a5eb0d2d071.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/29-2d2ae9a5e658b682d7b1dbc56fbcd75f47e4b0c70d6848ab28bd7aef21804b6c.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/30-5d84c1efc420a67357fff17743a5e7aeaa4b9c25b82181f2377e1a12586cb75c.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/31-8be67b9bc9828edcde6bc0f5a188ae1c4025115bdf62dc607153ece33687a54f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/32-5f25f1a6194d27377a15995f3c8c2e4bd2f1e91c3b49d26a2ee1fe7a44716205.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/33-e5196d03a363b0fa88c6cfc3526dfad795995d1560da046ba81bcebaea65507d.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/34-7d292550f6887b26a6e9b05c1694e34433e0e8c28f05e5f2c2592b35da98489d.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/35-e73c6cd2105efe4aa8a56d9326dbb38277a7bd5be33edc52ac0f638651bbd105.png&quot;]' data-sequence-initial-delay='0' data-sequence-loop='false' data-sequence-speed='1.0' data-sequence-type='scroll-trigger'>
+<div class='sequence-static-layer'>
+<img alt="Performance Graph" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/static-layer-fed98a2d961ee4538d66580c6fad2b549de2f8a3030b105072141deafb6ba8f3.png" />
+</div>
+<div class='sequence'>
+<img class="poster-image" alt="Performance Graph" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/maps-metrics/frames/35-e73c6cd2105efe4aa8a56d9326dbb38277a7bd5be33edc52ac0f638651bbd105.png" />
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<a name='share-and-connect'></a>
+<section class='poster'>
+<div class='bg-container'>
+<div class='bg connect-share-poster parallax-bg-layer' data-depth='1.1' data-offset='200'>
+<div class='grid'>
+<div class='sub-12 offset-sub-2'>
+<h1>Connect with friends and share your adventure.</h1>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class='feature-connect-and-share parallax'>
+<div class='grid social-network-for-txt'>
+<div class='offset-sub-3 col-1'>
+<div class='column-content'>
+<h3>Strava is the social network for athletes.</h3>
+<p>Record an activity and it goes to your Strava feed, where your friends and followers can share their own races and workouts, give kudos to great performances and leave comments on each other&#39;s activities.</p>
+</div>
+</div>
+</div>
+<div class='parallax-canvas'>
+<div class='parallax-layer' data-depth='1.0'>
+<div class='grid'>
+<div class='offset-sub-10 sub-12 bg connect-and-share-widget'>
+<div class='top comments-kudos-parallax-layer1'>
+<div class='group-section'>
+<div class='group-indicators grid'>
+<div class='chat-icon admin icon-offset'></div>
+<div class='chat-description offset-sub-1 main-description'>
+<h4>Sunset ride with the gang.</h4>
+<span class='no-align'>Sarah Mathias</span>
+</div>
+<div class='chat-gang'>
+<div class='chat-icon status'>
+<span>+3</span>
+</div>
+<div class='chat-icon icon-1'></div>
+<div class='chat-icon icon-2'></div>
+<div class='chat-icon icon-3'></div>
+</div>
+</div>
+</div>
+</div>
+<div class='bottom'>
+<div class='messages' data-messages='[{&quot;username&quot;:&quot;Helen Matthews&quot;,&quot;message&quot;:&quot;Wow, what a beautiful shot!&quot;,&quot;icon-class&quot;:&quot;icon-3&quot;},{&quot;username&quot;:&quot;Daniel Kim&quot;,&quot;message&quot;:&quot;Nice one Erin! That&#39;s a big selfie stick.&quot;,&quot;icon-class&quot;:&quot;icon-4&quot;},{&quot;username&quot;:&quot;Rachael Cheng&quot;,&quot;message&quot;:&quot;Amazing. Where is this trail?&quot;,&quot;icon-class&quot;:&quot;icon-5&quot;},{&quot;username&quot;:&quot;Jamie Kosoy&quot;,&quot;message&quot;:&quot;Love that route...one of my favorites.&quot;,&quot;icon-class&quot;:&quot;icon-6&quot;},{&quot;username&quot;:&quot;Ken Walters&quot;,&quot;message&quot;:&quot;Looking fast. Nice work&quot;,&quot;icon-class&quot;:&quot;icon-7&quot;},{&quot;username&quot;:&quot;Chad Springer&quot;,&quot;message&quot;:&quot;Sweet! I&#39;d love to join next time&quot;,&quot;icon-class&quot;:&quot;icon-9&quot;},{&quot;username&quot;:&quot;Carolyn Smith&quot;,&quot;message&quot;:&quot;So jealous, looks amazing!&quot;,&quot;icon-class&quot;:&quot;icon-8&quot;},{&quot;username&quot;:&quot;Erin Soderberg&quot;,&quot;message&quot;:&quot;Nice climbing, looks like a tough one&quot;,&quot;icon-class&quot;:&quot;icon-10&quot;}]'>
+<div class='slider'>
+<div class='user grid'>
+<div class='sub-1'>
+<div class='chat-icon icon-offset person-1 icon-1'></div>
+</div>
+<div class='offset-sub-1 chat-description'>
+<p class='username'>Helen Matthews</p>
+<p class='message'>Wow, what a beautiful shot!</p>
+</div>
+</div>
+<div class='user grid'>
+<div class='sub-1'>
+<div class='chat-icon icon-offset person-2 icon-2'></div>
+</div>
+<div class='offset-sub-1 chat-description'>
+<p class='username'>Daniel Kim</p>
+<p class='message'>Nice one Erin! That&#39;s a big selfie stick.</p>
+</div>
+</div>
+<div class='user grid'>
+<div class='sub-1'>
+<div class='chat-icon icon-offset person-2 icon-3'></div>
+</div>
+<div class='chat-description offset-sub-1'>
+<p class='username'></p>
+<p class='message'></p>
+</div>
+</div>
+</div>
+</div>
+<div class='chat-controls'>
+<div class='grid'>
+<div class='sub-1'>
+<div class='chat-button icon-offset'></div>
+</div>
+</div>
+<div class='likes-comments'>
+<div class='likes'>
+<p>16</p>
+</div>
+<div class='comments'>
+<p class='old-like'>
+<span>2</span>
+</p>
+<p class='new-like'>
+<span>3</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class='clubs double-panel'>
+<div class='grid'>
+<div class='col-3 panel column-light'>
+<div class='border-fix'></div>
+<div class='centerer'>
+<div class='fancy-auto-carousel fancy-auto-carousel-type-clubs' data-fancy-carousel-current-item='2' data-fancy-carousel-items='[{&quot;image&quot;:&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-01-733c39fba018cd7478ef94994e7f01b48e39f47e743a1e14d9f99bd542b061a4.jpg&quot;,&quot;content&quot;:[{&quot;icon&quot;:&quot;run&quot;,&quot;text&quot;:&quot;Lululemon Global Run Community&quot;}]},{&quot;image&quot;:&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-02-d586c48380ff67b518a54e67ff1fe950ebdf208977b1f3215c86d512b7005bd5.jpg&quot;,&quot;content&quot;:[{&quot;icon&quot;:&quot;bike&quot;,&quot;text&quot;:&quot;The Radivist Cycling Club&quot;}]},{&quot;image&quot;:&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-03-362ffe0c1a6a96232175125afab2fa37fe0017c226205830d89671da6f5f4f75.jpg&quot;,&quot;content&quot;:[{&quot;icon&quot;:&quot;run&quot;,&quot;text&quot;:&quot;San Francisco Running Company&quot;}]},{&quot;image&quot;:&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-04-bcce476d9b6cf7bdf025f92635edefc1eaa75e104b2bb06ab69970cae0c8dc27.jpg&quot;,&quot;content&quot;:[{&quot;icon&quot;:&quot;bike&quot;,&quot;text&quot;:&quot;Giro d’Italia Cycling Club&quot;}]},{&quot;image&quot;:&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-05-b2a0a16e2819af6e1ddc1f5bd763e05cae0d567c912ba3e72c24fb0fca9424c9.jpg&quot;,&quot;content&quot;:[{&quot;icon&quot;:&quot;run&quot;,&quot;text&quot;:&quot;New Balance Run Club&quot;}]},{&quot;image&quot;:&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-06-7cf7a3ebd7aa3b3ccbfc06954e8fefe81058c013de1a77ab94530e17d07badab.jpg&quot;,&quot;content&quot;:[{&quot;icon&quot;:&quot;bike&quot;,&quot;text&quot;:&quot;Rapha Cycle Club&quot;}]},{&quot;image&quot;:&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-07-d994a9834155f1da368ff3785d69b54d02db9be7117d136def31b3fe4df9fd96.jpg&quot;,&quot;content&quot;:[{&quot;icon&quot;:&quot;run&quot;,&quot;text&quot;:&quot;November Project Run Club&quot;}]},{&quot;image&quot;:&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-08-399eae89767d552e479d09085cc0f25f7b0761cdd5d5c8d1ef4cee4788ac0f1b.jpg&quot;,&quot;content&quot;:[{&quot;icon&quot;:&quot;bike&quot;,&quot;text&quot;:&quot;Cycling Maven Squadra&quot;}]},{&quot;image&quot;:&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-09-9011264f4947ed6cd19b4410f1d78fc57089c786e072af1661b4a3aa091a5493.jpg&quot;,&quot;content&quot;:[{&quot;icon&quot;:&quot;run&quot;,&quot;text&quot;:&quot;Parkrun&quot;}]},{&quot;image&quot;:&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-10-5a308507be4f1c902e42a1803f21a680b5299f30b48f49dc6bcb2286235d12e7.jpg&quot;,&quot;content&quot;:[{&quot;icon&quot;:&quot;bike&quot;,&quot;text&quot;:&quot;Global Cycling Network&quot;}]}]'>
+<div class='grid'>
+<div class='sub-2 column column-a'>
+<div class='align-center'>
+<div class='slider slide-down' data-fancy-carousel-item-offset='3'>
+<div class='next'></div>
+<div class='current'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-06-7cf7a3ebd7aa3b3ccbfc06954e8fefe81058c013de1a77ab94530e17d07badab.jpg" />
+</div>
+</div>
+<div class='slider slide-down' data-fancy-carousel-item-offset='2'>
+<div class='next'></div>
+<div class='current'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-05-b2a0a16e2819af6e1ddc1f5bd763e05cae0d567c912ba3e72c24fb0fca9424c9.jpg" />
+</div>
+</div>
+</div>
+</div>
+<div class='sub-2 column column-b'>
+<div class='slider slide-right' data-fancy-carousel-item-offset='1'>
+<div class='next'></div>
+<div class='current'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-04-bcce476d9b6cf7bdf025f92635edefc1eaa75e104b2bb06ab69970cae0c8dc27.jpg" />
+</div>
+</div>
+</div>
+<div class='sub-8 column column-c'>
+<div class='slider slide-right' data-fancy-carousel-item-offset='0'>
+<div class='next'></div>
+<div class='current'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-03-362ffe0c1a6a96232175125afab2fa37fe0017c226205830d89671da6f5f4f75.jpg" />
+</div>
+</div>
+</div>
+</div>
+<div class='grid'>
+<div class='offset-sub-9 sub-2 column column-e'>
+<div class='slider slide-up' data-fancy-carousel-item-offset='-1'>
+<div class='next'></div>
+<div class='current'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-02-d586c48380ff67b518a54e67ff1fe950ebdf208977b1f3215c86d512b7005bd5.jpg" />
+</div>
+</div>
+</div>
+</div>
+<div class='grid last-column'>
+<div class='offset-sub-11 sub-2 column column-d'>
+<div class='align-center'>
+<div class='slider slide-right' data-fancy-carousel-item-offset='-2'>
+<div class='next'></div>
+<div class='current'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/clubs/icons/club-01-733c39fba018cd7478ef94994e7f01b48e39f47e743a1e14d9f99bd542b061a4.jpg" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='grid'>
+<div class='offset-sub-1 sub-4 panel'>
+<div class='column-content' data-fancy-carousel-item='0'>
+<h4 class='icon icon-run'>San Francisco Running Company</h4>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='col-3 panel column-light no-center-text text-panel'>
+<div class='sub-4 offset-sub-4'>
+<div class='centerer'>
+<div class='column-content'>
+<h4>Hundreds of thousands of clubs – and counting.</h4>
+<p>All kinds of groups form clubs on Strava to organize activities and build communities - friends, teams, brands, gear shops and more.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class='feature-beacon parallax'>
+<div class='grid beacon-txt'>
+<div class='offset-sub-4 sub-5'>
+<div class='column-content'>
+<h3>Beacon: Peace of mind for athletes and their loved ones.</h3>
+<p>Turn on Beacon and you can share your location in real time with your friend, partner, parent, coach, butler, therapist, highly intelligent dog - anyone cool enough to have your back in an emergency.</p>
+</div>
+</div>
+</div>
+<div class='parallax-canvas'>
+<div class='parallax-layer' data-depth='0.25'>
+<div class='grid'>
+<div class='offset-sub-10 sub-12 bg beacon-pulsing-widget beacon-parallax-layer1'>
+<div class='pulse-container'>
+<div class='pulse-box'>
+<div class='pulse-centerer'>
+<div class='pulse-layer'></div>
+<div class='pulse-layer'></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='parallax-layer' data-depth='0.75'>
+<div class='grid'>
+<div class='offset-sub-2 sub-12 bg beacon-path-widget'>
+<div class='top beacon-parallax-layer2'></div>
+<div class='bottom'>
+<div class='beacon-interface'>
+<img alt="Beacon Recording Status" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/beacon/ui-left-3929236589020406fc0623bc882608f7c5d25fafb7e87a8a3ecf4e3aa4a2f6fd.png" />
+<img alt="Beacon Recording Status" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/beacon/ui-right-297df69acccb0d9fc3a70cebc7fe1edd701a591a859f4724ac1d8405ca8203fb.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='safety-contact-txt'>
+<div class='grid'>
+<div class='offset-col-4 col-1'>
+<div class='column-content'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/svgs/txt-3bd19c0a8add3aa5d1696b4638cbc73ea2be3032150a4ab72a8cb53c63b7c390.svg" />
+<blockquote>You&#39;re my safety contact for my next activity. Watch me on Strava.</blockquote>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class='explore-button beacon'>
+<h4>Explore even more Summit features.</h4>
+<a class='pill-button' href='/summit'>
+<span>Explore</span>
+</a>
+</div>
+<section class='triple-panel photos features-photos' data-photo-large-items='[&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/1-39fe94d1e9b73d4daba6d099bd50b1c4914e06a848107494d4697157b3cb0032.jpg&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/2-291546ebf7ca133442832ebcb9d8c151ef0d55c4bec5b35e36c7fd1f242e395b.jpg&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/3-22911dd3402e145661029360dd6ebb8e98910d38d5b461d047d2b342f6e2926a.jpg&quot;]' data-photo-small-items='[&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/4-ee32c916b25cda0839e3492098857e11fdf94c4d08d8909c4859f23a6253977c.jpg&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/5-9e6d326712a08f83d72646f2532372cf83633aa852f5f66f87fa75629de7c27d.jpg&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/6-f321a789f35b03db0878065801f6c30eaa72e94f48edd0a35ad4bdf76891bdb2.jpg&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/7-a4207d2dbe364977345d502ea12531de4dd434dd0a70504627123e6f24603916.jpg&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/8-d52d1d5a79b6984a9615b2c2622afeb21c5a371bb0a488166d4807311826a51a.jpg&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/9-06acca1e8bd8375f4dbe09272bf88e77669e6fae6e8dd0c0c7e8b21a9f601d5b.jpg&quot;]'>
+<div class='grid'>
+<div class='sub-6 panel'>
+<div class='centerer'>
+<div class='double-carousel'>
+<div class='carousel' data-carousel-animation-delay='0' data-carousel-animation-duration='0.666' data-carousel-delay='5' data-queue='small'>
+<div class='slider'>
+<div class='current'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/4-ee32c916b25cda0839e3492098857e11fdf94c4d08d8909c4859f23a6253977c.jpg" />
+</div>
+<div class='next'></div>
+</div>
+</div>
+<div class='carousel' data-carousel-animation-delay='0.133' data-carousel-animation-duration='0.533' data-carousel-delay='5' data-queue='small'>
+<div class='slider'>
+<div class='current'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/5-9e6d326712a08f83d72646f2532372cf83633aa852f5f66f87fa75629de7c27d.jpg" />
+</div>
+<div class='next'></div>
+</div>
+</div>
+</div>
+<div class='margin-fix top'></div>
+<div class='margin-fix bottom'></div>
+</div>
+</div>
+<div class='sub-6 panel text-panel'>
+<div class='centerer'>
+<div class='column-content'>
+<div class='grid'>
+<div class='offset-sub-1 col-4 copy-txt'>
+<h4>Don't just track your adventure - <em>show it.</em></h4>
+<p>Strava athletes go amazing places. You can attach as many photos and captions to an activity as you like and show your friends the story of your adventure.</p>
+</div>
+</div>
+</div>
+<div class='margin-fix'></div>
+</div>
+</div>
+<div class='sub-12 panel'>
+<div class='centerer'>
+<div class='carousel' data-carousel-animation-delay='0.033' data-carousel-animation-duration='0.633' data-carousel-delay='5' data-queue='large'>
+<div class='slider'>
+<div class='current'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/photos/1-39fe94d1e9b73d4daba6d099bd50b1c4914e06a848107494d4697157b3cb0032.jpg" />
+</div>
+<div class='next'></div>
+</div>
+</div>
+<div class='margin-fix'></div>
+</div>
+</div>
+</div>
+</section>
+
+<a name='explore-and-compete'></a>
+<section class='poster'>
+<div class='bg-container'>
+<div class='bg explore-compete-poster parallax-bg-layer' data-depth='1.1' data-offset='200'>
+<div class='grid'>
+<div class='sub-12 offset-sub-2'>
+<h1>Explore new routes and compete with a global community.</h1>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class='feature-segments parallax'>
+<div class='parallax-canvas'>
+<div class='parallax-layer' data-depth='1.0'>
+<div class='grid'>
+<div class='offset-sub-2 sub-10 segments-parallax-layer-1 bg'>
+<div class='sequence-container'>
+<div class='image-sequence segments-sequence' data-sequence-delay='0' data-sequence-frames='[&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/0-66e8ac46a837e3055d987bcc4478f6a910d5f23fb19b08ff74f29bdcb184387a.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/1-c8f6a02ec875356060d96e6a4a086e9d1b96dfdba07df2b30041d334203d707c.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/2-4af98c356eca8d179eeb4a3fdbb8365dab384475f4db54bc001bda04e70e321f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/3-11d869368d9ffb1d1cd072de6fa77f27eddb903cb2404fd20883067ed91301d7.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/4-bed4b1685929cb4599eb41445ac7b518925d9695a37081c13971150b64937ffd.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/5-256a34f22e211358d4ca15028e90cabc91ced7ed2e4f4e9b4e121852e3b8beb4.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/6-71f40357513a97c6ec6266005034f811fe95fd41eaaa66fa5fea99a9737fd020.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/7-a38cc1a549a8bb7622ebf3ef025ad80ad252cc151e050931748c62d4578cdff5.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/8-7386dad8cceba48117b040ab27805aec3f0c46a7d5a891c2ffd805ed05665e91.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/9-aae961b8a5a78633dc0123b5914203f4bb3faee2c5fe0abcd94902ab331f6ce1.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/10-b101c1a515bb9e2fe05c931ccdc9eaa0c9a638615a75892eabdf4cbec4cf44ec.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/11-05aff66a6d43b8660789eadabb8cce0536fa5e60bd85176417e574886a59d34a.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/12-823a1571b2b4933e1d37533425636be993dfac806ba0ead4ccc3e2d2e2e51cfc.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/13-feb7fbe23488fa24b209f5a92fe18b5b7235ab2c2c0e6f91080081368110c42b.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/14-52825b82f9f3d2eb1ad49a1e145a439023039a696c514c22440f625b5b3f48ac.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/15-efcceaeb2e5a36087c2b818bbe920602733f01a5449017c93de6d25829b917c4.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/16-55eb8386219de33c570058c8d2239dd1712fca8212a0fbfdcaf202aa8fabe3b3.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/17-4f01066fca90bb55e72d2ee2d35a810f7d498b6ea0761175877d5bcde77fffe6.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/18-f53238392f3756f72034594fdebb6e88cfa9c3790c512264ae9d1018a43ba0a1.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/19-cc52316678ac0a8a1e522679dc645f9f508b2c48ab9d3f1e7d3a93164e3513c5.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/20-c64ab1dcf65ca009061bf4a89c3b464936ae0816742210df2051918fe7552e9f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/21-0326d63dd0dad8e4508a26099bfc7e22d2851b2a69b80337cf703837c5a97419.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/22-67379f2af9afa53942ddc73cfc77ce5dbf2ed4bfe0afb2dd329aa267b7b29cae.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/23-d40706249e68fe6af356a5f1f4c7b06c1a5c5769eecbf01eb2b02aaf8f74ffc9.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/24-0bb8eb66d3e05aba683bc7a039f48e461e9058330453921708dacf1c89e2166a.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/25-32819e507ceb7f4c2d47272fc82f1167013d16e2f484ee41e872be723cd356a1.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/26-f2e16e543cdeeeee18096ac84635ebaf6193ee7103602c014dc857960025621f.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/27-e2b95838b5796f4e584ab36e46ca1e5663cb360114b838be3620e0ca273518da.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/28-8ddf9f1f868e9417fd8d128275b79d40cc1e1c7c05977ef9653dbefcd33ee96b.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/29-6810babbea807a4d69b9c55d2e0e94f26f4d463d37213370351d90de684004d1.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/30-1986fe0237ed374d82e8d53067d0f4e0553bbd406ce0b8227e292ae13564b620.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/31-4ae943a6b60d575e453395476ba372be822963b095d341a53236b622f9befb57.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/32-1ddaa6d865fc78ca45bd4457ede1d1b7595ed9bc55411050973f50e6e8f6a69c.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/33-17134940014d4a187f7a93b6acb57becc022ac72522312b4d899e64f63bbaaa4.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/34-7810cc8ca8bc3fb181ff2f809813a3464aacf91aa77f74e0b7807dd757eda55d.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/35-7d7f84d2138fe58aad1cad4228bc21986a2f0d697ea95b270b7b150f4b999d30.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/36-22c0e88435ec73da5d718a175057eb8d9e9a6d0ab7ffc93e278ead0f65d88f87.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/37-35d478a6273d2205a019daef7ff90a35e2369d4f595cac9a4b40eb668f8be193.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/38-6ad5a38ce12573ab8d9658005029d453177b8981c4cc595796a125ae0786a0b5.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/39-66e55f194b689f2b4b1e6ea0287d2a6c05be360e7a71982de83b7e42495597a6.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/40-6ed961b6e67f8cf3bb4a40fa144409ea8c9adca0b9a833d769f50b1cc071d86d.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/41-b01b029f595e277cad6d19576a902124255129832a1573af144cd831184e8f48.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/42-068ed931149b87c5831f949b110c1aa0d428988fa962f45b644df30222ba9001.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/43-85fce34e337e3a561f39de639593268904e6431e8bbcb974a9e275989c1cc98a.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/44-e0cf462f6187e653fbaf44cb6e8cf59c7bc495b5862d392b028f317dfd7b6e4c.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/45-b00e02e6bdca8927cf4ee4111d66c3577a940d83b201c4a2b3459d66683acaf7.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/46-b3407fd2d490e0de7c0aa0acf5f0a5e01c37464c2ece5a2a5500e539adb6a5f1.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/47-c432cdea202dd0e9101227ee5147ce9dcece4606570529ae9dffb796b26d0048.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/48-a0402a326367297c6338c4d1cf30529e6d01ef8470347b9a6a948ca2a9520ed4.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/49-1ff25f45e9d785c1809b5a983d221f60d5395c628548da9b8a8f622b27e30a29.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/50-1ff25f45e9d785c1809b5a983d221f60d5395c628548da9b8a8f622b27e30a29.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/51-1ff25f45e9d785c1809b5a983d221f60d5395c628548da9b8a8f622b27e30a29.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/52-1ff25f45e9d785c1809b5a983d221f60d5395c628548da9b8a8f622b27e30a29.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/53-1ff25f45e9d785c1809b5a983d221f60d5395c628548da9b8a8f622b27e30a29.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/54-1ff25f45e9d785c1809b5a983d221f60d5395c628548da9b8a8f622b27e30a29.png&quot;,&quot;https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/55-1ff25f45e9d785c1809b5a983d221f60d5395c628548da9b8a8f622b27e30a29.png&quot;]' data-sequence-initial-delay='0' data-sequence-loop='false' data-sequence-speed='1.0' data-sequence-type='scroll-trigger'>
+<div class='sequence-static-layer'>
+<img alt="Barton Hill Segment Map" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/static-layer-d17c3a273a742981fd6a638de718a35bc99b071a888e086ebbc02fb591508f85.jpg" />
+</div>
+<div class='sequence'>
+<img class="poster-image" alt="Barton Hill Segment Map" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/frames/55-1ff25f45e9d785c1809b5a983d221f60d5395c628548da9b8a8f622b27e30a29.png" />
+</div>
+<div class='sequence-static-layer top-layer'>
+<img alt="Barton Hill Segment Map" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/static-layer-front-3795530c21e14813d5a1116df7de5ca48b705a79b68e03a56aa9acd7f4051131.png" />
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class='parallax-layer' data-depth='2.0'>
+<div class='grid stats-widget'>
+<div class='offset-sub-6 sub-8 bg'>
+<div class='segment-interface'>
+<img alt="Barton Hill Segment Leaderboard" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/segments/ui-21b0a4914cf2190383ff332392f9e805f390087fd89173549cdd857ee06f52fb.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='grid segments-txt'>
+<div class='offset-col-4 col-1'>
+<div class='column-content'>
+<h3>Segments changed the game.</h3>
+<p>There are two eras of endurance sport history: before segments, and after segments. Created by the millions of Strava athletes, segments mark popular stretches of road or trail (like your favorite local climb) and create a leaderboard of times set by every Strava athlete who has been there before.</p>
+</div>
+</div>
+</div>
+</section>
+<section class='sell-me-on-it heatmap-intro'>
+<div class='grid'>
+<div class='offset-sub-6 sub-12'>
+<h2>The world&#39;s largest route and trail resource.</h2>
+<p>If it&#39;s been run or ridden, it&#39;s on Strava. With millions of athletes all over the world, Strava&#39;s road and trail network is unmatched. If you&#39;re looking for an adventure or want to make a route of your own, we can find you a place to go - and you can upload that route to your phone or GPS device for easier navigation.</p>
+</div>
+</div>
+</section>
+<section class='dual-pane-toggler heat-map'>
+<div class='grid'>
+<div class='running-stats offset-sub-7 sub-10'>
+<div class='heatmaps-interface'>
+<img alt="Running Route Summary" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/features/heat-map/ui-6d46cd2c38f77dcd3a29446a6d4dbd82dce8c0ff9478b7a5f58da1efef4bb973.png" />
+</div>
+</div>
+</div>
+<div class='grid map-images'>
+<div class='offset-sub-2 sub-20'>
+<div class='column-content top'>
+<div class='map-slider'>
+<div class='routes-trails-popularity-image map-slide'></div>
+<div class='routes-trails-heatmaps-image map-slide'></div>
+</div>
+</div>
+</div>
+</div>
+<div class='grid slider-grid'>
+<div class='offset-sub-2 sub-10'>
+<div class='panel first is-selected'>
+<div class='column-content'>
+<form>
+<div class='toggle-button'>
+<input checked='checked' data-id='0' id='popularity-checkbox' type='checkbox'>
+<label for='popularity-checkbox'></label>
+</div>
+</form>
+
+<h4>Use Popularity</h4>
+<p>You can use Strava to build a route of your own, or get inspired by a friend&#39;s activity and send their route to your phone or GPS device.</p>
+</div>
+</div>
+</div>
+<div class='sub-10'>
+<div class='panel last'>
+<div class='column-content'>
+<form>
+<div class='toggle-button'>
+<input checked='false' data-id='1' id='heat-checkbox' type='checkbox'>
+<label for='heat-checkbox'></label>
+</div>
+</form>
+
+<h4>Heatmaps</h4>
+<p>Whether you&#39;re in a new city or just looking to rediscover your own, heatmaps give you an instant look at routes that get the most activity.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<a name='footer'></a>
+<!-- final signup -->
+<section class='final-signup signup-features'>
+<div class='wrapper'>
+<div class='content'>
+<div class='grid'>
+<div class='sub-24'>
+<h3 class='alt'>Join Strava for free.</h3>
+</div>
+</div>
+<div class='signup-button desktop'>
+<a class='facebook' data-segioevent='{&quot;name&quot;:&quot;RegisterFlow Initiate&quot;,&quot;method&quot;:&quot;facebook&quot;,&quot;source&quot;:&quot;features_page&quot;}' href='https://www.facebook.com/v2.12/dialog/oauth?access_type=offline&amp;client_id=284597785309&amp;redirect_uri=https%3A%2F%2Fwww.strava.com%2Fo_auth%2Ffacebook&amp;response_type=code&amp;scope=email&amp;state=%7B%22context%22%3A%22facebook_web_signup_flow_v1%22%2C%22state%22%3A%22eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdGF0ZV9wYXJhbSI6NTQzMzM3ODJ9.0MCp86Mj8UMlpz4NJ15S5KNol7whCVNIUvsvdUsl9Gw%22%2C%22with_newsletter%22%3Afalse%7D'>
+Sign up with Facebook
+</a>
+</div>
+<div class='signup-button desktop'>
+<a class='google' data-segioevent='{&quot;name&quot;:&quot;RegisterFlow Initiate&quot;,&quot;method&quot;:&quot;google&quot;,&quot;source&quot;:&quot;features_page&quot;}' href='https://accounts.google.com/o/oauth2/auth?access_type=offline&amp;client_id=541588808765.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fwww.strava.com%2Fo_auth%2Fgoogle&amp;response_type=code&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.me+email+profile&amp;state=%7B%22context%22%3A%22google_web_signup_flow_v1%22%2C%22state%22%3A%22eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdGF0ZV9wYXJhbSI6NTQzMzM3ODJ9.0MCp86Mj8UMlpz4NJ15S5KNol7whCVNIUvsvdUsl9Gw%22%7D'>
+Sign up with Google
+</a>
+</div>
+<div class='signup-button mobile'>
+<a class='branch-button strava' href='/mobile'>
+Get the App
+</a>
+</div>
+<p class='email-signup desktop'>
+<a data-segioevent='{&quot;name&quot;:&quot;RegisterFlow ViewForm&quot;,&quot;method&quot;:&quot;email&quot;,&quot;source&quot;:&quot;features_page&quot;}' href='/register/free?cta=sign-up&amp;element=final-signup&amp;source=website_features'>
+Sign up with email
+</a>
+</p>
+<sub class='fine-print'>
+By signing up for Strava, you agree to the <a href='/legal/terms'>Terms of Service</a>. View our <a href='/legal/privacy'>Privacy Policy</a>.
+</sub>
+</div>
+</div>
+</section>
+
+<div class='trigger-global-nav-out'></div>
+<nav class='super-touts'>
+<a class='large-tout' href='/summit'>
+<div class='grid'>
+<div class='offset-sub-2 sub-9'>
+<h3>Strava Summit</h3>
+</div>
+<div class='offset-sub-8'>
+<div class='column-content'>
+<div class='pill-button on-dark'>
+<span>Explore</span>
+</div>
+</div>
+</div>
+</div>
+</a>
+</nav>
+<footer class='dark'>
+<div class='grid'>
+<div class='offset-sub-2 sub-5'>
+<div class='logo branding logo-lg logo-wh'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/svgs/strava-white-38011fe0ba540de6b3bd08db73f47b50084f480f0880b881a7334505ab56429e.svg" />
+</div>
+<p class='copyright'>
+&copy; 2020 Strava, Inc.
+<a href='/legal/privacy'>All rights reserved</a>
+</p>
+</div>
+<div class='offset-sub-1 sub-3'>
+<h5>Menu</h5>
+<ul>
+<li>
+<a href='/features'>
+<span class='txt'>Features</span>
+</a>
+</li>
+<li>
+<a href='/summit'>
+<span class='txt'>Summit</span>
+</a>
+</li>
+<li>
+<a href='https://strava.com/local'>
+<span class='txt'>Local</span>
+</a>
+</li>
+<li>
+<a href='/about'>
+<span class='txt'>About</span>
+</a>
+</li>
+<li>
+<a href='http://blog.strava.com' target='_blank'>
+<span class='txt'>Blog</span>
+</a>
+</li>
+<li>
+<a href='https://support.strava.com/hc/en-us' target='_blank'>
+<span class='txt'>Support</span>
+</a>
+</li>
+<li>
+<a href='/careers'>
+<span class='txt'>Careers</span>
+</a>
+</li>
+<li>
+<a href='https://business.strava.com'>
+<span class='txt'>Business</span>
+</a>
+</li>
+</ul>
+</div>
+<div class='offset-sub-2 sub-4 follow'>
+<h5>Follow</h5>
+<ul>
+<li>
+<a class='social-icon facebook' href='https://www.facebook.com/Strava' target='_blank'>
+<span class='txt'>Facebook</span>
+</a>
+</li>
+<li>
+<a class='social-icon instagram' href='https://www.instagram.com/strava/' target='_blank'>
+<span class='txt'>Instagram</span>
+</a>
+</li>
+<li>
+<a class='social-icon twitter' href='https://www.twitter.com/strava' target='_blank'>
+<span class='txt'>Twitter</span>
+</a>
+</li>
+<li>
+<a class='social-icon youtube' href='https://www.youtube.com/stravainc' target='_blank'>
+<span class='txt'>Youtube</span>
+</a>
+</li>
+</ul>
+</div>
+<div class='offset-sub-2 sub-3'>
+<h5>Get Started</h5>
+<ul>
+<li>
+<a data-segioevent='{&quot;name&quot;:&quot;RegisterFlow ViewForm&quot;,&quot;method&quot;:&quot;email&quot;,&quot;source&quot;:&quot;global_footer&quot;}' href='/register/free?cta=sign-up&amp;element=global-footer&amp;source=website_features'>
+<span class='txt'>Sign UP</span>
+</a>
+</li>
+<li>
+<a data-segioevent='{&quot;name&quot;:&quot;LoginFlow ViewForm&quot;,&quot;source&quot;:&quot;global_footer&quot;}' href='/login'>
+<span class='txt'>Login</span>
+</a>
+</li>
+<li class='badge apple-badge'>
+<a href='https://strava.app.link/gHZxO4jb5y' target='_blank'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/global/app-store-badge-93cbd8991fcab9bc6a50d3cb78fc1c24340d42af78023005e9ad3fd40445f8e1.png" />
+</a>
+</li>
+<li class='badge apple-badge'>
+<a href='https://strava.app.link/gHZxO4jb5y' target='_blank'>
+<img src="https://d3nn82uaxijpm6.cloudfront.net/assets/website_v2/global/play-store-badge-487435ce8352b7ab5a189bdfb3a2eac1196e504ac0c5bf467293b5d75fb09b6d.png" />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</footer>
+
+</div>
+</div>
+
+</div>
+</div>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register("/service_worker.js?v=dLlWydWlG8").then(function(registration) {
+      }, function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+</script>
+<script>
+  jQuery(document).ready(function() {
+    jQuery('a').each(addSegmentAttr);
+    jQuery('button').each(addSegmentAttr);
+    function addSegmentAttr(index, element){
+      var $element = jQuery(element);
+      var data = $element.data();
+      var external_analytics_event = data.segioevent;
+      if (external_analytics_event && external_analytics_event.name) {
+        var props = jQuery.extend({}, external_analytics_event);
+        delete props.name;
+  
+        Strava.ExternalAnalytics.trackLink($element, external_analytics_event.name, props);
+      }
+    }
+  
+    // Scroll Tracking
+    jQuery(document).one('scroll', function(){
+      Strava.ExternalAnalytics.track('Page Scrolled', null, null, null);
+    });
+  });
+</script>
+<script>
+  (function(){
+    var options = {"peek_data":false,"campaign":"features","channel":"Strava.com","feature":"web show","data":{"strava_deeplink_url":"strava://"}}
+    var peekData = options.peek_data ? options.peek_data : false;
+  
+    if (true) {
+      Strava.BranchIO.data(peekData)
+        .done(function(data) {
+          if (data && data.has_app) {
+            jQuery('#branch-button').text('Open');
+          }
+        });
+    }
+  
+    Strava.BranchIO.createLink(options)
+      .done(function(link) {
+        jQuery('.js-download-app-link').attr('href', link);
+      })
+      .fail(function(err) {
+        console.log(err);
+        jQuery('#smartbanner-orion').remove();
+      });
+  })();
+</script>
+<script>
+  jQuery(document).on('click', '#menu-icon', function() {
+    Strava.ExternalAnalytics.trackV2({
+      category: 'onboarding',
+      page: 'home_mobile',
+      action: 'click',
+      element: 'menu'
+    });
+  });
+  
+  jQuery(document).on('click', '#mobile-reg-button', function() {
+    Strava.ExternalAnalytics.trackV2({
+      category: 'onboarding',
+      page: 'home_mobile',
+      action: 'click',
+      element: 'menu_register'
+    });
+  });
+  
+  jQuery(document).on('click', '#mobile-login-button', function() {
+    Strava.ExternalAnalytics.trackV2({
+      category: 'onboarding',
+      page: 'home_mobile',
+      action: 'click',
+      element: 'menu_login'
+    });
+  });
+</script>
+
+<script>
+  jQuery(document).ready(function($) {
+    Strava.BranchIO.data(data)
+      .done(function(data) {
+        if (data && data.has_app) {
+          function baseline() {
+            $('#branch-install-text').text('Open');
+          }
+          function variation1() {
+            $('#branch-install-text').text('Open');
+          }
+          var methods = {
+            "baseline" : baseline,
+            "variation1" : variation1
+          };
+          Strava.Apptimize.runCodeBlock("Smartbanner No-op", methods);
+        }
+      });
+  
+    var options = {
+      campaign: 'features',
+      channel: 'Strava.com',
+      feature: 'web show',
+      data: {
+        strava_deeplink_url: 'strava://',
+        strava_page: 'welcome_page',
+        strava_button: 'legacy_smartbanner_install'
+      }
+    }
+  
+    Strava.BranchIO.createLink(options)
+      .done(function(link) {
+        jQuery('.branch-button').attr('href', link);
+      })
+      .fail(function(err) {
+        console.log(err);
+        jQuery('.branch-button').remove();
+      });
+  });
+</script>
+</body>
+
+</html>

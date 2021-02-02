@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang='en-US' xmlns:fb='http://www.facebook.com/2008/fbml' xmlns:og='http://opengraphprotocol.org/schema/' xmlns='http://www.w3.org/TR/html5'>
+<!--
+layout full screen
+-->
+<head>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='black' name='apple-mobile-web-app-status-bar-style'>
+<meta content='width = device-width, initial-scale = 1, maximum-scale = 1, user-scalable = yes' name='viewport'>
+<style type='text/css'>
+.spinner, .spinner .status {
+  position: relative;
+}
+.spinner {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.spinner .status {
+  top: 2px;
+  margin-left: 0.5em;
+}
+.spinner .status:empty {
+  display: none;
+}
+.spinner.lg .graphic {
+  border-width: 3px;
+  height: 32px;
+  width: 32px;
+}
+.spinner.tiny {
+  height: 10px;
+  width: 10px;
+}
+.spinner.centered, .spinner.vcentered {
+  box-sizing: border-box;
+  width: 100%;
+}
+.spinner.vcentered {
+  left: 0;
+  margin-top: -12px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 50%;
+}
+.spinner .graphic, .ajax-loading-image {
+  animation: spin 1.2s infinite linear;
+  box-sizing: border-box;
+  border-color: #eee;
+  border-radius: 50%;
+  border-style: solid;
+  border-top-color: #666;
+  border-top-style: solid;
+  border-width: 2px;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  vertical-align: middle;
+  width: 20px;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+</style>
+
+
+<script>
+  !function(options){
+    window.Strava = window.Strava || {};
+    var _enabled = true;
+    var _snowplow = true;
+    var _options = options;
+    var _ready = null;
+    var _snowplowReady = null;
+  
+    window.Strava.ExternalAnalytics = window.Strava.ExternalAnalytics || (
+      {
+        isEnabled: function() {
+          return _enabled;
+        },
+        snowplowEnabled: function() {
+          return _snowplow;
+        },
+        isDebug: function() {
+          return _options.debug;
+        },
+        track: function() {
+          if(this.isEnabled()) {
+            analytics.track.apply(analytics, arguments)
+            this.log('%ctrack %O', arguments)
+          }
+        },
+        trackV2: function(event) {
+          var eventData = {
+            'category': event.category,
+            'page': event.page,
+            'action': event.action,
+            'element': event.element || null,
+            'properties': event.properties || {}
+          }
+          if (this.snowplowEnabled()) {
+            snowplow('trackSelfDescribingEvent', {
+              schema: 'iglu:com.strava/track/jsonschema/1-0-0',
+              data: eventData
+            });
+          } else {
+            !!console.table && console.table(eventData);
+          }
+          this.track(event.category, eventData);
+        },
+        page: function(category, name, properties, options) {
+          if(this.isEnabled()) {
+            var _category = category;
+            var _name = name;
+            if(!_name) {
+              _name = category;
+              _category = null;
+            }
+            var _properties = properties || {};
+            _properties.is_mobile = _options.is_mobile;
+            _properties.mobile_os = _options.os;
+            _properties.athlete_id = _options.athlete_id;
+            _properties.locale = _options.locale;
+            analytics.page(_category, _name, _properties, options)
+            this.log('%canalytics %O', [_category, _name, _properties, options])
+          }
+          if(this.snowplowEnabled()) {
+            snowplow('trackPageView');
+          }
+        },
+        trackLink: function() {
+          if(this.isEnabled()) {
+            analytics.trackLink.apply(analytics, arguments)
+            this.log('%cattaching to track link %O', arguments)
+          }
+        },
+        trackForm: function() {
+          if(this.isEnabled()) {
+            analytics.trackForm.apply(analytics, arguments);
+            this.log('%cattaching to track form %O', arguments);
+          }
+        },
+        identifyV2: function(athleteId, options, eventName) {
+          if (this.snowplowEnabled()) {
+            var properties = options || {}
+            properties.athlete_id = athleteId;
+            var eventData = {
+              'category': 'identify',
+              'page': null,
+              'action': eventName,
+              'element': null,
+              'properties': properties
+            };
+            snowplow('trackSelfDescribingEvent', {
+              schema: 'iglu:com.strava/track/jsonschema/1-0-0',
+              data: eventData
+            });
+          }
+          this.identify(athleteId, options);
+        },
+        identify: function() {
+          if(this.isEnabled()) {
+            analytics.identify.apply(analytics, arguments);
+            this.log('%cidentify(%O)', arguments);
+          }
+        },
+        reset: function() {
+          if(this.isEnabled()) {
+            analytics.reset.apply(analytics, arguments);
+            this.log('%creset(%O)', arguments);
+          }
+          if(this.snowplowEnabled()) {
+            snowplow('setUserId', null)
+            var spCookie = document.cookie.match('_sp_id\\.[a-f0-9]+')
+            if(spCookie != null) {
+              document.cookie = spCookie[0] + "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+            }
+          }
+        },
+        setupSnowplow: function(id) {
+          if(this.snowplowEnabled()) {
+            snowplow("newTracker", "cf", "c.strava.com", {
+              appId: "strava-web",
+              platform: "web"
+            });
+            snowplow('setUserId', id);
+          }
+        },
+        anonymousId: function() {
+          var d = jQuery.Deferred();
+          if (this.isEnabled()) {
+            if (!_ready) {
+              _ready = jQuery.Deferred();
+              analytics.ready(function(){
+                _ready.resolve(analytics.user().anonymousId());
+              });
+            }
+            _ready.always(function(anonymousId){
+              d.resolve(anonymousId);
+            });
+          } else {
+            d.reject(null);
+          }
+          return d;
+        },
+        getDomainUserId: function() {
+          var d = jQuery.Deferred();
+          if (this.snowplowEnabled()) {
+            if (!_snowplowReady) {
+              _snowplowReady = jQuery.Deferred();
+              snowplow(function(){
+                _snowplowReady.resolve(this.cf.getDomainUserId());
+              });
+            }
+            _snowplowReady.always(function(getDomainUserId){
+              d.resolve(getDomainUserId);
+            });
+          } else {
+            d.reject(null);
+          }
+          return d;
+        },
+        log: function(message, values) {
+          if(this.isDebug()) {
+            console.log(message, 'background-color: yellow; color: blue; font-size: medium;', values);
+          }
+        },
+        debug: function(value) {
+          _options.debug = value;
+        }
+      }
+    )
+  }({
+    is_mobile: false,
+    os: "",
+    debug: false,
+    athlete_id: 54333782,
+    locale: "en-US"
+  });
+</script>
+
+<script>
+  !function(){
+    var analytics = window.analytics = window.analytics || [];
+    if(!analytics.initialize) {
+      if(analytics.invoked) {
+        window.console && console.error && console.error("Segment snippet included twice.");
+      } else {
+        analytics.invoked = !0;
+        analytics.methods = ["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];
+        analytics.factory = function(t) {
+          return function() {
+            var e = Array.prototype.slice.call(arguments);
+            e.unshift(t);
+            analytics.push(e);
+            return analytics
+          }
+        };
+        for(var t = 0; t < analytics.methods.length; t++) {
+          var e = analytics.methods[t];
+          analytics[e] = analytics.factory(e)
+        }
+        analytics.load = function(t) {
+          var e = document.createElement("script");
+          e.type = "text/javascript";
+          e.async = !0;
+          e.src = ("https:" === document.location.protocol ? "https://" : "http://") + "cdn.segment.com/analytics.js/v1/" + t + "/analytics.min.js";
+          var n = document.getElementsByTagName("script")[0];
+          n.parentNode.insertBefore(e,n)
+        };
+        analytics.SNIPPET_VERSION = "4.0.0";
+        analytics.load("4U9hx9LX3VDSlP3o5AoG4vHoGdJY340J");
+  
+        if (true) {
+          (function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://dy9z4910shqac.cloudfront.net/1oG5icild0laCtJMi45LjA.js","snowplow"));
+          Strava.ExternalAnalytics.setupSnowplow(54333782);
+        }
+  
+        if(Strava.ExternalAnalytics.isDebug()) {
+          analytics.debug();
+        } else {
+          analytics.debug(false);
+        }
+  
+        Strava.ExternalAnalytics.page(null, null, null);
+      }
+    }
+  }();
+</script>
+
+<script>
+  !function(debug){
+    window.Strava = window.Strava || {};
+  
+    var _enabled = true;
+    var _debug = !!debug;
+    var _branchData = null;
+  
+    window.Strava.BranchIO = window.Strava.BranchIO || (
+      {
+        isEnabled: function() {
+          return _enabled;
+        },
+        isDebug: function() {
+          return _debug;
+        },
+        dataToLocalStorage: function() {
+          if (!_branchData) {
+            _branchData = new Strava.BranchAnalytics.BranchData();
+          }
+  
+          var d = this.data()
+          var that = this;
+          d.done(function(data) {
+            that.log('storing data %o to local storage', data)
+            _branchData.data(data)
+          });
+          d.fail(function(message) {
+            that.log('failed to retrieve data from branch');
+            _branchData.data({})
+          });
+          return d;
+        },
+        createLink: function(options) {
+          var d = jQuery.Deferred();
+          var data = null;
+          const that = this;
+          var callback = function(e, l) {
+            if (!e) {
+              d.resolve(l);
+            } else {
+              d.reject(e);
+            }
+          }
+          if (options.peek_data) {
+            data = this.dataFromLocalStorage();
+            if (data && data.data_parsed && data.data_parsed['~referring_link']) {
+              d.resolve(data.data_parsed['~referring_link']);
+            } else {
+              d.reject();
+            }
+          } else {
+  
+            Strava.ExternalAnalytics
+              .anonymousId()
+              .always(function(anonymousId){
+                if (anonymousId) {
+                  options.data['anonymousId'] = anonymousId;
+                }
+  
+                Strava.ExternalAnalytics
+                  .getDomainUserId()
+                  .always(function(domainUserId){
+                    if (domainUserId) {
+                      options.data['domainUserId'] = domainUserId;
+                    }
+  
+                    if(that.isEnabled()) {
+                      branch.link(options, callback);
+                    };
+                });
+            });
+          }
+          return d;
+        },
+        dataFromLocalStorage: function() {
+          if (!_branchData) {
+            _branchData = new Strava.BranchAnalytics.BranchData();
+          }
+          return _branchData.data();
+        },
+        clearLocalStorage: function() {
+          if (!_branchData) {
+            _branchData = new Strava.BranchAnalytics.BranchData();
+          }
+          _branchData.data({});
+        },
+        data: function(checkLocalStorage) {
+          var d = jQuery.Deferred();
+          var that = this;
+          var c = function(message, meta_data) {
+            var storedData = null;
+  
+            if(message) {
+              d.reject(message);
+            } else {
+              if (checkLocalStorage == true && (meta_data == null || meta_data.data == "" || meta_data.data == null)) {
+                storedData = that.dataFromLocalStorage();
+                that.clearLocalStorage();
+  
+                d.resolve(storedData);
+              } else {
+                d.resolve(meta_data);
+              }
+            }
+          };
+  
+          if(this.isEnabled()) {
+            branch.data(c);
+            this.log('%cdata (branch enabled)');
+          } else {
+            this.log('%cdata (branch disabled)');
+            d.resolve({});
+          }
+          return d;
+        },
+        identify: function(athleteId) {
+          var callback = function(error, data) {
+            if (error) {
+              console.log(error);
+            }
+          }
+          if(this.isEnabled()) {
+            branch.setIdentity(athleteId, callback);
+          }
+        },
+        track: function(eventName, metaData) {
+          var callback = function(error, data) {
+            if (error) {
+              console.log(error);
+            }
+          }
+          if(this.isEnabled()) {
+            branch.track(eventName, metaData, callback);
+          }
+        },
+        log: function(message, values) {
+          if(this.isDebug()) {
+            console.log(message, 'background-color: yellow; color: blue; font-size: medium;', values);
+          }
+        },
+        debug: function(value) {
+          _debug = value;
+        }
+      }
+    )
+  }(false);
+</script>
+
+<script>
+  (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
+  branch.init("key_live_lmpPsfj2DP8CflI4rmzfiemerte7sgwm", {});
+</script>
+
+<title>Strava | New Route</title>
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+    {'gtm.start': new Date().getTime(),event:'gtm.js'}
+    );var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','googleTagManagerDataLayer', "GTM-TP845S");
+</script>
+
+<link rel="icon" type="image/x-icon" href="https://d3nn82uaxijpm6.cloudfront.net/assets/favicon-0d7ea75514bdc47a1068a27141829faceb186402188efd6684387f8ea0ded5e7.ico" />
+
+<link rel="stylesheet" media="screen" href="https://d3nn82uaxijpm6.cloudfront.net/assets/strava-app-routemaster-13322b96e4b1659de3a2b856f2680907f0ef6eb33b0acc4ddac06be766c3de13.css" />
+
+<script type='application/ld+json'>
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Strava",
+  "url": "https://www.strava.com/",
+  "logo": "https://d3nn82uaxijpm6.cloudfront.net/assets/brands/strava/logo-strava-lg-5671105ffddb86e437bb68503a4973e8bf07e2a41c0b332d3e3bced21d537e98.png",
+  "sameAs": [
+    "https://facebook.com/Strava",
+    "https://twitter.com/strava",
+    "https://instagram.com/strava",
+    "https://youtube.com/stravainc",
+    "https://blog.strava.com",
+    "https://github.com/strava",
+    "https://medium.com/strava-engineering"
+  ]
+}
+
+
+</script>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="bg8+Zl8vvIeZfOaaE+MKztIfzGx2x9/kCDThPr2ZXiY7l8rV06KhjfIGbnCYxglV7DS6iPgXjot2e1Ob5TYpIA==" />
+<script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/chunking_runtime-607af9eb4369ccc03cfc.js"></script>
+<script src="https://d3nn82uaxijpm6.cloudfront.net/packs/js/global-4d6618f51b8656e5d99d.chunk.js"></script>
+<script src="https://d3nn82uaxijpm6.cloudfront.net/assets/strava-head-d0f4c1f1472bbfd71048d6bbbe5e3b9041ec1330343ab67cfc3a6099b8fee09e.js"></script>
+
+</head>
+<body class='logged-in  feed3p0 old-login'>
+<noscript>
+<iframe height='0' src='//www.googletagmanager.com/ns.html?id=GTM-TP845S' style='display:none;visibility:hidden' width='0'></iframe>
+</noscript>
+
+<header>
+<a class='md strava-logo' href='/'>Strava</a>
+<h2 class='h5 brand'>Route Builder <sup>Beta</sup></h2>
+<div class='utility'><a class="exit" href="/athlete/routes">Exit Builder</a></div>
+</header>
+<div class='workspace' id='route-container'>
+<div class='top panel centered'><div class='toolbar'>
+<form class='float-left' id='search'><input class='input-lg' placeholder='Enter a location' type='text'><div class='button minimal' tabindex='0' title='Search'>
+<div class='icon search'></div>
+</div>
+</form>
+<div id='builder-controls'>
+<div class='group float-left'>
+<div class='button' id='undo' tabindex='0' title='Undo last waypoint'>
+<div class='icon undo'></div>
+<div class='label'>Undo</div>
+</div>
+<div class='button' id='redo' tabindex='0' title='Redo last waypoint'>
+<div class='icon redo'></div>
+<div class='label'>Redo</div>
+</div>
+<div class='button' id='clear-route' tabindex='0' title='Clear the map'>
+<div class='icon reset'></div>
+<div class='label'>Clear</div>
+</div>
+</div>
+<div class='more-controls'>
+<div class='more-controls-panel'>
+<div class='group float-left' id='route-settings'></div>
+<div class='group float-left' id='activity-select'>
+<ul class='switches'>
+<li>
+<div class='button' data-route-type='1' tabindex='0'>
+<div class='icon cycling'></div>
+<div class='label'>Ride</div>
+</div>
+</li>
+<li>
+<div class='button selected' data-route-type='2' tabindex='0'>
+<div class='icon running'></div>
+<div class='label'>Run</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class='float-right'>
+<div class='alt button disabled save-route' tabindex='0' title='Save'>Save</div>
+</div>
+</div>
+</div>
+</div>
+<div class='left panel collapsed full-height'><div class='toolbar'>
+<div class='group' id='panels-nav'>
+<div class='button' data-target-panel='#view-options' tabindex='0' title='Map Settings'>
+<div class='icon settings'>Map Settings</div>
+</div>
+<div class='button' data-target-panel='#cue-sheet' tabindex='0' title='Cue Sheet'>
+<div class='icon list'>Cue Sheet</div>
+</div>
+<div class='button' data-target-panel='#segment-explore-options' tabindex='0' title='Segment Explorer'>
+<div class='icon segments'>Segment Explorer</div>
+</div>
+</div>
+<div class='group'>
+<div class='button' id='help' tabindex='0' title='Help'>
+<div class='icon info'>Help</div>
+</div>
+</div>
+<div class='group bottom'>
+<div class='button' id='error-reporting' tabindex='0' title='Report a Problem'>
+<div class='icon report'>Report a Problem</div>
+</div>
+</div>
+</div>
+<div class='content'>
+<div class='utility collapse button' tabindex='0' title='Close this panel'>
+<div class='arrow-left icon'>Close this panel</div>
+</div>
+<div class='section route-list-options' id='view-options'><h2>Map View Options</h2>
+<ul class='group'>
+<li class='map-style'>
+<span class='label'>Map Style</span>
+<div class='switches btn-group btn-group-justified'>
+<div class='button btn-xs active' data-value='mapbox' tabindex='0'>OSM</div>
+<div class='button btn-xs' data-value='standard' tabindex='0'>Standard</div>
+<div class='button btn-xs' data-value='satellite' tabindex='0'>Satellite</div>
+</div>
+</li>
+</ul>
+<ul class='group'>
+<li id='toggle-global-heatmap'>
+<span class='label'>Global Heatmap</span>
+<div class='toggle-button float-right'>
+<div class='btn'></div>
+</div>
+</li>
+<li id='toggle-distance-markers'>
+<span class='label'>Distance Markers</span>
+<div class='toggle-button active float-right'>
+<div class='btn'></div>
+</div>
+</li>
+<li id='select-distance-units'>
+<span class='label'>Units</span>
+<div class='switches btn-group float-right'>
+<div class='button btn-xs' data-value='metric' tabindex='0' title='Kilometers'>km</div>
+<div class='button btn-xs' data-value='imperial' tabindex='0' title='Miles'>mi</div>
+</div>
+</li>
+</ul>
+</div>
+<div class='section' id='cue-sheet'>
+<h2>Cue Sheet</h2>
+<div class='header row'>
+<strong class='spans6 distance-unit'></strong>
+<strong class='spans10'>Direction/Detail</strong>
+</div>
+<div id='directions-container'>
+<ol id='directions'></ol>
+<div class='disclaimer'>Route recommendations may be incomplete and/or inaccurate and may contain sections of private land and/or sections of terrain that could be challenging or hazardous. Always use your best judgement about the safety of road and trail conditions and follow traffic and property laws.</div>
+</div>
+</div>
+<div class='section route-list-options' id='segment-explore-options'><h2>Segment Explore</h2>
+<div class='segment-controls'>
+<div class='group terrain-run' style='display: hidden'>
+<div class='label'>Terrain</div>
+<br>
+<ul class='switches' id='running-cats'>
+<li>
+<span class='button btn-xs active' data-run-terrain='all' tabindex='0'>All</span>
+</li>
+<li>
+<span class='button btn-xs' data-run-terrain='flat' tabindex='0'>Flat</span>
+</li>
+<li>
+<span class='button btn-xs' data-run-terrain='hilly' tabindex='0'>Hilly</span>
+</li>
+<li>
+<span class='button btn-xs' data-run-terrain='steep' tabindex='0'>Steep</span>
+</li>
+</ul>
+</div>
+<div class='group category-ride' style='display: hidden'>
+<div class='label'>Climb Category</div>
+<div id='segment-cat-container'>
+<div id='slider-container'>
+<div id='segment-vals'></div>
+</div>
+<ul id='segment-categories'>
+<li class='category'>
+<abbr title='Uncategorized'>U</abbr>
+</li>
+<li class='category'>
+<abbr title='Category 4'>4</abbr>
+</li>
+<li class='category'>
+<abbr title='Category 3'>3</abbr>
+</li>
+<li class='category'>
+<abbr title='Category 2'>2</abbr>
+</li>
+<li class='category'>
+<abbr title='Category 1'>1</abbr>
+</li>
+<li class='category'>
+<abbr title='HC Climb — Hors Categorie'>HC</abbr>
+</li>
+</ul>
+</div>
+</div>
+<div class='segment-layer group'>
+<span class='label'>Segments</span>
+<span class='float-right'>
+<span class='toggle-button' id='toggle-segments'>
+<div class='btn'></div>
+</span>
+<span class='button btn-xs explore'>Refresh</span>
+</span>
+</div>
+</div>
+<div id='segment-list'>
+<ul class='unstyled'></ul>
+</div>
+</div>
+</div>
+</div>
+<div class='panel collapsed' id='map-controls'>
+<div class='group' id='zoom-controls'>
+<div class='button zoom-in' title='Zoom in'>
+<div class='zoom-in icon'></div>
+</div>
+<div class='button zoom-out' title='Zoom out'>
+<div class='zoom-out icon'></div>
+</div>
+</div>
+</div>
+<div id='map-canvas'></div>
+<div class='bottom panel collapsed'><ul class='inline-stats header'>
+<li>
+<strong id='route-type'>Activity</strong>
+<div class='label'>Route Type</div>
+</li>
+<li>
+<strong id='distance'>
+<abbr class='unit' title='kilometers'>km</abbr>
+</strong>
+<div class='label'>Distance</div>
+</li>
+<li>
+<strong id='elevation'>
+0<abbr class='unit' title='meters'>m</abbr>
+</strong>
+<div class='label'>Elevation Gain</div>
+</li>
+<li>
+<strong id='moving-time'>0:00:00</strong>
+<div class='label'>Est. Moving Time</div>
+</li>
+</ul>
+<div class='utility clickable'>
+<div class='label'>Elevation Off</div>
+<div class='collapse button' data-target-panel='#chart-container' tabindex='0' title='Open this panel'>
+<div class='icon arrow-down'>Collapse</div>
+</div>
+</div>
+<div class='content' id='chart-container'>
+<div id='y_axis'></div>
+<div id='chart-container'>
+<div class='base-chart'></div>
+</div>
+<div id='annotation'></div>
+</div>
+</div>
+</div>
+<div class='ui-widget-overlay route-loader' style='display: none'>
+<div class='loading-module'>
+<div class='loading-content'>Please Wait While We Calculate Your Route</div>
+</div>
+</div>
+<script id='routeToggleControlTemplate' type='text/template'>
+<div class='ui-control' id='toggle-{{data.name}}'>
+<div class='toggle-button' tabindex='0'>
+<div class='btn'></div>
+</div>
+<div class='label'>{{data.nameLong}}</div>
+</div>
+</script>
+<script id='directionsTemplate' type='text/template'>
+<li class='row' data-raw='{{raw_distance}}'>
+<div class='spans6 distance'>{{distance}}</div>
+<div class='spans10 detail'>{{detail}}</div>
+</li>
+</script>
+<script id='manualModeWarningTemplate' type='text/template'>
+<div class='centered dark tooltip active'>
+<div class='close right clickable' title='Cancel'>&#10005;</div>
+<h2 class='mb-0'>Warning</h2>
+<p>
+<ul>
+<li>Manual mode will no longer ensure your route's path follows roads or trails.</li>
+<li>Popularity and Minimize Elevation toggles will be disabled.</li>
+<li>Cue sheet entries cannot be created for manual edits.</li>
+<li>Distance and elevation can only be roughly estimated for manual edits.</li>
+<li>You cannot add a new start point to your route.</li>
+</ul>
+</p>
+<span class='continue minimal button'>Continue</span>
+</div>
+</script>
+
+<script id='routeBuilderHelpTemplate' type='text/template'>
+<header>
+<h2>Strava Route Builder</h2>
+</header>
+<div class='help-content borderless'>
+<ul class='nav'>
+<li>
+<span class='dt' data-term='#help-definition-getting-started'>Getting Started</span>
+</li>
+<li>
+<span class='dt' data-term='#help-definition-overview'>Overview</span>
+<ul>
+<li>
+<span class='dt' data-term='#help-definition-overview-route-controls'>Route Controls</span>
+</li>
+<li>
+<span class='dt' data-term='#help-definition-overview-map-views'>Map Views</span>
+</li>
+<li>
+<span class='dt' data-term='#help-definition-overview-cue-sheets'>Cue Sheets</span>
+</li>
+<li>
+<span class='dt' data-term='#help-definition-overview-elevation-profile'>Elevation Profile</span>
+</li>
+<li>
+<span class='dt' data-term='#help-definition-overview-route-types'>Route Types</span>
+</li>
+</ul>
+</li>
+<li>
+<span class='dt' data-term='#help-definition-basic-navigation'>Basic Navigation</span>
+</li>
+<li>
+<span class='dt' data-term='#help-definition-editing-routes'>Editing a Route</span>
+</li>
+<li>
+<span class='dt' data-term='#help-definition-saving-routes'>Saving a Route</span>
+</li>
+<li>
+<span class='dt' data-term='#help-definition-creating-from-activities'>Creating Routes from Activities</span>
+</li>
+<li>
+<span class='dt' data-term='#help-definition-reporting-problems'>Reporting Problems</span>
+</li>
+<li class='view-tutorial'>
+<div class='view-ftue button'>View the tutorial</div>
+</li>
+</ul>
+<div class='inset main'></div>
+</div>
+</script>
+<script id='help-definition-getting-started' type='text/template'>
+<h2>Getting Started</h2>
+<p>The Route Builder is a tool that lets you create running and cycling routes. You can share routes with friends, download them to compatible GPS devices, and print cue sheets. The Route Builder uses real data to help you create routes on the roads and paths cyclists and runners prefer.</p>
+<p>
+<div class='view-ftue button'>View the tutorial</div>
+</p>
+<h3>What is a Route?</h3>
+<p>A route is a collections of points on a map (waypoints) and paths (roads, trails, etc.) that form a ride or run.</p>
+<h3>What is a Waypoint?</h3>
+<p>A waypoint is a point you place on the map to help build a route. To add a waypoint, click the map. You can drag existing waypoints to move them to new locations. You can remove waypoints using the undo/redo tools.</p>
+</script>
+<script id='help-definition-overview' type='text/template'>
+<h2>Route Builder <abbr title='User Interface'>UI</abbr> Overview</h2>
+<h3>Accessing Route Builder</h3>
+<p>You access the Route Builder by pressing the <strong>Create a Route</strong> button on the My Routes page accessible via the Dashboard.</p>
+<h3>Exiting the Route Builder and returning to Strava.com</h3>
+<p>Accessing the Route Builder takes you outside of the main Strava website. If at any time you wish to leave the Route Builder and return to Strava, press the back button on your browser or press the <strong>Exit Builder</strong> button.</p>
+<p>Remember to save your route before exiting the Route Builder. If you don&#39;t save and go back to Strava.com, your route will be lost.</p>
+</script>
+<script id='help-definition-overview-route-controls' type='text/template'>
+<h2>Route Controls</h2>
+<h3>Undo &amp; Redo</h3>
+<p>Clicking the <strong>Undo</strong> or <strong>Redo</strong> button allows you to remove or add back a previous action.</p>
+<h3>Clearing the Map</h3>
+<p>When you click the <strong>Clear</strong> button, your entire route is removed from the Route Builder. You can use <strong>Undo</strong> to add the route back for further editing. Once you exit from the Route Builder, you will not be able to be retrieve your route.</p>
+<h3>Strava Popularity Toggle</h3>
+<p>Enabling the Popularity toggle will take the activity data of runs and rides from the Strava community and use that to select paths runners and cyclists prefer.</p>
+<h3>Minimize Elevation Toggle</h3>
+<p>Disabled by default, the Minimize Elevation toggle will favor paths that have the least amount of climb. Turn this on if you want to create a more mellow route.</p>
+</script>
+<script id='help-definition-overview-map-views' type='text/template'>
+<h2>Map View Options</h2>
+<h3>Toggle Distance Markers</h3>
+<p>Distance markers are an aid to let you see the length of your route. Depending on the complexity of the route you&#39;re building, you may want to disable distance markers from displaying on the map. Toggling markers on or off will not affect the route you&#39;re working on.</p>
+<h3>Unit Preferences &amp; Selection</h3>
+<p>The units on the distance markers displayed in Route Builder are based on the ones you&#39;ve set in your Athlete Settings. You can also select your preferred unit markers from the Map View Options panel. The units displayed for routes are based on the viewer&#39;s unit preferences from settings.</p>
+</script>
+<script id='help-definition-overview-cue-sheets' type='text/template'>
+<h2>Cue Sheets</h2>
+<p>Cue sheets offer turn by turn directions. These are to be used as guides only.</p>
+<p>Route recommendations may be incomplete and/or inaccurate and may contain sections of private land and/or sections of terrain that could be challenging or hazardous. Always use your best judgement about the safety of road and trail conditions and follow traffic and property laws.</p>
+</script>
+<script id='help-definition-overview-elevation-profile' type='text/template'>
+<h2>Elevation Profile</h2>
+<p>The elevation profile gives a simple representation of the elevation changes on the route you are building.</p>
+<p>Click on the bottom panel to expand the elevation profile.</p>
+<p>When scrubbed (mouse over the elevation profile), elevation and grade are displayed in an info box.</p>
+</script>
+<script id='help-definition-overview-route-types' type='text/template'>
+<h2>Route Type</h2>
+<p>The Route Builder supports two type of routes: running and cycling. Your preferred sport type is selected by default, but can be changed at any time while building a route. The Route type is important in because it changes the underlying map data we use to build your route. For example, if this is set to run, the Route Builder will use real run activity data from Strava.com to choose paths for that route.</p>
+</script>
+<script id='help-definition-basic-navigation' type='text/template'>
+<h2>Basic Map Navigation</h2>
+<h3>Search for a Location</h3>
+<p>Enter the name or address of the location where you&#39;d like to create your route in the search box on the top toolbar. The location search tool works best when you enter a full address but is not required.</p>
+<h3>Panning &amp; Zoom Control</h3>
+<p>The map can also be moved around the screen by clicking and dragging the map. If you want to zoom in to get a closer look, use your scroll wheel to zoom in and out or use the plus/minus zoom tools in the top left corner of the map.</p>
+</script>
+<script id='help-definition-editing-routes' type='text/template'>
+<h2>Editing a Route</h2>
+<p>If you own a route, you can edit it again after it's been saved. From the route's overview page, press the <strong>Edit Route</strong> button. The route will open in Route Builder where you can edit the route by adding/removing or moving waypoints. The changes you make won't be applied to the route until you click <strong>Save Route</strong>.</p>
+</script>
+<script id='help-definition-saving-routes' type='text/template'>
+<h2>Saving a Route</h2>
+<p>When you've finished creating your route and are ready to save it, press the <strong>Save Route</strong> button on the top right corner of the Route Builder. You'll specify a route type (Road, Mountain Bike, or Cyclocross for Rides and Road or Trail for runs) and name. Optionally, you can also provide a description of the route to share some more detailed information about your creation.</p>
+<h3>Private Routes</h3>
+<p>You can now save a route as private which means no one will be able to view it except for you. Private routes cannot be shared or used for group events.</p>
+</script>
+<script id='help-definition-creating-from-activities' type='text/template'>
+<h2>Creating Routes From Activities</h2>
+<p>Activities can be converted to routes by accessing the ‘Create Route’ button from the Actions (wrench) menu on an Activity page. Route Builder will do its best to convert that activity to a Route.</p>
+<p>However, in cases where an activity occurred in a dense urban area, has bad GPS data, or insufficient basemap data is available, the route that’s created may deviate from the original activity. Route Builder will display both the new route and original activity on the map so they can be compared.</p>
+<p>Routes created from activities cannot be modified like a regular route. So popularity, elevation, and other controls may be disabled.</p>
+</script>
+<script id='help-definition-reporting-problems' type='text/template'>
+<h2>Reporting Problems</h2>
+<p>If you encounter a problem with the route you are building, use the error reporting tool found in the bottom left corner in the Route Builder. Here you can note on the map where you&#39;ve encountered as issue and send us additional detail to explain what is wrong with the map or route at that point. Reported errors will be folded into quarterly map updates to continuously improve routes on Strava.</p>
+</script>
+<script id='help-definition-view-tutorial' type='text/template'></script>
+
+<script id='save-route-template' type='text/template'>
+<header>
+<h1 class='marginless'>Save</h1>
+</header>
+<div class='content' id='save-content'>
+<div class='spinner vcentered hidden'>
+<div class='graphic'></div>
+</div>
+<form class='main'>
+Enter a name and description for your route below. On the next page, you&#39;ll be able to see, edit, and share your route.
+<div class='row inline-inputs'>
+<div class='spans4'>
+<label>{{routeType}}</label>
+<div class='drop-down-menu enabled subtype'>
+<div class='selection'></div>
+<ul class='options hidden'></ul>
+</div>
+</div>
+<div class='spans12'>
+<label for='name'>Route Name (required)</label>
+<input id='name' name='name' type='text' value='{{name}}'>
+</div>
+</div>
+<label for='description'>Description</label>
+<textarea id='description' name='description'>{{description}}</textarea>
+<label>
+<input id='private-js' type='checkbox'>
+Private
+<div class='lock sprite'></div>
+</label>
+<br>
+Public routes are for the whole Strava community to enjoy. If you ever decide to delete your account, please know that public route you create may remain. <a href=https://support.strava.com/hc/en-us/articles/216918827 target='_blank'>Learn more</a>
+<div class='actions rightAlign'>
+<div class='button cancel'>Cancel</div>
+<div class='button reverse submit'>Save</div>
+</div>
+</form>
+</div>
+</script>
+<script id='save-result-template' type='text/template'>
+<div class='result'>
+<h3 class='marginless'>Your Route has been saved</h3>
+<p>Go check it out and start sharing it with friends</p>
+<a class='button reverse' href='/routes/{{route_id}}'>View My Route</a>
+</div>
+</script>
+<script id='save-result-error-template' type='text/template'>
+<div class='result'>
+<h3 class='marginless'>We could not save your route. Please try again later.</h3>
+</div>
+</script>
+
+<script id='custom-map-controls-show-privacy-fullscreen-template' type='text/template'>
+<div id='map-control-container' style='padding: 5px'>
+<div class='js-map-control' id='map-control-container' index='1'>
+<div class='inline-inputs' id='strava-map-controls'>
+
+<div class='drop-down-menu' id='map-type-control'>
+<a class='selection' data-map-type-id='terrain' id='selected-map'>Terrain Map</a>
+<ul class='options'>
+<li>
+<a class='map-type-selector' data-map-type-id='standard'>Standard Map</a>
+</li>
+<li>
+<a class='map-type-selector' data-map-type-id='satellite'>Satellite Map</a>
+</li>
+<li>
+<label>
+<input id='privacy_toggle' type='checkbox'>Show Privacy Zone</input>
+</label>
+</li>
+</ul>
+</div>
+
+<a class='button' id='toggle-fullscreen'></a>
+</div>
+</div>
+</div>
+</script>
+<script id='custom-map-controls-suggest-privacy-fullscreen-template' type='text/template'>
+<div id='map-control-container' style='padding: 5px'>
+<div class='js-map-control' id='map-control-container' index='1'>
+<div class='inline-inputs' id='strava-map-controls'>
+
+<div class='drop-down-menu' id='map-type-control'>
+<a class='selection' data-map-type-id='terrain' id='selected-map'>Terrain Map</a>
+<ul class='options'>
+<li>
+<a class='map-type-selector' data-map-type-id='standard'>Standard Map</a>
+</li>
+<li>
+<a class='map-type-selector' data-map-type-id='satellite'>Satellite Map</a>
+</li>
+<li>
+<a href='/settings/privacy'>Add Privacy Zone</a>
+</li>
+</ul>
+</div>
+
+<a class='button' id='toggle-fullscreen'></a>
+</div>
+</div>
+</div>
+</script>
+<script id='custom-map-controls-show-privacy-template' type='text/template'>
+<div id='map-control-container' style='padding: 5px'>
+<div class='js-map-control' id='map-control-container' index='1'>
+<div class='inline-inputs' id='strava-map-controls'>
+
+<div class='drop-down-menu' id='map-type-control'>
+<a class='selection' data-map-type-id='terrain' id='selected-map'>Terrain Map</a>
+<ul class='options'>
+<li>
+<a class='map-type-selector' data-map-type-id='standard'>Standard Map</a>
+</li>
+<li>
+<a class='map-type-selector' data-map-type-id='satellite'>Satellite Map</a>
+</li>
+<li>
+<label>
+<input id='privacy_toggle' type='checkbox'>Show Privacy Zone</input>
+</label>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+</script>
+<script id='custom-map-controls-suggest-privacy-template' type='text/template'>
+<div id='map-control-container' style='padding: 5px'>
+<div class='js-map-control' id='map-control-container' index='1'>
+<div class='inline-inputs' id='strava-map-controls'>
+
+<div class='drop-down-menu' id='map-type-control'>
+<a class='selection' data-map-type-id='terrain' id='selected-map'>Terrain Map</a>
+<ul class='options'>
+<li>
+<a class='map-type-selector' data-map-type-id='standard'>Standard Map</a>
+</li>
+<li>
+<a class='map-type-selector' data-map-type-id='satellite'>Satellite Map</a>
+</li>
+<li>
+<a href='/settings/privacy'>Add Privacy Zone</a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+</script>
+<script id='custom-map-controls-fullscreen-template' type='text/template'>
+<div id='map-control-container' style='padding: 5px'>
+<div class='js-map-control' id='map-control-container' index='1'>
+<div class='inline-inputs' id='strava-map-controls'>
+
+<div class='drop-down-menu' id='map-type-control'>
+<a class='selection' data-map-type-id='terrain' id='selected-map'>Terrain Map</a>
+<ul class='options'>
+<li>
+<a class='map-type-selector' data-map-type-id='standard'>Standard Map</a>
+</li>
+<li>
+<a class='map-type-selector' data-map-type-id='satellite'>Satellite Map</a>
+</li>
+</ul>
+</div>
+
+<a class='button' id='toggle-fullscreen'></a>
+</div>
+</div>
+</div>
+</script>
+<script id='custom-map-controls-template' type='text/template'>
+<div id='map-control-container' style='padding: 5px'>
+<div class='js-map-control' id='map-control-container' index='1'>
+<div class='inline-inputs' id='strava-map-controls'>
+
+<div class='drop-down-menu' id='map-type-control'>
+<a class='selection' data-map-type-id='terrain' id='selected-map'>Terrain Map</a>
+<ul class='options'>
+<li>
+<a class='map-type-selector' data-map-type-id='standard'>Standard Map</a>
+</li>
+<li>
+<a class='map-type-selector' data-map-type-id='satellite'>Satellite Map</a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+</script>
+
+<link rel="stylesheet" media="screen" href="https://d3nn82uaxijpm6.cloudfront.net/assets/maps/strava-mapbox-1a922627b9fd2ef5b5113f985681222e064c5603e2dffd11d6861007005539ac.css" />
+
+
+
+<script src="https://d3nn82uaxijpm6.cloudfront.net/assets/mapbox-da2fe5d1172b95abafc266d12990e4fda0648c438fa9c8d5db4a220b5846becb.js"></script>
+<script>
+  window._maps_api = "pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg"
+  jQuery(document).ready(function(){
+    Strava.Maps.Mapbox.Base.setMapIds({"terrain_id":"strava.blprdx6r","terrain_template":"https://api.tiles.mapbox.com/v4/strava.blprdx6r/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","satellite_id":"strava.xdfmkj4i","satellite_template":"https://api.tiles.mapbox.com/v4/strava.xdfmkj4i/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","standard_id":"strava.map-zn3cjvc6","standard_template":"https://api.tiles.mapbox.com/v4/strava.map-zn3cjvc6/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","runbikehike_template":"https://api.tiles.mapbox.com/v4/mapbox.run-bike-hike/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxstreets_template":"https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxstreetsbasic_template":"https://api.tiles.mapbox.com/v4/mapbox.streets-basic/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxlight_template":"https://api.tiles.mapbox.com/v4/mapbox.light/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxsatellite_template":"https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxstreetssatellite_template":"https://api.tiles.mapbox.com/v4/mapbox.streets-satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxoutdoors_template":"https://api.tiles.mapbox.com/v4/mapbox.outdoors/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg"});
+  });
+</script>
+<script id='lightbox-template' type='text/template'>
+<div class='lightbox-window modal-content'>
+<div class='close-lightbox'>
+<button class='btn btn-unstyled btn-close'>
+<div class='app-icon icon-close icon-xs icon-white'></div>
+</button>
+</div>
+</div>
+</script>
+<script id='popover-template' type='text/template'>
+<div class='popover'></div>
+</script>
+<script>
+  window._asset_host = "https://d3nn82uaxijpm6.cloudfront.net";
+  window._measurement_preference = "meters";
+  window._date_preference = "%m/%d/%Y";
+  window._datepicker_preference_format = "mm/dd/yy";
+  
+  jQuery(document).ready(function() {
+    Strava.Util.EventLogging.createInstance("https://analytics.strava.com","7215fa60b5f01ecc3967543619f7e3d9", 54333782);
+  });
+</script>
+<script>
+  //async script load for twitter
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+<script src="https://d3nn82uaxijpm6.cloudfront.net/assets/strava/i18n/locales/en-US-de91477721a7079f5e18bf268e92bfa63e7a8ad9a9b724d75630686b53507bdf.js"></script>
+<script src="https://d3nn82uaxijpm6.cloudfront.net/assets/application-1e5550ccbb276da15ff0592c11a53f2f265a02d0ea3779fce3109da9145bf5db.js"></script>
+
+
+
+<div id='fb-root'></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: "284597785309",
+      status: true,
+      cookie: true,
+      xfbml: true,
+      version: "v2.12"
+    });
+    Strava.Facebook.PermissionsManager.getInstance().facebookReady();
+    jQuery('#fb-root').trigger('facebook:init');
+  };
+  (function(d){
+    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement('script'); js.id = id; js.async = true;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    ref.parentNode.insertBefore(js, ref);
+  }(document));
+</script>
+
+
+<script>
+  var currentAthlete = new Strava.Models.CurrentAthlete({"id":54333782,"logged_in":true,"display_name":"Happy Bee","first_name":"Happy","last_name":"Bee","premium":false,"has_power_analysis_access":false,"photo_large":"avatar/athlete/large.png","photo":"https://d3nn82uaxijpm6.cloudfront.net/assets/avatar/athlete/large-800a7033cc92b2a5548399e26b1ef42414dd1a9cb13b99454222d38d58fd28ef.png","badge":null,"measurement_preference":"meters","weight_measurement_unit":"kg","type":1,"member_type":"","display_location":"Singapore, Singapore","gender":"F","geo":{"city":"Singapore","state":null,"country":"Singapore","lat_lng":[1.2931,103.8558]},"has_leaderboards_access":false,"has_pace_zone_analysis_access":false,"is_segments_restricted":false});
+  HAML.globals = function() {
+    return {
+      currentAthlete: currentAthlete,
+      renderPartial: function(name, context) {
+        if (context == null) {
+          context = this;
+        }
+        return JST[name](context);
+      }
+    }
+  }
+</script>
+
+<script src="https://d3nn82uaxijpm6.cloudfront.net/assets/strava/routes/route_builder_mapbox_manifest-397819bbfd019530a933d803cd0f40d7c4da28fb01988f3ec9dc7e5adf192717.js"></script>
+<script>
+  (function(){
+    var options = {
+      startFtue: "true",
+      heatmapImagePath: 'https://d3nn82uaxijpm6.cloudfront.net/assets/application/routes/img-routebuilder-welcome-heatmap-9d15dc25d74c0b37a7ce0005888070e24a91ba07e1ca94631a1aea370b7f3232.png',
+      searchPath: '/segments/explore/search',
+      detailsPath: '/segments/explore/details',
+      rideSpeed: 6.71,
+      runSpeed: 2.68,
+      currentAthleteGender: 'F',
+      currentAthleteGoalsAccess: false,
+      clone: false
+    };
+  
+    var activity = null;
+    if (false) {
+      activity = {
+        activity_id: null,
+        name: '',
+        stream: null,
+        route_type: null
+      };
+    }
+  
+    jQuery(document).ready(function() {
+      window._maps_api = "pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg"
+      Strava.Maps.Mapbox.Base.setMapIds({"terrain_id":"strava.blprdx6r","terrain_template":"https://api.tiles.mapbox.com/v4/strava.blprdx6r/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","satellite_id":"strava.xdfmkj4i","satellite_template":"https://api.tiles.mapbox.com/v4/strava.xdfmkj4i/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","standard_id":"strava.map-zn3cjvc6","standard_template":"https://api.tiles.mapbox.com/v4/strava.map-zn3cjvc6/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","runbikehike_template":"https://api.tiles.mapbox.com/v4/mapbox.run-bike-hike/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxstreets_template":"https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxstreetsbasic_template":"https://api.tiles.mapbox.com/v4/mapbox.streets-basic/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxlight_template":"https://api.tiles.mapbox.com/v4/mapbox.light/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxsatellite_template":"https://api.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxstreetssatellite_template":"https://api.tiles.mapbox.com/v4/mapbox.streets-satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg","mapboxoutdoors_template":"https://api.tiles.mapbox.com/v4/mapbox.outdoors/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RyYXZhIiwiYSI6IlpoeXU2U0UifQ.c7yhlZevNRFCqHYm6G6Cyg"});
+      new Strava.Util.DropDownMenu('.drop-down-menu');
+      new Strava.Routes.RouteBuilderView(
+          'div#route-container',
+          "Singapore, Singapore",
+          null,
+          null,
+          activity,
+          options
+      );
+    });
+  })();
+</script>
+<script>
+  jQuery(document).ready(function() {
+    jQuery('a').each(addSegmentAttr);
+    jQuery('button').each(addSegmentAttr);
+    function addSegmentAttr(index, element){
+      var $element = jQuery(element);
+      var data = $element.data();
+      var external_analytics_event = data.segioevent;
+      if (external_analytics_event && external_analytics_event.name) {
+        var props = jQuery.extend({}, external_analytics_event);
+        delete props.name;
+  
+        Strava.ExternalAnalytics.trackLink($element, external_analytics_event.name, props);
+      }
+    }
+  
+    // Scroll Tracking
+    jQuery(document).one('scroll', function(){
+      Strava.ExternalAnalytics.track('Page Scrolled', null, null, null);
+    });
+  });
+</script>
+<script>
+  jQuery(document).ready(function() {
+    jQuery('#explore-strava, #challenge-list-view, .promo-simple, .promo-fancy, .promo-overlay, .sponsor-link-section, .sponsor').on('click', 'a', function(event) {
+      var link = jQuery(event.target).closest('a');
+      var adzerkClickUri = link.data('adzerk-click-uri');
+      if (adzerkClickUri != null) {
+        jQuery.get(adzerkClickUri); // this is fire-and-forget - we don't need to wait for a successful response from Adzerk
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

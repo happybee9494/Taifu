@@ -1,0 +1,2253 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Mi Account - Security</title>
+
+
+		<link type="text/css" rel="stylesheet" href="/static/res/26fe965/account-static/respassport/acc-2014/css/reset.css">
+<link type="text/css" rel="stylesheet" href="/static/res/bf31af5/account-static/respassport/acc-2014/css/layout.css">
+
+		<link type="text/css" rel="stylesheet" href="/static/res/b0dbaf1/account-static/respassport/HtmlResource/cssSass/css/modacctip.css">
+	
+<style type="text/css">
+.score_1{color:rgb(255,0,0)}
+.score_2{color:rgb(255,102,0)}
+.score_3{color:rgb(255,204,0)}
+.score_4{color:rgb(51,204,0)}
+.score_bg_1{background-color:rgb(255,0,0)}
+.score_bg_2{background-color:rgb(255,102,0)}
+.score_bg_3{background-color:rgb(255,204,0)}
+.score_bg_4{background-color:rgb(51,204,0)}
+.score_outer_1 em{color:rgb(255,0,0)}
+.score_outer_2 em{color:rgb(255,102,0)}
+.score_outer_3 em{color:rgb(255,204,0)}
+.score_outer_4 em{color:rgb(51,204,0)}
+/*禁用修改头像功能*/
+.na-img-area:hover .na-edit{
+	display:none;
+}
+.na-img-area{cursor:default}
+/*叹号垂直居中*/
+.error-tip{
+	line-height: 1.0;
+}
+/*米号可复制*/
+.na-num{
+	position: relative;
+	z-index: 10;
+}
+/*统一颜色*/
+.color-active{
+	color:rgb(255,102,0)!important;
+}
+/*tip additionals*/
+/*
+.tip, .mod_acc_tip{
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-left:-212px;
+	margin-top: -266px;
+	z-index:20;
+}
+*/
+.tip_h295{
+	margin-top: -152px;
+}
+.tip_h424{
+	margin-top: -218px;
+}
+.tip_h436{
+	margin-top: -224px;
+}
+/*动态select的布局*/
+#popSetMibao .i_currentselected{
+	width: auto !important;
+}
+#popSetMibao .i_selectoption{
+	width: 100% !important;
+}
+/*显示和隐藏备用手机*/
+#popManageTokenStatus dd .no_fb_mobile{	
+	display: block;
+}
+#popManageTokenStatus dd .fb_mobile{
+	display: none;
+}
+#popManageTokenStatus .has_fb_mobile .no_fb_mobile{
+	display: none;
+}
+#popManageTokenStatus .has_fb_mobile .fb_mobile{
+	display: block;
+}
+/*popup的遮层*/
+.popup_mask .mod_wrap{
+    height: 100%;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+.popup_mask .mod_acc_tip{
+	display:none;
+	position:absolute;
+	left:50%;
+	margin-left:-206px;
+	top:50%;
+	margin-top:-187px;
+	_top: 500px;
+}
+/*某些要在前面的对话框*/
+.callable{
+	z-index: 200;
+}
+/*vertically center*/
+#popSetMibao, #popAnswerMibao, #popManageTokenStatus, #popManageTokenKeys{
+	top:0;
+	margin-top: 0;
+}
+/*下拉框限高*/
+.i_selectoption {
+    height: 150px;
+}
+/*已完成安装*/
+#popManageTokenDownload .tip_btns .installed{
+	display:inline-block;
+}
+#popManageTokenDownload .tip_btns .goback{
+	display:none;
+}
+#popManageTokenDownload .token_enabled .installed{
+	display:none;
+}
+#popManageTokenDownload .token_enabled .goback{
+	display:inline-block;
+}
+/*IE6*/
+#popUpdatePassword .capt_box{
+	display: none;
+}
+/*sms not sent*/
+#sms-unsent{
+	width:100%;
+	height:100%;
+	position:fixed;
+	_position:absolute;
+	left:0;
+	top:0;
+	z-index:10000;
+	display:none;
+}
+#sms-unsent .bg{
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:-1;
+	filter:alpha(opacity=70);
+	-moz-opacity:.7;
+	opacity:.7;
+	background-color:#aaa;
+}
+#sms-unsent .msg-box{
+	width:560px;
+	height:200px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-280px;
+	margin-top:-100px;
+	background-color:#fff;
+}
+#sms-unsent .msg-box .text{
+	position:absolute;
+	text-align:center;
+	top:56px;
+	font-size:18px;
+	color:#585858;
+	width:500px;
+}
+#sms-unsent .msg-box .button{
+	position:absolute;
+	text-align:center;
+	top:100px;
+	width:120px;
+	height:40px;
+	color:#333;
+	border:1px solid #dadada;
+	left:50%;
+	margin-left:-61px;
+	cursor:pointer;
+	line-height:40px;
+	font-size:16px;
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	border-radius:1px;
+}
+/*干掉该死的IE6的遮罩问题*/
+#loadingMask .bkc{
+	_height:2000px;
+}
+/*wap*/
+.bugfix_ie6,
+.n-account-area-box{ display:block;}	
+/*hide default options*/
+.def-opt{
+	display: none;
+}
+#popEnterNewPhone{
+	margin-top:-250px;
+}
+.del-account-deny h4{
+  font-size:14px;
+  font-weight:normal;
+}
+.del-account-deny-content{
+  list-style:disc;
+  font-fize:14px;
+}
+.del-account-deny-content  li{
+  list-style:disc;
+  font-fize:14px;
+}
+.txt_tip{ margin-top:0;}
+</style>
+<style type="text/css" media="print">
+	.n-logo-area .logout,
+	.n-account-area,
+	.n-frame,
+	.n-main-nav,
+	.n-footer{display : none; }
+</style>
+</head>
+<body class="en" style="overflow-y: scroll;">
+	<div class="popup_mask" style="display: none;" id="loadingMask">
+		<div class="bkc"></div>
+		<div class="mod_wrap loadingmask">
+			
+		</div>
+	</div>
+  <div class="wrapper blockimportant">
+  
+  <div class="wrap">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+
+
+
+
+
+    
+        
+      
+
+  
+
+<div class="layout bugfix_ie6 hide">
+  <div class="n-logo-area clearfix">
+    <div class="fl-l">
+      <img src="/static/res/aff1713/account-static/respassport/acc-2014/img/milogo36.png" srcset="/static/res/aff1713/account-static/respassport/acc-2014/img/milogo36.png 1x, /static/res/aff1713/account-static/respassport/acc-2014/img/milogo36@2x.png 2x">
+      <span class="logo_title">Mi Account </span>
+    </div>
+    
+      <a id="logoutLink" class="fl-r logout" href="/pass/logout?userId=6372769616&amp;callback=https://account.xiaomi.com">
+          Sign out 
+      </a>
+	  <script>
+	  setTimeout(function(){
+		  if(location.hostname === 'account.xiaomi.com'){return;}
+		  var link = document.getElementById('logoutLink');
+		  if(link){
+			  var href = link.getAttribute('href');
+			  var a = document.createElement('a');
+			  a.setAttribute('href','/');
+			  var homeURL = a.href;
+			  href = href.replace(/\&callback\=.*$/, '&callback=' + homeURL);
+			  link.setAttribute('href', href);
+			  a = null;
+		  }
+	  },100);
+	  </script>
+    
+  </div>
+  
+    <!--头像 名字-->
+	<div class="n-account-area-box">
+		<div class="n-account-area clearfix">
+		  <div class="na-info">
+			<p class="na-name" style="color:#999;font-weight:normal;">Set nickname</p>
+			<p class="na-num">6372769616</p>
+		  </div>
+		  <div class="na-img-area fl-l">
+      <!--na-img-bg-area不能插入任何子元素-->
+      <div class="na-img-bg-area"></div>
+		  </div>
+		</div>
+	</div>
+  
+</div>
+
+	<div id="sms-unsent">
+		<div class="bg"></div>
+		<div class="msg-box">
+			<div class="text">Couldn't send SMS message</div>
+			<div class="button">OK</div>
+		</div>
+	</div>
+	<div class="layout">
+    <div class="n-main-nav clearfix">
+  <ul class="c_b">
+    <li class="current">
+      <a href="/pass/auth/security/home?cUserId=-JquUe0_jvfWkviuyNZNbvoCAlQ&amp;userId=6372769616" title="Security" data-action="security">Security</a>
+      <em class="n-nav-corner"></em>
+    </li>
+    <li>
+      <a href="/pass/auth/profile/home?cUserId=-JquUe0_jvfWkviuyNZNbvoCAlQ&amp;userId=6372769616" title="Personal info" data-action="profile">Personal info</a>
+      <em class="n-nav-corner"></em>
+    </li>
+    <li>
+      <a href="/pass/auth/sns/home?cUserId=-JquUe0_jvfWkviuyNZNbvoCAlQ&amp;userId=6372769616" title="Accounts &amp; permissions" data-action="sns">Accounts &amp; permissions</a>
+      <em class="n-nav-corner"></em>
+    </li>
+    <li>
+      <a href="/pass/auth/services/home?cUserId=-JquUe0_jvfWkviuyNZNbvoCAlQ&amp;userId=6372769616" title="Products" data-action="services">Products</a>
+      <em class="n-nav-corner"></em>
+    </li>
+  </ul>
+</div>
+      <div class="n-frame">
+        <div class="title-item title_security_wap security_level">
+          <h4 class="title-big dis-inb">Security check-up</h4>
+          <em class="space6"></em>
+          <p class="font-normal dis-inb wap_colb2"><em class="light-num" style="padding:0">
+			  	
+						<span class="score_2">60</span>
+					
+		  </em>points</p>
+          <div class="slider-area dis-inb vert-m" style="width:360px;">
+            <div class="slider-bar-bg"></div>
+            <div class="slider-bar-line score_bg_2" style="width:60%;"></div>
+            <em class="drag-ico" style="left:60%"></em>
+          </div>
+          <p class="font-normal dis-inb security_level_txt">
+		  
+				<span class="score_outer_2"><em class="light-num">2</em> risks detected</span>
+			
+		  </p>
+        </div>
+      	<div class="title-item title_security_wap dis_none_pc">
+          <h4 class="title-big dis-inb">Basic info</h4>
+        </div>
+        <ul class="device-detail-area">
+          <li id="changePassword" class="click-row">
+            <div class="font-img-item clearfix">
+              <em class="fi-ico fi-ico-lock"></em>
+              <p class="title-normal dis-inb">Password</p>
+			  
+					<p class="font-default">
+						Set a strong password to keep your account secure
+					</p>
+				
+			  
+			  
+					<span class="title-normal wap-desc dis_none_pc">
+						Change
+					</span>
+					
+				<i class="arrow_r"></i>
+        	  </div>
+			  
+					
+				
+            <div class="ada-btn-area" id="btnUpdatePassword">
+              <a __href="/pass/changePassword?userId=6372769616" class="n-btn">
+              
+                  Change
+                
+              </a>
+            </div>
+          </li>
+          <li id="changeEmail" class="click-row">
+            <div class="font-img-item clearfix">
+              <em class="fi-ico fi-ico-email"></em>
+              <div class="item_column">
+                <p class="title-normal dis-inb">Recovery email</p>
+                
+                
+                    <span class="title-normal wap-desc user_address">
+                      <span dir="ltr" class="text_overflow">ha*********4@g****.com</span>
+                    </span>
+                  
+              </div>
+              <span class="title-normal wap-desc">
+              
+                  <span class="dis_none_pc">Change</span>
+                 
+              </span>
+              
+                  <p class="font-default">Use this email address to sign in, reset your password, or change security settings.</p>
+                
+              <i class="arrow_r"></i>				
+          	</div>
+            <div class="ada-btn-area" id="btnUpdateEmail">
+            
+                
+                  <!--正常状态-->
+                    <a __href="/pass/bindAddress?userId=6372769616&amp;type=EM&amp;replace=true&amp;address=ha*********4@g****.com" class="n-btn">Change</a>
+                  
+              
+            </div>
+          </li>
+          <li id="changeMobile" class="click-row">
+            <div class="font-img-item clearfix">
+              <em class="fi-ico fi-ico-phone"></em>
+              <div class="item_column">
+                <p class="title-normal dis-inb">Recovery phone</p>
+                
+                  <span class="warning-tip">&nbsp;</span>
+                
+                
+              </div>
+              <span class="title-normal wap-desc">
+              
+                  <span class="color-active">None </span>
+                 
+              </span>
+              
+                  
+                  
+                    <p class="font-default color-active">Don't get locked out of your account! Set the recovery phone now.</p>
+                  
+                 
+              <i class="arrow_r"></i>
+            </div>
+            <div class="ada-btn-area" id="btnUpdatePhone">
+            <!--无地址--><a class="n-btn btnBindMobile" __href="/pass/bindAddress?userId=6372769616&amp;type=PH&amp;replace=false&amp;address=">Add </a>
+              
+            </div>
+          </li>
+          <li style="display:none;" id="setMibao" class="click-row">
+            <div class="font-img-item clearfix">
+              <em class="fi-ico fi-ico-secret"></em>
+              <p class="title-normal dis-inb">Security questions</p>
+              
+                <span class="warning-tip">&nbsp;</span>
+                <span class="title-normal wap-desc">
+                  <span class="color-active">None</span>
+                </span>
+                <p class="font-default color-active">Don't get locked out of your account! Set some security questions now.</p>
+              
+              <i class="arrow_r"></i>				
+            </div>
+            <div class="ada-btn-area" id="btnSetMibao">
+			  	<a id="mibao_link" __href="https://sq.id.mi.com/setQuestion?userId=6372769616&amp;_locale=en" class="n-btn">Add</a>
+					 
+            </div>
+          </li>
+      	</ul>
+		<!--
+        <div class="title-item">
+          <h4 class="title-big dis-inb">
+			  	
+					 
+		  </h4>
+        </div>
+		-->
+	</div>
+		<div class="n-frame device_recommend" style="display:none">
+			<div class="title-item title_security_wap">
+				<h4 class="title-big dis-inb">Account tools</h4>
+			</div>
+			<ul class="device-detail-area">
+			  <li class="click-row">
+				<div class="font-img-item clearfix">
+				  <em class="fi-ico fi-ico-token"></em>
+				  <p class="title-normal dis-inb">Authenticator</p>
+				   
+						<p class="font-default">Require 2-step verification when you sign in on a device that isn't trusted</p>
+					   
+				   
+						<span class="title-normal wap-desc color-active">Activate</span>
+					   
+					<i class="arrow_r"></i>
+				</div>
+				<div class="ada-btn-area" id="btnManageToken">
+				   
+						<a __href="/pass/2StepLogin/explain?userId=6372769616" class="n-btn">Activate</a>
+					   
+				</div>
+			  </li>
+			</ul>
+    </div>
+    <div class="n-frame dis_none_pc">
+      <div class="title-item title_security_wap">
+				<h4 class="title-big dis-inb">Other</h4>
+			</div>
+      <ul class="device-detail-area">
+        <li>
+          <div class="font-img-item clearfix">
+            <em class="fi-ico fi-ico-info"></em>
+            <p class="title-normal dis-inb">Edit info</p>
+            <span class="title-normal wap-desc"></span>
+            <i class="arrow_r"></i>
+            <a class="pos_opc nav-item" href="/pass/auth/profile/home?cUserId=-JquUe0_jvfWkviuyNZNbvoCAlQ&amp;userId=6372769616" data-action="profile">Edit info</a>
+          </div>
+        </li>
+        <li>
+          <div class="font-img-item clearfix">
+            <em class="fi-ico fi-ico-auth"></em>
+            <p class="title-normal dis-inb">Accounts &amp; permissions</p>
+            <span class="title-normal wap-desc"></span>
+            <i class="arrow_r"></i>
+            <a class="pos_opc nav-item" href="/pass/auth/sns/home?cUserId=-JquUe0_jvfWkviuyNZNbvoCAlQ&amp;userId=6372769616" data-action="sns">Accounts &amp; permissions</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="logout_wap log-out">
+      <a class="btnadpt bg_white" href="/pass/logout?userId=6372769616&amp;callback=https://account.xiaomi.com">Sign out </a>
+    </div>
+      </div>
+    </div>
+    </div>
+	  
+
+<div class="n-footer">
+  <div class="nf-link-area clearfix">
+    <ul class="lang-select-list">
+        <li class="page-footer-list default-show-en"><a class="locale-link current" href="javascript:void(0)" data-lang="en">English‎</a></li>
+        <li class="page-footer-list"><button class="show-more-lang">…</button>|</li>
+
+      
+
+        <li><a class="a_critical" href="https://account.xiaomi.com/helpcenter/faq" target="_blank"><em></em>FAQ</a>|</li>
+        <li>
+        <a class="a_critical" href="/about/protocol/privacy" title="Privacy Policy" target="_blank">
+            Privacy Policy
+          </a>
+        </li>
+
+      
+    </ul>
+  </div>
+  <p class="nf-intro"><span>Xiaomi Inc., All rights reserved</span></p>
+  <div class="cookie_usage_notify cookie-usage-notify" style="display: none;">
+    <i class="warning_white"></i>
+    <div class="text_content">
+      <p class="warning_text">Attention</p>
+      <p>This website uses cookies to store info on your device. Cookies help our website work normally and show us how we can improve your user experience. By using this website, you agree to our cookie policy.</p>
+    </div>
+    <button class="close_cookie_usage close-cookie-usage"><i class="icon_close"></i><span class="btn-text">Agree</span></button>
+  </div>
+</div>
+<style>
+body,button,input,select,textarea{ font-family:arial;}
+.show-more-lang{ padding: 0 5px; border: 1px solid #ccc; background: #fff; border-radius: 3px; cursor:pointer; margin-right:10px;}
+.lang_items_list li{ float:left; width:50%; padding:5px 0; line-height:20px;}
+.more-lang-modal .external_logo_area{ display:none;}
+.lang_items_list .current{ color:#0600fb;}
+.countrycode-container-usual{display:none;}
+
+    .more-lang-modal{ width:800px; height:500px; left:50%; top:50%; margin-left:-400px; margin-top:-250px;padding-bottom:30px;}
+    .more-lang-modal .lang_items_list li{ width:25%;}
+    .lang_items_list{ padding:20px 10px 0;}
+	
+/*rtl*/
+body[class^=ar] .show-more-lang,body[class=iw_IL] .show-more-lang,body[class=fa_IR] .show-more-lang{ margin:0 0 0 10px;}
+body[class^=ar] .lang_items_list li,body[class=iw_IL] .lang_items_list li,body[class=fa_IR] .lang_items_list li{ float:right;}
+</style>
+
+  
+<script src="https://account.xiaomi.com/static/res/6941994/passport/scripts/jquery-1.8.3.min.js"></script>
+<script src="https://account.xiaomi.com/static/res/64371/scripts/common/more/placeholder.js"></script>
+
+<!--[if (gt IE 8)|(!IE)]><!-->
+<script>
+window.onetrack=window.onetrack||function(){(onetrack.q=onetrack.q||[]).push(arguments)}
+onetrack('init', '30000000031')
+</script>
+<script async="" src="//ssl-cdn.static.browser.mi-img.com/mistat-data/onetrack/onetrack.js"></script>
+<!--<![endif]-->
+<script src="https://account.xiaomi.com/static/res/12a1050/account-static/html/login/modal/dist/modal_lite.js"></script><a target="_blank"></a>
+<!--[if (gt IE 8)|(!IE)]><!-->
+<script src="/static/res/public/account-static/scripts/bundle.min.js"></script>
+<script>
+  Sentry.init({
+    dsn: 'https://09b23e44d1824c86a3be11fe9cc41262@sentry.micloud.d.xiaomi.net/63'
+  });
+</script>
+<!--<![endif]-->
+<script>
+$(function(){
+/*==========初始化外部链接部分==========*/
+
+  var URL_DATA={
+    agreement:"/about/protocol/agreement",
+    privacy:"/about/protocol/privacy",
+    login:'/pass/serviceLogin?null'
+  }
+  function checkInspectLink(){
+    $(".inspect_link").each(function(){
+      var item=$(this);
+      if( !item.data("inited-inspect") ){
+        item.attr("title",item.text());
+        item.attr("target","_blank");
+        item.data("inited-inspect","true");
+        initOuterLink(this);
+      }
+    });
+    setTimeout(function(){
+      checkInspectLink();
+    },1000)
+  }
+  function initOuterLink(obj){
+    var clss=(obj.className+"").split(/\s+/);
+    var tmp,i=0,len=clss.length;
+    for(;i<len;i++){
+      tmp=(clss[i]+"").replace(/_link$/,"");
+      if(tmp in URL_DATA){
+        $(obj).attr("href",URL_DATA[tmp]);
+        break;
+      }
+    }
+  }
+  checkInspectLink();
+
+//页脚初始化部分
+
+  /*if($(window).innerWidth() <= 640 && (!/AppName\/[0-9\.]+$/.test(navigator.userAgent) || navigator.standalone)){
+    $('.n-footer').show();
+  }*/
+
+  
+  //变量
+  var MSG={
+    close:"Close"
+  };
+  //页面语言部分
+  var locale="en";
+  var locales=[
+    {key:"zh_CN",value:"中文(简体)‎",title:"选择语言"},
+    {key:"zh_TW",value:"‎‎中文(繁體)‎",title:"選擇語言"},
+    {key:"en",value:"English‎",title:"Select Your Language"},
+    {key:"ko_KR",value:"한국어",title:"언어를 선택하세요"},
+    {key:"pt_BR",value:"Português (Brasil)‎",title:"Selecione o seu idioma"},
+    {key:"in_ID",value:"Bahasa Indonesia",title:"Pilih Bahasa Anda"},
+    {key:"hi_IN",value:"हिन्दी",title:"अपनी भाषा चुनें"},
+    {key:"ta_IN",value:"தமிழ்",title:"உங்கள் மொழியை தேர்ந்தெடுக்கவும்"},
+    {key:"te_IN",value:"తెలుగు",title:"మీ భాషను ఎంచుకోండి"},
+    {key:"kn_IN",value:"ಕನ್ನಡ",title:"ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ"},
+    {key:"mr_IN",value:"मराठी",title:"तुमची भाषा निवडा"},
+    {key:"ml_IN",value:"മലയാളം",title:"താങ്കളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക"},
+    {key:"bn_IN",value:"বাংলা",title:"আপনার ভাষা নির্বাচন করুন"},
+    {key:"th_TH",value:"ภาษาไทย",title:"เลือกภาษาของคุณ"},
+    {key:"vi_VN",value:"Tiếng Việt",title:"Chọn ngôn ngữ của bạn"},
+    {key:"ms_MY",value:"Bahasa Melayu",title:"Pilih Bahasa Anda"},
+    {key:"tr_TR",value:"Türkçe",title:"Dilini Seç"},
+    {key:"ar",value:"العربية",title:"اختر اللغة"},
+    {key:"ru_RU",value:"Русский",title:"Выбрать язык"},  
+    {key:"es_US",value:"Español (América)‎",title:"Seleccionar idioma"},
+    {key:"uk_UA",value:"Українська",title:"Виберіть мову"}, 
+    {key:"uz_UZ",value:"O'zbekcha",title:"Tilni tanlang"},
+    {key:"as_IN",value:"অসমীয়া",title:"ভাষা চয়ন কৰক"},
+    {key:"fa_IR",value:"فارسی",title:"انتخاب زبان"},
+    {key:"fr_FR",value:"Français",title:"Sélectionnez une langue"},
+    {key:"it_IT",value:"Italiano",title:"Scegli la lingua"},
+    {key:"iw_IL",value:"עברית",title:"בחר שפה"},
+    {key:"my_MM",value:"ဗမာ",title:"ဘာသာစကားကိုရွေးချယ်ပါ"},
+    {key:"pl_PL",value:"Polski",title:"Wybierz język"},
+    {key:"es_ES",value:"Español (España)‎",title:"Selecciona idioma"},
+    {key:"cs_CZ",value:"Čeština",title:"Vyberte jazyk"},
+    {key:"el_GR",value:"Ελληνικά",title:"Επιλέξτε μια γλώσσα"},
+    {key:"nl_NL",value:"Nederlands",title:"Selecteer uw taal"},
+    {key:"de_DE",value:"Deutsch",title:"Sprache auswählen"},
+    {key:"ja_JP",value:"日本語‎",title:"言語を選択"},
+    {key:"bs_BA",value:"Bosanski‎",title:"Izaberite jezik"},
+    {key:"hr_HR",value:"Hrvatski",title:"Izaberi jezik"},
+    {key:"fi_FI",value:"Suomi",title:"Valitse kieli"},
+    {key:"lv_LV",value:"Latviešu",title:"Izvēlēties valodu"},
+    {key:"ne_IN",value:"नेपाली",title:"भाषा छनौट गर्नुहोस्"},
+    {key:"pt_PT",value:"Português (Portugal)",title:"Selecionar idioma"},
+    {key:"ro_RO",value:"Română",title:"Selectaţi limba"},
+    {key:"sr_RS",value:"Српски",title:"Изаберите језик"},
+    {key:"sk_SK",value:"Slovenčina",title:"Vyberte jazyk"},
+    {key:"sl_SI",value:"Slovenščina",title:"Izberite jezik"},
+    {key:"lt_LT",value:"Lietuvių",title:"Pasirinkite kalbą"},
+    {key:"gu_IN",value:"ગુજરાતી",title:"ભાષા પસંદ કરો"},
+    {key:"hy_AM",value:"հայերեն",title:"Ընտրել լեզուն"},
+    {key:"pa_IN",value:"ਪੰਜਾਬੀ",title:"ਭਾਸ਼ਾ ਚੁਣੋ"},
+    {key:"ha_NG",value:"Hausa",title:"Zabi yare"},
+    {key:"kk_KZ",value:"Қазақ тілі",title:"Тілді таңдаңыз"},
+    {key:"az_AZ",value:"Azərbaycan",title:"Dil seçin"},
+    {key:"or_IN",value:"ଓଡ଼ିଆ",title:"ଭାଷା ଚୟନ କରନ୍ତୁ"}
+  ]
+  var curLocale;
+  var _html=[];
+  $.each(locales,function(index,data){
+    if(data.key===locale){
+      curLocale=data;
+    }
+    _html.push('<li><a href="javascript:void(0)" class="locale-link" data-lang="'+data.key+'">'+data.value+'</a></li>');
+  });
+  if(!curLocale){
+    curLocale=locale.indexOf("zh")!==-1?locales[1]:locales[2];
+  }
+  if(curLocale.key!=='en'){
+    $(".default-show-en").before($("<li>").html("<a class='current' href='javascript:void(0)' data-lang='"+curLocale.key+"'>"+curLocale.value+"</a>"));
+  }
+  //modal
+  var localeModal=new Modal({
+    title:curLocale.title,
+    cls:"mod_acc_tip more-lang-modal",
+    html:"<div class='modal-select-list-con'><ul class='lang-select-list lang_items_list c_b'></ul></div>",
+    modalfixed:true,
+    afterRender:function(){
+      $(this.body).find(".lang-select-list").html(_html.join(""));
+      $(this.header).find(".btn_mod_close span").text(MSG.close);
+    }
+  })
+  localeModal.close();
+  $(".show-more-lang").bind("click",function(){
+    localeModal.show();
+  });
+
+
+  //点击语言
+  var list=$(".lang-select-list .locale-link");
+  list.each(function(index,item){
+    if($(this).data("lang")===curLocale.key){
+      $(this).addClass("current");
+    }
+  });
+  list.bind("click",function(){
+    var selectLocale=$(this).data("lang");
+    var params=location.search.substring(1).split("&");
+    if(locale!==selectLocale){
+      for(var i=0;i<params.length;i++){
+        if(params[i].indexOf("_locale=")===0){
+          params.splice(i,1);i--;
+        }
+      }
+      params.push("_locale="+selectLocale);
+      location.href=("//"+location.host+location.pathname+"?"+params.join("&")+location.hash);
+    }
+  });
+  //隐私说明使用cookie
+  var COOKIE_USAGE_TC=null;
+  var cookieUsage=$('.cookie-usage-notify');
+  if(!!window.localStorage){
+    if(localStorage.getItem('COOKIE_USAGE')!=='true'){
+      cookieUsage.show();
+    }
+  }else{
+    cookieUsage.show();
+  }
+  $('.close-cookie-usage').bind('click',function(){
+    clearTimeout(COOKIE_USAGE_TC);
+    cookieUsage.hide();
+    if(!!window.localStorage){
+      localStorage.setItem('COOKIE_USAGE',true);
+    }
+  });
+  COOKIE_USAGE_TC=setTimeout(function(){
+    cookieUsage.hide();
+  },20000);
+});
+var JSP_VAR={
+  deviceType:'PC',
+  userId:'6372769616',
+  dataCenter:'sgp',
+  dataCenterZone:'Singapore',
+  locale:'en',
+  region:'SG',
+  cancel:'Cancel ',
+  cUserId:'-JquUe0_jvfWkviuyNZNbvoCAlQ',
+  callback:'null',
+  sid:'',
+  areaConfig:{"A":[{"B":"AF","C":"Afghanistan","N":"+93"},{"B":"AL","C":"Albania","N":"+355"},{"B":"DZ","C":"Algeria","N":"+213"},{"B":"AS","C":"American Samoa","N":"+1"},{"B":"AD","C":"Andorra","N":"+376"},{"B":"AO","C":"Angola","N":"+244"},{"B":"AI","C":"Anguilla","N":"+1"},{"B":"AQ","C":"Antarctica","N":"+672"},{"B":"AG","C":"Antigua and Barbuda","N":"+1"},{"B":"AR","C":"Argentina","N":"+54"},{"B":"AM","C":"Armenia","N":"+374"},{"B":"AW","C":"Aruba","N":"+297"},{"B":"AU","C":"Australia","N":"+61"},{"B":"AT","C":"Austria","N":"+43"},{"B":"AZ","C":"Azerbaijan","N":"+994"}],"B":[{"B":"BS","C":"Bahamas","N":"+1"},{"B":"BH","C":"Bahrain","N":"+973"},{"B":"BD","C":"Bangladesh","N":"+880"},{"B":"BB","C":"Barbados","N":"+1"},{"B":"BY","C":"Belarus","N":"+375"},{"B":"BE","C":"Belgium","N":"+32"},{"B":"BZ","C":"Belize","N":"+501"},{"B":"BJ","C":"Benin","N":"+229"},{"B":"BM","C":"Bermuda","N":"+1"},{"B":"BT","C":"Bhutan","N":"+975"},{"B":"BO","C":"Bolivia","N":"+591"},{"B":"BQ","C":"Bonaire, Sint Eustatius and Saba","N":"+599"},{"B":"BA","C":"Bosnia and Herzegovina","N":"+387"},{"B":"BW","C":"Botswana","N":"+267"},{"B":"BR","C":"Brazil","N":"+55"},{"B":"IO","C":"British Indian Ocean Territory","N":"+246"},{"B":"VG","C":"British Virgin Islands","N":"+1"},{"B":"BN","C":"Brunei","N":"+673"},{"B":"BG","C":"Bulgaria","N":"+359"},{"B":"BF","C":"Burkina Faso","N":"+226"},{"B":"BI","C":"Burundi","N":"+257"}],"C":[{"B":"KH","C":"Cambodia","N":"+855"},{"B":"CM","C":"Cameroon","N":"+237"},{"B":"CA","C":"Canada","N":"+1"},{"B":"CV","C":"Cape Verde","N":"+238"},{"B":"KY","C":"Cayman Islands","N":"+1"},{"B":"CF","C":"Central African Republic","N":"+236"},{"B":"TD","C":"Chad","N":"+235"},{"B":"CL","C":"Chile","N":"+56"},{"B":"CN","C":"China","N":"+86"},{"B":"CX","C":"Christmas Island","N":"+61"},{"B":"CC","C":"Cocos Islands","N":"+61"},{"B":"CO","C":"Colombia","N":"+57"},{"B":"KM","C":"Comoros","N":"+269"},{"B":"CG","C":"Congo","N":"+242"},{"B":"CK","C":"Cook Islands","N":"+682"},{"B":"CR","C":"Costa Rica","N":"+506"},{"B":"HR","C":"Croatia","N":"+385"},{"B":"CU","C":"Cuba","N":"+53"},{"B":"CW","C":"Curaçao","N":"+599"},{"B":"CY","C":"Cyprus","N":"+357"},{"B":"CZ","C":"Czech Republic","N":"+420"},{"B":"CI","C":"Côte d'Ivoire","N":"+225"}],"D":[{"B":"DK","C":"Denmark","N":"+45"},{"B":"DJ","C":"Djibouti","N":"+253"},{"B":"DM","C":"Dominica","N":"+1"},{"B":"DO","C":"Dominican Republic","N":"+1"}],"E":[{"B":"EC","C":"Ecuador","N":"+593"},{"B":"EG","C":"Egypt","N":"+20"},{"B":"SV","C":"El Salvador","N":"+503"},{"B":"GQ","C":"Equatorial Guinea","N":"+240"},{"B":"ER","C":"Eritrea","N":"+291"},{"B":"EE","C":"Estonia","N":"+372"},{"B":"ET","C":"Ethiopia","N":"+251"}],"F":[{"B":"FK","C":"Falkland Islands","N":"+500"},{"B":"FO","C":"Faroe Islands","N":"+298"},{"B":"FJ","C":"Fiji","N":"+679"},{"B":"FI","C":"Finland","N":"+358"},{"B":"FR","C":"France","N":"+33"},{"B":"GF","C":"French Guiana","N":"+594"},{"B":"PF","C":"French Polynesia","N":"+689"}],"G":[{"B":"GA","C":"Gabon","N":"+241"},{"B":"GM","C":"Gambia","N":"+220"},{"B":"GE","C":"Georgia","N":"+995"},{"B":"DE","C":"Germany","N":"+49"},{"B":"GH","C":"Ghana","N":"+233"},{"B":"GI","C":"Gibraltar","N":"+350"},{"B":"GR","C":"Greece","N":"+30"},{"B":"GL","C":"Greenland","N":"+299"},{"B":"GD","C":"Grenada","N":"+1"},{"B":"GP","C":"Guadeloupe","N":"+590"},{"B":"GU","C":"Guam","N":"+1"},{"B":"GT","C":"Guatemala","N":"+502"},{"B":"GG","C":"Guernsey","N":"+44"},{"B":"GN","C":"Guinea","N":"+224"},{"B":"GW","C":"Guinea-Bissau","N":"+245"},{"B":"GY","C":"Guyana","N":"+592"}],"H":[{"B":"HT","C":"Haiti","N":"+509"},{"B":"HN","C":"Honduras","N":"+504"},{"B":"HK","C":"Hong Kong,China","N":"+852"},{"B":"HU","C":"Hungary","N":"+36"}],"I":[{"B":"IS","C":"Iceland","N":"+354"},{"B":"IN","C":"India","N":"+91"},{"B":"ID","C":"Indonesia","N":"+62"},{"B":"IR","C":"Iran","N":"+98"},{"B":"IQ","C":"Iraq","N":"+964"},{"B":"IE","C":"Ireland","N":"+353"},{"B":"IM","C":"Isle Of Man","N":"+44"},{"B":"IL","C":"Israel","N":"+972"},{"B":"IT","C":"Italy","N":"+39"}],"J":[{"B":"JM","C":"Jamaica","N":"+1"},{"B":"JP","C":"Japan","N":"+81"},{"B":"JE","C":"Jersey","N":"+44"},{"B":"JO","C":"Jordan","N":"+962"}],"K":[{"B":"KZ","C":"Kazakhstan","N":"+7"},{"B":"KE","C":"Kenya","N":"+254"},{"B":"KI","C":"Kiribati","N":"+686"},{"B":"KW","C":"Kuwait","N":"+965"},{"B":"KG","C":"Kyrgyzstan","N":"+996"}],"L":[{"B":"LA","C":"Laos","N":"+856"},{"B":"LV","C":"Latvia","N":"+371"},{"B":"LB","C":"Lebanon","N":"+961"},{"B":"LS","C":"Lesotho","N":"+266"},{"B":"LR","C":"Liberia","N":"+231"},{"B":"LY","C":"Libya","N":"+218"},{"B":"LI","C":"Liechtenstein","N":"+423"},{"B":"LT","C":"Lithuania","N":"+370"},{"B":"LU","C":"Luxembourg","N":"+352"}],"M":[{"B":"MO","C":"Macao,China","N":"+853"},{"B":"MK","C":"Macedonia","N":"+389"},{"B":"MG","C":"Madagascar","N":"+261"},{"B":"MW","C":"Malawi","N":"+265"},{"B":"MY","C":"Malaysia","N":"+60"},{"B":"MV","C":"Maldives","N":"+960"},{"B":"ML","C":"Mali","N":"+223"},{"B":"MT","C":"Malta","N":"+356"},{"B":"MH","C":"Marshall Islands","N":"+692"},{"B":"MQ","C":"Martinique","N":"+596"},{"B":"MR","C":"Mauritania","N":"+222"},{"B":"MU","C":"Mauritius","N":"+230"},{"B":"YT","C":"Mayotte","N":"+262"},{"B":"MX","C":"Mexico","N":"+52"},{"B":"FM","C":"Micronesia","N":"+691"},{"B":"MD","C":"Moldova","N":"+373"},{"B":"MC","C":"Monaco","N":"+377"},{"B":"MN","C":"Mongolia","N":"+976"},{"B":"ME","C":"Montenegro","N":"+382"},{"B":"MS","C":"Montserrat","N":"+1"},{"B":"MA","C":"Morocco","N":"+212"},{"B":"MZ","C":"Mozambique","N":"+258"},{"B":"MM","C":"Myanmar","N":"+95"}],"N":[{"B":"NA","C":"Namibia","N":"+264"},{"B":"NR","C":"Nauru","N":"+674"},{"B":"NP","C":"Nepal","N":"+977"},{"B":"NL","C":"Netherlands","N":"+31"},{"B":"NC","C":"New Caledonia","N":"+687"},{"B":"NZ","C":"New Zealand","N":"+64"},{"B":"NI","C":"Nicaragua","N":"+505"},{"B":"NE","C":"Niger","N":"+227"},{"B":"NG","C":"Nigeria","N":"+234"},{"B":"NU","C":"Niue","N":"+683"},{"B":"NF","C":"Norfolk Island","N":"+672"},{"B":"KP","C":"North Korea","N":"+850"},{"B":"MP","C":"Northern Mariana Islands","N":"+1"},{"B":"NO","C":"Norway","N":"+47"}],"O":[{"B":"OM","C":"Oman","N":"+968"}],"P":[{"B":"PK","C":"Pakistan","N":"+92"},{"B":"PW","C":"Palau","N":"+680"},{"B":"PS","C":"Palestine","N":"+970"},{"B":"PA","C":"Panama","N":"+507"},{"B":"PG","C":"Papua New Guinea","N":"+675"},{"B":"PY","C":"Paraguay","N":"+595"},{"B":"PE","C":"Peru","N":"+51"},{"B":"PH","C":"Philippines","N":"+63"},{"B":"PN","C":"Pitcairn","N":"+64"},{"B":"PL","C":"Poland","N":"+48"},{"B":"PT","C":"Portugal","N":"+351"},{"B":"PR","C":"Puerto Rico","N":"+1"}],"Q":[{"B":"QA","C":"Qatar","N":"+974"}],"R":[{"B":"RE","C":"Reunion","N":"+262"},{"B":"RO","C":"Romania","N":"+40"},{"B":"RU","C":"Russia","N":"+7"},{"B":"RW","C":"Rwanda","N":"+250"}],"S":[{"B":"BL","C":"Saint Barthélemy","N":"+590"},{"B":"SH","C":"Saint Helena","N":"+290"},{"B":"KN","C":"Saint Kitts And Nevis","N":"+1"},{"B":"LC","C":"Saint Lucia","N":"+1"},{"B":"MF","C":"Saint Martin","N":"+590"},{"B":"PM","C":"Saint Pierre And Miquelon","N":"+508"},{"B":"VC","C":"Saint Vincent And The Grenadines","N":"+1"},{"B":"WS","C":"Samoa","N":"+685"},{"B":"SM","C":"San Marino","N":"+378"},{"B":"ST","C":"Sao Tome And Principe","N":"+239"},{"B":"SA","C":"Saudi Arabia","N":"+966"},{"B":"SN","C":"Senegal","N":"+221"},{"B":"RS","C":"Serbia","N":"+381"},{"B":"SC","C":"Seychelles","N":"+248"},{"B":"SL","C":"Sierra Leone","N":"+232"},{"B":"SG","C":"Singapore","N":"+65"},{"B":"SX","C":"Sint Maarten (Dutch part)","N":"+1"},{"B":"SK","C":"Slovakia","N":"+421"},{"B":"SI","C":"Slovenia","N":"+386"},{"B":"SB","C":"Solomon Islands","N":"+677"},{"B":"SO","C":"Somalia","N":"+252"},{"B":"ZA","C":"South Africa","N":"+27"},{"B":"GS","C":"South Georgia and the South Sandwich Islands","N":"+500"},{"B":"KR","C":"South Korea","N":"+82"},{"B":"SS","C":"South Sudan","N":"+211"},{"B":"ES","C":"Spain","N":"+34"},{"B":"LK","C":"Sri Lanka","N":"+94"},{"B":"SD","C":"Sudan","N":"+249"},{"B":"SR","C":"Suriname","N":"+597"},{"B":"SJ","C":"Svalbard And Jan Mayen","N":"+47"},{"B":"SZ","C":"Swaziland","N":"+268"},{"B":"SE","C":"Sweden","N":"+46"},{"B":"CH","C":"Switzerland","N":"+41"},{"B":"SY","C":"Syria","N":"+963"}],"T":[{"B":"TJ","C":"Tajikistan","N":"+992"},{"B":"TZ","C":"Tanzania","N":"+255"},{"B":"TH","C":"Thailand","N":"+66"},{"B":"CD","C":"The Democratic Republic Of Congo","N":"+243"},{"B":"TL","C":"Timor-Leste","N":"+670"},{"B":"TG","C":"Togo","N":"+228"},{"B":"TK","C":"Tokelau","N":"+690"},{"B":"TO","C":"Tonga","N":"+676"},{"B":"TT","C":"Trinidad and Tobago","N":"+1"},{"B":"TN","C":"Tunisia","N":"+216"},{"B":"TR","C":"Turkey","N":"+90"},{"B":"TM","C":"Turkmenistan","N":"+993"},{"B":"TC","C":"Turks And Caicos Islands","N":"+1"},{"B":"TV","C":"Tuvalu","N":"+688"}],"U":[{"B":"VI","C":"U.S. Virgin Islands","N":"+1"},{"B":"UG","C":"Uganda","N":"+256"},{"B":"UA","C":"Ukraine","N":"+380"},{"B":"AE","C":"United Arab Emirates","N":"+971"},{"B":"GB","C":"United Kingdom","N":"+44"},{"B":"US","C":"United States","N":"+1"},{"B":"UY","C":"Uruguay","N":"+598"},{"B":"UZ","C":"Uzbekistan","N":"+998"}],"V":[{"B":"VU","C":"Vanuatu","N":"+678"},{"B":"VA","C":"Vatican","N":"+379"},{"B":"VE","C":"Venezuela","N":"+58"},{"B":"VN","C":"Vietnam","N":"+84"}],"W":[{"B":"WF","C":"Wallis And Futuna","N":"+681"},{"B":"EH","C":"Western Sahara","N":"+212"}],"Y":[{"B":"YE","C":"Yemen","N":"+967"}],"Z":[{"B":"ZM","C":"Zambia","N":"+260"},{"B":"ZW","C":"Zimbabwe","N":"+263"}]}
+};
+</script>
+
+<script>
+/*MIUI  客户端和  authSDK 客户端*/
+  function isWebview(){
+    var result=false;
+    var ua=navigator.userAgent;
+    var authSDK=/passport\/oauthsdk\/([\d.]+)/i.test(ua)? parseFloat(RegExp.$1) : false ;
+    var miuiClient=/passport\/oauthmiui/i.test(ua);
+    var weixinClient=/micromessenger/i.test(ua);
+    var miAccountClient=/passportsdk\/(notificationwebview|PassportHybridView)/i.test(ua);
+    var miuiYellowPageClient=/miuiyellowpage/i.test(ua);
+    var miotClient=/MIOT/i.test(ua);
+    var mishopClient=/Shop/i.test(ua);
+    if(authSDK || miuiClient || weixinClient || miAccountClient || miuiYellowPageClient||miotClient||mishopClient){
+      result={
+        authSDK:authSDK,
+        miuiClient:miuiClient,
+        weixinClient:weixinClient,
+        miAccountClient:miAccountClient,
+        miuiYellowPageClient:miuiYellowPageClient,
+        miotClient:miotClient,
+        mishopClient:mishopClient,
+      }
+    }
+    return result;
+  }
+  
+  if (isWebview().miAccountClient && !!getCookie('NativeUserAgent')) {
+    addClass(document.body,'sys_wv');
+  }
+  
+  function getCookie(key) {
+    var cookie = document.cookie;
+    var cookieArray = cookie.split(';');
+    var val = "";
+    for (var i = 0; i < cookieArray.length; i++) {
+      if (trim(cookieArray[i]).substr(0, key.length) == key) {
+        val = trim(cookieArray[i]).substr(key.length + 1);
+        break;
+      }
+    }
+    return unescape(val);
+  }
+  
+  function trim(str){
+    return (str+"").replace(/^\s+/,"").replace(/\s+$/,"");
+  }
+  
+  function isArray(a){
+    return Object.prototype.toString.call(a)==='[object Array]';
+  }
+  function hasClass(el,cls){
+    if(el.className){
+     var clss = el.className.split(/\s+/);
+     clss.unshift("000");clss.push("000");
+     return (clss.length > 2) && ( clss.join(",").indexOf(","+cls+",") > -1 );
+    }
+    return false;
+  }
+  function addClass(el,cls){
+    if(isArray(el)){
+      for(var i=0,len=el.length;i<len;i++){
+        addClass( el[i], cls);
+      }
+    }else{
+      if(!hasClass(el,cls)){
+        if(el.className===""){
+          el.className=cls;
+        }else{
+          el.className+=" "+cls;
+        }
+      }
+    }
+  }
+</script>
+<script>  
+  var isDark=window.matchMedia && window.matchMedia('screen and (prefers-color-scheme: dark)').matches;
+  
+  function getParam(key){
+    var search=location.search.substring(1);
+    var params=search.split("&");
+    var i=0,p,index,result="";
+    for(;p=params[i++];){
+      index=p.indexOf("=");
+      if(p.substring(0,index)===key){
+        result=p.substring(index+1);break;
+      }
+    }
+    return result;
+  }
+  if(JSP_VAR.deviceType==='mobile'){
+    if((getParam('_provision')==='true' && getParam('_device_name')==='scorpio') || getParam('_uiThemeMode')==='night_yes'){
+      $("body").addClass('viewblack').addClass('sys_wv');
+    }
+    if(isDark){
+      $("body").addClass('viewblack');
+    }
+  }
+  
+</script>
+<script>
+  
+  if(isWebview()){
+    $(".n-footer").hide();
+    //$(".n-logo-area").hide();
+    if (!isWebview().weixinClient) {
+     $(".log-out").hide(); 
+    }
+  }
+</script>
+
+
+<!--TIPS s-->
+<!-- 修改密码 s -->
+<div class="popup_mask">
+  <div class="bkc"></div>
+  <div class="mod_wrap">
+    <div id="popUpdatePassword" class="mod_acc_tip" style="display:none;">
+      <div class="mod_tip_hd">
+        
+            <h4>Change password</h4>
+          
+        <a class="btn_mod_close" href="" title=""><span>Close</span></a>
+      </div>
+      <div class="mod_tip_bd">
+        <div class="modify_pwd">
+          <dl>
+            
+              <dt>Current password </dt>
+              <dd class="grpOldPass">
+                <div class="inputbg">
+                  <label class="labelbox pwd_panel c_b">
+                    <input class="oldPass hidePwd" type="password" name="password" placeholder="Enter password" autocomplete="off" disableautocomplete="">
+                  </label>
+                </div>
+                <div class="err_tip error-con" _text=""><em class="icon_error"></em><span></span></div>
+              </dd>
+            
+            <dt>New password</dt>
+            <dd class="grpNewPass">
+              <div class="inputbg">
+                <label class="labelbox pwd_panel c_b">
+                  <input class="newPass hidePwd set-password" type="password" name="repassword" data-error=".error-password" placeholder="New password" autocomplete="off" disableautocomplete="">
+                </label>
+                <label class="labelbox pwd_panel c_b">
+                  <input class="newPass2 hidePwd" type="password" name="repassword2" data-repeat=".set-password" data-error=".error-password" placeholder="Confirm password" autocomplete="off" disableautocomplete="">
+                </label>
+              </div>
+              <div class="err_tip error-con error-password txt_tip" _text="Password must be 8-16 characters and include both numbers and letters"><em class="icon_error"></em><span data-origin="Password must be 8-16 characters and include both numbers and letters">Password must be 8-16 characters and include both numbers and letters</span></div>
+            </dd>
+            <!--3次后弹出-->
+            <dl class="capt_box" style="display:none;">
+              <span></span>
+              <dt>Code </dt>
+              <dd>
+                <div class="inputcode">
+                <label class="labelbox chkcode input_bg"><input type="text" name="icode" placeholder="Enter code" autocomplete="off" disableautocomplete=""></label>
+                <img class="chkcode_img" alt="">
+                <a href="" title="Refresh" class="next_capt hidden">Refresh</a>
+                </div>
+                <div class="err_tip error-con" _text=""><em class="icon_error"></em><span></span></div>
+              </dd>
+            </dl>
+          </dl>
+        </div>
+        <div class="tip_btns">
+          <a class="btn_tip btn_commom btnOK" href="" title="OK ">OK </a>
+          <a class="btn_tip btn_back btnCancel" href="" title="Cancel ">Cancel </a>
+        </div>
+      </div>
+      <div class="privacy_box">
+        <a href="/about/protocol/privacy" title="jspResource.getString(" jsp_regst_link2")"="" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 修改密码 e -->
+<!-- 修改密码成功 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+  <div class="mod_wrap">
+    <div class="mod_acc_tip" id="popUpdatePasswordSuccess" style="display:none">
+      <div class="mod_tip_hd">
+        <h4>Change password</h4>
+        <a class="btn_mod_close" href="" onclick="javascript:void location.reload(true);" title=""><span>Close</span></a>
+      </div>
+      <div class="mod_tip_bd">
+        <div class="wapbox">
+          <div class="t_c mar30">
+            <div class="icon_auth_reg icon_auth_succ"></div>
+              
+                  Password changed successfully
+                
+            </div>
+          </div>
+          <div class="t_c mar30">
+            <p>You'll be signed out in <span class="logoutCountdown"></span>s.</p>
+          </div>
+        </div>
+        <div class="tip_btns wap_btn_abs">
+          <a class="btn_tip btn_commom btnReturn" href="/" title="Sign in again">Sign in again</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- 修改密码成功 e -->
+
+<!-- 绑定手机发送验证码 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+		<div class="mod_acc_tip" id="popVerifyMobile" style="display:none;">
+			<div class="mod_tip_hd">
+				<h4>Verification</h4>
+				<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+			</div>
+			<div class="mod_tip_bd">
+				<div class="disten30x103">
+					<h6>A verification code has been sent to  <em></em> &nbsp;</h6>
+					<div class="mod inputsend">
+						<label class="input_bg">
+              <input class="remain_input" type="text" placeholder="Enter verification code">
+              <span class="remain">
+                <a title="Resend code" class="resend">Resend code</a>
+                <!--<tt style="display:none;">30秒</tt>-->
+              </span>
+            </label>
+					</div>
+				</div>				
+				<div class="tip_btns">
+					<a class="btn_tip btn_commom" href="" title="OK ">OK </a>
+					<a class="btn_tip btn_back" href="" title="Cancel ">Cancel </a>
+				</div>
+				<div class="txt_qst">
+          <div class="sns_unavaliable">
+  <a target="_blank" href="https://account.xiaomi.com/helpcenter/faq/_/02.faqs/05.sms-and-email-verification-code/faq-1">Can't receive verification code?</a>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 绑定手机发送验证码 e -->
+<!-- 绑定安全手机 s -->
+<div class="popup_mask callable">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popEnterNewPhone" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>
+				
+						Add phone number
+					
+			</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="tabbar_panel">
+				<div class="tabbar">
+					<div class="tab_opt c_b">
+					<!--
+						<span>安全确认</span>
+					-->
+						<!-- 选中添加class为now -->
+						<span class="phonetab1 now">Enter phone number</span>
+						<span class="phonetab2">Verify phone number</span>
+						<span class="phonetab3 end">OK </span>
+					</div>
+					<div class="tabline c_b">
+						<i class="now"></i>
+						<i></i>					
+						<i></i>
+            <span class="justify_fix"></span>
+					</div>
+				</div>
+			</div>
+			<div class="wapbox">
+				<dl class="binding phonestep1">
+					<dt>Enter new recovery phone number</dt>
+					<dd class="zindex_4">
+            
+              <div class="tits set_qst_tit cty-code">
+                <p class="c_b"><span>Singapore</span><em _code="+65">+65</em></p>
+                <i class="icon_cirarr"></i>
+              </div>
+              <div class="country-container-panel">              
+              <div class="country-container"><div class="country-code"><div class="container countrycode-container-A"><div class="header">A</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+93" data-brief="AF">Afghanistan</span><span class="record-code">+93</span></li><li class="record clearfix"><span class="record-country" data-code="+355" data-brief="AL">Albania</span><span class="record-code">+355</span></li><li class="record clearfix"><span class="record-country" data-code="+213" data-brief="DZ">Algeria</span><span class="record-code">+213</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="AS">American Samoa</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+376" data-brief="AD">Andorra</span><span class="record-code">+376</span></li><li class="record clearfix"><span class="record-country" data-code="+244" data-brief="AO">Angola</span><span class="record-code">+244</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="AI">Anguilla</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+672" data-brief="AQ">Antarctica</span><span class="record-code">+672</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="AG">Antigua and Barbuda</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+54" data-brief="AR">Argentina</span><span class="record-code">+54</span></li><li class="record clearfix"><span class="record-country" data-code="+374" data-brief="AM">Armenia</span><span class="record-code">+374</span></li><li class="record clearfix"><span class="record-country" data-code="+297" data-brief="AW">Aruba</span><span class="record-code">+297</span></li><li class="record clearfix"><span class="record-country" data-code="+61" data-brief="AU">Australia</span><span class="record-code">+61</span></li><li class="record clearfix"><span class="record-country" data-code="+43" data-brief="AT">Austria</span><span class="record-code">+43</span></li><li class="record clearfix"><span class="record-country" data-code="+994" data-brief="AZ">Azerbaijan</span><span class="record-code">+994</span></li></ul></div><div class="container countrycode-container-B"><div class="header">B</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="BS">Bahamas</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+973" data-brief="BH">Bahrain</span><span class="record-code">+973</span></li><li class="record clearfix"><span class="record-country" data-code="+880" data-brief="BD">Bangladesh</span><span class="record-code">+880</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="BB">Barbados</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+375" data-brief="BY">Belarus</span><span class="record-code">+375</span></li><li class="record clearfix"><span class="record-country" data-code="+32" data-brief="BE">Belgium</span><span class="record-code">+32</span></li><li class="record clearfix"><span class="record-country" data-code="+501" data-brief="BZ">Belize</span><span class="record-code">+501</span></li><li class="record clearfix"><span class="record-country" data-code="+229" data-brief="BJ">Benin</span><span class="record-code">+229</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="BM">Bermuda</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+975" data-brief="BT">Bhutan</span><span class="record-code">+975</span></li><li class="record clearfix"><span class="record-country" data-code="+591" data-brief="BO">Bolivia</span><span class="record-code">+591</span></li><li class="record clearfix"><span class="record-country" data-code="+599" data-brief="BQ">Bonaire, Sint Eustatius and Saba</span><span class="record-code">+599</span></li><li class="record clearfix"><span class="record-country" data-code="+387" data-brief="BA">Bosnia and Herzegovina</span><span class="record-code">+387</span></li><li class="record clearfix"><span class="record-country" data-code="+267" data-brief="BW">Botswana</span><span class="record-code">+267</span></li><li class="record clearfix"><span class="record-country" data-code="+55" data-brief="BR">Brazil</span><span class="record-code">+55</span></li><li class="record clearfix"><span class="record-country" data-code="+246" data-brief="IO">British Indian Ocean Territory</span><span class="record-code">+246</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="VG">British Virgin Islands</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+673" data-brief="BN">Brunei</span><span class="record-code">+673</span></li><li class="record clearfix"><span class="record-country" data-code="+359" data-brief="BG">Bulgaria</span><span class="record-code">+359</span></li><li class="record clearfix"><span class="record-country" data-code="+226" data-brief="BF">Burkina Faso</span><span class="record-code">+226</span></li><li class="record clearfix"><span class="record-country" data-code="+257" data-brief="BI">Burundi</span><span class="record-code">+257</span></li></ul></div><div class="container countrycode-container-C"><div class="header">C</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+855" data-brief="KH">Cambodia</span><span class="record-code">+855</span></li><li class="record clearfix"><span class="record-country" data-code="+237" data-brief="CM">Cameroon</span><span class="record-code">+237</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="CA">Canada</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+238" data-brief="CV">Cape Verde</span><span class="record-code">+238</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="KY">Cayman Islands</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+236" data-brief="CF">Central African Republic</span><span class="record-code">+236</span></li><li class="record clearfix"><span class="record-country" data-code="+235" data-brief="TD">Chad</span><span class="record-code">+235</span></li><li class="record clearfix"><span class="record-country" data-code="+56" data-brief="CL">Chile</span><span class="record-code">+56</span></li><li class="record clearfix"><span class="record-country" data-code="+86" data-brief="CN">China</span><span class="record-code">+86</span></li><li class="record clearfix"><span class="record-country" data-code="+61" data-brief="CX">Christmas Island</span><span class="record-code">+61</span></li><li class="record clearfix"><span class="record-country" data-code="+61" data-brief="CC">Cocos Islands</span><span class="record-code">+61</span></li><li class="record clearfix"><span class="record-country" data-code="+57" data-brief="CO">Colombia</span><span class="record-code">+57</span></li><li class="record clearfix"><span class="record-country" data-code="+269" data-brief="KM">Comoros</span><span class="record-code">+269</span></li><li class="record clearfix"><span class="record-country" data-code="+242" data-brief="CG">Congo</span><span class="record-code">+242</span></li><li class="record clearfix"><span class="record-country" data-code="+682" data-brief="CK">Cook Islands</span><span class="record-code">+682</span></li><li class="record clearfix"><span class="record-country" data-code="+506" data-brief="CR">Costa Rica</span><span class="record-code">+506</span></li><li class="record clearfix"><span class="record-country" data-code="+385" data-brief="HR">Croatia</span><span class="record-code">+385</span></li><li class="record clearfix"><span class="record-country" data-code="+53" data-brief="CU">Cuba</span><span class="record-code">+53</span></li><li class="record clearfix"><span class="record-country" data-code="+599" data-brief="CW">Curaçao</span><span class="record-code">+599</span></li><li class="record clearfix"><span class="record-country" data-code="+357" data-brief="CY">Cyprus</span><span class="record-code">+357</span></li><li class="record clearfix"><span class="record-country" data-code="+420" data-brief="CZ">Czech Republic</span><span class="record-code">+420</span></li><li class="record clearfix"><span class="record-country" data-code="+225" data-brief="CI">Côte d'Ivoire</span><span class="record-code">+225</span></li></ul></div><div class="container countrycode-container-D"><div class="header">D</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+45" data-brief="DK">Denmark</span><span class="record-code">+45</span></li><li class="record clearfix"><span class="record-country" data-code="+253" data-brief="DJ">Djibouti</span><span class="record-code">+253</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="DM">Dominica</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="DO">Dominican Republic</span><span class="record-code">+1</span></li></ul></div><div class="container countrycode-container-E"><div class="header">E</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+593" data-brief="EC">Ecuador</span><span class="record-code">+593</span></li><li class="record clearfix"><span class="record-country" data-code="+20" data-brief="EG">Egypt</span><span class="record-code">+20</span></li><li class="record clearfix"><span class="record-country" data-code="+503" data-brief="SV">El Salvador</span><span class="record-code">+503</span></li><li class="record clearfix"><span class="record-country" data-code="+240" data-brief="GQ">Equatorial Guinea</span><span class="record-code">+240</span></li><li class="record clearfix"><span class="record-country" data-code="+291" data-brief="ER">Eritrea</span><span class="record-code">+291</span></li><li class="record clearfix"><span class="record-country" data-code="+372" data-brief="EE">Estonia</span><span class="record-code">+372</span></li><li class="record clearfix"><span class="record-country" data-code="+251" data-brief="ET">Ethiopia</span><span class="record-code">+251</span></li></ul></div><div class="container countrycode-container-F"><div class="header">F</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+500" data-brief="FK">Falkland Islands</span><span class="record-code">+500</span></li><li class="record clearfix"><span class="record-country" data-code="+298" data-brief="FO">Faroe Islands</span><span class="record-code">+298</span></li><li class="record clearfix"><span class="record-country" data-code="+679" data-brief="FJ">Fiji</span><span class="record-code">+679</span></li><li class="record clearfix"><span class="record-country" data-code="+358" data-brief="FI">Finland</span><span class="record-code">+358</span></li><li class="record clearfix"><span class="record-country" data-code="+33" data-brief="FR">France</span><span class="record-code">+33</span></li><li class="record clearfix"><span class="record-country" data-code="+594" data-brief="GF">French Guiana</span><span class="record-code">+594</span></li><li class="record clearfix"><span class="record-country" data-code="+689" data-brief="PF">French Polynesia</span><span class="record-code">+689</span></li></ul></div><div class="container countrycode-container-G"><div class="header">G</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+241" data-brief="GA">Gabon</span><span class="record-code">+241</span></li><li class="record clearfix"><span class="record-country" data-code="+220" data-brief="GM">Gambia</span><span class="record-code">+220</span></li><li class="record clearfix"><span class="record-country" data-code="+995" data-brief="GE">Georgia</span><span class="record-code">+995</span></li><li class="record clearfix"><span class="record-country" data-code="+49" data-brief="DE">Germany</span><span class="record-code">+49</span></li><li class="record clearfix"><span class="record-country" data-code="+233" data-brief="GH">Ghana</span><span class="record-code">+233</span></li><li class="record clearfix"><span class="record-country" data-code="+350" data-brief="GI">Gibraltar</span><span class="record-code">+350</span></li><li class="record clearfix"><span class="record-country" data-code="+30" data-brief="GR">Greece</span><span class="record-code">+30</span></li><li class="record clearfix"><span class="record-country" data-code="+299" data-brief="GL">Greenland</span><span class="record-code">+299</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="GD">Grenada</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+590" data-brief="GP">Guadeloupe</span><span class="record-code">+590</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="GU">Guam</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+502" data-brief="GT">Guatemala</span><span class="record-code">+502</span></li><li class="record clearfix"><span class="record-country" data-code="+44" data-brief="GG">Guernsey</span><span class="record-code">+44</span></li><li class="record clearfix"><span class="record-country" data-code="+224" data-brief="GN">Guinea</span><span class="record-code">+224</span></li><li class="record clearfix"><span class="record-country" data-code="+245" data-brief="GW">Guinea-Bissau</span><span class="record-code">+245</span></li><li class="record clearfix"><span class="record-country" data-code="+592" data-brief="GY">Guyana</span><span class="record-code">+592</span></li></ul></div><div class="container countrycode-container-H"><div class="header">H</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+509" data-brief="HT">Haiti</span><span class="record-code">+509</span></li><li class="record clearfix"><span class="record-country" data-code="+504" data-brief="HN">Honduras</span><span class="record-code">+504</span></li><li class="record clearfix"><span class="record-country" data-code="+852" data-brief="HK">Hong Kong,China</span><span class="record-code">+852</span></li><li class="record clearfix"><span class="record-country" data-code="+36" data-brief="HU">Hungary</span><span class="record-code">+36</span></li></ul></div><div class="container countrycode-container-I"><div class="header">I</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+354" data-brief="IS">Iceland</span><span class="record-code">+354</span></li><li class="record clearfix"><span class="record-country" data-code="+91" data-brief="IN">India</span><span class="record-code">+91</span></li><li class="record clearfix"><span class="record-country" data-code="+62" data-brief="ID">Indonesia</span><span class="record-code">+62</span></li><li class="record clearfix"><span class="record-country" data-code="+98" data-brief="IR">Iran</span><span class="record-code">+98</span></li><li class="record clearfix"><span class="record-country" data-code="+964" data-brief="IQ">Iraq</span><span class="record-code">+964</span></li><li class="record clearfix"><span class="record-country" data-code="+353" data-brief="IE">Ireland</span><span class="record-code">+353</span></li><li class="record clearfix"><span class="record-country" data-code="+44" data-brief="IM">Isle Of Man</span><span class="record-code">+44</span></li><li class="record clearfix"><span class="record-country" data-code="+972" data-brief="IL">Israel</span><span class="record-code">+972</span></li><li class="record clearfix"><span class="record-country" data-code="+39" data-brief="IT">Italy</span><span class="record-code">+39</span></li></ul></div><div class="container countrycode-container-J"><div class="header">J</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="JM">Jamaica</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+81" data-brief="JP">Japan</span><span class="record-code">+81</span></li><li class="record clearfix"><span class="record-country" data-code="+44" data-brief="JE">Jersey</span><span class="record-code">+44</span></li><li class="record clearfix"><span class="record-country" data-code="+962" data-brief="JO">Jordan</span><span class="record-code">+962</span></li></ul></div><div class="container countrycode-container-K"><div class="header">K</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+7" data-brief="KZ">Kazakhstan</span><span class="record-code">+7</span></li><li class="record clearfix"><span class="record-country" data-code="+254" data-brief="KE">Kenya</span><span class="record-code">+254</span></li><li class="record clearfix"><span class="record-country" data-code="+686" data-brief="KI">Kiribati</span><span class="record-code">+686</span></li><li class="record clearfix"><span class="record-country" data-code="+965" data-brief="KW">Kuwait</span><span class="record-code">+965</span></li><li class="record clearfix"><span class="record-country" data-code="+996" data-brief="KG">Kyrgyzstan</span><span class="record-code">+996</span></li></ul></div><div class="container countrycode-container-L"><div class="header">L</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+856" data-brief="LA">Laos</span><span class="record-code">+856</span></li><li class="record clearfix"><span class="record-country" data-code="+371" data-brief="LV">Latvia</span><span class="record-code">+371</span></li><li class="record clearfix"><span class="record-country" data-code="+961" data-brief="LB">Lebanon</span><span class="record-code">+961</span></li><li class="record clearfix"><span class="record-country" data-code="+266" data-brief="LS">Lesotho</span><span class="record-code">+266</span></li><li class="record clearfix"><span class="record-country" data-code="+231" data-brief="LR">Liberia</span><span class="record-code">+231</span></li><li class="record clearfix"><span class="record-country" data-code="+218" data-brief="LY">Libya</span><span class="record-code">+218</span></li><li class="record clearfix"><span class="record-country" data-code="+423" data-brief="LI">Liechtenstein</span><span class="record-code">+423</span></li><li class="record clearfix"><span class="record-country" data-code="+370" data-brief="LT">Lithuania</span><span class="record-code">+370</span></li><li class="record clearfix"><span class="record-country" data-code="+352" data-brief="LU">Luxembourg</span><span class="record-code">+352</span></li></ul></div><div class="container countrycode-container-M"><div class="header">M</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+853" data-brief="MO">Macao,China</span><span class="record-code">+853</span></li><li class="record clearfix"><span class="record-country" data-code="+389" data-brief="MK">Macedonia</span><span class="record-code">+389</span></li><li class="record clearfix"><span class="record-country" data-code="+261" data-brief="MG">Madagascar</span><span class="record-code">+261</span></li><li class="record clearfix"><span class="record-country" data-code="+265" data-brief="MW">Malawi</span><span class="record-code">+265</span></li><li class="record clearfix"><span class="record-country" data-code="+60" data-brief="MY">Malaysia</span><span class="record-code">+60</span></li><li class="record clearfix"><span class="record-country" data-code="+960" data-brief="MV">Maldives</span><span class="record-code">+960</span></li><li class="record clearfix"><span class="record-country" data-code="+223" data-brief="ML">Mali</span><span class="record-code">+223</span></li><li class="record clearfix"><span class="record-country" data-code="+356" data-brief="MT">Malta</span><span class="record-code">+356</span></li><li class="record clearfix"><span class="record-country" data-code="+692" data-brief="MH">Marshall Islands</span><span class="record-code">+692</span></li><li class="record clearfix"><span class="record-country" data-code="+596" data-brief="MQ">Martinique</span><span class="record-code">+596</span></li><li class="record clearfix"><span class="record-country" data-code="+222" data-brief="MR">Mauritania</span><span class="record-code">+222</span></li><li class="record clearfix"><span class="record-country" data-code="+230" data-brief="MU">Mauritius</span><span class="record-code">+230</span></li><li class="record clearfix"><span class="record-country" data-code="+262" data-brief="YT">Mayotte</span><span class="record-code">+262</span></li><li class="record clearfix"><span class="record-country" data-code="+52" data-brief="MX">Mexico</span><span class="record-code">+52</span></li><li class="record clearfix"><span class="record-country" data-code="+691" data-brief="FM">Micronesia</span><span class="record-code">+691</span></li><li class="record clearfix"><span class="record-country" data-code="+373" data-brief="MD">Moldova</span><span class="record-code">+373</span></li><li class="record clearfix"><span class="record-country" data-code="+377" data-brief="MC">Monaco</span><span class="record-code">+377</span></li><li class="record clearfix"><span class="record-country" data-code="+976" data-brief="MN">Mongolia</span><span class="record-code">+976</span></li><li class="record clearfix"><span class="record-country" data-code="+382" data-brief="ME">Montenegro</span><span class="record-code">+382</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="MS">Montserrat</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+212" data-brief="MA">Morocco</span><span class="record-code">+212</span></li><li class="record clearfix"><span class="record-country" data-code="+258" data-brief="MZ">Mozambique</span><span class="record-code">+258</span></li><li class="record clearfix"><span class="record-country" data-code="+95" data-brief="MM">Myanmar</span><span class="record-code">+95</span></li></ul></div><div class="container countrycode-container-N"><div class="header">N</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+264" data-brief="NA">Namibia</span><span class="record-code">+264</span></li><li class="record clearfix"><span class="record-country" data-code="+674" data-brief="NR">Nauru</span><span class="record-code">+674</span></li><li class="record clearfix"><span class="record-country" data-code="+977" data-brief="NP">Nepal</span><span class="record-code">+977</span></li><li class="record clearfix"><span class="record-country" data-code="+31" data-brief="NL">Netherlands</span><span class="record-code">+31</span></li><li class="record clearfix"><span class="record-country" data-code="+687" data-brief="NC">New Caledonia</span><span class="record-code">+687</span></li><li class="record clearfix"><span class="record-country" data-code="+64" data-brief="NZ">New Zealand</span><span class="record-code">+64</span></li><li class="record clearfix"><span class="record-country" data-code="+505" data-brief="NI">Nicaragua</span><span class="record-code">+505</span></li><li class="record clearfix"><span class="record-country" data-code="+227" data-brief="NE">Niger</span><span class="record-code">+227</span></li><li class="record clearfix"><span class="record-country" data-code="+234" data-brief="NG">Nigeria</span><span class="record-code">+234</span></li><li class="record clearfix"><span class="record-country" data-code="+683" data-brief="NU">Niue</span><span class="record-code">+683</span></li><li class="record clearfix"><span class="record-country" data-code="+672" data-brief="NF">Norfolk Island</span><span class="record-code">+672</span></li><li class="record clearfix"><span class="record-country" data-code="+850" data-brief="KP">North Korea</span><span class="record-code">+850</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="MP">Northern Mariana Islands</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+47" data-brief="NO">Norway</span><span class="record-code">+47</span></li></ul></div><div class="container countrycode-container-O"><div class="header">O</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+968" data-brief="OM">Oman</span><span class="record-code">+968</span></li></ul></div><div class="container countrycode-container-P"><div class="header">P</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+92" data-brief="PK">Pakistan</span><span class="record-code">+92</span></li><li class="record clearfix"><span class="record-country" data-code="+680" data-brief="PW">Palau</span><span class="record-code">+680</span></li><li class="record clearfix"><span class="record-country" data-code="+970" data-brief="PS">Palestine</span><span class="record-code">+970</span></li><li class="record clearfix"><span class="record-country" data-code="+507" data-brief="PA">Panama</span><span class="record-code">+507</span></li><li class="record clearfix"><span class="record-country" data-code="+675" data-brief="PG">Papua New Guinea</span><span class="record-code">+675</span></li><li class="record clearfix"><span class="record-country" data-code="+595" data-brief="PY">Paraguay</span><span class="record-code">+595</span></li><li class="record clearfix"><span class="record-country" data-code="+51" data-brief="PE">Peru</span><span class="record-code">+51</span></li><li class="record clearfix"><span class="record-country" data-code="+63" data-brief="PH">Philippines</span><span class="record-code">+63</span></li><li class="record clearfix"><span class="record-country" data-code="+64" data-brief="PN">Pitcairn</span><span class="record-code">+64</span></li><li class="record clearfix"><span class="record-country" data-code="+48" data-brief="PL">Poland</span><span class="record-code">+48</span></li><li class="record clearfix"><span class="record-country" data-code="+351" data-brief="PT">Portugal</span><span class="record-code">+351</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="PR">Puerto Rico</span><span class="record-code">+1</span></li></ul></div><div class="container countrycode-container-Q"><div class="header">Q</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+974" data-brief="QA">Qatar</span><span class="record-code">+974</span></li></ul></div><div class="container countrycode-container-R"><div class="header">R</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+262" data-brief="RE">Reunion</span><span class="record-code">+262</span></li><li class="record clearfix"><span class="record-country" data-code="+40" data-brief="RO">Romania</span><span class="record-code">+40</span></li><li class="record clearfix"><span class="record-country" data-code="+7" data-brief="RU">Russia</span><span class="record-code">+7</span></li><li class="record clearfix"><span class="record-country" data-code="+250" data-brief="RW">Rwanda</span><span class="record-code">+250</span></li></ul></div><div class="container countrycode-container-S"><div class="header">S</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+590" data-brief="BL">Saint Barthélemy</span><span class="record-code">+590</span></li><li class="record clearfix"><span class="record-country" data-code="+290" data-brief="SH">Saint Helena</span><span class="record-code">+290</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="KN">Saint Kitts And Nevis</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="LC">Saint Lucia</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+590" data-brief="MF">Saint Martin</span><span class="record-code">+590</span></li><li class="record clearfix"><span class="record-country" data-code="+508" data-brief="PM">Saint Pierre And Miquelon</span><span class="record-code">+508</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="VC">Saint Vincent And The Grenadines</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+685" data-brief="WS">Samoa</span><span class="record-code">+685</span></li><li class="record clearfix"><span class="record-country" data-code="+378" data-brief="SM">San Marino</span><span class="record-code">+378</span></li><li class="record clearfix"><span class="record-country" data-code="+239" data-brief="ST">Sao Tome And Principe</span><span class="record-code">+239</span></li><li class="record clearfix"><span class="record-country" data-code="+966" data-brief="SA">Saudi Arabia</span><span class="record-code">+966</span></li><li class="record clearfix"><span class="record-country" data-code="+221" data-brief="SN">Senegal</span><span class="record-code">+221</span></li><li class="record clearfix"><span class="record-country" data-code="+381" data-brief="RS">Serbia</span><span class="record-code">+381</span></li><li class="record clearfix"><span class="record-country" data-code="+248" data-brief="SC">Seychelles</span><span class="record-code">+248</span></li><li class="record clearfix"><span class="record-country" data-code="+232" data-brief="SL">Sierra Leone</span><span class="record-code">+232</span></li><li class="record clearfix"><span class="record-country" data-code="+65" data-brief="SG">Singapore</span><span class="record-code">+65</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="SX">Sint Maarten (Dutch part)</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+421" data-brief="SK">Slovakia</span><span class="record-code">+421</span></li><li class="record clearfix"><span class="record-country" data-code="+386" data-brief="SI">Slovenia</span><span class="record-code">+386</span></li><li class="record clearfix"><span class="record-country" data-code="+677" data-brief="SB">Solomon Islands</span><span class="record-code">+677</span></li><li class="record clearfix"><span class="record-country" data-code="+252" data-brief="SO">Somalia</span><span class="record-code">+252</span></li><li class="record clearfix"><span class="record-country" data-code="+27" data-brief="ZA">South Africa</span><span class="record-code">+27</span></li><li class="record clearfix"><span class="record-country" data-code="+500" data-brief="GS">South Georgia and the South Sandwich Islands</span><span class="record-code">+500</span></li><li class="record clearfix"><span class="record-country" data-code="+82" data-brief="KR">South Korea</span><span class="record-code">+82</span></li><li class="record clearfix"><span class="record-country" data-code="+211" data-brief="SS">South Sudan</span><span class="record-code">+211</span></li><li class="record clearfix"><span class="record-country" data-code="+34" data-brief="ES">Spain</span><span class="record-code">+34</span></li><li class="record clearfix"><span class="record-country" data-code="+94" data-brief="LK">Sri Lanka</span><span class="record-code">+94</span></li><li class="record clearfix"><span class="record-country" data-code="+249" data-brief="SD">Sudan</span><span class="record-code">+249</span></li><li class="record clearfix"><span class="record-country" data-code="+597" data-brief="SR">Suriname</span><span class="record-code">+597</span></li><li class="record clearfix"><span class="record-country" data-code="+47" data-brief="SJ">Svalbard And Jan Mayen</span><span class="record-code">+47</span></li><li class="record clearfix"><span class="record-country" data-code="+268" data-brief="SZ">Swaziland</span><span class="record-code">+268</span></li><li class="record clearfix"><span class="record-country" data-code="+46" data-brief="SE">Sweden</span><span class="record-code">+46</span></li><li class="record clearfix"><span class="record-country" data-code="+41" data-brief="CH">Switzerland</span><span class="record-code">+41</span></li><li class="record clearfix"><span class="record-country" data-code="+963" data-brief="SY">Syria</span><span class="record-code">+963</span></li></ul></div><div class="container countrycode-container-T"><div class="header">T</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+992" data-brief="TJ">Tajikistan</span><span class="record-code">+992</span></li><li class="record clearfix"><span class="record-country" data-code="+255" data-brief="TZ">Tanzania</span><span class="record-code">+255</span></li><li class="record clearfix"><span class="record-country" data-code="+66" data-brief="TH">Thailand</span><span class="record-code">+66</span></li><li class="record clearfix"><span class="record-country" data-code="+243" data-brief="CD">The Democratic Republic Of Congo</span><span class="record-code">+243</span></li><li class="record clearfix"><span class="record-country" data-code="+670" data-brief="TL">Timor-Leste</span><span class="record-code">+670</span></li><li class="record clearfix"><span class="record-country" data-code="+228" data-brief="TG">Togo</span><span class="record-code">+228</span></li><li class="record clearfix"><span class="record-country" data-code="+690" data-brief="TK">Tokelau</span><span class="record-code">+690</span></li><li class="record clearfix"><span class="record-country" data-code="+676" data-brief="TO">Tonga</span><span class="record-code">+676</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="TT">Trinidad and Tobago</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+216" data-brief="TN">Tunisia</span><span class="record-code">+216</span></li><li class="record clearfix"><span class="record-country" data-code="+90" data-brief="TR">Turkey</span><span class="record-code">+90</span></li><li class="record clearfix"><span class="record-country" data-code="+993" data-brief="TM">Turkmenistan</span><span class="record-code">+993</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="TC">Turks And Caicos Islands</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+688" data-brief="TV">Tuvalu</span><span class="record-code">+688</span></li></ul></div><div class="container countrycode-container-U"><div class="header">U</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="VI">U.S. Virgin Islands</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+256" data-brief="UG">Uganda</span><span class="record-code">+256</span></li><li class="record clearfix"><span class="record-country" data-code="+380" data-brief="UA">Ukraine</span><span class="record-code">+380</span></li><li class="record clearfix"><span class="record-country" data-code="+971" data-brief="AE">United Arab Emirates</span><span class="record-code">+971</span></li><li class="record clearfix"><span class="record-country" data-code="+44" data-brief="GB">United Kingdom</span><span class="record-code">+44</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="US">United States</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+598" data-brief="UY">Uruguay</span><span class="record-code">+598</span></li><li class="record clearfix"><span class="record-country" data-code="+998" data-brief="UZ">Uzbekistan</span><span class="record-code">+998</span></li></ul></div><div class="container countrycode-container-V"><div class="header">V</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+678" data-brief="VU">Vanuatu</span><span class="record-code">+678</span></li><li class="record clearfix"><span class="record-country" data-code="+379" data-brief="VA">Vatican</span><span class="record-code">+379</span></li><li class="record clearfix"><span class="record-country" data-code="+58" data-brief="VE">Venezuela</span><span class="record-code">+58</span></li><li class="record clearfix"><span class="record-country" data-code="+84" data-brief="VN">Vietnam</span><span class="record-code">+84</span></li></ul></div><div class="container countrycode-container-W"><div class="header">W</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+681" data-brief="WF">Wallis And Futuna</span><span class="record-code">+681</span></li><li class="record clearfix"><span class="record-country" data-code="+212" data-brief="EH">Western Sahara</span><span class="record-code">+212</span></li></ul></div><div class="container countrycode-container-Y"><div class="header">Y</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+967" data-brief="YE">Yemen</span><span class="record-code">+967</span></li></ul></div><div class="container countrycode-container-Z"><div class="header">Z</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+260" data-brief="ZM">Zambia</span><span class="record-code">+260</span></li><li class="record clearfix"><span class="record-country" data-code="+263" data-brief="ZW">Zimbabwe</span><span class="record-code">+263</span></li></ul></div></div><div class="cancel_panel"><div class="cancel_box"><a class="btnadpt bg_white btn-cancel" href="javascript:void(0);">Cancel </a></div></div><div class="navbar_panel"><div class="navbar"><a to="A">A</a><a to="B">B</a><a to="C">C</a><a to="D">D</a><a to="E">E</a><a to="F">F</a><a to="G">G</a><a to="H">H</a><a to="I">I</a><a to="J">J</a><a to="K">K</a><a to="L">L</a><a to="M">M</a><a to="N">N</a><a to="O">O</a><a to="P">P</a><a to="Q">Q</a><a to="R">R</a><a to="S">S</a><a to="T">T</a><a to="U">U</a><a to="V">V</a><a to="W">W</a><a to="X">X</a><a to="Y">Y</a><a to="Z">Z</a></div></div></div></div>
+              
+					</dd>
+					<dd>
+						<div>
+              <label class="input_bg"><input type="tel" class="new_phone" placeholder="Enter phone number" autocomplete="off" disableautocomplete=""></label>
+              <input type="hidden" class="full_new_phone" value="" autocomplete="off" disableautocomplete="">
+            </div>
+            <div class="err_tip error-con" _text=""><em class="icon_error"></em><span></span></div>
+						<div class="err_tip wng_fmt err_tip_independ" style="display:none" _text="Phone number format error">Phone number format error</div>
+						<div class="err_tip empty_phone err_tip_independ" style="display:none" _text="Enter phone number">Enter phone number</div>
+						<div class="err_tip phone_bound err_tip_independ" style="display:none" _text="This number is similar to the current one">This number is similar to the current one</div>
+						<div class="err_tip phone_bound_elsewhere err_tip_independ" style="display:none" _text="This phone number is already associated with another account.">This phone number is already associated with another account.</div>
+						<div class="err_tip dupl_phone err_tip_independ" _text="Phone number can't be the same as the recovery one">Phone number can't be the same as the recovery one</div>
+            <div class="err_tip reach_max err_tip_independ" _text="Too many verification attempts. Try again tomorrow.">Too many verification attempts. Try again tomorrow.</div>
+					</dd>
+					<dd class="inputcode">
+						<label class="input_bg chkcode"><input type="text" placeholder="Enter code" class="capt_box" autocomplete="off" disableautocomplete=""></label>
+						<img class="chkcode_img" src="/pass/getCode?icodeType=antispam" _src="/pass/getCode?icodeType=antispam" alt="">
+						<a class="color333 hidden" href="" title="Refresh">Refresh</a>
+					</dd>
+					<div class="err_tip empty_capt err_tip_independ" style="display:none" _text="Enter verification code">Enter verification code</div>
+					<div style="display:none;" class="err_tip wng_capt err_tip_independ" _text="The verification code you entered is incorrect">The verification code you entered is incorrect</div>
+					<div class="err_tip sys_err err_tip_independ" style="display:none" _text="Something went wrong. Wait a minute or two and try again.">Something went wrong. Wait a minute or two and try again.</div>
+					<div class="err_tip bad_param err_tip_independ" style="display:none" _text="Invalid">Invalid</div>
+					<div class="tip_btns">
+						<a class="btn_tip btn_commom" href="" title="Next">Next</a>					
+					</div>
+				</dl>	
+				<dl class="verify" style="display:none">
+					<div class="phonestep2">
+            <div class="xs_title_box">
+              <div class="content_title">A verification code has been sent to  <em class="ff6 address-place"> </em>&nbsp;</div>
+              <p>Enter code</p>
+            </div>
+            <div class="mod inputsend">
+							<label class="input_bg">
+                <input class="phone_capt remain_input" type="text" placeholder="Enter verification code" autocomplete="off" disableautocomplete="">
+                <span class="remain">
+                  <a class="resend noSend" href="javascript:void(0);" title="Resend code" autocomplete="off" disableautocomplete="true" disabled="disabled">Resend code</a>
+                </span>
+              </label>
+						</div>
+						<div class="err_tip empty_capt err_tip_independ" style="display:none" _text="Enter verification code">Enter verification code</div>
+						<div class="err_tip wng_capt err_tip_independ" style="display:none;" _text="The code you entered is incorrect or expired">The code you entered is incorrect or expired</div>
+						<div class="err_tip phone_used err_tip_independ" style="display:none;" _text="This phone has been associated with several Mi Accounts in a short period of time. Try using another phone number. ">This phone has been associated with several Mi Accounts in a short period of time. Try using another phone number. </div>
+            <div class="err_tip sys_err err_tip_independ" style="display:none;" _text="Something went wrong. Wait a minute or two and try again.">Something went wrong. Wait a minute or two and try again.</div>
+						<div class="err_tip sms_custom err_tip_independ" style="display:none;" _text=""><div class="text"></div></div>
+						<div class="err_tip quota_tip" id="quotaTextLabel" _text="attempts remaining"><b style="display:inline;font-weight:normal;" id="quotaLabel"></b>attempts remaining</div>
+					</div>				
+					<div class="tip_btns">
+						<a class="btn_tip btn_commom" href="" title="OK ">OK </a>
+						<a class="btn_tip btn_back" href="" title="Cancel ">Cancel </a>
+					</div>
+					<div class="txt_qst">
+            <div class="sns_unavaliable">
+  <a target="_blank" href="https://account.xiaomi.com/helpcenter/faq/_/02.faqs/05.sms-and-email-verification-code/faq-1">Can't receive verification code?</a>
+</div>
+          </div>
+				</dl>
+				<dl style="display:none" class="success">
+					<div class="t_c">
+						<h4>
+						
+								Phone number bound successfully
+							
+						</h4>
+					</div>
+					<div class="tip_btns wap_btn_abs">
+						<a class="btn_tip btn_commom" href="" title="Back to account">Back to account</a>					
+					</div>
+				</dl>
+			</div>
+		</div>
+    <div class="privacy_box">
+      <a href="/about/protocol/privacy" title="jspResource.getString(" jsp_regst_link2")"="" target="_blank">Privacy Policy</a>
+    </div>
+	</div>
+	</div>
+</div>
+<!-- 绑定安全手机 e -->
+<!-- 绑定安全邮箱 s -->
+<div class="popup_mask callable">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popEnterNewEmail" style="display:none;">
+		<div class="mod_tip_hd">
+			<h4>
+				
+						Change email address
+					
+			</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="tabbar_panel">
+				<div class="tabbar">
+					<div class="tab_opt c_b">
+						<!-- 选中添加class为now -->
+						<span class="mailtab1 now">Enter email address</span>
+						<span class="mailtab2">Verify email address</span>
+						<span class="mailtab3 end">OK </span>
+					</div>
+					<div class="tabline c_b">
+						<i class="now"></i>
+						<i></i>
+						<i></i>
+            <span class="justify_fix"></span>
+					</div>
+				</div>
+			</div>
+			<div class="wapbox">
+				<dl class="binding mailstep1">
+					<dt>Enter your email address</dt>					
+					<dd>
+						<label class="input_bg"><input type="text" placeholder="Enter your email address" class="new_email" autocomplete="off" disableautocomplete=""></label>
+					</dd>
+					<div class="err_tip wng_fmt err_tip_independ" style="display:none" _text="The address you entered is invalid ">The address you entered is invalid </div>
+					<div class="err_tip empty_email err_tip_independ" style="display:none" _text="Enter email address ">Enter email address </div>
+					<div class="err_tip email_bound err_tip_independ" style="display:none" _text="This email is similar to the current one">This email is similar to the current one</div>
+					<div class="err_tip email_bound_elsewhere err_tip_independ" style="display:none" _text="This email address is already associated with another account.">This email address is already associated with another account.</div>
+					<div class="err_tip bad_param err_tip_independ" style="display:none" _text="Invalid">Invalid</div>
+					<dd class="inputcode">
+						<label class="input_bg chkcode"><input type="text" placeholder="Enter code" class="capt_box" autocomplete="off" disableautocomplete=""></label>
+						<img class="chkcode_img" src="/pass/getCode?icodeType=antispam" _src="/pass/getCode?icodeType=antispam" alt="">
+						<a class="color333 hidden" href="" title="Refresh">Refresh</a>
+					</dd>
+					<div style="display:none;" class="err_tip empty_capt err_tip_independ" _text="Enter verification code">Enter verification code</div>
+					<div style="display:none;" class="err_tip wng_capt err_tip_independ" _text="The verification code you entered is incorrect">The verification code you entered is incorrect</div>
+					<div class="err_tip sys_err err_tip_independ" style="display:none" _text="Something went wrong. Wait a minute or two and try again.">Something went wrong. Wait a minute or two and try again.</div>
+					<!--<div class="checkbox n_checked select-edm">
+						<label>
+							<i class="icon_select"></i>
+							Stay up to date with news and offers from the Mi Store. 
+						</label>
+					</div>-->
+					<div class="tip_btns">
+						<a class="btn_tip btn_commom" href="" title="Next">Next</a>					
+					</div>
+				</dl>
+				<dl class="verify" style="display:none;">	
+					<div class="mailstep2">
+						<div class="xs_title_box">
+              <div class="content_title">Verification code sent to <em class="ff6 address-place"></em></div>
+              <p>Enter code</p>
+            </div>
+            <div class="mod inputsend">
+							<label class="input_bg">
+                <input type="text" placeholder="Enter verification code" class="capt_box remain_input" autocomplete="off" disableautocomplete="">
+                <span class="remain">
+                  <a title="Resend code" class="resend">Resend code</a>
+                </span>
+              </label>
+						</div>
+						<!-- 错误信息提示 -->
+						<div style="display:none;" class="err_tip empty_capt err_tip_independ" _text="Enter verification code">Enter verification code</div>
+						<div style="display:none;" class="err_tip send_fail err_tip_independ" _text="Couldn't send SMS message">Couldn't send SMS message</div>		
+						<div style="display:none;" class="err_tip wng_capt err_tip_independ" _text="The code you entered is incorrect or expired">The code you entered is incorrect or expired</div>
+            <div style="display:none;" class="err_tip sys_err err_tip_independ" _text="Something went wrong. Wait a minute or two and try again.">Something went wrong. Wait a minute or two and try again.</div>	
+					</div>				
+					<div class="tip_btns">
+						<a class="btn_tip btn_commom" href="" title="OK ">OK </a>
+						<a class="btn_tip btn_back" href="" title="Cancel ">Cancel </a>
+					</div>
+					<div class="txt_qst"><em class="icon_qst"></em><a target="_blank" href="https://static.account.xiaomi.com/html/faq/faqRegisterReceiveCheckNum.html" title="Didn't receive a code?">Didn't receive a code?</a></div>
+				</dl>
+				<dl style="display:none;" class="success">	
+					<div class="t_c">
+						<h4>
+						
+								Email address changed successfully
+							
+						</h4>
+					</div>
+					<div class="tip_btns wap_btn_abs">
+						<a class="btn_tip btn_commom" href="" title="Back to account">Back to account</a>					
+					</div>
+				</dl>
+			</div>
+		</div>
+    <div class="privacy_box">
+      <a href="/about/protocol/privacy" title="jspResource.getString(" jsp_regst_link2")"="" target="_blank">Privacy Policy</a>
+    </div>
+	</div>
+	</div>
+</div>
+<!-- 绑定安全邮箱 e -->
+<!-- 设置密保问题 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popSetMibao" style="display:none">
+		<form id="frmSetQuestions" target="fraSetMibao" action="/pass/auth/security/setSafeQuestions" method="POST">
+		<div class="mod_tip_hd">
+			<h4>Choose security questions</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="wapbox rember_mibaoqst">
+				<h4>Answers are case-sensitive</h4>
+        <div class="select-area">
+		<ul class="set_mibao c_b">
+		<li>
+          <dl class="login-dl clearfix">
+            <dd class="dd_r clearfix">
+              <select class="iselect" autocomplete="off" disableautocomplete="">
+                <optgroup label="Family" _type="0">
+                  <option value="" _role="default" class="def-opt" selected="">Choose a question</option>
+                  <option value="1" _answertip="">Name of your maternal grandmother</option>
+                  <option value="2" _answertip="">Name of your maternal grandfather</option>
+                  <option value="3" _answertip="">Name of your paternal grandfather</option>
+                  <option value="4" _answertip="">Name of your paternal grandmother</option>
+                  <option value="5" _answertip="">Your Father's birthday</option>
+                  <option value="6" _answertip="">Your Mother's birthday</option>
+                  <option value="7" _answertip="">Number of days between your parents’ birthdays</option>
+                </optgroup>
+                <optgroup label="School" _type="1">
+                  <option value="8" _answertip="">Name of your 12th-grade math teacher</option>
+                  <option value="9" _answertip="">Name of your 6th-grade math teacher</option>
+                  <option value="10" _answertip="">Name of the university where you attended undergrad</option>
+                  <option value="11" _answertip="">Name of your roommate in college</option>
+                  <option value="12" _answertip="">Name of your tutor in college</option>
+                </optgroup>
+                <optgroup label="Personal info" _type="2">
+                  <option value="13" _answertip="">What’s your nickname at home?</option>
+                  <option value="14" _answertip="">The last 6 digits of your ID number</option>
+                  <option value="15" _answertip="">Name of the hospital in which you were born</option>
+                  <option value="16" _answertip="">Name of your best friend</option>
+                </optgroup>
+                <optgroup label="“Firsts”" _type="3">
+                  <option value="17" _answertip="">Name of your first pet</option>
+                  <option value="18" _answertip="">Name of your first boyfriend/girlfriend</option>
+                  <option value="19" _answertip="">Name of your first employer</option>
+                </optgroup>
+                <optgroup label="Marriage" _type="4">
+                  <option value="20" _answertip="">Wedding anniversary</option>
+                  <option value="21" _answertip="">Spouse's name</option>
+                  <option value="22" _answertip="">Spouse's birthday</option>
+                </optgroup>
+              </select>
+            </dd>
+            <dd class="dd_l clearfix">
+              <label class="input_bg"><input class="input_kuang errortip" type="text" placeholder="" _placeheld="" autocomplete="off" disableautocomplete="" isrequired="true"></label>
+              <span class="error-mes err_tip err_tip_independ" style="display:block;" _text=""></span>
+            </dd>
+          </dl>
+		  </li>
+		  <li>
+          <dl class="login-dl clearfix">
+            <dd class="dd_r clearfix">
+              <select class="iselect" autocomplete="off" disableautocomplete="">
+                <optgroup label="Family" _type="0">
+                  <option value="" _role="default" class="def-opt" selected="">Choose a question</option>
+                  <option value="1" _answertip="">Name of your maternal grandmother</option>
+                  <option value="2" _answertip="">Name of your maternal grandfather</option>
+                  <option value="3" _answertip="">Name of your paternal grandfather</option>
+                  <option value="4" _answertip="">Name of your paternal grandmother</option>
+                  <option value="5" _answertip="">Your Father's birthday</option>
+                  <option value="6" _answertip="">Your Mother's birthday</option>
+                  <option value="7" _answertip="">Number of days between your parents’ birthdays</option>
+                </optgroup>
+                <optgroup label="School" _type="1">
+                  <option value="8" _answertip="">Name of your 12th-grade math teacher</option>
+                  <option value="9" _answertip="">Name of your 6th-grade math teacher</option>
+                  <option value="10" _answertip="">Name of the university where you attended undergrad</option>
+                  <option value="11" _answertip="">Name of your roommate in college</option>
+                  <option value="12" _answertip="">Name of your tutor in college</option>
+                </optgroup>
+                <optgroup label="Personal info" _type="2">
+                  <option value="13" _answertip="">What’s your nickname at home?</option>
+                  <option value="14" _answertip="">The last 6 digits of your ID number</option>
+                  <option value="15" _answertip="">Name of the hospital in which you were born</option>
+                  <option value="16" _answertip="">Name of your best friend</option>
+                </optgroup>
+                <optgroup label="“Firsts”" _type="3">
+                  <option value="17" _answertip="">Name of your first pet</option>
+                  <option value="18" _answertip="">Name of your first boyfriend/girlfriend</option>
+                  <option value="19" _answertip="">Name of your first employer</option>
+                </optgroup>
+                <optgroup label="Marriage" _type="4">
+                  <option value="20" _answertip="">Wedding anniversary</option>
+                  <option value="21" _answertip="">Spouse's name</option>
+                  <option value="22" _answertip="">Spouse's birthday</option>
+                </optgroup>
+              </select>
+            </dd>
+            <dd class="dd_l clearfix">
+              <label class="input_bg"><input class="input_kuang errortip" type="text" placeholder="" _placeheld="" autocomplete="off" disableautocomplete="" isrequired="true"></label>
+              <span class="error-mes err_tip err_tip_independ" style="display:block;" _text=""></span>
+            </dd>
+          </dl>
+		  </li>
+		  <li>
+          <dl class="login-dl clearfix">
+            <dd class="dd_r clearfix">
+              <select class="iselect" autocomplete="off" disableautocomplete="">
+                <optgroup label="Family" _type="0">
+                  <option value="" _role="default" class="def-opt" selected="">Choose a question</option>
+                  <option value="1" _answertip="">Name of your maternal grandmother</option>
+                  <option value="2" _answertip="">Name of your maternal grandfather</option>
+                  <option value="3" _answertip="">Name of your paternal grandfather</option>
+                  <option value="4" _answertip="">Name of your paternal grandmother</option>
+                  <option value="5" _answertip="">Your Father's birthday</option>
+                  <option value="6" _answertip="">Your Mother's birthday</option>
+                  <option value="7" _answertip="">Number of days between your parents’ birthdays</option>
+                </optgroup>
+                <optgroup label="School" _type="1">
+                  <option value="8" _answertip="">Name of your 12th-grade math teacher</option>
+                  <option value="9" _answertip="">Name of your 6th-grade math teacher</option>
+                  <option value="10" _answertip="">Name of the university where you attended undergrad</option>
+                  <option value="11" _answertip="">Name of your roommate in college</option>
+                  <option value="12" _answertip="">Name of your tutor in college</option>
+                </optgroup>
+                <optgroup label="Personal info" _type="2">
+                  <option value="13" _answertip="">What’s your nickname at home?</option>
+                  <option value="14" _answertip="">The last 6 digits of your ID number</option>
+                  <option value="15" _answertip="">Name of the hospital in which you were born</option>
+                  <option value="16" _answertip="">Name of your best friend</option>
+                </optgroup>
+                <optgroup label="“Firsts”" _type="3">
+                  <option value="17" _answertip="">Name of your first pet</option>
+                  <option value="18" _answertip="">Name of your first boyfriend/girlfriend</option>
+                  <option value="19" _answertip="">Name of your first employer</option>
+                </optgroup>
+                <optgroup label="Marriage" _type="4">
+                  <option value="20" _answertip="">Wedding anniversary</option>
+                  <option value="21" _answertip="">Spouse's name</option>
+                  <option value="22" _answertip="">Spouse's birthday</option>
+                </optgroup>
+              </select>
+            </dd>
+            <dd class="dd_l clearfix">
+              <label class="input_bg"><input class="input_kuang errortip" type="text" placeholder="" _placeheld="" autocomplete="off" disableautocomplete="" isrequired="true"></label>
+              <span class="error-mes err_tip err_tip_independ" style="display:block;" _text=""></span>
+            </dd>
+          </dl>
+		  </li>
+		  <li>
+          <dl class="login-dl clearfix">
+            <dd class="dd_r clearfix">
+              <select class="iselect" autocomplete="off" disableautocomplete="">
+                <optgroup label="Family" _type="0">
+                  <option value="" _role="default" class="def-opt" selected="">Choose a question</option>
+                  <option value="1" _answertip="">Name of your maternal grandmother</option>
+                  <option value="2" _answertip="">Name of your maternal grandfather</option>
+                  <option value="3" _answertip="">Name of your paternal grandfather</option>
+                  <option value="4" _answertip="">Name of your paternal grandmother</option>
+                  <option value="5" _answertip="">Your Father's birthday</option>
+                  <option value="6" _answertip="">Your Mother's birthday</option>
+                  <option value="7" _answertip="">Number of days between your parents’ birthdays</option>
+                </optgroup>
+                <optgroup label="School" _type="1">
+                  <option value="8" _answertip="">Name of your 12th-grade math teacher</option>
+                  <option value="9" _answertip="">Name of your 6th-grade math teacher</option>
+                  <option value="10" _answertip="">Name of the university where you attended undergrad</option>
+                  <option value="11" _answertip="">Name of your roommate in college</option>
+                  <option value="12" _answertip="">Name of your tutor in college</option>
+                </optgroup>
+                <optgroup label="Personal info" _type="2">
+                  <option value="13" _answertip="">What’s your nickname at home?</option>
+                  <option value="14" _answertip="">The last 6 digits of your ID number</option>
+                  <option value="15" _answertip="">Name of the hospital in which you were born</option>
+                  <option value="16" _answertip="">Name of your best friend</option>
+                </optgroup>
+                <optgroup label="“Firsts”" _type="3">
+                  <option value="17" _answertip="">Name of your first pet</option>
+                  <option value="18" _answertip="">Name of your first boyfriend/girlfriend</option>
+                  <option value="19" _answertip="">Name of your first employer</option>
+                </optgroup>
+                <optgroup label="Marriage" _type="4">
+                  <option value="20" _answertip="">Wedding anniversary</option>
+                  <option value="21" _answertip="">Spouse's name</option>
+                  <option value="22" _answertip="">Spouse's birthday</option>
+                </optgroup>
+              </select>
+            </dd>
+            <dd class="dd_l clearfix">
+              <label class="input_bg"><input class="input_kuang errortip" type="text" placeholder="" _placeheld="" autocomplete="off" disableautocomplete="" isrequired="true"></label>
+              <span class="error-mes err_tip err_tip_independ" style="display:block;" _text=""></span>
+            </dd>
+          </dl>
+		  </li>
+		  </ul>
+        </div>
+	  <input type="hidden" name="questions" class="form-data">
+	  <input type="hidden" name="userId" value="6372769616">
+	  <input type="hidden" name="mibao_ph" value="">
+	  <input type="hidden" name="serviceToken" value="">
+				<div class="tl_c">
+					<span class="error-mes form-error-mes err_tip err_tip_independ" style="display:none;" _text=""></span>
+				</div>
+				<div class="tip_btns wap_pb20">
+					<input class="btn_tip btn_commom" title="OK " value="OK " type="submit">			
+				</div>
+			</div>
+		</div>
+		</form>
+    <div class="privacy_box">
+      <a href="/about/protocol/privacy" title="jspResource.getString(" jsp_regst_link2")"="" target="_blank">Privacy Policy</a>
+    </div>
+	</div>
+	</div><!---->
+</div>
+<!-- 设置密保问题 e -->
+	<!-- 回答设置密保问题 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popAnswerMibao" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Choose security questions</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="wapbox rember_mibaoqst">
+				<h4>Confirm answers</h4>
+				<div class="set_mibao">
+					<ul class="c_b">					
+						<li>
+							<p></p>
+							<label class="input_bg"><input type="text" _placeheld="" autocomplete="off" disableautocomplete=""></label>
+							<span class="error-mes err_tip err_tip_independ" style="display:block;" _text=""></span>
+						</li>
+						<li>
+							<p></p>
+							<label class="input_bg"><input type="text" _placeheld="" autocomplete="off" disableautocomplete=""></label>
+							<span class="error-mes err_tip err_tip_independ" style="display:block;" _text=""></span>
+						</li>
+						<li>
+							<p></p>
+							<label class="input_bg"><input type="text" _placeheld="" autocomplete="off" disableautocomplete=""></label>
+							<span class="error-mes err_tip err_tip_independ" style="display:block;" _text=""></span>
+						</li>
+						<li>
+							<p></p>
+							<label class="input_bg"><input type="text" _placeheld="" autocomplete="off" disableautocomplete=""></label>
+							<span class="error-mes err_tip err_tip_independ" style="display:block;" _text=""></span>
+						</li>					
+					</ul>
+					<div class="tl_c">
+						<span class="error-mes form-error-mes err_tip err_tip_independ" style="display:block;" _text=""></span>
+					</div>	
+				</div>				
+			</div>
+			<div class="tip_btns">
+				<a class="btn_tip btn_commom" href="" title="OK ">OK </a>
+				<a class="btn_tip btn_back" href="" title="Reset">Reset</a>
+			</div>
+		</div>
+    <div class="privacy_box">
+      <a href="/about/protocol/privacy" title="jspResource.getString(" jsp_regst_link2")"="" target="_blank">Privacy Policy</a>
+    </div>
+	</div>
+	</div>
+</div>
+	<!-- 回答设置密保问题 e -->
+	<!-- 设置密保成功 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popFinishMibao" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Choose security questions</h4>
+			<a class="btn_mod_close" href="" onclick="(function(){location.hash='#';location.reload(true);})();" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">			
+			<div class="t_c wapbox mar30">
+				<div class="txt_ff6"><em class="acctip_icon acctip_icon_2"></em>Security questions set successfully</div>						
+			</div>
+			
+			<div class="tip_btns wap_btn_abs">
+				<a class="btn_tip btn_commom" href="" title="Back to account">Back to account</a>					
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 设置密保成功 e -->
+	<!-- 开启登录保护 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenHome" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Get Authenticator app</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="t_c security">				
+				<div class="icon_mibao icon_mibao1"></div>				
+				<div class="wapbox intro">
+					<p class="style_h4">Require 2-step verification for untrusted devices when signing in to your Mi Account.</p>
+					<p class="style_h4">2-step verification is free and easy to use.</p>
+				</div>				
+				<div class="tip_btns">
+					<a class="btn_tip btn_commom" href="" title="Activate" _href="#popManageTokenDownAct">Activate</a>					
+				</div>
+				<p class="notice">Prevent unauthorized access to your account</p>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 开启登录保护 e -->
+	<!-- 获取动态口令 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenDownAct" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Get Authenticator app</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="t_c wapbox security">				
+				<div class="icon_mibao icon_mibao2"></div>
+				<div class="intro">
+					<p class="style_h4">2-step verification</p>
+					<p class="style_h4">Fast and secure</p>
+				</div>								
+			</div>
+			<div class="tip_btns">
+				<a class="btn_tip btn_back" href="" title="Download app" _href="#popManageTokenDownload">Download app</a>					
+				<a class="btn_tip btn_commom wap_mt10" href="" title="Activate" _href="#popManageTokenActivate">Activate</a>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 获取动态口令 e -->
+	<!-- 获取安全令牌 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenDownload" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Get Authenticator app</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">			
+			<div class="wapbox disten30x25">
+				<h4>Get </h4>
+				<div class="newtab">
+					<!-- 选中添加class为now -->
+					<a class="now" href="" title="Android"><em class="acctip_icon acctip_icon_4"></em>Android<i></i></a>
+					<a href="" title="iOS"><em class="acctip_icon acctip_icon_5"></em>iOS<i></i></a>
+				</div>
+				<div style="display:block;" class="tabcon">
+					<p>1. Go to the Mi App Market on your phone (app.mi.com)</p>
+					<p>2. Search <span>Secure sign in</span></p>
+					<p>3. Download <a href="http://app.xiaomi.com/download/62091?ref=search" target="_self" title="">Authenticator</a></p>
+				</div>
+				<div class="tabcon">
+					<p>1.Open App Store</p>
+					<p>2. Search <span>Secure sign in</span></p>
+					<p>3. Get Authenticator <a href="https://itunes.apple.com/en/app/xiao-mi-an-quan-ling-pai/id734383238?mt=8" title="" target="_blank">here</a></p>
+				</div>
+				<div class="wap_tokenstore">
+					<a class="btn_tip btn_back" href="http://app.xiaomi.com/download/62091?ref=search" title=""><i class="icon_store icon_android"></i>Android</a>
+					<a class="btn_tip btn_back" href="https://itunes.apple.com/en/app/xiao-mi-an-quan-ling-pai/id734383238?mt=8" title=""><i class="icon_store icon_iphone"></i>iPhone</a>
+				</div>
+			</div>
+			<div class="tip_btns">
+				<a class="btn_tip btn_commom installed" href="" title="App is already installed." _href="#popManageTokenActivate">App is already installed.</a>			
+				<a class="btn_tip btn_back goback" href="" title="Back" _href="#popManageTokenStatus">Back</a>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 获取安全令牌 e -->
+	<!-- 激活安全令牌 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenActivate" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Get Authenticator app</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">			
+			<div class="t_c mar30"><h4 class="wap_pt0">Activate Authenticator</h4></div>
+			<div class="wapbox getactived disten30x76">
+				<p>1. Install Authenticator</p>
+				<div>
+					<p>2. Scan QR code</p>
+					<img alt="" width="124" height="124">
+				</div>
+				<p>3. Enter 6 digit code<label class="input_bg"><input type="text" placeholder="6 digit code"></label></p>
+				<div class="err_tip wng_capt err_tip_independ" _text="The code you entered is incorrect">The code you entered is incorrect</div>				
+				<div class="err_tip empty_capt err_tip_independ" _text="Enter verification code">Enter verification code</div>					
+			    <div class="err_tip sys_err err_tip_independ" _text="Something went wrong. Wait a minute or two and try again.">Something went wrong. Wait a minute or two and try again.</div>		
+			</div>
+			<div class="tip_btns">
+				<!-- 默认态未填写动态口令btn为禁用，动态口令填写后btn才亮起来，去掉class为disabled -->
+				<a class="btn_tip btn_commom" href="javascript:void(0);" title="Activate">Activate</a>				
+			</div>	
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 激活安全令牌 e -->
+	<!-- 添加信任设备 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenTrustDevice" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Get Authenticator app</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="t_c mar30"><h3>Add trusted device</h3></div>
+			<div class="wapbox mardoub30">
+				<p class="npb_circle_normal"><span class="npb-circle npb-circle-current"></span><span>Access your account from a trusted device without entering the 6-digit code</span></p>
+				<p class="npb_circle_normal"><span class="npb-circle npb-circle-current"></span><span>Your account is safe even if you lose your phone.</span></p>
+				<div class="mod_trust">
+					<!-- 默认勾选添加icon_true,用户点击去掉icon_true添加icon_false -->
+					<div class="token_chk_area">
+						<i class="icon_token_chk icon_true"></i><span class="style_h4">Trust this computer</span>
+					</div>
+					<div>Sign in and view all of your trusted devices</div>
+				</div>
+				<div class="err_tip wng_capt err_tip_independ" _text="The code you entered is incorrect">The code you entered is incorrect</div>							
+				<div class="err_tip sys_err err_tip_independ" _text="Something went wrong. Wait a minute or two and try again.">Something went wrong. Wait a minute or two and try again.</div>
+			</div>
+				
+			<div class="tip_btns">
+				<input class="btn_tip btn_commom" type="submit" value="Next">		
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 添加信任设备 e -->
+	<!-- 成功开启登录保护 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenFinish" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Get Authenticator app</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="t_c wapbox mar30">
+				<div class="txt_ff6"><em class="acctip_icon acctip_icon_2"></em>2-step verification is on</div>			
+				<p>You'll be signed out in <span class="logoutCountdown"></span>s.</p>							
+			</div>
+			<div class="tip_btns wap_btn_abs">
+				<a class="btn_tip btn_commom" href="/" title="Sign in again">Sign in again</a>					
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 成功开启登录保护 e -->
+	<!-- 设置安全令牌 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip wth482" id="popManageTokenStatus" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>2-step verification</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="wapbox set_security_token disten30x14">
+				<h3>2-step verification is on</h3>
+				<p>Authenticator is free and easy to use.</p>
+				<div class="tip_btns">
+					<a class="btn_tip btn_back" href="" title="Download app" _href="#popManageTokenDownload">Download app</a>
+					<a class="btn_tip btn_back" href="" title="Change" _href="#popManageTokenActivate">Change</a>
+				</div>
+				<h3>Additional settings</h3>
+				<p>Prevent unauthorized access to your Mi Account</p>
+				<p>History</p>
+				<ul class="plan c_b">
+					<li>
+						<dl>
+							<dt><em class="acctip_icon acctip_icon_6"></em><span class="txt_tit">Recovery device</span></dt>
+							<dd class="">
+								<p class="mar17">If you don't have your phone, you can send a spare key to your recovery device.</p>								
+								<div class="alink no_fb_mobile">									
+									<p>										
+										<a href="" title="Add recovery device" _href="#popManageTokenSetMobile">Add recovery device</a>
+									</p>
+								</div>
+								<!-- 添加了备用手机后显示 -->
+								<div class="alink fb_mobile">
+									<p>Changes saved:<span></span></p>
+									<p>
+										<a href="" title="Change" _href="#popManageTokenSetMobile">Change</a>
+										<a href="" title="Delete" class="delBackupPhone">Delete</a>
+									</p>
+								</div>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt><em class="acctip_icon acctip_icon_7"></em><span class="txt_tit">Spare keys</span></dt>
+							<dd>
+								<p class="mar17">Print or download one-time use keys for when your phone is unavailable.</p>								
+								<div class="alink">									
+									<p class="bak_keystxt">										
+										<a href="" title="View spare keys" _href="#popManageTokenKeys">View spare keys</a>
+									</p>
+								</div>
+							</dd>
+						</dl>
+					</li>
+				</ul>				
+				<div class="err_tip sys_err err_tip_independ" _text="Something went wrong. Wait a minute or two and try again.">Something went wrong. Wait a minute or two and try again.</div>
+				<div class="err_tip backup_phone_not_exists err_tip_independ" _text="recovery phone doesn't exist">recovery phone doesn't exist</div>
+			</div>
+			<div class="tip_btns">
+				<a class="btn_tip btn_commom btn_close_popup" href="" title="Back">Back</a>
+				<a class="btn_tip btn_back btn_disable_token" href="" title="Turn off 2-step verification">Turn off 2-step verification</a>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 设置安全令牌 e -->
+	<!-- 开启登录保护未绑定邮箱 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenBindEmail" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Get Authenticator app</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="t_c security">
+				<div class="icon_mibao icon_mibao3"></div>
+				<div class="wapbox intro">
+					<p class="style_h4">To enable 2-step verification, add an email address to your account first</p>					
+				</div>				
+				<div class="tip_btns">
+					<a class="btn_tip btn_commom btn_adapt" href="" title="Back" _href="#noSuchElement" __href="#popEnterNewEmail">Back</a>
+					<!-- <input class="btn_tip btn_commom" type="submit" value="绑定安全邮箱"> -->
+				</div>				
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 开启登录保护未绑定邮箱 e -->
+	<!-- 开启登录保护未绑定手机 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenBindPhone" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Get Authenticator app</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="t_c security">
+				<div class="icon_mibao icon_mibao4"></div>
+				<div class="wapbox intro">
+					<p class="style_h4">To enable 2-step verification, add a phone number to your account first</p>					
+				</div>				
+				<div class="tip_btns">
+					<a class="btn_tip btn_commom" href="" title="Back" _href="#noSuchElement" __href="#popEnterNewPhone">Back</a>
+					<!-- <input class="btn_tip btn_commom" type="submit" value="绑定安全手机"> -->
+				</div>				
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 开启登录保护未绑定手机 e -->
+	<!-- 设置备用手机号 s -->
+<div class="popup_mask">
+	<div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenSetMobile" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>2-step verification</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="wapbox">
+				<div class="binding setbackphone">
+					<h3 class="t_c">Enter phone number</h3>				
+					<div class="fixpos">
+							<div class="tits set_qst_tit cty-code">
+								<p class="c_b"><span>Singapore</span><em _code="+65">+65</em></p>
+								<i class="icon_cirarr"></i>
+							</div>
+							<div class="country-container-panel">
+              <div class="country-container"><div class="country-code"><div class="container countrycode-container-A"><div class="header">A</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+93" data-brief="AF">Afghanistan</span><span class="record-code">+93</span></li><li class="record clearfix"><span class="record-country" data-code="+355" data-brief="AL">Albania</span><span class="record-code">+355</span></li><li class="record clearfix"><span class="record-country" data-code="+213" data-brief="DZ">Algeria</span><span class="record-code">+213</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="AS">American Samoa</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+376" data-brief="AD">Andorra</span><span class="record-code">+376</span></li><li class="record clearfix"><span class="record-country" data-code="+244" data-brief="AO">Angola</span><span class="record-code">+244</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="AI">Anguilla</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+672" data-brief="AQ">Antarctica</span><span class="record-code">+672</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="AG">Antigua and Barbuda</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+54" data-brief="AR">Argentina</span><span class="record-code">+54</span></li><li class="record clearfix"><span class="record-country" data-code="+374" data-brief="AM">Armenia</span><span class="record-code">+374</span></li><li class="record clearfix"><span class="record-country" data-code="+297" data-brief="AW">Aruba</span><span class="record-code">+297</span></li><li class="record clearfix"><span class="record-country" data-code="+61" data-brief="AU">Australia</span><span class="record-code">+61</span></li><li class="record clearfix"><span class="record-country" data-code="+43" data-brief="AT">Austria</span><span class="record-code">+43</span></li><li class="record clearfix"><span class="record-country" data-code="+994" data-brief="AZ">Azerbaijan</span><span class="record-code">+994</span></li></ul></div><div class="container countrycode-container-B"><div class="header">B</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="BS">Bahamas</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+973" data-brief="BH">Bahrain</span><span class="record-code">+973</span></li><li class="record clearfix"><span class="record-country" data-code="+880" data-brief="BD">Bangladesh</span><span class="record-code">+880</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="BB">Barbados</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+375" data-brief="BY">Belarus</span><span class="record-code">+375</span></li><li class="record clearfix"><span class="record-country" data-code="+32" data-brief="BE">Belgium</span><span class="record-code">+32</span></li><li class="record clearfix"><span class="record-country" data-code="+501" data-brief="BZ">Belize</span><span class="record-code">+501</span></li><li class="record clearfix"><span class="record-country" data-code="+229" data-brief="BJ">Benin</span><span class="record-code">+229</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="BM">Bermuda</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+975" data-brief="BT">Bhutan</span><span class="record-code">+975</span></li><li class="record clearfix"><span class="record-country" data-code="+591" data-brief="BO">Bolivia</span><span class="record-code">+591</span></li><li class="record clearfix"><span class="record-country" data-code="+599" data-brief="BQ">Bonaire, Sint Eustatius and Saba</span><span class="record-code">+599</span></li><li class="record clearfix"><span class="record-country" data-code="+387" data-brief="BA">Bosnia and Herzegovina</span><span class="record-code">+387</span></li><li class="record clearfix"><span class="record-country" data-code="+267" data-brief="BW">Botswana</span><span class="record-code">+267</span></li><li class="record clearfix"><span class="record-country" data-code="+55" data-brief="BR">Brazil</span><span class="record-code">+55</span></li><li class="record clearfix"><span class="record-country" data-code="+246" data-brief="IO">British Indian Ocean Territory</span><span class="record-code">+246</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="VG">British Virgin Islands</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+673" data-brief="BN">Brunei</span><span class="record-code">+673</span></li><li class="record clearfix"><span class="record-country" data-code="+359" data-brief="BG">Bulgaria</span><span class="record-code">+359</span></li><li class="record clearfix"><span class="record-country" data-code="+226" data-brief="BF">Burkina Faso</span><span class="record-code">+226</span></li><li class="record clearfix"><span class="record-country" data-code="+257" data-brief="BI">Burundi</span><span class="record-code">+257</span></li></ul></div><div class="container countrycode-container-C"><div class="header">C</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+855" data-brief="KH">Cambodia</span><span class="record-code">+855</span></li><li class="record clearfix"><span class="record-country" data-code="+237" data-brief="CM">Cameroon</span><span class="record-code">+237</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="CA">Canada</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+238" data-brief="CV">Cape Verde</span><span class="record-code">+238</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="KY">Cayman Islands</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+236" data-brief="CF">Central African Republic</span><span class="record-code">+236</span></li><li class="record clearfix"><span class="record-country" data-code="+235" data-brief="TD">Chad</span><span class="record-code">+235</span></li><li class="record clearfix"><span class="record-country" data-code="+56" data-brief="CL">Chile</span><span class="record-code">+56</span></li><li class="record clearfix"><span class="record-country" data-code="+86" data-brief="CN">China</span><span class="record-code">+86</span></li><li class="record clearfix"><span class="record-country" data-code="+61" data-brief="CX">Christmas Island</span><span class="record-code">+61</span></li><li class="record clearfix"><span class="record-country" data-code="+61" data-brief="CC">Cocos Islands</span><span class="record-code">+61</span></li><li class="record clearfix"><span class="record-country" data-code="+57" data-brief="CO">Colombia</span><span class="record-code">+57</span></li><li class="record clearfix"><span class="record-country" data-code="+269" data-brief="KM">Comoros</span><span class="record-code">+269</span></li><li class="record clearfix"><span class="record-country" data-code="+242" data-brief="CG">Congo</span><span class="record-code">+242</span></li><li class="record clearfix"><span class="record-country" data-code="+682" data-brief="CK">Cook Islands</span><span class="record-code">+682</span></li><li class="record clearfix"><span class="record-country" data-code="+506" data-brief="CR">Costa Rica</span><span class="record-code">+506</span></li><li class="record clearfix"><span class="record-country" data-code="+385" data-brief="HR">Croatia</span><span class="record-code">+385</span></li><li class="record clearfix"><span class="record-country" data-code="+53" data-brief="CU">Cuba</span><span class="record-code">+53</span></li><li class="record clearfix"><span class="record-country" data-code="+599" data-brief="CW">Curaçao</span><span class="record-code">+599</span></li><li class="record clearfix"><span class="record-country" data-code="+357" data-brief="CY">Cyprus</span><span class="record-code">+357</span></li><li class="record clearfix"><span class="record-country" data-code="+420" data-brief="CZ">Czech Republic</span><span class="record-code">+420</span></li><li class="record clearfix"><span class="record-country" data-code="+225" data-brief="CI">Côte d'Ivoire</span><span class="record-code">+225</span></li></ul></div><div class="container countrycode-container-D"><div class="header">D</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+45" data-brief="DK">Denmark</span><span class="record-code">+45</span></li><li class="record clearfix"><span class="record-country" data-code="+253" data-brief="DJ">Djibouti</span><span class="record-code">+253</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="DM">Dominica</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="DO">Dominican Republic</span><span class="record-code">+1</span></li></ul></div><div class="container countrycode-container-E"><div class="header">E</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+593" data-brief="EC">Ecuador</span><span class="record-code">+593</span></li><li class="record clearfix"><span class="record-country" data-code="+20" data-brief="EG">Egypt</span><span class="record-code">+20</span></li><li class="record clearfix"><span class="record-country" data-code="+503" data-brief="SV">El Salvador</span><span class="record-code">+503</span></li><li class="record clearfix"><span class="record-country" data-code="+240" data-brief="GQ">Equatorial Guinea</span><span class="record-code">+240</span></li><li class="record clearfix"><span class="record-country" data-code="+291" data-brief="ER">Eritrea</span><span class="record-code">+291</span></li><li class="record clearfix"><span class="record-country" data-code="+372" data-brief="EE">Estonia</span><span class="record-code">+372</span></li><li class="record clearfix"><span class="record-country" data-code="+251" data-brief="ET">Ethiopia</span><span class="record-code">+251</span></li></ul></div><div class="container countrycode-container-F"><div class="header">F</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+500" data-brief="FK">Falkland Islands</span><span class="record-code">+500</span></li><li class="record clearfix"><span class="record-country" data-code="+298" data-brief="FO">Faroe Islands</span><span class="record-code">+298</span></li><li class="record clearfix"><span class="record-country" data-code="+679" data-brief="FJ">Fiji</span><span class="record-code">+679</span></li><li class="record clearfix"><span class="record-country" data-code="+358" data-brief="FI">Finland</span><span class="record-code">+358</span></li><li class="record clearfix"><span class="record-country" data-code="+33" data-brief="FR">France</span><span class="record-code">+33</span></li><li class="record clearfix"><span class="record-country" data-code="+594" data-brief="GF">French Guiana</span><span class="record-code">+594</span></li><li class="record clearfix"><span class="record-country" data-code="+689" data-brief="PF">French Polynesia</span><span class="record-code">+689</span></li></ul></div><div class="container countrycode-container-G"><div class="header">G</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+241" data-brief="GA">Gabon</span><span class="record-code">+241</span></li><li class="record clearfix"><span class="record-country" data-code="+220" data-brief="GM">Gambia</span><span class="record-code">+220</span></li><li class="record clearfix"><span class="record-country" data-code="+995" data-brief="GE">Georgia</span><span class="record-code">+995</span></li><li class="record clearfix"><span class="record-country" data-code="+49" data-brief="DE">Germany</span><span class="record-code">+49</span></li><li class="record clearfix"><span class="record-country" data-code="+233" data-brief="GH">Ghana</span><span class="record-code">+233</span></li><li class="record clearfix"><span class="record-country" data-code="+350" data-brief="GI">Gibraltar</span><span class="record-code">+350</span></li><li class="record clearfix"><span class="record-country" data-code="+30" data-brief="GR">Greece</span><span class="record-code">+30</span></li><li class="record clearfix"><span class="record-country" data-code="+299" data-brief="GL">Greenland</span><span class="record-code">+299</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="GD">Grenada</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+590" data-brief="GP">Guadeloupe</span><span class="record-code">+590</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="GU">Guam</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+502" data-brief="GT">Guatemala</span><span class="record-code">+502</span></li><li class="record clearfix"><span class="record-country" data-code="+44" data-brief="GG">Guernsey</span><span class="record-code">+44</span></li><li class="record clearfix"><span class="record-country" data-code="+224" data-brief="GN">Guinea</span><span class="record-code">+224</span></li><li class="record clearfix"><span class="record-country" data-code="+245" data-brief="GW">Guinea-Bissau</span><span class="record-code">+245</span></li><li class="record clearfix"><span class="record-country" data-code="+592" data-brief="GY">Guyana</span><span class="record-code">+592</span></li></ul></div><div class="container countrycode-container-H"><div class="header">H</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+509" data-brief="HT">Haiti</span><span class="record-code">+509</span></li><li class="record clearfix"><span class="record-country" data-code="+504" data-brief="HN">Honduras</span><span class="record-code">+504</span></li><li class="record clearfix"><span class="record-country" data-code="+852" data-brief="HK">Hong Kong,China</span><span class="record-code">+852</span></li><li class="record clearfix"><span class="record-country" data-code="+36" data-brief="HU">Hungary</span><span class="record-code">+36</span></li></ul></div><div class="container countrycode-container-I"><div class="header">I</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+354" data-brief="IS">Iceland</span><span class="record-code">+354</span></li><li class="record clearfix"><span class="record-country" data-code="+91" data-brief="IN">India</span><span class="record-code">+91</span></li><li class="record clearfix"><span class="record-country" data-code="+62" data-brief="ID">Indonesia</span><span class="record-code">+62</span></li><li class="record clearfix"><span class="record-country" data-code="+98" data-brief="IR">Iran</span><span class="record-code">+98</span></li><li class="record clearfix"><span class="record-country" data-code="+964" data-brief="IQ">Iraq</span><span class="record-code">+964</span></li><li class="record clearfix"><span class="record-country" data-code="+353" data-brief="IE">Ireland</span><span class="record-code">+353</span></li><li class="record clearfix"><span class="record-country" data-code="+44" data-brief="IM">Isle Of Man</span><span class="record-code">+44</span></li><li class="record clearfix"><span class="record-country" data-code="+972" data-brief="IL">Israel</span><span class="record-code">+972</span></li><li class="record clearfix"><span class="record-country" data-code="+39" data-brief="IT">Italy</span><span class="record-code">+39</span></li></ul></div><div class="container countrycode-container-J"><div class="header">J</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="JM">Jamaica</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+81" data-brief="JP">Japan</span><span class="record-code">+81</span></li><li class="record clearfix"><span class="record-country" data-code="+44" data-brief="JE">Jersey</span><span class="record-code">+44</span></li><li class="record clearfix"><span class="record-country" data-code="+962" data-brief="JO">Jordan</span><span class="record-code">+962</span></li></ul></div><div class="container countrycode-container-K"><div class="header">K</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+7" data-brief="KZ">Kazakhstan</span><span class="record-code">+7</span></li><li class="record clearfix"><span class="record-country" data-code="+254" data-brief="KE">Kenya</span><span class="record-code">+254</span></li><li class="record clearfix"><span class="record-country" data-code="+686" data-brief="KI">Kiribati</span><span class="record-code">+686</span></li><li class="record clearfix"><span class="record-country" data-code="+965" data-brief="KW">Kuwait</span><span class="record-code">+965</span></li><li class="record clearfix"><span class="record-country" data-code="+996" data-brief="KG">Kyrgyzstan</span><span class="record-code">+996</span></li></ul></div><div class="container countrycode-container-L"><div class="header">L</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+856" data-brief="LA">Laos</span><span class="record-code">+856</span></li><li class="record clearfix"><span class="record-country" data-code="+371" data-brief="LV">Latvia</span><span class="record-code">+371</span></li><li class="record clearfix"><span class="record-country" data-code="+961" data-brief="LB">Lebanon</span><span class="record-code">+961</span></li><li class="record clearfix"><span class="record-country" data-code="+266" data-brief="LS">Lesotho</span><span class="record-code">+266</span></li><li class="record clearfix"><span class="record-country" data-code="+231" data-brief="LR">Liberia</span><span class="record-code">+231</span></li><li class="record clearfix"><span class="record-country" data-code="+218" data-brief="LY">Libya</span><span class="record-code">+218</span></li><li class="record clearfix"><span class="record-country" data-code="+423" data-brief="LI">Liechtenstein</span><span class="record-code">+423</span></li><li class="record clearfix"><span class="record-country" data-code="+370" data-brief="LT">Lithuania</span><span class="record-code">+370</span></li><li class="record clearfix"><span class="record-country" data-code="+352" data-brief="LU">Luxembourg</span><span class="record-code">+352</span></li></ul></div><div class="container countrycode-container-M"><div class="header">M</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+853" data-brief="MO">Macao,China</span><span class="record-code">+853</span></li><li class="record clearfix"><span class="record-country" data-code="+389" data-brief="MK">Macedonia</span><span class="record-code">+389</span></li><li class="record clearfix"><span class="record-country" data-code="+261" data-brief="MG">Madagascar</span><span class="record-code">+261</span></li><li class="record clearfix"><span class="record-country" data-code="+265" data-brief="MW">Malawi</span><span class="record-code">+265</span></li><li class="record clearfix"><span class="record-country" data-code="+60" data-brief="MY">Malaysia</span><span class="record-code">+60</span></li><li class="record clearfix"><span class="record-country" data-code="+960" data-brief="MV">Maldives</span><span class="record-code">+960</span></li><li class="record clearfix"><span class="record-country" data-code="+223" data-brief="ML">Mali</span><span class="record-code">+223</span></li><li class="record clearfix"><span class="record-country" data-code="+356" data-brief="MT">Malta</span><span class="record-code">+356</span></li><li class="record clearfix"><span class="record-country" data-code="+692" data-brief="MH">Marshall Islands</span><span class="record-code">+692</span></li><li class="record clearfix"><span class="record-country" data-code="+596" data-brief="MQ">Martinique</span><span class="record-code">+596</span></li><li class="record clearfix"><span class="record-country" data-code="+222" data-brief="MR">Mauritania</span><span class="record-code">+222</span></li><li class="record clearfix"><span class="record-country" data-code="+230" data-brief="MU">Mauritius</span><span class="record-code">+230</span></li><li class="record clearfix"><span class="record-country" data-code="+262" data-brief="YT">Mayotte</span><span class="record-code">+262</span></li><li class="record clearfix"><span class="record-country" data-code="+52" data-brief="MX">Mexico</span><span class="record-code">+52</span></li><li class="record clearfix"><span class="record-country" data-code="+691" data-brief="FM">Micronesia</span><span class="record-code">+691</span></li><li class="record clearfix"><span class="record-country" data-code="+373" data-brief="MD">Moldova</span><span class="record-code">+373</span></li><li class="record clearfix"><span class="record-country" data-code="+377" data-brief="MC">Monaco</span><span class="record-code">+377</span></li><li class="record clearfix"><span class="record-country" data-code="+976" data-brief="MN">Mongolia</span><span class="record-code">+976</span></li><li class="record clearfix"><span class="record-country" data-code="+382" data-brief="ME">Montenegro</span><span class="record-code">+382</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="MS">Montserrat</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+212" data-brief="MA">Morocco</span><span class="record-code">+212</span></li><li class="record clearfix"><span class="record-country" data-code="+258" data-brief="MZ">Mozambique</span><span class="record-code">+258</span></li><li class="record clearfix"><span class="record-country" data-code="+95" data-brief="MM">Myanmar</span><span class="record-code">+95</span></li></ul></div><div class="container countrycode-container-N"><div class="header">N</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+264" data-brief="NA">Namibia</span><span class="record-code">+264</span></li><li class="record clearfix"><span class="record-country" data-code="+674" data-brief="NR">Nauru</span><span class="record-code">+674</span></li><li class="record clearfix"><span class="record-country" data-code="+977" data-brief="NP">Nepal</span><span class="record-code">+977</span></li><li class="record clearfix"><span class="record-country" data-code="+31" data-brief="NL">Netherlands</span><span class="record-code">+31</span></li><li class="record clearfix"><span class="record-country" data-code="+687" data-brief="NC">New Caledonia</span><span class="record-code">+687</span></li><li class="record clearfix"><span class="record-country" data-code="+64" data-brief="NZ">New Zealand</span><span class="record-code">+64</span></li><li class="record clearfix"><span class="record-country" data-code="+505" data-brief="NI">Nicaragua</span><span class="record-code">+505</span></li><li class="record clearfix"><span class="record-country" data-code="+227" data-brief="NE">Niger</span><span class="record-code">+227</span></li><li class="record clearfix"><span class="record-country" data-code="+234" data-brief="NG">Nigeria</span><span class="record-code">+234</span></li><li class="record clearfix"><span class="record-country" data-code="+683" data-brief="NU">Niue</span><span class="record-code">+683</span></li><li class="record clearfix"><span class="record-country" data-code="+672" data-brief="NF">Norfolk Island</span><span class="record-code">+672</span></li><li class="record clearfix"><span class="record-country" data-code="+850" data-brief="KP">North Korea</span><span class="record-code">+850</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="MP">Northern Mariana Islands</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+47" data-brief="NO">Norway</span><span class="record-code">+47</span></li></ul></div><div class="container countrycode-container-O"><div class="header">O</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+968" data-brief="OM">Oman</span><span class="record-code">+968</span></li></ul></div><div class="container countrycode-container-P"><div class="header">P</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+92" data-brief="PK">Pakistan</span><span class="record-code">+92</span></li><li class="record clearfix"><span class="record-country" data-code="+680" data-brief="PW">Palau</span><span class="record-code">+680</span></li><li class="record clearfix"><span class="record-country" data-code="+970" data-brief="PS">Palestine</span><span class="record-code">+970</span></li><li class="record clearfix"><span class="record-country" data-code="+507" data-brief="PA">Panama</span><span class="record-code">+507</span></li><li class="record clearfix"><span class="record-country" data-code="+675" data-brief="PG">Papua New Guinea</span><span class="record-code">+675</span></li><li class="record clearfix"><span class="record-country" data-code="+595" data-brief="PY">Paraguay</span><span class="record-code">+595</span></li><li class="record clearfix"><span class="record-country" data-code="+51" data-brief="PE">Peru</span><span class="record-code">+51</span></li><li class="record clearfix"><span class="record-country" data-code="+63" data-brief="PH">Philippines</span><span class="record-code">+63</span></li><li class="record clearfix"><span class="record-country" data-code="+64" data-brief="PN">Pitcairn</span><span class="record-code">+64</span></li><li class="record clearfix"><span class="record-country" data-code="+48" data-brief="PL">Poland</span><span class="record-code">+48</span></li><li class="record clearfix"><span class="record-country" data-code="+351" data-brief="PT">Portugal</span><span class="record-code">+351</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="PR">Puerto Rico</span><span class="record-code">+1</span></li></ul></div><div class="container countrycode-container-Q"><div class="header">Q</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+974" data-brief="QA">Qatar</span><span class="record-code">+974</span></li></ul></div><div class="container countrycode-container-R"><div class="header">R</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+262" data-brief="RE">Reunion</span><span class="record-code">+262</span></li><li class="record clearfix"><span class="record-country" data-code="+40" data-brief="RO">Romania</span><span class="record-code">+40</span></li><li class="record clearfix"><span class="record-country" data-code="+7" data-brief="RU">Russia</span><span class="record-code">+7</span></li><li class="record clearfix"><span class="record-country" data-code="+250" data-brief="RW">Rwanda</span><span class="record-code">+250</span></li></ul></div><div class="container countrycode-container-S"><div class="header">S</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+590" data-brief="BL">Saint Barthélemy</span><span class="record-code">+590</span></li><li class="record clearfix"><span class="record-country" data-code="+290" data-brief="SH">Saint Helena</span><span class="record-code">+290</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="KN">Saint Kitts And Nevis</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="LC">Saint Lucia</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+590" data-brief="MF">Saint Martin</span><span class="record-code">+590</span></li><li class="record clearfix"><span class="record-country" data-code="+508" data-brief="PM">Saint Pierre And Miquelon</span><span class="record-code">+508</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="VC">Saint Vincent And The Grenadines</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+685" data-brief="WS">Samoa</span><span class="record-code">+685</span></li><li class="record clearfix"><span class="record-country" data-code="+378" data-brief="SM">San Marino</span><span class="record-code">+378</span></li><li class="record clearfix"><span class="record-country" data-code="+239" data-brief="ST">Sao Tome And Principe</span><span class="record-code">+239</span></li><li class="record clearfix"><span class="record-country" data-code="+966" data-brief="SA">Saudi Arabia</span><span class="record-code">+966</span></li><li class="record clearfix"><span class="record-country" data-code="+221" data-brief="SN">Senegal</span><span class="record-code">+221</span></li><li class="record clearfix"><span class="record-country" data-code="+381" data-brief="RS">Serbia</span><span class="record-code">+381</span></li><li class="record clearfix"><span class="record-country" data-code="+248" data-brief="SC">Seychelles</span><span class="record-code">+248</span></li><li class="record clearfix"><span class="record-country" data-code="+232" data-brief="SL">Sierra Leone</span><span class="record-code">+232</span></li><li class="record clearfix"><span class="record-country" data-code="+65" data-brief="SG">Singapore</span><span class="record-code">+65</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="SX">Sint Maarten (Dutch part)</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+421" data-brief="SK">Slovakia</span><span class="record-code">+421</span></li><li class="record clearfix"><span class="record-country" data-code="+386" data-brief="SI">Slovenia</span><span class="record-code">+386</span></li><li class="record clearfix"><span class="record-country" data-code="+677" data-brief="SB">Solomon Islands</span><span class="record-code">+677</span></li><li class="record clearfix"><span class="record-country" data-code="+252" data-brief="SO">Somalia</span><span class="record-code">+252</span></li><li class="record clearfix"><span class="record-country" data-code="+27" data-brief="ZA">South Africa</span><span class="record-code">+27</span></li><li class="record clearfix"><span class="record-country" data-code="+500" data-brief="GS">South Georgia and the South Sandwich Islands</span><span class="record-code">+500</span></li><li class="record clearfix"><span class="record-country" data-code="+82" data-brief="KR">South Korea</span><span class="record-code">+82</span></li><li class="record clearfix"><span class="record-country" data-code="+211" data-brief="SS">South Sudan</span><span class="record-code">+211</span></li><li class="record clearfix"><span class="record-country" data-code="+34" data-brief="ES">Spain</span><span class="record-code">+34</span></li><li class="record clearfix"><span class="record-country" data-code="+94" data-brief="LK">Sri Lanka</span><span class="record-code">+94</span></li><li class="record clearfix"><span class="record-country" data-code="+249" data-brief="SD">Sudan</span><span class="record-code">+249</span></li><li class="record clearfix"><span class="record-country" data-code="+597" data-brief="SR">Suriname</span><span class="record-code">+597</span></li><li class="record clearfix"><span class="record-country" data-code="+47" data-brief="SJ">Svalbard And Jan Mayen</span><span class="record-code">+47</span></li><li class="record clearfix"><span class="record-country" data-code="+268" data-brief="SZ">Swaziland</span><span class="record-code">+268</span></li><li class="record clearfix"><span class="record-country" data-code="+46" data-brief="SE">Sweden</span><span class="record-code">+46</span></li><li class="record clearfix"><span class="record-country" data-code="+41" data-brief="CH">Switzerland</span><span class="record-code">+41</span></li><li class="record clearfix"><span class="record-country" data-code="+963" data-brief="SY">Syria</span><span class="record-code">+963</span></li></ul></div><div class="container countrycode-container-T"><div class="header">T</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+992" data-brief="TJ">Tajikistan</span><span class="record-code">+992</span></li><li class="record clearfix"><span class="record-country" data-code="+255" data-brief="TZ">Tanzania</span><span class="record-code">+255</span></li><li class="record clearfix"><span class="record-country" data-code="+66" data-brief="TH">Thailand</span><span class="record-code">+66</span></li><li class="record clearfix"><span class="record-country" data-code="+243" data-brief="CD">The Democratic Republic Of Congo</span><span class="record-code">+243</span></li><li class="record clearfix"><span class="record-country" data-code="+670" data-brief="TL">Timor-Leste</span><span class="record-code">+670</span></li><li class="record clearfix"><span class="record-country" data-code="+228" data-brief="TG">Togo</span><span class="record-code">+228</span></li><li class="record clearfix"><span class="record-country" data-code="+690" data-brief="TK">Tokelau</span><span class="record-code">+690</span></li><li class="record clearfix"><span class="record-country" data-code="+676" data-brief="TO">Tonga</span><span class="record-code">+676</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="TT">Trinidad and Tobago</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+216" data-brief="TN">Tunisia</span><span class="record-code">+216</span></li><li class="record clearfix"><span class="record-country" data-code="+90" data-brief="TR">Turkey</span><span class="record-code">+90</span></li><li class="record clearfix"><span class="record-country" data-code="+993" data-brief="TM">Turkmenistan</span><span class="record-code">+993</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="TC">Turks And Caicos Islands</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+688" data-brief="TV">Tuvalu</span><span class="record-code">+688</span></li></ul></div><div class="container countrycode-container-U"><div class="header">U</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="VI">U.S. Virgin Islands</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+256" data-brief="UG">Uganda</span><span class="record-code">+256</span></li><li class="record clearfix"><span class="record-country" data-code="+380" data-brief="UA">Ukraine</span><span class="record-code">+380</span></li><li class="record clearfix"><span class="record-country" data-code="+971" data-brief="AE">United Arab Emirates</span><span class="record-code">+971</span></li><li class="record clearfix"><span class="record-country" data-code="+44" data-brief="GB">United Kingdom</span><span class="record-code">+44</span></li><li class="record clearfix"><span class="record-country" data-code="+1" data-brief="US">United States</span><span class="record-code">+1</span></li><li class="record clearfix"><span class="record-country" data-code="+598" data-brief="UY">Uruguay</span><span class="record-code">+598</span></li><li class="record clearfix"><span class="record-country" data-code="+998" data-brief="UZ">Uzbekistan</span><span class="record-code">+998</span></li></ul></div><div class="container countrycode-container-V"><div class="header">V</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+678" data-brief="VU">Vanuatu</span><span class="record-code">+678</span></li><li class="record clearfix"><span class="record-country" data-code="+379" data-brief="VA">Vatican</span><span class="record-code">+379</span></li><li class="record clearfix"><span class="record-country" data-code="+58" data-brief="VE">Venezuela</span><span class="record-code">+58</span></li><li class="record clearfix"><span class="record-country" data-code="+84" data-brief="VN">Vietnam</span><span class="record-code">+84</span></li></ul></div><div class="container countrycode-container-W"><div class="header">W</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+681" data-brief="WF">Wallis And Futuna</span><span class="record-code">+681</span></li><li class="record clearfix"><span class="record-country" data-code="+212" data-brief="EH">Western Sahara</span><span class="record-code">+212</span></li></ul></div><div class="container countrycode-container-Y"><div class="header">Y</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+967" data-brief="YE">Yemen</span><span class="record-code">+967</span></li></ul></div><div class="container countrycode-container-Z"><div class="header">Z</div><ul class="list"><li class="record clearfix"><span class="record-country" data-code="+260" data-brief="ZM">Zambia</span><span class="record-code">+260</span></li><li class="record clearfix"><span class="record-country" data-code="+263" data-brief="ZW">Zimbabwe</span><span class="record-code">+263</span></li></ul></div></div><div class="cancel_panel"><div class="cancel_box"><a class="btnadpt bg_white btn-cancel" href="javascript:void(0);">Cancel </a></div></div><div class="navbar_panel"><div class="navbar"><a to="A">A</a><a to="B">B</a><a to="C">C</a><a to="D">D</a><a to="E">E</a><a to="F">F</a><a to="G">G</a><a to="H">H</a><a to="I">I</a><a to="J">J</a><a to="K">K</a><a to="L">L</a><a to="M">M</a><a to="N">N</a><a to="O">O</a><a to="P">P</a><a to="Q">Q</a><a to="R">R</a><a to="S">S</a><a to="T">T</a><a to="U">U</a><a to="V">V</a><a to="W">W</a><a to="X">X</a><a to="Y">Y</a><a to="Z">Z</a></div></div></div></div>
+					</div>
+					<div class="fixpos"><label class="input_bg"><input type="tel" class="backupPhoneInput" placeholder="Enter spare phone number" autocomplete="off" disableautocomplete=""></label></div>							
+				</div>
+				<div class="setbakphone_error">
+					<div class="err_tip empty_phone err_tip_independ" _text="Enter recovery phone number">Enter recovery phone number</div>
+					<div class="err_tip wng_fmt err_tip_independ" _text="Phone number format error">Phone number format error</div>
+					<div class="err_tip sys_err err_tip_independ" _text="Something went wrong. Wait a minute or two and try again.">Something went wrong. Wait a minute or two and try again.</div>
+					<div class="err_tip dupl_phone err_tip_independ" _text="Recovery phone number can't be the same as your phone number">Recovery phone number can't be the same as your phone number</div>
+					<div class="err_tip set_fail err_tip_independ" _text="Couldn't add recovery device">Couldn't add recovery device</div>
+					<div class="err_tip bad_param err_tip_independ" style="display:none" _text="Invalid">Invalid</div>
+				</div>
+			</div>
+			<div class="tip_btns">
+				<a class="btn_tip btn_commom" href="" title="OK ">OK </a>
+			</div>
+		</div>
+    <div class="privacy_box">
+      <a href="/about/protocol/privacy" title="jspResource.getString(" jsp_regst_link2")"="" target="_blank">Privacy Policy</a>
+    </div>
+	</div>
+	</div>
+</div>
+	<!-- 设置备用手机号 e -->
+	<!-- 关闭登录保护 s -->
+<div class="popup_mask">
+    <div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenDisableFinish" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>2-step verification</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">			
+			<div class="t_c wapbox mar30">
+				<div class="txt_ff6"><em class="acctip_icon acctip_icon_2"></em>2-step verification is off</div>						
+			</div>
+			<div class="tip_btns wap_btn_abs">
+				<a class="btn_tip btn_commom" href="/" title="Back">Back</a>					
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 关闭登录保护 e -->
+	<!-- 查看备用密钥 s -->
+	<!--不做成模态-->
+<div class="popup_mask">
+	<div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popManageTokenKeys" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>2-step verification</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="mod_tip_bd">
+			<div class="disten30x25 wapbox security_keys">
+				<h4>These keys can be used instead of the code generated by your Authenticator.<span class="ff6 marl15">You can only use each key once.</span></h4>
+				<div class="mi_code c_b">
+					<!-- 已经使用添加class为out -->
+				</div>
+				<div class="lh20">
+					<p>Make sure you keep a hard copy of your spare keys in a safe place (e.g. your wallet)</p>
+					<p>Out of keys? <a class="ff6" href="javascript:void(0)" id="refresh_code">Get more keys</a> (you won't be able to use previous keys to sign in) (After reset, all previous keys will be invalid)</p>
+				</div>				
+			</div>
+			<div class="tip_btns">
+				<a class="btn_tip btn_back btn_print" id="printKeys" title="Print">Print</a>					
+				<a class="btn_tip btn_back sendEmail" href="" title="Send email">Send email</a>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+	<!-- 查看备用密钥 e -->
+<!--无法通过验证，申请人工审核 s-->
+<div class="popup_mask">
+	<div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popVeriNotExists" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Account Authentication</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="wapbox mod_tip_bd">
+			<div class="t_c success">
+				<h4 class="ff6">Couldn't verify your identity.</h4>				
+			</div>
+			<div class="fail_identify ft14 pb30">Reset security questions or use a trusted device.</div>
+			<div class="tip_btns">
+				<a class="btn_tip btn_back btn_adapt" href="" title="Reset recovery phone">Reset recovery phone</a>					
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<!--无法通过验证，申请人工审核 e-->
+<!--无法通过验证遇到问题 s-->
+<div class="popup_mask">
+	<div class="bkc"></div>
+	<div class="mod_wrap">
+	<div class="mod_acc_tip" id="popVeriFailed" style="display:none">
+		<div class="mod_tip_hd">
+			<h4>Account Authentication</h4>
+			<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+		</div>
+		<div class="wapbox mod_tip_bd">
+			<div class="t_c success">
+				<h4 class="ff6">Something went wrong</h4>				
+			</div>
+			<div class="fail_identify ft14">
+				<p>Something went wrong. Your action couldn't be completed. </p>
+				<p>Stumped? Retry later or contact the customer support. </p>
+			</div>
+			<div class="t_c pdtop20 ft14">Error code: <span class="err_code"></span></div>
+			<div class="tip_btns">
+				<a class="btn_tip btn_back" href="" title="Back">Back</a>					
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<!--无法通过验证遇到问题 e-->
+<!--删除帐号警告 s-->
+<div class="popup_mask">
+  <div class="bkc"></div>
+  <div class="mod_wrap">
+    <div class="mod_acc_tip" id="popSuicideWarning" style="display:none">
+      <div class="mod_tip_hd">
+        <h4>Delete your Mi Account</h4>
+        <a class="btn_mod_close" href="" title=""><span>Close</span></a>
+      </div>
+      <div class="wapbox mod_tip_bd">
+        <div class="del-account-allow">
+          <div class="logout_area">
+            <h4>To delete your Mi Account (<span>6372769616</span>), enter your password and confirm that you want to delete all data associated with this account. <span class="ff6">You won't be able to restore your account after that</span>.</h4>
+            <div class="logout_txt">
+              <p class="ft14">All content associated with your account will be permanently deleted (the list below may not contain all the services linked to this account).</p>
+              <ul class="num_list">
+                <li>1.Mi Coins that you've purchased but haven't spent.</li>
+                <li>2.Photos and contacts you've synced with the cloud.</li>
+                <li>3.Themes you've purchased in the MIUI Theme Store.</li>
+                <li>4.In-app purchases associated with this account.</li>
+                <li>5.Mi.com purchase history.</li>
+              </ul>
+            </div>
+            <div class="ft14 ff6 warn-text" style="display:none;">
+              
+                  Too many Mi Accounts are associated with the phone number <span></span>. Wait 6 months after deleting your Mi Account to add this phone number to another account.
+                
+            </div>
+            <div style="display:none;" class="sys_err err_tip err_tip_independ" _text="Error&nbsp;">Error&nbsp;<span class="err_code"></span></div>
+            <!-- 选中添加now -->
+            <div class="t_c twostep_trustinfo now">
+              <label><i class="icon_select"></i>Yes, I want to permanently delete my Mi Account and all its data.</label>
+            </div>  
+          </div>
+          <div class="tip_btns">
+            <!-- 禁用时添加disabled -->
+            <a class="btn_tip btn_commom disabled" href="" title="Delete Mi Account">Delete Mi Account</a>
+            <a class="btn_tip btn_back" href="" title="Cancel ">Cancel </a>    
+          </div>
+        </div><!--del-account-allow-->
+        <div class="del-account-deny" style="display:none">
+          <div class="logout_area">
+            <h4>Can't sign out. The following services save important data in your account.</h4>
+            <div class="logout_txt">
+              <ul class="num_list del-account-deny-content">
+                <li class="del-account-deny-passport hide">Mi Account</li>
+                <li class="del-account-deny-micloudweb hide del-account-deny-imicom">Xiaomi Cloud</li>
+                <li class="del-account-deny-mifiapi del-account-deny-jrmicom hide">Mi Finance</li>
+                <li class="del-account-deny-boss-online hide">Mi Mobile (The account can be removed only after Mi Mobile is canceled)</li>
+                <li class="del-account-deny-micloudfind hide">Find device hasn't been turned off for some devices</li>
+                <li class="del-account-deny-billcenter hide">Mi Coins</li>
+                <li class="del-account-deny-identity hide">Verified Mi ID (<a href="https://certify.mipay.com/">Remove verification</a> in Mi Pay or contact customer support).</li>
+                <li class="del-account-deny-mipay-india hide">Mi Pay (Call 18001036386 (in India) to turn off Mi Pay)</li>
+                <li class="del-account-deny-sbillcenter_tmp hide">Mi Coins (Unused coins are available on your balance)</li>
+                <li class="del-account-deny-sbillcenter hide">Mi Coins (Unused coins are available on your balance)</li>
+                <li class="del-account-deny-nbillcenter hide">Mi Coins (Unused coins are available on your balance)</li>
+                <li class="del-account-deny-hk_nbillcenter hide">Mi Coins (Unused coins are available on your balance)</li>
+                <li class="del-account-deny-micloud hide">Xiaomi Cloud (Go to i.mi.com to revoke authorization)</li>
+                <li class="del-account-deny-xiaomiio hide">
+                  <div>There are apps paired to your account in Mi Home. Make sure you've unpaired them.</div>
+                  <div>If there are multiple locations in your Mi Home, confirm that the items are unpaired by switching between the locations in the Mi Home app.</div>
+                </li>
+                <li class="del-account-deny-micreditid hide">Mi Credit (Cancel the service in Mi Credit first)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tip_btns">
+            <a class="btn_tip btn_back" href="javascript:void(0)" title="OK">OK</a>
+          </div>
+        </div><!--del-account-deny-->
+      </div>
+    </div>
+  </div>
+</div>
+<!--删除帐号警告 e-->
+<!--删除帐号提示 s-->
+<div class="popup_mask">
+	<div class="bkc"></div>
+	<div class="mod_wrap">
+		<div class="mod_acc_tip" id="popSuicidePrompt" style="display:none">
+			<div class="mod_tip_hd">
+				<h4>Delete your Mi Account</h4>
+				<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+			</div>
+			<div class="mod_tip_bd">
+				<div class="icon_warning"></div>
+				<div class="wapbox logout_area">			
+					<div class="confirm_txt">
+						<p class="ft14">Before moving forward, make sure you've signed out of your Mi Account on all your devices. If you delete your account before signing out, you may not be able to use these devices normally.</p>
+            <div class="del_account_devices_con del-devices-panel">
+              <div class="hd">You signed in to your Mi Account on the following devices:</div>
+              <ul class="online_devices c_b online-devices">
+              </ul>
+            </div>
+					</div>
+          <div class="err_tip error-con" _text=""><em class="icon_error"></em><span></span></div>
+					<div style="display:none;" class="sys_err err_tip err_tip_independ" _text="Error&nbsp;">Error&nbsp;<span class="err_code"></span></div>
+          <div style="display:none;" class="del_fail err_tip err_tip_independ" _text="Couldn't sign out">Couldn't sign out</div>
+				</div>
+				<div class="tip_btns">
+					<!-- 禁用时添加disabled -->
+					<a class="btn_tip btn_commom" href="" title="Delete Account">Delete Account</a>
+					<a class="btn_tip btn_back" href="" title="Cancel ">Cancel </a>
+				</div>		
+			</div>
+		</div>
+	</div>
+</div>
+<!--删除帐号提示 e-->
+<!--删除帐号成功 s-->
+<div class="popup_mask">
+	<div class="bkc"></div>
+	<div class="mod_wrap">
+		<div class="mod_acc_tip" id="popSuicideSuccess" style="display:none">
+			<div class="mod_tip_hd">
+				<h4>Delete your Mi Account</h4>
+				<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+			</div>
+			<div class="mod_tip_bd">
+				<div class="wapbox t_c mar30">
+					<div class="txt_ff6"><em class="acctip_icon acctip_icon_2"></em>Mi Account deleted successfully</div>
+					<p>Will leave this page automatically in <span>10</span>s</p>						
+				</div>
+				<div class="tip_btns">
+					<a class="btn_tip btn_commom" href="/" title="Exit">Exit</a>					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--删除帐号成功 e-->
+<!--删除帐号失败 s-->
+<div class="popup_mask">
+	<div class="bkc"></div>
+	<div class="mod_wrap">
+		<div class="mod_acc_tip" id="popSuicideFailure" style="display:none">
+			<div class="mod_tip_hd">
+				<h4>Delete your Mi Account</h4>
+				<a class="btn_mod_close" href="" title=""><span>Close</span></a>
+			</div>
+			<div class="mod_tip_bd">		
+				<div class="wapbox logout_area">			
+					<div class="ft14 logout_unable">
+						<p>Can't delete Mi Account ID <span>6372769616</span> associated with MIUI.</p>
+						<p class="pt10">To delete your Mi Account, contact our support team at 400-100-5678</p>
+					</div>			
+				</div>				
+				<div class="tip_btns">			
+					<a class="btn_tip btn_commom" href="/" title="Back  ">Back  </a>			
+				</div>		
+			</div>
+		</div>
+	</div>
+</div>
+<!--删除帐号失败 e-->
+	<!--TIPS e-->
+	<!--发短信之国际化-->
+	<div id="l11n-node" style="display:none;" _l11n-jsp_wap_ba_errortips3="Phone number format error" _l11n-jsp_cu_mnl_tip34="The phone number you entered belongs to your recovery phone. You can <a style='color:#ff7e00' href='/pass/forgetPassword' target='_blank'>reset password</a> using this phone number." _l11n-jsp_cu_mnl_tip35="The phone number you entered is already associated to another Mi Account. Try a different phone number." _l11n-jsp_wap_ba_errortips1="Email address format error" _l11n-jsp_regst_img_code_incorrect="The code you entered is incorrect." _l11n-jsp_sms_unsent="Couldn't send SMS message" _l11n-jsp_sys_error="Something went wrong. Wait a minute or two and try again." _l11n-jsp_2014_bad_param="Invalid" _l11n-answer_empty="Answer can't be empty" _l11n-answer_too_short="Answer can't be shorter than 2 characters" _l11n-answer_too_long="Answer can't be longer than 128 characters" _l11n-question_empty="You need to choose a question" _l11n-answer_same="Can't add questions with duplicate answers" _l11n-wrong_answer="The answer you entered is incorrect" _l11n-retry_after="That's too many wrong answers. This account will be locked for <span class='color_yellow'>1</span> hour." _l11n-lang_mismatch="Existing security questions were detected in a different language. If you update now, your previous answers will be replaced." _l11n-existing_question="Previous questions" _l11n-jsp_2014_tip23="Error&nbsp;" _l11n-jsp_2014_token_used="(used)" _l11n-jsp_2014_my_backup_keys="Spare key" _l11n-jsp_sac_reset="Cancel "></div>
+	<!--密保数据-->
+	<div id="questionData" style="display:none"></div><script>
+	(function(){
+		var mibaoLink = document.getElementById('mibao_link');
+		if(mibaoLink){
+			var href = mibaoLink.getAttribute('__href');
+			if(location.hostname.indexOf('oneboxhost') !== -1){
+				href = href.replace("/sq.id.mi.com/","/oneboxhost.sq.id.mi.com/").replace("https://","http://");
+			}
+			mibaoLink.setAttribute("__href",href);
+		}
+	})();
+	</script>
+  <script>
+    JSP_VAR.isPasswordSet=true;
+    var MSG={
+      cancel:"Cancel ",
+      toMore:"You&#39;ve exceeded the maximum number of verification attempts allowed within 24 hours",
+      phone_empty:"Enter phone number",
+      delphone_empty:"Enter phone number",
+      icode_empty:"Enter verification code",
+      ticket_empty:"Enter verification code",
+      phone_rule:"The phone number you entered is invalid.",
+      icode_rule:"The code you entered is incorrect",
+      ticket_rule:"The code you entered is incorrect or expired",
+      ticket_resError:"The code you entered is incorrect or expired",
+      phoneUnqualCurrent:"This number is similar to the current one",
+      phBindToOther:"This phone number is already associated with another account.",
+      reachMax:"Too many verification attempts. Try again tomorrow.",
+      error_system:"Something went wrong. Wait a minute or two and try again.",
+      bad_param:"Invalid",
+      bindLeftTimes:"There are 3 Mi Accounts associated with this phone number, can&#39;t add another one.",
+      phoneBindTomuch:"This phone has been associated with several Mi Accounts in a short period of time. Try using another phone number. ",
+      password_empty:"Enter your current password",
+      repassword_empty:"Enter your new password",
+      repassword2_empty:"Confirm your new password",
+      repassword_rule:"Password must be 8-16 characters and include both numbers and letters",
+      repassword2_rule:"Password entered is inconsistent ",
+      not_same_pwd:"Can&#39;t be the same as current password ",
+      password_resError:"The password you entered is incorrect",
+      password_resError:"The password you entered is incorrect",
+      repassword_format_error:"The format of the new password is incorrect",
+      pwd_risk_error:"New password can&#39;t contain your Mi Account ID, recovery phone, or recovery email.",
+      pwd_in_black:"Looks like your password isn&#39;t safe, try setting a new one",
+      pwd_in_email:"Password can&#39;t be the same as your email",
+      too_frequently:"Too many requests are being made from your IP address. Wait a minute and try again.",
+      back:"Back"
+    };
+    var fromTw='false'==='true';
+  </script>
+	<script src="https://account.xiaomi.com/static/res/6941994/passport/scripts/jquery-1.8.3.min.js"></script>
+	<script src="https://account.xiaomi.com/static/res/5S4cNRG/scripts/passport/jquery.bgiframe.js"></script>
+	<script src="https://account.xiaomi.com/static/res/01e7b91/passport/scripts/jquery.form.js"></script>
+	<script src="https://account.xiaomi.com/static/res/Ac2MxhH/scripts/passport/select.js"></script>
+	<script src="https://account.xiaomi.com/static/res/bde1db5/passport/scripts/oo/oo-min.js"></script>
+	<script src="https://account.xiaomi.com/static/res/d833ee3/passport/scripts/oo/com/mi/utils/cookie.js"></script>
+	<script src="https://account.xiaomi.com/static/res/1080ab8/passport/scripts/oo/com/mi/utils/time.js"></script>
+	<script src="/static/res/d3ed6b8/account-static/html/login/identity/dist/script/identity-en.js"></script><a target="_blank"></a>
+
+	<!--发短信 s-->
+	<script src="https://account.xiaomi.com/static/res/836f8ab/scripts/respassport/scripts/oo/com/mi/utils/l11n.js"></script>
+	<script src="https://account.xiaomi.com/static/res/29dfc87/account-static/respassport/scripts/oo/com/mi/widgets/sms_sgp.js"></script>
+	<!--发短信 e-->
+	<!--密保 s-->
+	<script src="https://account.xiaomi.com/static/res/180a9c8/passport/scripts/oo/com/mi/passport/mibao-min.js"></script>
+	<!--密保 e-->
+	<!--URL解析 s-->
+	<script src="https://account.xiaomi.com/static/res/cea14d9/passport/scripts/oo/com/mi/utils/url.js"></script>
+	<!--URL解析 e-->
+  <script src="/static/res/b54c16c/account-static/respassport/scripts/oo/com/mi/passport/portal/common.js"></script>
+
+  <script src="/static/res/9c2da41/account-static/scripts/tool/countryCode.js">
+</script>
+
+	<script src="/static/res/0db8b5b/account-static/respassport/scripts/oo/com/mi/passport/portal/sgp/2014.js">
+</script>
+  
+  
+	<script src="/static/res/a367f68/account-static/respassport/scripts/placeholder.js">
+</script>
+	<script>
+	var mibaoData = $.parseJSON($('#questionData').text().replace(/\'/g,'"'));
+	OO(['com.mi.passport.portal.2014'],function(portal2014,O){
+		var Security = portal2014.Security;
+		var sec = new Security();
+		sec.render();
+	});
+	</script>
+	<script>
+	$('#loadingMask').hidePopup();
+	</script>
+	<style type="text/css">
+	/*干掉该死的IE6的遮罩问题*/
+	#loadingMask .bkc{
+		_height:200%;
+	}
+	</style>
+
+
+<div class="modal_container" style="display: none;"><div class="modal_msk"></div><div class="modal_tip mod_acc_tip more-lang-modal" style="display: none;" id="modal-id-0"><div class="modal_tip_flex"><div class="modal_tip_hd modal-header"><div class="external_logo_area"><a class="milogo" href="javascript:void(0)"></a></div><div class="modal-header-text modal_tip_title">Select Your Language</div><a href="javascript:void(0)" title="" class="modal-header-close btn_mod_close"><span>Close</span></a></div><div class="modal_tip_bd modal-body"><div class="modal-select-list-con"><ul class="lang-select-list lang_items_list c_b"><li><a href="javascript:void(0)" class="locale-link" data-lang="zh_CN">中文(简体)‎</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="zh_TW">‎‎中文(繁體)‎</a></li><li><a href="javascript:void(0)" class="locale-link current" data-lang="en">English‎</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="ko_KR">한국어</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="pt_BR">Português (Brasil)‎</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="in_ID">Bahasa Indonesia</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="hi_IN">हिन्दी</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="ta_IN">தமிழ்</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="te_IN">తెలుగు</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="kn_IN">ಕನ್ನಡ</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="mr_IN">मराठी</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="ml_IN">മലയാളം</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="bn_IN">বাংলা</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="th_TH">ภาษาไทย</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="vi_VN">Tiếng Việt</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="ms_MY">Bahasa Melayu</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="tr_TR">Türkçe</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="ar">العربية</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="ru_RU">Русский</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="es_US">Español (América)‎</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="uk_UA">Українська</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="uz_UZ">O'zbekcha</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="as_IN">অসমীয়া</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="fa_IR">فارسی</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="fr_FR">Français</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="it_IT">Italiano</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="iw_IL">עברית</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="my_MM">ဗမာ</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="pl_PL">Polski</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="es_ES">Español (España)‎</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="cs_CZ">Čeština</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="el_GR">Ελληνικά</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="nl_NL">Nederlands</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="de_DE">Deutsch</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="ja_JP">日本語‎</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="bs_BA">Bosanski‎</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="hr_HR">Hrvatski</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="fi_FI">Suomi</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="lv_LV">Latviešu</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="ne_IN">नेपाली</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="pt_PT">Português (Portugal)</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="ro_RO">Română</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="sr_RS">Српски</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="sk_SK">Slovenčina</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="sl_SI">Slovenščina</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="lt_LT">Lietuvių</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="gu_IN">ગુજરાતી</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="hy_AM">հայերեն</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="pa_IN">ਪੰਜਾਬੀ</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="ha_NG">Hausa</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="kk_KZ">Қазақ тілі</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="az_AZ">Azərbaycan</a></li><li><a href="javascript:void(0)" class="locale-link" data-lang="or_IN">ଓଡ଼ିଆ</a></li></ul></div></div></div></div></div></body></html>

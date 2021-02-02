@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr">
+    <head>
+        <title>Todoist</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="theme-color" content="#c24f3d" />
+        <meta
+            property="og:image"
+            content="https://d3ptyyxy2at9ui.cloudfront.net/assets/images/968d99236e2536919d6d14ca13d25930.jpg"
+        />
+        <meta
+            property="og:image:secure_url"
+            content="https://d3ptyyxy2at9ui.cloudfront.net/assets/images/968d99236e2536919d6d14ca13d25930.jpg"
+        />
+        <meta name="apple-itunes-app" content="app-id=572688855" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+        <script src="https://d3ptyyxy2at9ui.cloudfront.net/assets/init_scripts.2bfdd547.js"></script>
+        <script
+            async
+            src="https://www.google-analytics.com/analytics.js"
+        ></script>
+        
+        <link
+            rel="stylesheet"
+            href="https://d3ptyyxy2at9ui.cloudfront.net/assets/ist_libs.a5a871c1c4c0ce7be567.css"
+        />
+        
+        <link
+            rel="stylesheet"
+            href="https://d3ptyyxy2at9ui.cloudfront.net/assets/app.3f5fc33ccc884cb40072.css"
+        />
+        
+    </head>
+
+    <body>
+        <div id="loading" class="loading_screen">
+            <div class="loading_screen--loader">
+                <svg
+                    class="loading_screen--logo"
+                    width="64"
+                    height="64"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g fill="none" fill-rule="evenodd">
+                        <path
+                            class="logo_bg"
+                            d="M56.000016 0h-48c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V8c0-4.4-3.6-8-8-8"
+                            fill="#E44332"
+                        />
+                        <g class="logo_stripe" fill="#FFF">
+                            <path
+                                d="M13.672368 29.985936c1.1304-.65152 25.34368-14.58496 25.89952-14.90592.5544-.32016.58224-1.30224-.03824-1.65632-.62096-.35408-1.79984-1.02368-2.23856-1.28048-.44656-.26048-1.24976-.40528-1.99472.02384-.30928.1784-21.00256 12.0768-21.69424
+                        12.46992-.82784.47072-1.85248.4768-2.67744-.0008-.65152-.37696-10.92864-6.3488-10.92864-6.3488v5.39712c2.66016 1.54912 9.2744 5.40128 10.87744 6.30624.95664.54016 1.87232.52688 2.79488-.0048"
+                            />
+                            <path
+                                d="M13.672368 40.76952c1.1304-.65152 25.34368-14.58496 25.89952-14.90592.5544-.32.58224-1.30224-.03824-1.65632-.62096-.35408-1.79984-1.02368-2.23856-1.28048-.44656-.26048-1.24976-.40528-1.99472.02384-.30928.1784-21.00256 12.0768-21.69424
+                        12.46992-.82784.47072-1.85248.4768-2.67744-.0008-.65152-.37696-10.92864-6.3488-10.92864-6.3488v5.39712c2.66016 1.54912 9.2744 5.40128 10.87744 6.30624.95664.54016 1.87232.52688 2.79488-.0048"
+                            />
+                            <path
+                                d="M13.672368 51.55312c1.1304-.65152 25.34368-14.58496 25.89952-14.90592.5544-.32.58224-1.30224-.03824-1.65632-.62096-.35408-1.79984-1.02368-2.23856-1.28048-.44656-.26048-1.24976-.40528-1.99472.02384-.30928.1784-21.00256 12.0768-21.69424
+                        12.46992-.82784.47072-1.85248.4768-2.67744-.0008-.65152-.37696-10.92864-6.3488-10.92864-6.3488v5.39712c2.66016 1.54912 9.2744 5.40128 10.87744 6.30624.95664.54016 1.87232.52688 2.79488-.0048"
+                            />
+                        </g>
+                    </g>
+                </svg>
+
+                <svg
+                    class="loading_screen--spinner"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                >
+                    <g fill="none" fill-rule="nonzero">
+                        <path
+                            class="ring_thumb"
+                            fill="#E44331"
+                            d="M17.945 3.958A9.955 9.955 0 0 0 12 2c-2.19 0-4.217.705-5.865 1.9L5.131 2.16A11.945 11.945 0 0 1 12 0c2.59 0 4.99.82 6.95 2.217l-1.005 1.741z"
+                        />
+                        <path
+                            class="ring_track"
+                            fill="#FCECEA"
+                            d="M5.13 2.16L6.136 3.9A9.987 9.987 0 0 0 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10a9.986 9.986 0 0 0-4.055-8.042l1.006-1.741A11.985 11.985 0 0 1 24 12c0 6.627-5.373 12-12 12S0 18.627 0 12c0-4.073 2.029-7.671 5.13-9.84z"
+                        />
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div id="todoist_app"></div>
+
+        
+        <script src="https://d3ptyyxy2at9ui.cloudfront.net/assets/vendor.c5e0678410756cc08970.js"></script>
+        
+        <script src="https://d3ptyyxy2at9ui.cloudfront.net/assets/ist_libs.9cb2b61d4ccad4704255.js"></script>
+        
+        <script src="https://d3ptyyxy2at9ui.cloudfront.net/assets/app.f46ca9ea6ff941128549.js"></script>
+        
+    </body>
+</html>

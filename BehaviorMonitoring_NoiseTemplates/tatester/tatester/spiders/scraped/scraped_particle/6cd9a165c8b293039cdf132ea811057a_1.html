@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width" name="viewport">
+    <meta content="Particle" property="og:title">
+    <meta content="Documentation for Particle, a platform for connected devices." name="description">
+    <title>Particle Documentation | Status LED and Device Modes</title>
+    <script src="/assets/js/jquery-1.11.1.min.js">
+    </script>
+    <link href="/assets/orange.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <script type="text/javascript">
+        var devices = [
+  "boron",
+  "photon",
+  "electron",
+  "argon",
+  "xenon"
+];
+        var forkLocations = {
+  "boron": {
+    "path": "/tutorials/device-os/led/boron",
+    "name": "Boron"
+  },
+  "photon": {
+    "path": "/tutorials/device-os/led/photon",
+    "name": "Photon"
+  },
+  "electron": {
+    "path": "/tutorials/device-os/led/electron",
+    "name": "Electron"
+  },
+  "argon": {
+    "path": "/tutorials/device-os/led/argon",
+    "name": "Argon"
+  },
+  "xenon": {
+    "path": "/tutorials/device-os/led/xenon",
+    "name": "Xenon"
+  }
+};
+    </script>
+    <script type="text/javascript">
+        if (window.location.search === '?start') {
+            // always select device when coming from particle.io/start
+        } else if (devices.length === 1) {
+            var fork = forkLocations[devices[0]];
+            window.location.replace(fork.path + window.location.hash);
+        } else {
+            var lastDevice = localStorage.getItem('lastDevice');
+            var fork = forkLocations[lastDevice];
+            if (lastDevice && fork) {
+                window.location.replace(fork.path + window.location.hash);
+            }
+            else {
+                // 2020-02: Skip the device selection interstitial if the
+                // last device is not set and instead jump to the first device
+                // in the list. 
+                if (devices.length >= 1) {
+                    var fork = forkLocations[devices[0]];
+                    window.location.replace(fork.path + window.location.hash);
+                }
+            }
+        }
+    </script>
+    <script src="/assets/js/docs.js"></script>
+    <script src="/assets/js/ga.js"></script>
+</head>
+<body>
+<div id="docs">
+    <div class="header redirector-header">
+        <div class="left"><a href="https://www.particle.io"><img id="logo" src="/assets/images/particle-docs.png"></a></div>
+    </div>
+    <div class="getting-started" id="device-redirector">
+        <h1 class="choose-device-header">Which device are you interested in?</h1>
+        <ul class="devices">
+                <a href="/tutorials/device-os/led/boron" id="boron-link">
+                    <li class="device" id="boron">
+                        <h3 id="Boron">Boron</h3>
+                        <img src="/assets/images/boron.svg">
+                    </li>
+                </a>
+                <a href="/tutorials/device-os/led/photon" id="photon-link">
+                    <li class="device" id="photon">
+                        <h3 id="Photon">Photon</h3>
+                        <img src="/assets/images/photon.svg">
+                    </li>
+                </a>
+                <a href="/tutorials/device-os/led/electron" id="electron-link">
+                    <li class="device" id="electron">
+                        <h3 id="Electron">Electron</h3>
+                        <img src="/assets/images/electron.svg">
+                    </li>
+                </a>
+                <a href="/tutorials/device-os/led/argon" id="argon-link">
+                    <li class="device" id="argon">
+                        <h3 id="Argon">Argon</h3>
+                        <img src="/assets/images/argon.svg">
+                    </li>
+                </a>
+                <a href="/tutorials/device-os/led/xenon" id="xenon-link">
+                    <li class="device" id="xenon">
+                        <h3 id="Xenon">Xenon</h3>
+                        <img src="/assets/images/xenon.svg">
+                    </li>
+                </a>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    for (var device in forkLocations) {
+        var dl = document.getElementById(device + '-link');
+        if (dl) {
+            dl.href = dl.pathname + window.location.hash;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,681 @@
+<!doctype html>
+<html class="two-columns">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+  
+  <title>Command Line | Tutorials | Particle</title>
+  
+  <!-- Spark theme mods -->
+  <link href='/assets/css/style.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://s3.amazonaws.com/icomoon.io/49057/Dashboard/style.css?9t9e91">
+  
+  <!-- Meta -->
+  <meta content="Command Line | Tutorials" property="og:title">
+  
+  <meta content="Command line interface for managing your Particle devices for Windows, Mac OS, and Linux" name="description">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/orange.ico" type="image/x-icon" />
+  
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="xoBkwTJRCA1Uxlx-g3dDw3YeaXTTA5hXQJfmR1mL84s" />
+</head>
+<body>
+  <div id="docs" data-level>
+    <div class='header'>
+    
+      <div class='left' data-swiftype-index='false'>
+    
+    
+        <div class="toggle-nav">
+          <a href="#" class="subnav-link toggle-navigation">
+            <i class="ion-navicon" title="show/hide the navigation"></i>
+          </a>
+        </div>
+    
+        <a href="/">
+          <img src="/assets/images/particle-docs.png" id="logo">
+        </a>
+    
+        <div class="sections">
+          <a class="nav " href="/">Home</a>
+          <a class="nav " href="/quickstart">Quickstart</a>
+          <a class="nav active" href="/tutorials">Tutorials</a>
+          <a class="nav " href="/reference">Reference</a>
+          <a class="nav " href="/datasheets">Datasheets</a>
+          <a class="nav " href="/community">Community</a>
+          <a class="nav " href="/workshops">Workshops</a>
+          <a class="nav " href="https://support.particle.io/hc/">Support</a>
+        </div>
+    
+        <div class="dropdown mobile-only">
+          <a id="dLabel" data-target="#" class="nav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            Tutorials
+            <i class="icon ion-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dLabel">
+            <li><a href="/">Home</a></li>
+            <li><a href="/quickstart">Quickstart</a></li>
+            <li><a href="/tutorials">Tutorials</a></li>
+            <li><a href="/reference">Reference</a></li>
+            <li><a href="/datasheets">Datasheets</a></li>
+            <li><a href="/community">Community</a></li>
+            <li><a href="/workshops">Workshops</a></li>
+            <li><a href="https://support.particle.io/hc/">Support</a></li>
+          </ul>
+        </div>
+    
+      </div>
+    
+      <div class='right'>
+        <div class="search">
+          <div class="search-input-wrapper">
+            <input class="st-default-search-input" type="text" placeholder='Search' value=''/>
+          </div>
+          <div class="search-results">
+          </div>
+        </div>
+    
+        <a href='https://github.com/particle-iot/docs/tree/master/src/content/tutorials/developer-tools/cli.md' class="nav" target="_blank"><i class="ion-edit"></i>Edit</a>
+    
+      </div>
+    </div>
+
+    <div class='content-root'>
+      <div class='menubar'>
+
+
+      <ul class="nav guide-menu" data-swiftype-index="false">
+        <li data-level="1" class="guide-section ">
+          <h3 class="guide-section-titles" >Device OS</h3>
+            <ul type="1">
+                <li class="top-level " data-level="1.1">
+                    <a href="/tutorials/device-os/device-os">Device OS</a>
+                </li>
+                <li class="top-level " data-level="1.2">
+                    <a href="/tutorials/device-os/led">Status LED and Device Modes</a>
+                </li>
+                <li class="top-level " data-level="1.3">
+                    <a href="/tutorials/device-os/libraries">Firmware Libraries</a>
+                </li>
+                <li class="top-level " data-level="1.4">
+                    <a href="/tutorials/device-os/bluetooth-le">Bluetooth LE</a>
+                </li>
+            </ul>
+          </li>
+        <li data-level="2" class="guide-section active-section">
+          <h3 class="guide-section-titles" >Developer Tools</h3>
+            <ul type="1">
+                <li class="top-level " data-level="2.1">
+                    <a href="/tutorials/developer-tools/workbench">Workbench</a>
+                </li>
+                <li class="top-level active" data-level="2.2">
+                    <span>Command Line</span>
+                      <i id="toggle-in-page-nav" class="ion-minus"></i>
+                </li>
+                    <div class="in-page-toc-container">
+                      <ul class="nav in-page-toc show">
+                        <li class="middle-level" data-nav=""><i class="toggle-secondary-toc ion-arrow-right-b"></i><a href="#installing">Installing</a></li>
+                            <ul class="nav secondary-in-page-toc">
+                                <li data-secondary-nav=""><a href="#using-macos-or-linux">Using macOS or Linux</a></li>
+                                <li data-secondary-nav=""><a href="#using-windows">Using Windows</a></li>
+                                <li data-secondary-nav=""><a href="#advanced-install">Advanced Install</a></li>
+                                <li data-secondary-nav=""><a href="#upgrading-to-the-latest-version">Upgrading to the latest version</a></li>
+                                <li data-secondary-nav=""><a href="#running-from-source-advanced-">Running from source (advanced)</a></li>
+                            </ul>
+                        <li class="middle-level" data-nav=""><i class="toggle-secondary-toc ion-arrow-right-b"></i><a href="#getting-started">Getting Started</a></li>
+                            <ul class="nav secondary-in-page-toc">
+                                <li data-secondary-nav=""><a href="#particle-setup">particle setup</a></li>
+                                <li data-secondary-nav=""><a href="#particle-help">particle help</a></li>
+                            </ul>
+                        <li class="middle-level" data-nav=""><a href="#flashing-over-serial-for-the-electron">Flashing over Serial for the Electron</a></li>
+                        <li class="middle-level" data-nav=""><a href="#blink-an-led-with-tinker">Blink an LED with Tinker</a></li>
+                        <li class="middle-level" data-nav=""><a href="#update-your-device-remotely">Update your device remotely</a></li>
+                        <li class="middle-level" data-nav=""><a href="#compile-and-flash-code-locally">Compile and flash code locally</a></li>
+                        <li class="middle-level" data-nav=""><i class="toggle-secondary-toc ion-arrow-right-b"></i><a href="#working-with-projects-and-libraries">Working with projects and libraries</a></li>
+                            <ul class="nav secondary-in-page-toc">
+                                <li data-secondary-nav=""><a href="#creating-a-project">Creating a project</a></li>
+                                <li data-secondary-nav=""><a href="#using-libraries">Using libraries</a></li>
+                                <li data-secondary-nav=""><a href="#library-search">library search</a></li>
+                                <li data-secondary-nav=""><a href="#library-add">library add</a></li>
+                                <li data-secondary-nav=""><a href="#library-view">library view</a></li>
+                                <li data-secondary-nav=""><a href="#library-copy">library copy</a></li>
+                                <li data-secondary-nav=""><a href="#incorporating-the-library-into-your-project">Incorporating the library into your project</a></li>
+                            </ul>
+                        <li class="middle-level" data-nav=""><i class="toggle-secondary-toc ion-arrow-right-b"></i><a href="#contributing-libraries">Contributing Libraries</a></li>
+                            <ul class="nav secondary-in-page-toc">
+                                <li data-secondary-nav=""><a href="#create-a-project-for-consuming-the-library">Create a project for consuming the library</a></li>
+                                <li data-secondary-nav=""><a href="#scaffolding-the-library">Scaffolding the library</a></li>
+                                <li data-secondary-nav=""><a href="#authoring-the-library">Authoring the library</a></li>
+                                <li data-secondary-nav=""><a href="#consuming-the-library">Consuming the library</a></li>
+                                <li data-secondary-nav=""><a href="#contributing-the-library">Contributing the library</a></li>
+                                <li data-secondary-nav=""><a href="#publishing-the-library">Publishing the Library</a></li>
+                            </ul>
+                        <li class="middle-level" data-nav=""><a href="#reference">Reference</a></li>
+                      </ul>
+                    </div>
+                <li class="top-level " data-level="2.3">
+                    <a href="/tutorials/developer-tools/tinker">Tinker &amp; Mobile App</a>
+                </li>
+                <li class="top-level " data-level="2.4">
+                    <a href="/tutorials/developer-tools/two-step-authentication">Two-Step Authentication</a>
+                </li>
+                <li class="top-level " data-level="2.5">
+                    <a href="/tutorials/developer-tools/build">Web IDE (Build)</a>
+                </li>
+                <li class="top-level " data-level="2.6">
+                    <a href="/tutorials/developer-tools/dev">Desktop IDE (Dev)</a>
+                </li>
+            </ul>
+          </li>
+        <li data-level="3" class="guide-section ">
+          <h3 class="guide-section-titles" >Cellular Connectivity</h3>
+            <ul type="1">
+                <li class="top-level " data-level="3.1">
+                    <a href="/tutorials/cellular-connectivity/introduction">Introduction</a>
+                </li>
+                <li class="top-level " data-level="3.2">
+                    <a href="/tutorials/cellular-connectivity/sim-management">SIM Management</a>
+                </li>
+                <li class="top-level " data-level="3.3">
+                    <a href="/tutorials/cellular-connectivity/billing">Cellular Billing Guide</a>
+                </li>
+                <li class="top-level " data-level="3.4">
+                    <a href="/tutorials/cellular-connectivity/data">Cellular Data Guide</a>
+                </li>
+                <li class="top-level " data-level="3.5">
+                    <a href="/tutorials/cellular-connectivity/cellular-carriers">Cellular Carriers</a>
+                </li>
+            </ul>
+          </li>
+        <li data-level="4" class="guide-section ">
+          <h3 class="guide-section-titles" >Device Cloud</h3>
+            <ul type="1">
+                <li class="top-level " data-level="4.1">
+                    <a href="/tutorials/device-cloud/introduction">Introduction</a>
+                </li>
+                <li class="top-level " data-level="4.2">
+                    <a href="/tutorials/device-cloud/ota-updates">OTA Firmware Updates</a>
+                </li>
+                <li class="top-level " data-level="4.3">
+                    <a href="/tutorials/device-cloud/console">Console</a>
+                </li>
+                <li class="top-level " data-level="4.4">
+                    <a href="/tutorials/device-cloud/webhooks">Webhooks</a>
+                </li>
+                <li class="top-level " data-level="4.5">
+                    <a href="/tutorials/device-cloud/authentication">Authentication</a>
+                </li>
+            </ul>
+          </li>
+        <li data-level="5" class="guide-section ">
+          <h3 class="guide-section-titles" >Diagnostics</h3>
+            <ul type="1">
+                <li class="top-level " data-level="5.1">
+                    <a href="/tutorials/diagnostics/introduction">Introduction</a>
+                </li>
+                <li class="top-level " data-level="5.2">
+                    <a href="/tutorials/diagnostics/device-vitals">Device Vitals</a>
+                </li>
+                <li class="top-level " data-level="5.3">
+                    <a href="/tutorials/diagnostics/fleet-health">Fleet Health</a>
+                </li>
+            </ul>
+          </li>
+        <li data-level="6" class="guide-section ">
+          <h3 class="guide-section-titles" >Product Tools</h3>
+            <ul type="1">
+                <li class="top-level " data-level="6.1">
+                    <a href="/tutorials/product-tools/introduction">Introduction</a>
+                </li>
+                <li class="top-level " data-level="6.2">
+                    <a href="/tutorials/product-tools/security">Security</a>
+                </li>
+                <li class="top-level " data-level="6.3">
+                    <a href="/tutorials/product-tools/device-groups">Device Groups</a>
+                </li>
+                <li class="top-level " data-level="6.4">
+                    <a href="/tutorials/product-tools/development-devices">Development Devices</a>
+                </li>
+                <li class="top-level " data-level="6.5">
+                    <a href="/tutorials/product-tools/team-access-controls">Team Access Controls</a>
+                </li>
+                <li class="top-level " data-level="6.6">
+                    <a href="/tutorials/product-tools/organizations">Organizations</a>
+                </li>
+            </ul>
+          </li>
+        <li data-level="7" class="guide-section ">
+          <h3 class="guide-section-titles" >Integrations</h3>
+            <ul type="1">
+                <li class="top-level " data-level="7.1">
+                    <a href="/tutorials/integrations/introduction">Introduction</a>
+                </li>
+                <li class="top-level " data-level="7.2">
+                    <a href="/tutorials/integrations/google-cloud-platform">Google Cloud Platform</a>
+                </li>
+                <li class="top-level " data-level="7.3">
+                    <a href="/tutorials/integrations/google-maps">Google Maps</a>
+                </li>
+                <li class="top-level " data-level="7.4">
+                    <a href="/tutorials/integrations/azure-iot-hub">Azure IoT Hub</a>
+                </li>
+                <li class="top-level " data-level="7.5">
+                    <a href="/tutorials/integrations/influxdata">InfluxData</a>
+                </li>
+                <li class="top-level " data-level="7.6">
+                    <a href="/tutorials/integrations/ifttt">IFTTT</a>
+                </li>
+            </ul>
+          </li>
+        <li data-level="8" class="guide-section ">
+          <h3 class="guide-section-titles" >Hardware Projects</h3>
+            <ul type="1">
+                <li class="top-level " data-level="8.1">
+                    <a href="/tutorials/hardware-projects/hardware-examples">Hardware Examples</a>
+                </li>
+                <li class="top-level " data-level="8.2">
+                    <a href="/tutorials/hardware-projects/maker-kit">Maker Kit Tutorials</a>
+                </li>
+                <li class="top-level " data-level="8.3">
+                    <a href="/tutorials/hardware-projects/e-series-eval-kit">E Series Eval Kit Tutorials</a>
+                </li>
+                <li class="top-level " data-level="8.4">
+                    <a href="/tutorials/hardware-projects/som-first-board">SoM First Board</a>
+                </li>
+            </ul>
+          </li>
+        <li data-level="9" class="guide-section ">
+          <h3 class="guide-section-titles" >IoT Rules Engine</h3>
+            <ul type="1">
+                <li class="top-level " data-level="9.1">
+                    <a href="/tutorials/iot-rules-engine/quickstart">Quickstart Guide</a>
+                </li>
+                <li class="top-level " data-level="9.2">
+                    <a href="/tutorials/iot-rules-engine/real-time-alerting">Real-time Alerting</a>
+                </li>
+                <li class="top-level " data-level="9.3">
+                    <a href="/tutorials/iot-rules-engine/device-command-and-control">Device Command and Control</a>
+                </li>
+                <li class="top-level " data-level="9.4">
+                    <a href="/tutorials/iot-rules-engine/data-management">Data Management</a>
+                </li>
+                <li class="top-level " data-level="9.5">
+                    <a href="/tutorials/iot-rules-engine/visualization-and-analytics">Visualization and Analytics</a>
+                </li>
+                <li class="top-level " data-level="9.6">
+                    <a href="/tutorials/iot-rules-engine/fleet-wide-remote-diagnostics">Fleet-wide Remote Diagnostics</a>
+                </li>
+                <li class="top-level " data-level="9.7">
+                    <a href="/tutorials/iot-rules-engine/dynamic-firmware-management">Dynamic Firmware Management</a>
+                </li>
+            </ul>
+          </li>
+        <li data-level="10" class="guide-section ">
+          <h3 class="guide-section-titles" >Learn More</h3>
+            <ul type="1">
+                <li class="top-level " data-level="10.1">
+                    <a href="/tutorials/learn-more/about-i2c">About I2C</a>
+                </li>
+                <li class="top-level " data-level="10.2">
+                    <a href="/tutorials/learn-more/about-serial">About Serial</a>
+                </li>
+                <li class="top-level " data-level="10.3">
+                    <a href="/tutorials/learn-more/ethernet-featherwing">Ethernet FeatherWing</a>
+                </li>
+                <li class="top-level " data-level="10.4">
+                    <a href="/tutorials/learn-more/batteries">Batteries</a>
+                </li>
+                <li class="top-level " data-level="10.5">
+                    <a href="/tutorials/learn-more/beyond-prototpying">Beyond Prototyping</a>
+                </li>
+                <li class="top-level " data-level="10.6">
+                    <a href="/tutorials/learn-more/xenon-options">Using a Xenon without Mesh</a>
+                </li>
+                <li class="top-level " data-level="10.7">
+                    <a href="/tutorials/learn-more/xenon-circuit-python">CircuitPython on Xenon</a>
+                </li>
+            </ul>
+          </li>
+      </ul>
+      </div>
+      <div class="page-body">
+        <div class='content-inner'>
+          <div class="content" >
+            <h1 id="particle-cli">Particle CLI<a href="#particle-cli" class="header-permalinks"><i class="ion-link"></i></a></h1><p>The Particle CLI is a powerful tool for interacting with your devices
+and the Particle Device Cloud.  The CLI uses <a href="http://nodejs.org/" target="_blank" rel="noopener noreferrer">Node.js</a> and can easily run on Windows, macOS (OS X), and Linux.  It&apos;s also <a href="https://github.com/particle-iot/particle-cli" target="_blank" rel="noopener noreferrer">open source</a> so you can edit and change it, and even send in your changes as <a href="https://help.github.com/articles/about-pull-requests/" target="_blank" rel="noopener noreferrer">pull requests</a> if you want to share!</p>
+<h2 id="installing">Installing<a href="#installing" class="header-permalinks"><i class="ion-link"></i></a></h2><h3 id="using-macos-or-linux">Using macOS or Linux<a href="#using-macos-or-linux" class="header-permalinks"><i class="ion-link"></i></a></h3><p>The easiest way to install the CLI is to open a Terminal and type:</p>
+<pre><code class="lang-sh">bash &lt;( curl -sL https://particle.io/install-cli )
+</code></pre>
+<p>This command downloads the <code>particle</code> command to your home directory at <code>~/bin</code>, installs a version of Node.js to <code>~/.particle</code> and installs the <code>particle-cli</code> Node.js module that contain the code of the CLI.</p>
+<p>It will also try to install <a href="https://support.particle.io/hc/en-us/articles/360039251394/" target="_blank" rel="noopener noreferrer">DFU-util</a>, a utility program for programming devices over USB. See the <a href="https://support.particle.io/hc/en-us/articles/360039251394/" target="_blank" rel="noopener noreferrer">instructions for installing DFU-util</a> if the installer is not able to automatically install dfu-util.</p>
+<p>The installer also works on the Raspberry Pi!</p>
+<h3 id="using-windows">Using Windows<a href="#using-windows" class="header-permalinks"><i class="ion-link"></i></a></h3><p>Download the <a href="https://binaries.particle.io/cli/installer/windows/ParticleCLISetup.exe" target="_blank" rel="noopener noreferrer">Windows CLI Installer</a> and run it to install the Particle CLI, the device drivers and <a href="https://support.particle.io/hc/en-us/articles/360039251394/" target="_blank" rel="noopener noreferrer">DFU-util</a>.</p>
+<p>The CLI is installed to <code>%LOCALAPPDATA%\particle</code> (<code>C:\Users\username\AppData\Local\particle</code> for Windows in English).</p>
+<h3 id="advanced-install">Advanced Install<a href="#advanced-install" class="header-permalinks"><i class="ion-link"></i></a></h3><p>You can manually install the <code>particle-cli</code> Node.js package if you need the CLI installed in a different location or you need to install a specific version of the CLI. </p>
+<p>Make sure you have a recent <a href="http://nodejs.org/" target="_blank" rel="noopener noreferrer">LTS version of Node.js</a> installed.</p>
+<pre><code class="lang-sh"># check that you have node.js 10 or above. Check http://nodejs.org on how to update node.js
+$ node -v
+v10.15.1
+# check that you have npm 6 or above
+$ npm -v
+6.4.1
+</code></pre>
+<p>Next, open a command prompt or terminal, and install by typing:</p>
+<pre><code class="lang-sh"># how to install the particle-cli
+$ npm install -g particle-cli
+$ particle login
+</code></pre>
+<p>If you experience permission errors, we recommend you change the directory where npm installs global packages (ones installed with <code>-g</code>) to another directory as documented <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions#option-2-change-npms-default-directory-to-another-directory" target="_blank" rel="noopener noreferrer">here</a>. If you must install <code>particle-cli</code> to the default global package location as the superuser, you have to use the <code>--unsafe-perm</code> flag to successfully install all dependencies: <code>sudo npm install -g --unsafe-perm particle-cli</code>.</p>
+<p>For more OS-specific install instructions, see below.</p>
+<p>On Windows, make sure to download and install the <a href="https://binaries.particle.io/drivers/windows/particle_drivers.exe" target="_blank" rel="noopener noreferrer">Windows Drivers</a> if you installed the CLI through <code>npm</code> and did not use the <a href="#using-windows">Windows CLI Installer</a>.</p>
+<p>To use the local flash and key features you&apos;ll also need to install <a href="https://s3.amazonaws.com/spark-assets/dfu-util-0.8-binaries.tar.xz" target="_blank" rel="noopener noreferrer">dfu-util</a>, and <a href="http://www.openssl.org/" target="_blank" rel="noopener noreferrer">openssl</a>.  They are freely available and open-source, and there are installers and binaries for most major platforms.</p>
+<p>Here are some great tutorials on the community for full installs:</p>
+<p><a href="https://community.particle.io/t/tutorial-spark-cli-on-windows-06-may-2014/3112" target="_blank" rel="noopener noreferrer">Install Separate Components for Windows</a></p>
+<p><a href="https://community.particle.io/t/how-to-install-spark-cli-on-ubuntu-12-04/3474" target="_blank" rel="noopener noreferrer">Installing on Ubuntu 12.04</a></p>
+<p><a href="https://community.particle.io/t/how-to-install-the-spark-toolchain-in-ubuntu-14-04/4139" target="_blank" rel="noopener noreferrer">Installing on Ubuntu 14.04</a></p>
+<p><a href="http://community.particle.io/t/tutorial-particle-cli-on-mac-osx-07-jun-2015/5225" target="_blank" rel="noopener noreferrer">Installing on Mac</a></p>
+<h3 id="upgrading-to-the-latest-version">Upgrading to the latest version<a href="#upgrading-to-the-latest-version" class="header-permalinks"><i class="ion-link"></i></a></h3><p>If you installed the Particle CLI through the installer, it will periodically update itself to the latest version.</p>
+<p>To force it to update, run the installer script again or enter this command:</p>
+<pre><code class="lang-sh"># how to update the installed CLI
+$ particle update-cli
+</code></pre>
+<p>If the CLI is outputing unexpected errors after an update, delete the <code>~/.particle</code> (macOS and Linux) or <code>C:\Users\&lt;username&gt;\AppData\Local\particle</code> directory and run the installer script again to start over.</p>
+<p><strong>To prevent the Particle CLI from automatically updating, set the environment variable <code>PARTICLE_DISABLE_UPDATE=true</code> for your system. Use <code>particle update-cli</code> to manually update.</strong></p>
+<p>If you installed manually using <code>npm install</code>, you can upgrade by running the same command you used to install the tool.</p>
+<h3 id="running-from-source-advanced-">Running from source (advanced)<a href="#running-from-source-advanced-" class="header-permalinks"><i class="ion-link"></i></a></h3><p>To grab the CLI source and play with it locally</p>
+<pre><code class="lang-sh"># how to get the source code for the CLI
+$ git clone https://github.com/particle-iot/particle-cli.git
+$ cd particle-cli
+$ npm install
+$ npm start -- help
+</code></pre>
+<p>View <a href="https://github.com/particle-iot/particle-cli#development" target="_blank" rel="noopener noreferrer">README#Development</a> for more</p>
+<h2 id="getting-started">Getting Started<a href="#getting-started" class="header-permalinks"><i class="ion-link"></i></a></h2><p>  These next two commands are all you need to get started setting up an account, claiming a device, and discovering new features.</p>
+<h3 id="particle-setup">particle setup<a href="#particle-setup" class="header-permalinks"><i class="ion-link"></i></a></h3><p>  This command will guide you through logging in or creating a new account as well as claiming your device!</p>
+<pre><code class="lang-sh"># how to setup your account and your device
+$ particle setup
+</code></pre>
+<h3 id="particle-help">particle help<a href="#particle-help" class="header-permalinks"><i class="ion-link"></i></a></h3><p>  Shows you what commands are available and how to use them.  You can also give the name of a command for detailed help.</p>
+<pre><code class="lang-sh"># how to get help
+$ particle help
+$ particle help keys
+</code></pre>
+<h2 id="flashing-over-serial-for-the-electron">Flashing over Serial for the Electron<a href="#flashing-over-serial-for-the-electron" class="header-permalinks"><i class="ion-link"></i></a></h2><p>If you&apos;re wanting to save data on your Electron you should definitely consider flashing your Electron over
+USB instead of OTA (over-the-air).</p>
+<p>Assuming you&apos;ve compiled and downloaded the firmware binary from <a href="https://build.particle.io" target="_blank" rel="noopener noreferrer">Build IDE</a> by clicking the cloud button next to the file name, you should
+be able to use the Particle CLI, mentioned above, to flash your application firmware to your Electron <em>without using data.</em></p>
+<p>Steps:</p>
+<ul>
+<li><strong>1:</strong> Put the Electron in to <a href="/tutorials/device-os/led/electron/#dfu-mode-device-firmware-upgrade-">DFU mode</a> (blinking yellow).</li>
+<li><strong>2:</strong> Open a command prompt or terminal window.</li>
+<li><strong>3:</strong> Navigate to the folder where you&apos;ve downloaded the <code>firmware.bin</code> file.</li>
+<li><strong>4:</strong> From the CLI issue <code>particle flash --usb firmware.bin</code></li>
+</ul>
+<pre><code class="lang-sh"># How to flash an Electron over USB
+$ particle flash --usb firmware.bin
+</code></pre>
+<p><em>Note</em>: If your Electron goes into <a href="/tutorials/device-os/led/electron/#safe-mode">safe
+mode</a> blinking magenta you should put the Electron back into DFU mode (blinking yellow) and do:</p>
+<pre><code>$ particle update
+</code></pre><h2 id="blink-an-led-with-tinker">Blink an LED with Tinker<a href="#blink-an-led-with-tinker" class="header-permalinks"><i class="ion-link"></i></a></h2><p>If you&apos;re just opening a new device, chances are it&apos;s already loaded with Tinker, the app we load at the factory.  If you don&apos;t have Tinker, or if you&apos;ve been using the build IDE already, let&apos;s load it quickly by typing:</p>
+<pre><code class="lang-sh"># How to re-load tinker onto a device
+$ particle flash my_new_device_name tinker
+Including:
+/usr/local/lib/node_modules/particle-cli/binaries/particle_tinker.bin
+attempting to flash firmware to your device my_new_device_name
+flash device said  {&quot;id&quot;:&quot;0123456789ABCDEFGHI&quot;,&quot;status&quot;:&quot;Update started&quot;}
+</code></pre>
+<p>Let&apos;s make sure your device is online and loaded with Tinker.  We should see the four characteristic functions exposed by Tinker, &quot;digitalWrite&quot;, &quot;digitalRead&quot;, &quot;analogWrite&quot;, and &quot;analogRead&quot;.</p>
+<pre><code class="lang-sh"># how to show all your devices and their functions and variables
+$ particle list
+
+Checking with the cloud...
+Retrieving devices... (this might take a few seconds)
+my_device_name (0123456789ABCDEFGHI) 0 variables, and 4 functions
+  Functions:
+    int digitalread(String args)
+    int digitalwrite(String args)
+    int analogread(String args)
+    int analogwrite(String args)
+
+</code></pre>
+<p>Let&apos;s try turning on the LED attached to pin D7 on your device.</p>
+<pre><code class="lang-sh"># how to call a function on your device
+$ particle call my_device_name digitalwrite D7,HIGH
+1
+$ particle call my_device_name digitalwrite D7,LOW
+1
+</code></pre>
+<p>Nice!  You should have seen the small blue LED turn on, and then off.</p>
+<h2 id="update-your-device-remotely">Update your device remotely<a href="#update-your-device-remotely" class="header-permalinks"><i class="ion-link"></i></a></h2><p>You can write whole apps and flash them remotely from the command line just as you would from the build IDE.  Let&apos;s write a small blink sketch to try it out.</p>
+<p>Copy and paste the following program into a file called blinky.ino</p>
+<pre><code class="lang-ino">// Copy me to blinky.ino
+#define PIN D7
+int state = 0;
+
+void setup() {
+    //tell the device we want to write to this pin
+    pinMode(PIN, OUTPUT);
+}
+void loop() {
+    //alternate the PIN between high and low
+    digitalWrite(PIN, (state) ? HIGH : LOW);
+
+    //invert the state
+    state = !state;
+
+    //wait half a second
+    delay(500);
+}
+</code></pre>
+<p>Then let&apos;s compile that program to make sure it&apos;s valid code.  The CLI will automatically download the compiled binary of your program if everything went well.</p>
+<pre><code class="lang-sh"># how to compile a program without flashing to your device
+$ particle compile photon blinky.ino
+Including:
+blinky.ino
+attempting to compile firmware
+pushing file: blinky.ino
+grabbing binary from: https://api.particle.io/v1/binaries/01234567890ABCDEFGH
+saved firmware to firmware_123456781234.bin
+Compiled firmware downloaded.
+</code></pre>
+<p>Replace photon with the type of device you have:</p>
+<ul>
+<li>argon</li>
+<li>boron</li>
+<li>photon</li>
+<li>p1</li>
+<li>electron (also E series)</li>
+</ul>
+<p>Now that we have a valid program, let&apos;s flash it to our device!  We can use either the source code again, or we can send our binary.</p>
+<pre><code class="lang-sh"># how to flash a program to your device (from source code)
+$ particle flash my_device_name blinky.ino
+
+# OR - how to flash a pre-compiled binary to your device
+$ particle flash my_device_name firmware_123456781234.bin
+Including:
+firmware_123456781234.bin
+attempting to flash firmware to your device my_device_name
+flash device said  {&quot;id&quot;:&quot;01234567890ABCDEFGH&quot;,&quot;status&quot;:&quot;Update started&quot;}
+</code></pre>
+<h2 id="compile-and-flash-code-locally">Compile and flash code locally<a href="#compile-and-flash-code-locally" class="header-permalinks"><i class="ion-link"></i></a></h2><p>You can find a <a href="https://support.particle.io/hc/en-us/articles/360039741273/" target="_blank" rel="noopener noreferrer">step-by-step guide to installing the local build toolchain for the firmware</a> in the FAQ section of the documentation.</p>
+<p>After building your code on your machine, you can flash it to your device over Serial or remotely.</p>
+<h2 id="working-with-projects-and-libraries">Working with projects and libraries<a href="#working-with-projects-and-libraries" class="header-permalinks"><i class="ion-link"></i></a></h2><p>When your code gets too long for one file or you want to use libraries
+that other developers have contributed to the Particle platform it&apos;s
+time to create a project.</p>
+<h3 id="creating-a-project">Creating a project<a href="#creating-a-project" class="header-permalinks"><i class="ion-link"></i></a></h3><p>By default projects are created in your home directory under Particle or
+in your Documents folder under Particle on Windows. You can also create
+projects in the current directory.</p>
+<pre><code class="lang-sh">$ particle project create
+What would you like to call your project? [myproject]: doorbell
+Would you like to create your project in the default project directory? [Y/n]:
+Initializing project in directory /home/user/Particle/projects/doorbell...
+&gt; A new project has been initialized in directory /home/user/Particle/projects/doorbell
+</code></pre>
+<h3 id="using-libraries">Using libraries<a href="#using-libraries" class="header-permalinks"><i class="ion-link"></i></a></h3><p>The CLI supports using libraries with your project. This allows you to
+incorporate already written and tested code into your project, speeding
+up development and assuring quality.</p>
+<p>The overall flow when consuming a library goes like this</p>
+<ul>
+<li>set up the initial project for your application</li>
+<li>find the library you want to add <code>particle library search</code></li>
+<li>add the library to your project - <code>particle library add</code></li>
+<li>edit your source code to use the library</li>
+<li>compile your project - <code>particle compile</code></li>
+</ul>
+<p>These commands are described in more details in <a href="/reference/developer-tools/cli/#particle-library">the CLI reference</a>.</p>
+<h3 id="library-search">library search<a href="#library-search" class="header-permalinks"><i class="ion-link"></i></a></h3><p>The <code>library search</code> command allows you to search for libraries that are related to the text that you type in.</p>
+<p>For example,</p>
+<pre><code>particle library search neo
+</code></pre><p>Will find libraries containing <code>neo</code> in their name.</p>
+<h3 id="library-add">library add<a href="#library-add" class="header-permalinks"><i class="ion-link"></i></a></h3><p>The <code>library add</code> command adds the latest version of a library to your project.</p>
+<p>For example, if you wanted to add the InternetButton library to your project, you would type</p>
+<pre><code>$ particle library add internetbutton
+&gt; Library InternetButton 0.1.10 has been added to the project.
+&gt; To get started using this library, run particle library view InternetButton to view the library documentation and sources.
+</code></pre><p>This will add the InternetButton dependency to your project&apos;s <code>project.properties</code> file.</p>
+<p>The InternetButton library itself is not present in your project, so you won&apos;t see the InternetButton sources.
+The library is added to your project when the project is compiled in the cloud.</p>
+<p>To make the library functionality available to your application, you add an include statement to your application source code.
+The include statement names the library header file, which is the library name with a <code>.h</code> ending.  </p>
+<p>For example, if we were using the library &quot;UberSensor&quot;, it would be included like this</p>
+<pre><code>#include &quot;UberSensor.h&quot;
+</code></pre><h3 id="library-view">library view<a href="#library-view" class="header-permalinks"><i class="ion-link"></i></a></h3><p>The <code>library view</code> downloads the source code of a library so you can view the code, example and README.</p>
+<pre><code>$ particle library view internetbutton
+Checking library internetbutton...
+Library InternetButton 0.1.11 installed.
+Checking library neopixel...
+Checking library particle_ADXL362...
+Library particle_ADXL362 0.0.1 installed.
+Library neopixel 0.0.10 installed.
+To view the library documentation and sources directly, please change to the directory /home/monkbroc/Particle/community/libraries/InternetButton@0.1.11
+</code></pre><p>Change to the directory indicated to view the sources.</p>
+<h3 id="library-copy">library copy<a href="#library-copy" class="header-permalinks"><i class="ion-link"></i></a></h3><p>Adding a library to your project does not add the library sources. For times when you want to modify the library sources, you can have them added locally.</p>
+<pre><code>particle library copy neopixel
+</code></pre><p>The library will be copied to the <code>lib</code> folder of your project. If you already have the library in your <code>project.properties</code> make sure to remove it so the cloud compiler doesn&apos;t overwrite your changed copy with the published code.</p>
+<h3 id="incorporating-the-library-into-your-project">Incorporating the library into your project<a href="#incorporating-the-library-into-your-project" class="header-permalinks"><i class="ion-link"></i></a></h3><p>Once the library is added, it is available for use within your project.
+The first step to using the library is to include the library header, which follows the name of the library. For example:</p>
+<pre><code>#include &quot;neopixel.h&quot;
+</code></pre><p>The functions and classes from that library are then available for use in your application.
+Check out the library examples and documentation that comes with the library for specifics on using that library.</p>
+<h2 id="contributing-libraries">Contributing Libraries<a href="#contributing-libraries" class="header-permalinks"><i class="ion-link"></i></a></h2><p>Contributing a library is the process where you author a library and share this with the community.</p>
+<p>The steps to creating a library are as follows:</p>
+<ul>
+<li>optionally, create a project for consuming the library</li>
+<li>scaffold a new library structure - <code>library create</code></li>
+<li>author the library, tests and examples</li>
+<li>publish the library</li>
+</ul>
+<h3 id="create-a-project-for-consuming-the-library">Create a project for consuming the library<a href="#create-a-project-for-consuming-the-library" class="header-permalinks"><i class="ion-link"></i></a></h3><p>While it&apos;s not strictly necessary to have a project present when authoring
+a new library, having one can help ensure that the library works as intended before publishing it. The project allows you to consume the library, check that it compiles and verify it behaves as expected on the target platforms before publishing.</p>
+<p>For the library consumer project that will consume the library <code>mylib</code>, create an initial project structure that looks like this:</p>
+<pre><code>src/project.cpp
+src/project.h
+project.properties
+lib/mylib
+</code></pre><p>The library will exist in the directory <code>lib/mylib</code>.</p>
+<p>All these files are initially empty - we&apos;ll add content to them as the library is authored.</p>
+<h3 id="scaffolding-the-library">Scaffolding the library<a href="#scaffolding-the-library" class="header-permalinks"><i class="ion-link"></i></a></h3><p>The <code>library create</code> command is used to scaffold the library. It creates a skeleton structure for the library, containing
+initial sources, examples, tests and documentation.</p>
+<p>In our example project structure we want to create a new library in <code>lib/mylib</code> so we will run these commands:</p>
+<pre><code>cd lib/mylib
+particle library create
+</code></pre><p>The command will prompt you to enter the name of the library - <code>mylib</code>, the version - <code>0.0.1</code> and the author, your name/handle/ident.</p>
+<p>The command will then create the skeleton structure for the library.</p>
+<h3 id="authoring-the-library">Authoring the library<a href="#authoring-the-library" class="header-permalinks"><i class="ion-link"></i></a></h3><p>You are then free to edit the <code>.cpp</code> and <code>.h</code> files in the <code>lib/mylib/src</code> folder to provide the functionality of your library.</p>
+<p>It&apos;s a good idea to test often, by writing code in the consuming project that uses each piece of functionality in the library as it&apos;s written.</p>
+<h3 id="consuming-the-library">Consuming the library<a href="#consuming-the-library" class="header-permalinks"><i class="ion-link"></i></a></h3><p>To test your changes in the library, compile the project using <code>particle compile &lt;platform&gt;</code></p>
+<p><code>particle compile photon</code></p>
+<p>This will create a <code>.bin</code> file which you then flash to your device.</p>
+<p><code>particle flash mydevice firmware.bin</code></p>
+<p>(Replace the name <code>firmware.bin</code> with the name of the <code>.bin</code> file produced by the compile step.)</p>
+<h3 id="contributing-the-library">Contributing the library<a href="#contributing-the-library" class="header-permalinks"><i class="ion-link"></i></a></h3><p>Once you have tested the library and you are ready to upload the library to the cloud, you run the <code>library upload</code>
+command.  You run this command from the directory containing the library</p>
+<pre><code>cd lib/mylib
+particle library upload
+</code></pre><p>Before the library is contributed, it is first validated. If validation succeeds, the library is contributed
+and is then available for use in your other projects. The library is not available to anyone else.</p>
+<h3 id="publishing-the-library">Publishing the Library<a href="#publishing-the-library" class="header-permalinks"><i class="ion-link"></i></a></h3><p>If you wish to make a contributed library available to everyone, it first needs to be published.</p>
+<p>When publishing a library, it&apos;s important to ensure the version number hasn&apos;t been published before -
+if the version has already been published, the library will not be published and an error message will be displayed.</p>
+<p>Incrementing the version number with each publish is a recommended approach to ensuring unique versions.</p>
+<p>Once the library is published, it is visible to everyone and available for use. Once the a given version of a library
+has been published, the files and data cannot be changed. Subsequent changes must be via a new contributed version
+and subsequent publish.</p>
+<h2 id="reference">Reference<a href="#reference" class="header-permalinks"><i class="ion-link"></i></a></h2><p>For more info on CLI commands, go <a href="/reference/developer-tools/cli/">here</a>.</p>
+<p><strong>Also</strong>, check out and join our <a href="http://community.particle.io/" target="_blank" rel="noopener noreferrer">community forums</a> for advanced help, tutorials, and troubleshooting.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SEGMENT -->
+    <script type="text/javascript">
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
+          analytics.load("PiTQtuDPGp3hKGGN3lU9GJvInSsnKBCR");
+        analytics.page()
+      }}();
+    </script>
+    
+    <!-- Let me embed vines -->
+    <script async src="https://platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+    
+    <!-- jQuery -->
+    <script src="/assets/js/jquery-1.11.1.min.js"></script>
+    
+    <!-- Vendor theme mods -->
+    <script src='/assets/js/jquery-styling.js'></script>
+    <script src='/assets/js/bootstrap-dropdown.js'></script>
+    <script src='/assets/js/prettify.js'></script>
+    <script src='/assets/js/svg.min.js'></script>
+    <!-- Custom -->
+    <script type="text/javascript" src="https://s3.amazonaws.com/redirect.particle.io/redirect-banner.js"></script>
+    <script type="text/javascript" src="/assets/js/handlebars-runtime.js"></script>
+    <script type="text/javascript" src="/assets/js/precompiled.js"></script>
+    <script src='/assets/js/docs.js'></script>
+    <script src='/assets/js/ga.js'></script>
+    <script src='/assets/js/device-animation.js'></script>
+    <script src='/assets/js/collapse.js'></script>
+    <script src='/assets/js/fonts-license.js'></script>
+    
+    <!-- Marketo Munchkin -->
+    <script type="text/javascript">
+    (function() {
+      var didInit = false;
+      function initMunchkin() {
+        if(didInit === false) {
+          didInit = true;
+          Munchkin.init('079-NUZ-391');
+        }
+      }
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = '//munchkin.marketo.net/munchkin.js';
+      s.onreadystatechange = function() {
+        if (this.readyState == 'complete' || this.readyState == 'loaded') {
+          initMunchkin();
+        }
+      };
+      s.onload = initMunchkin;
+      document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+    </script>
+    
+    <!-- SwiftType Search -->
+    <script type="text/javascript">
+      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+      
+      _st('install','CKUexuMbPvLg4SZiPvGM','2.0.0');
+    </script>
+    
+    <!-- Live Reload -->
+
+</body>
+</html>

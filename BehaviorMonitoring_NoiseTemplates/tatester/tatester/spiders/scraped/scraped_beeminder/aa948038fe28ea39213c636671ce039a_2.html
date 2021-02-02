@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Beeminder
+  </title>
+  <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="apple-touch-icon-precomposed" href="/images/small_logo_bee_256.png">
+  <meta name="msapplication-TileColor" content="#f5bd27">
+  <meta name="msapplication-TileImage" content="/images/small_logo_bee_256.png">
+  <meta content="akrasia, self-binding, goal tracking, incentives" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+  <meta property="fb:app_id" content="208127512622250">
+  <meta property="og:type"          content="website" />
+  <meta property="og:site_name"     content="Beeminder"/>
+
+  <meta name="apple-itunes-app" content="app-id=551869729">
+  
+  <script type="text/javascript"
+          src="https://www.google.com/jsapi?key=ABQIAAAAOa-RFkKAwduJA0bwi01kRBTCuJY-e-yhy9Frd0u60DKsVj9RQBSizo_DrtDPclb_pgY9C9HGVoizIw"></script>
+
+<!-- //! remember to correct link to css files -->
+
+<link rel="stylesheet" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="all" href="/assets/application-2b305ca7396c6645642908fe1cd7e7fc4b812713d1fb13386b06d8f2a9368df1.css" data-turbolinks-track="true" />
+
+<script>
+  window.beemApi = {};
+  // autod stuff called by other files
+  beemApi.stripePublishableKey = "pk_live_2EhbxY9XN4LejUgtuhrdF3ew";
+  beemApi.currentIsPayer = false;
+    beemApi.accessToken     = "31ra4szlotd5i5jfk0e0kzmjr";
+    beemApi.currentUsername = "happybee9494";
+    beemApi.currentEmail    = "happybee9494@gmail.com";
+    beemApi.currentUTCoff   = 28800;
+    beemApi.hasFreebees     = true;
+    beemApi.golCount        = 0;
+    /* tryanyway = try reloading graphs on not-mine goals */
+    beemApi.tryanyway       = false;
+</script>
+
+<script src="https://js.stripe.com/v1/"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+//<![CDATA[
+Stripe.setPublishableKey('pk_live_2EhbxY9XN4LejUgtuhrdF3ew');
+//]]>
+</script>
+<script src="https://js.braintreegateway.com/web/3.6.3/js/client.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.6.3/js/paypal.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.6.3/js/data-collector.min.js"></script>
+
+
+<script src="/assets/application-67dcc2f479665bd0485bf0fde9ff6b1733f9d1f1305ab3176522fb0f282dec0a.js" data-turbolinks-track="true"></script>
+
+
+
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="jOkeFRPXm4Q9Fzlksk+E1MXTkToUpNf4WCTRpWLJwWUK33FoqOJjtjGZcN6+oa0rhX2N033RlfXvEFlPtI4tiQ==" />
+  <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||
+[]);
+mixpanel.init("fcf247309f6907760126754500f885f6", {'loaded':function(){
+  $("#new_user #mixpanel_distinct_id").val(mixpanel.get_distinct_id());
+}});</script><!-- end Mixpanel -->
+
+  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1139630139405951');
+  //fbq('addPixel', '314586222206152');
+  fbq('track', "PageView");
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=314586222206152&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-54HKBK6');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54HKBK6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <div id="user-timezone-hours" style="display: none; width: 0px; height: 0px;">+0800</div>
+    <div id="user-timezone-offset" style="display: none; width: 0px; height: 0px;">28800</div>
+  <div id="flash-js" class="row no-gutters">
+    <a href="#" class="hide-flash col-1">
+      <div class="mega-octicon octicon-x"></div>
+    </a>
+    <div class="message col-10"></div>
+    <div class="col-1"></div>
+  </div>
+  <div id="fb-root"></div>
+
+  <div id="header">
+    <div class="row justify-content-around">
+      <div class="col-12 col-md-4 masthead">
+        <a href="/home"><div class="logo"></div></a>
+        <div class="tagline">Gradual results, instant gratification</div>
+      </div>
+      <div class="main-nav col-12 col-md-8">
+  <div class="row justify-content-end no-gutters">
+    <div class="col-12 col-sm-10 links">
+        <div class="link">
+          <a href="https://www.beeminder.com/happybee9494">happybee9494</a>
+        </div>
+      <div class="link"><a href="/premium">Premium</a></div>
+      <div class="link">
+      <a title="A gallery of things people are beeminding for you to be inspired by." href="https://www.beeminder.com/featured">Featured</a>
+      </div>
+      <div class="link">
+      <a title="Feature announcements, press roundups, PSAs, and guest posts. Even some fairly scientific articles on behavioral economics and the psychology of akrasia." href="http://blog.beeminder.com/">Blog</a>
+      </div>
+      <div class="link">
+      <a title="Includes a Newbee section for asking questions if you&#39;re confused." href="https://forum.beeminder.com">Forum</a>
+      </div>
+    </div>
+    <div class="main-nav user-nav">
+        <div class="menu">
+          <div class="drop-down-anchor">
+  <a href="#">
+    <img class="avatar" src="https://secure.gravatar.com/avatar/5d0b4d4df7869de76e520ab7f0e22d4f?size=256&amp;default=https%3A%2F%2Fbeeminder.com%2Fimages%2Ffallback%2F_avatar0.png" alt="5d0b4d4df7869de76e520ab7f0e22d4f?size=256&amp;default=https%3a%2f%2fbeeminder.com%2fimages%2ffallback%2f avatar0" />
+    <span class="octicon octicon-triangle-down"></span>
+</a></div>
+<div class="popup">
+  <a class="clear-elf" href="/new">New Goal</a>
+  <a href="/happybee9494/gallery">Gallery</a>
+  <a href="/settings/account">Account Settings</a>
+  <a href="/reminders/happybee9494">Reminders</a>
+  <a href="/breaks/happybee9494">Breaks</a>
+  <a href="/payment">Payments</a>
+  <a class="last signout" rel="nofollow" data-method="delete" href="/users/sign_out">Log out</a>
+</div>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+    <div class="trial-banner">
+    <span id="add-text">
+      Beeminder can't be a credible threat unless you
+      <a href="#" data-toggle="modal" data-target="#pick-payment">add a payment method</a>.
+    </span>
+    <span class="hidden" id="loading-text">Loading payment form...</span>
+  </div>
+  <div class="modal fade" id="pick-payment" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add payment method</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          Beeminder is a motivational tool that allows you to pledge money to stay
+          on track towards a goal.
+        </div>
+        <div class="form-row">
+          If you go off track, we charge you the amount you're pledging on that goal.
+        </div>
+        <div class="form-row buttons">
+          <button class="add-cc bbtn">
+            Add a credit card
+          </button>
+        </div>
+        <div class="form-row">
+          Can't use a credit card?
+          You can
+          <a class="add-paypal" 
+            role="button" href="#">use PayPal</a>,
+          if you must.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="header-hero">
+      Featured Beeminders
+    </div>
+  <!--[if lt IE 9]>
+<div id="flash-ie" class="flash_container flash-error">
+  <a href="#" class="close" data-dismiss="alert">x</a>
+  <div>
+    <h2>Uh oh, you seem to be using an out-of-date Internet Explorer...</h2>
+    <p>
+    Beeminder is
+    pretty broken on IE&lt;9. Do you have Firefox or Chrome or Safari or
+    Opera or IE10+ or <a href="http://whatbrowser.org">anything else at all</a>?
+    </p><p>
+    As a token of our deep shame for being the kind of developers who don't
+    support IE, here's an ewok dressed like a bee!
+    </p>
+    <div id="kitteh">
+      <img src="/assets/beecat-5d0ab471e4a311e154596ec78ae9ff6e43fc231841b5521c39765d5dfbc770e2.jpg">
+    </div>
+  </div>
+</div>
+<![endif]-->
+
+<div class="clear"></div>
+
+
+      <div class="content container-fluid ">
+        
+        <div class="panel ">
+            <div class="gallery row justify-content-around">
+    <div class="gallery-goal col-auto" data-slug="garminsteps">
+      <a class="minithumb" href="/chriswax/garminsteps"><img title="Green. bmndr.com/chriswax/garminsteps is way above the road: ~23 days of safety buffer! (safe to stay flat for ~23 days)" alt="chriswax/garminsteps&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/5f9c0209-6fcf-495a-844f-dcea793a0f01-thumb.png" /></a>
+      <a href="/chriswax/garminsteps" title="chriswax/garminsteps" class="slug">
+        chriswax: garminsteps
+      </a>
+      <div class="summary" title="garminsteps">
+        
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="esperanto">
+      <a class="minithumb" href="/adamwolf/esperanto"><img title="Blue. bmndr.com/adamwolf/esperanto is in the top lane: perfect! (safe to stay flat for ~2 days)" alt="adamwolf/esperanto&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/df816bde-3d66-4ae9-a167-621ae14d8a1c-thumb.png" /></a>
+      <a href="/adamwolf/esperanto" title="adamwolf/esperanto" class="slug">
+        adamwolf: esperanto
+      </a>
+      <div class="summary" title="Esperanto ">
+        Esperanto 
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="wake">
+      <a class="minithumb" href="/gudamor/wake"><img title="Green. bmndr.com/gudamor/wake is way above the road: ~7 days of safety buffer! (safe to stay flat for ~7 days)" alt="gudamor/wake&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/f963869c-1c9b-4ead-ba1d-fd5d212d184b-thumb.png" /></a>
+      <a href="/gudamor/wake" title="gudamor/wake" class="slug">
+        gudamor: wake
+      </a>
+      <div class="summary" title="Wake and Weigh">
+        Wake and Weigh
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="weight">
+      <a class="minithumb" href="/gudamor/weight"><img title="Green. bmndr.com/gudamor/weight is in the wrong lane: could derail tomorrow! (safe to stay flat for ~53 days)" alt="gudamor/weight&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/0ab7eab7-69eb-4ef3-b53a-19c21103b77a-thumb.png" /></a>
+      <a href="/gudamor/weight" title="gudamor/weight" class="slug">
+        gudamor: weight
+      </a>
+      <div class="summary" title="Weight Loss">
+        Weight Loss
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="studying">
+      <a class="minithumb" href="/xunlucki/studying"><img title="Green. bmndr.com/xunlucki/studying is well above the road: ~4 days of safety buffer! (safe to stay flat for ~4 days)" alt="xunlucki/studying&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/284fe0a1-238a-49ff-8709-99cba01aaa2a-thumb.png" /></a>
+      <a href="/xunlucki/studying" title="xunlucki/studying" class="slug">
+        xunlucki: studying
+      </a>
+      <div class="summary" title="Studying 18 hours a week">
+        Studying 18 hours a week
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="morning_work-out">
+      <a class="minithumb" href="/furioness/morning_work-out"><img title="Green. bmndr.com/furioness/morning_work-out is way above the road: ~7 days of safety buffer! (safe to stay flat for ~7 days)" alt="furioness/morning_work-out&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/3283f122-5c2e-464c-b1c5-ac7075a4febd-thumb.png" /></a>
+      <a href="/furioness/morning_work-out" title="furioness/morning_work-out" class="slug">
+        furioness: morning_work-out
+      </a>
+      <div class="summary" title="~ 25 - 40 min morning work-out. For now persistence is more important than quality">
+        ~ 25 - 40 min morning work-out. For now persistence is more important than quality
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="diss">
+      <a class="minithumb" href="/dianaka/diss"><img title="Orange. bmndr.com/dianaka/diss is in the wrong lane: could derail tomorrow! (safe to stay flat for ~1 day)" alt="dianaka/diss&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/15dcb60c-a7f4-429f-9c0c-4c63977323e3-thumb.png" /></a>
+      <a href="/dianaka/diss" title="dianaka/diss" class="slug">
+        dianaka: diss
+      </a>
+      <div class="summary" title="">
+        
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="hydrate">
+      <a class="minithumb" href="/mrneil/hydrate"><img title="Green. bmndr.com/mrneil/hydrate is way above the road: ~133 days of safety buffer! (safe to stay flat for ~133 days)" alt="mrneil/hydrate&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/c8637775-5d6d-4e41-8664-86b20e47d42a-thumb.png" /></a>
+      <a href="/mrneil/hydrate" title="mrneil/hydrate" class="slug">
+        mrneil: hydrate
+      </a>
+      <div class="summary" title="Hydrate myself - drink more water">
+        Hydrate myself - drink more water
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="100mil2020">
+      <a class="minithumb" href="/whenindoubtrun/100mil2020"><img title="Green. bmndr.com/whenindoubtrun/100mil2020 is way above the road: ~6 days of safety buffer! (safe to stay flat for ~6 days)" alt="whenindoubtrun/100mil2020&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/4e93279c-2d2f-4c46-8def-3e02d88a3875-thumb.png" /></a>
+      <a href="/whenindoubtrun/100mil2020" title="whenindoubtrun/100mil2020" class="slug">
+        whenindoubtrun: 100mil2020
+      </a>
+      <div class="summary" title="Jag vill spränga gränsen på 100 mil 2020">
+        Jag vill spränga gränsen på 100 mil 2020
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="vaha">
+      <a class="minithumb" href="/martinkovarik/vaha"><img title="Green. bmndr.com/martinkovarik/vaha is currently on a flat road (safe to stay flat for ~69 days)" alt="martinkovarik/vaha&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/e5235fab-5a30-4e1a-af9e-d9c1c0176e2b-thumb.png" /></a>
+      <a href="/martinkovarik/vaha" title="martinkovarik/vaha" class="slug">
+        martinkovarik: vaha
+      </a>
+      <div class="summary" title="hubnutí">
+        hubnutí
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="productivity">
+      <a class="minithumb" href="/brennanbrown/productivity"><img title="Green. bmndr.com/brennanbrown/productivity is above the road: awesome! (safe to stay flat for ~3 days)" alt="brennanbrown/productivity&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/4e3c674a-71fa-4000-80c4-a6b66cac83dd-thumb.png" /></a>
+      <a href="/brennanbrown/productivity" title="brennanbrown/productivity" class="slug">
+        brennanbrown: productivity
+      </a>
+      <div class="summary" title="Tracking the number hours of productive time I&#39;ve accomplished per day to encourage me to do what&#39;s important.">
+        Tracking the number hours of productive time I&#39;ve accomplished per day to encourage me to do what&#39;s important.
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="readpocketarticles">
+      <a class="minithumb" href="/hihowareyouireallywanttoknow/readpocketarticles"><img title="Red. bmndr.com/hihowareyouireallywanttoknow/readpocketarticles is below the road: will derail at end of day! (safe to stay flat for ~0 days)" alt="hihowareyouireallywanttoknow/readpocketarticles&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/e4a67c1a-31b7-4654-8002-0d577c039750-thumb.png" /></a>
+      <a href="/hihowareyouireallywanttoknow/readpocketarticles" title="hihowareyouireallywanttoknow/readpocketarticles" class="slug">
+        hihowareyouireallywanttoknow: readpocketarticles
+      </a>
+      <div class="summary" title="Read Pocket Articles">
+        Read Pocket Articles
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="arrypotter">
+      <a class="minithumb" href="/mad/arrypotter"><img title="Blue. bmndr.com/mad/arrypotter is in the top lane: perfect! (safe to stay flat for ~2 days)" alt="mad/arrypotter&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/2b9ff017-73e8-4b89-99b3-e63969f7f1a1-thumb.png" /></a>
+      <a href="/mad/arrypotter" title="mad/arrypotter" class="slug">
+        mad: arrypotter
+      </a>
+      <div class="summary" title="Read the Harry Potter series in French, average one chapter per week ">
+        Read the Harry Potter series in French, average one chapter per week 
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="code">
+      <a class="minithumb" href="/ksen0/code"><img title="Green. bmndr.com/ksen0/code is way above the road: ~342 days of safety buffer! (safe to stay flat for ~342 days)" alt="ksen0/code&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/c34753a2-ae77-4e3f-89fb-b7bfdab7d9b8-thumb.png" /></a>
+      <a href="/ksen0/code" title="ksen0/code" class="slug">
+        ksen0: code
+      </a>
+      <div class="summary" title="">
+        
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="wakeup">
+      <a class="minithumb" href="/nguyenleccss361/wakeup"><img title="Orange. bmndr.com/nguyenleccss361/wakeup is currently on a flat road" alt="nguyenleccss361/wakeup&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/385a6ff5-e4df-4e5e-ad11-1c511f6d9503-thumb.png" /></a>
+      <a href="/nguyenleccss361/wakeup" title="nguyenleccss361/wakeup" class="slug">
+        nguyenleccss361: wakeup
+      </a>
+      <div class="summary" title="Wake Up on Time">
+        Wake Up on Time
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="english_learning">
+      <a class="minithumb" href="/furioness/english_learning"><img title="Red. bmndr.com/furioness/english_learning is below the road: will derail at end of day! (safe to stay flat for ~0 days)" alt="furioness/english_learning&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/78ed5745-fb9e-420c-99be-ce08bea359d8-thumb.png" /></a>
+      <a href="/furioness/english_learning" title="furioness/english_learning" class="slug">
+        furioness: english_learning
+      </a>
+      <div class="summary" title="Learning english using anything specialized.">
+        Learning english using anything specialized.
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="lesen">
+      <a class="minithumb" href="/donedamned/lesen"><img title="Green. bmndr.com/donedamned/lesen is way above the road: ~5 days of safety buffer! (safe to stay flat for ~5 days)" alt="donedamned/lesen&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/fd831a0e-047b-4b4f-a44d-7409f4977e65-thumb.png" /></a>
+      <a href="/donedamned/lesen" title="donedamned/lesen" class="slug">
+        donedamned: lesen
+      </a>
+      <div class="summary" title="1h / general learning">
+        1h / general learning
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="skritter">
+      <a class="minithumb" href="/thailyn/skritter"><img title="Green. bmndr.com/thailyn/skritter is way above the road: ~130 days of safety buffer! (safe to stay flat for ~130 days)" alt="thailyn/skritter&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/a1c51670-e0be-42c5-a282-443a7a457e75-thumb.png" /></a>
+      <a href="/thailyn/skritter" title="thailyn/skritter" class="slug">
+        thailyn: skritter
+      </a>
+      <div class="summary" title="Skritter Practice">
+        Skritter Practice
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="brushing-teeth">
+      <a class="minithumb" href="/dutchie/brushing-teeth"><img title="Green. bmndr.com/dutchie/brushing-teeth is above the road: awesome! (safe to stay flat for ~3 days)" alt="dutchie/brushing-teeth&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/3a4811d2-0da2-4805-806b-cd51dbd3e298-thumb.png" /></a>
+      <a href="/dutchie/brushing-teeth" title="dutchie/brushing-teeth" class="slug">
+        dutchie: brushing-teeth
+      </a>
+      <div class="summary" title="Brushing teeth">
+        Brushing teeth
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="sleep">
+      <a class="minithumb" href="/gudamor/sleep"><img title="Green. bmndr.com/gudamor/sleep is way above the road: ~7 days of safety buffer! (safe to stay flat for ~7 days)" alt="gudamor/sleep&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/4e85fad5-23a3-4a67-80d7-db8c556d1503-thumb.png" /></a>
+      <a href="/gudamor/sleep" title="gudamor/sleep" class="slug">
+        gudamor: sleep
+      </a>
+      <div class="summary" title="Sleep">
+        Sleep
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="hamstring">
+      <a class="minithumb" href="/tracy_reader/hamstring"><img title="Blue. bmndr.com/tracy_reader/hamstring is in the top lane: perfect! (safe to stay flat for ~2 days)" alt="tracy_reader/hamstring&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/eb332250-e9cb-461c-9853-5ae0dcd6769b-thumb.png" /></a>
+      <a href="/tracy_reader/hamstring" title="tracy_reader/hamstring" class="slug">
+        tracy_reader: hamstring
+      </a>
+      <div class="summary" title="Hamstring Stretches">
+        Hamstring Stretches
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="productivity">
+      <a class="minithumb" href="/bvansomeren/productivity"><img title="Green. bmndr.com/bvansomeren/productivity is way above the road: ~23 days of safety buffer! (safe to stay flat for ~23 days)" alt="bvansomeren/productivity&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/6ee1da2c-b8cf-4f2a-bd1d-35d16f4ecdbc-thumb.png" /></a>
+      <a href="/bvansomeren/productivity" title="bvansomeren/productivity" class="slug">
+        bvansomeren: productivity
+      </a>
+      <div class="summary" title="productivity">
+        
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="all-productive">
+      <a class="minithumb" href="/asifm/all-productive"><img title="Blue. bmndr.com/asifm/all-productive is in the top lane: perfect! (safe to stay flat for ~2 days)" alt="asifm/all-productive&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/b088297b-7de1-4bb5-b88d-4fb714bf144e-thumb.png" /></a>
+      <a href="/asifm/all-productive" title="asifm/all-productive" class="slug">
+        asifm: all-productive
+      </a>
+      <div class="summary" title="30 hours of productive work per week">
+        30 hours of productive work per week
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="headway-sum">
+      <a class="minithumb" href="/grayson/headway-sum"><img title="Green. bmndr.com/grayson/headway-sum is currently on a flat road (safe to stay flat for ~3 days)" alt="grayson/headway-sum&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/d08eb584-40e5-4e68-906f-3e6b7ab22870-thumb.png" /></a>
+      <a href="/grayson/headway-sum" title="grayson/headway-sum" class="slug">
+        grayson: headway-sum
+      </a>
+      <div class="summary" title="40 hrs/wk of forward progress">
+        40 hrs/wk of forward progress
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="inboxzero">
+      <a class="minithumb" href="/tracy_reader/inboxzero"><img title="Green. bmndr.com/tracy_reader/inboxzero is way above the road: ~5 days of safety buffer! (safe to stay flat for ~5 days)" alt="tracy_reader/inboxzero&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/e79ff9cb-5c7a-4aa9-bf1d-58affbebea73-thumb.png" /></a>
+      <a href="/tracy_reader/inboxzero" title="tracy_reader/inboxzero" class="slug">
+        tracy_reader: inboxzero
+      </a>
+      <div class="summary" title="InboxZero">
+        InboxZero
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="weeklyreview">
+      <a class="minithumb" href="/tracy_reader/weeklyreview"><img title="Green. bmndr.com/tracy_reader/weeklyreview is way above the road: ~9 days of safety buffer! (safe to stay flat for ~9 days)" alt="tracy_reader/weeklyreview&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/80f5675d-e08f-4cba-85df-498655547d6d-thumb.png" /></a>
+      <a href="/tracy_reader/weeklyreview" title="tracy_reader/weeklyreview" class="slug">
+        tracy_reader: weeklyreview
+      </a>
+      <div class="summary" title="BiweeklyReview">
+        BiweeklyReview
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="skritter">
+      <a class="minithumb" href="/nick/skritter"><img title="Orange. bmndr.com/nick/skritter is in the wrong lane: could derail tomorrow! (safe to stay flat for ~1 day)" alt="nick/skritter&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/b47b0ee0-c152-4ca8-a720-fb8ca9ec1a2f-thumb.png" /></a>
+      <a href="/nick/skritter" title="nick/skritter" class="slug">
+        nick: skritter
+      </a>
+      <div class="summary" title="Study Chinese on Skritter">
+        Study Chinese on Skritter
+      </div>
+    </div>
+    <div class="gallery-goal col-auto" data-slug="mandarin">
+      <a class="minithumb" href="/grayson/mandarin"><img title="Green. bmndr.com/grayson/mandarin is way above the road: ~19 days of safety buffer! (safe to stay flat for ~19 days)" alt="grayson/mandarin&#39;s progress graph" src="https://bmndr.s3.amazonaws.com/uploads/be952f76-628c-4810-ab5a-bc8cdd2cd6bc-thumb.png" /></a>
+      <a href="/grayson/mandarin" title="grayson/mandarin" class="slug">
+        grayson: mandarin
+      </a>
+      <div class="summary" title="5 / 224 weekly pomos">
+        5 / 224 weekly pomos
+      </div>
+    </div>
+</div>
+
+
+          <div class="clear"></div>
+        </div>
+      </div>
+
+
+  <div id="footer_section">
+    <div class="footer">
+  <div class="help">
+      <a href="http://help.beeminder.com/">HELP DOCS</a>
+  </div>
+  <div class="links row">
+    <div class="link">
+      <a href="https://www.beeminder.com/overview">About</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/aboutus">team</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/contact">contact</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/jobs">jobs</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/faq">faq</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/money">pricing</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/api">api</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/changelog">changelog</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/terms">terms</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/donate">donate</a>
+    </div>
+  </div>
+  <div class="app-badges">
+    <a class="android" href='https://play.google.com/store/apps/details?id=com.beeminder.beeminder'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+    <a class="ios" href="https://itunes.apple.com/us/app/beeminder/id551869729"><img src="/assets/AppStore-25178aeef6eb6b83b96f5f2d004eda3bffbb37122de64afbaef7107b384a4132.svg" alt="Appstore" /></a>  </div>
+  <div class="social">
+    <a href="https://twitter.com/bmndr">
+      <img height="32px" width="32px" src="/assets/logo_twitter_square_32@2-5673ab86695ada32b20059c64d8665471ab2f3146c1f0725e0be2f1c0a49de01.png" alt="Logo twitter square 32@2" />
+    </a>
+    <a href="https://facebook.com/beeminder">
+      <img height="32px" width="32px" src="/assets/logo_facebook_square_32@2-2aa6cb00f83b9d60bfb26570827146746bc1e7872d20785a1db9017d9ed13f42.png" alt="Logo facebook square 32@2" />
+    </a>
+    <a href="https://www.instagram.com/beeminder/">
+      <img height="32px" width="32px" src="/assets/logo_instagram_64px-f8e3cfddebe72340990b08c596a6056147a4151a7953d185236c1556d5389822.png" alt="Logo instagram 64px" />
+    </a>
+    <a href="https://www.linkedin.com/company/beeminder?trk=recent-update_see-all#updates">
+      <img height="32px" src="/assets/logo_linkedin_34px-f13fc8de8d18741fcab086f7d6c40952e8d8f95073031d80046507250b50eeee.png" alt="Logo linkedin 34px" />
+    </a>
+
+  </div>
+  <div class="copyright">
+    &copy; Beeminder 2011&ndash;2020
+<!--
+Danny and Bee and Andy argue about automatically setting the copyright year to 2020:
+
+D: boo to automatically filling in copyright! that's how we prove we're still at the wheel :)
+A: it only proves that if it's publicly visible how the copyright is being created
+A: like if beeminder were open source. otherwise no one can tell the difference
+D: actually i think when the copyright changes at a random time in january, that's a good signal that you're at the wheel...
+D: if it changes at the stroke of midnight then obviously you cheated and could all be dead or on a beach somewhere
+B: but everyone cheats
+B: so it can only be an indicator in our absence
+D: boo to cheaters
+bystander: it's the best way to score GitHub points too: open `2017` -> `2018` pull requests
+A: but who is going around checking exactly when copyrights change??
+A: bots, that's who
+A: okay nevermind I'm on board with this as a precaution to confuse future overlords
+B: anyhow, it also makes us look stupid. like we don't know how to use string format, and causes people to write us emails like "Umm. so your copyright is out of date. I don't know what language you guys use, but in php it's really easy you.."
+A: maybe that's a positive, identify users who can write code
+A: "oh, thanks! here's another nerd sniping problem. can you rewrite beebrain?"
+D: clearly the optimal solution is to set it to `year(now-random(5,10)*86400)` :)
+D: (simulates a fairly attentive human at the wheel updating the copyright 5-10 days after new years)
+D: i can't tell what fraction serious i am about doing it manually. i guess if, counterfactually, we ever weren't at the wheel it would be lies and that feels icky
+D: like there's something inherently dishonest about literally being like "copyright... uh, whatever year it is when you're reading this!"
+B: ok, so part of the checklist for shuttering beeminder is "update footer copyright date"
+B: you clearly didn't understand my argument for why we're doing this, because you seem to remain unconvinced. go read my email again and then i'm putting you in timeout so you can think about what you've done.
+D: [pastes this in the html source so we can show it to people in 2021 who see "2020" and think we don't know how to insert a dynamic date]
+PS: Bee's argument in the email with the user who called us out:
+I think Danny had some convoluted reasoning for why we shouldn't just make that programmatic, like "it's a signal that the site is still active", but I think that's kind of incorrect -- anyone writing a website can make the copyright date be programmatically generated, so it doesn't actually serve as any indicator of currency, it can only serve as a anti-activity signal by going out of date.
+-->
+  </div>
+</div> 
+
+  </div>
+    
+
+
+<div class="modal fade" id="hook-check" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Goals review</h2>
+        <button type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-hidden="true">&times;</button>
+
+      </div>
+      <div class="modal-body">
+        <p>
+           Your payment method will be used for all of your active goals once you <a class="dark" title="Or click the blue New Goal button in your dashboard or gallery" href="https://www.beeminder.com/new">create some</a>!
+                  </p>
+
+        <div class="modal-buttons">
+          <p style="padding-bottom: 15px;"><em>You can archive a goal any time using the Archive button on the Stop/Pause tab</em><p>
+          <button type="button"
+                  class="bbtn"
+                  data-dismiss="modal">Sounds good</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    <script type="text/javascript">
+      $(document).ready(function() {
+        mixpanel.identify("happybee9494");
+        mixpanel.name_tag("happybee9494");
+        mixpanel.people.set({"username": "happybee9494"})
+      });
+    </script>
+
+  <script> // facebook js sdk
+    window.fbAsyncInit = function(){FB.init({appId:'362719670519679', xfbml:true, version:'v2.0'})}
+    ;(function(d,s,id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'))
+  </script>
+
+<script> // facebook js sdk
+  window.fbAsyncInit = function(){FB.init({appId:'208127512622250', xfbml:true, version:'v2.0'})}
+  ;(function(d,s,id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'))
+</script>
+
+ <!-- end /useronboard script block -->
+
+<!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o0ga1');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+
+</body>
+</html>

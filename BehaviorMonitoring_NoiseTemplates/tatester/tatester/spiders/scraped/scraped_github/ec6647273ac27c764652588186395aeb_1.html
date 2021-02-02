@@ -1,0 +1,1891 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://github.githubassets.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-FG+rXqMOivrAjdEQE7tO4BwM1poGmg70hJFTlNSxjX87grtrZ6UnPR8NkzwUHlQEGviu9XuRYeO8zH9YwvZhdg==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-146fab5ea30e8afac08dd11013bb4ee0.css" />
+  
+    <link crossorigin="anonymous" media="all" integrity="sha512-bqIvTjrYM8hmo8Y7y5fzsxn+OAFrHWG6byMAbBSM9qFe8NQymQqFeBaF2MGvAwy7x2s4bnzXE5bDGHnrQjtoQQ==" rel="stylesheet" href="https://github.githubassets.com/assets/github-6ea22f4e3ad833c866a3c63bcb97f3b3.css" />
+    
+    
+    
+    
+
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>NovelCOVID/API: API for Current cases and more stuff about COVID-19 or the Novel Coronavirus Strain</title>
+    <meta name="description" content="API for Current cases and more stuff about COVID-19 or the Novel Coronavirus Strain - NovelCOVID/API">
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    <meta name="twitter:image:src" content="https://avatars1.githubusercontent.com/u/61817610?s=400&amp;v=4" /><meta name="twitter:site" content="@github" /><meta name="twitter:card" content="summary" /><meta name="twitter:title" content="NovelCOVID/API" /><meta name="twitter:description" content="API for Current cases and more stuff about COVID-19 or the Novel Coronavirus Strain - NovelCOVID/API" />
+    <meta property="og:image" content="https://avatars1.githubusercontent.com/u/61817610?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="NovelCOVID/API" /><meta property="og:url" content="https://github.com/NovelCOVID/API" /><meta property="og:description" content="API for Current cases and more stuff about COVID-19 or the Novel Coronavirus Strain - NovelCOVID/API" />
+
+  <link rel="assets" href="https://github.githubassets.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NTI2OTE2MTM2OmMyNTBiMTliMDc3OWU5MDZhMjkzZTYyNGNkYzU1ZjhhMTg3ZTY0N2YzZjljMzRjNGYxYTU4NmZhNGNhNWE0NmU=--14afe03083569cf297bd5ed5729416e9b661a5fe">
+  <link rel="sudo-modal" href="/sessions/sudo_modal">
+
+  <meta name="request-id" content="C680:6EBA:83BD76:AEC081:5EA2DA4C" data-pjax-transient="true" /><meta name="html-safe-nonce" content="aa5a0cd5cb049b7eb70a32d9eee607bad40d5aad" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS8iLCJyZXF1ZXN0X2lkIjoiQzY4MDo2RUJBOjgzQkQ3NjpBRUMwODE6NUVBMkRBNEMiLCJ2aXNpdG9yX2lkIjoiODg5MTc5NjQyMjg0MjgzMzQxNyIsInJlZ2lvbl9lZGdlIjoiYXAtc291dGhlYXN0LTEiLCJyZWdpb25fcmVuZGVyIjoiaWFkIn0=" data-pjax-transient="true" /><meta name="visitor-hmac" content="ec112456f31ca1fbd48998e3cc2e5e7291813b6cc5922fbe30156936d527c09f" data-pjax-transient="true" />
+
+
+
+  <meta name="github-keyboard-shortcuts" content="repository" data-pjax-transient="true" />
+
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+<meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-ga_id" content="" class="js-octo-ga-id" /><meta name="octolytics-actor-id" content="61506491" /><meta name="octolytics-actor-login" content="happybee9494" /><meta name="octolytics-actor-hash" content="9cef6ab2d24259ba6a6fc63b3d6156540a95998d2d4f5818e00b6db77e644987" />
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" />
+
+
+
+    <meta name="google-analytics" content="UA-3769691-2">
+
+  <meta class="js-ga-set" name="userId" content="5aebbbe5f9504b3a3ab1ab0734c01386">
+
+<meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="happybee9494">
+
+      <meta name="expected-hostname" content="github.com">
+
+      <meta name="js-proxy-site-detection-payload" content="ODA1YzYwNWQyNjIxMTg4Y2RiZDc1ZjBkNDZmMTIzYmE2M2Q5ZjYxMjA2NDc2M2Y5MzIyZTU4NGRlYmVlMDVmN3x7InJlbW90ZV9hZGRyZXNzIjoiNDkuMjQ1LjQxLjE4IiwicmVxdWVzdF9pZCI6IkM2ODA6NkVCQTo4M0JENzY6QUVDMDgxOjVFQTJEQTRDIiwidGltZXN0YW1wIjoxNTg3NzMxMDIxLCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+
+    <meta name="enabled-features" content="MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS,GHE_CLOUD_TRIAL,PAGE_STALE_CHECK">
+
+  <meta http-equiv="x-pjax-version" content="aee2087ef1c7879c0ddf05531ab45a68">
+  
+
+      <link href="https://github.com/NovelCOVID/API/commits/master.atom" rel="alternate" title="Recent Commits to API:master" type="application/atom+xml">
+
+  <meta name="go-import" content="github.com/NovelCOVID/API git https://github.com/NovelCOVID/API.git">
+
+  <meta name="octolytics-dimension-user_id" content="61817610" /><meta name="octolytics-dimension-user_login" content="NovelCOVID" /><meta name="octolytics-dimension-repository_id" content="245077032" /><meta name="octolytics-dimension-repository_nwo" content="NovelCOVID/API" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="245077032" /><meta name="octolytics-dimension-repository_network_root_nwo" content="NovelCOVID/API" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
+
+
+    <link rel="canonical" href="https://github.com/NovelCOVID/API" data-pjax-transient>
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+
+  </head>
+
+  <body class="logged-in env-production min-width-lg">
+    
+
+    <div class="position-relative js-header-wrapper ">
+      <a href="#start-of-content" class="p-3 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+      <span class="Progress progress-pjax-loader position-fixed width-full js-pjax-loader-bar">
+        <span class="progress-pjax-loader-bar top-0 left-0" style="width: 0%;"></span>
+      </span>
+
+      
+      
+
+
+
+          <header class="Header py-lg-0" role="banner">
+  <div class="Header-item">
+    <a class="Header-link" href="https://github.com/" data-hotkey="g d"
+  aria-label="Homepage " data-ga-click="Header, go to dashboard, icon:logo">
+  <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+
+  </div>
+
+
+  <div class="Header-item Header-item--full">
+      <div class="header-search mr-3 scoped-search site-scoped-search js-site-search position-relative js-jump-to"
+  role="combobox"
+  aria-owns="jump-to-results"
+  aria-label="Search or jump to"
+  aria-haspopup="listbox"
+  aria-expanded="false"
+>
+  <div class="position-relative">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-site-search-form" role="search" aria-label="Site" data-scope-type="Repository" data-scope-id="245077032" data-scoped-search-url="/NovelCOVID/API/search" data-unscoped-search-url="/search" action="/NovelCOVID/API/search" accept-charset="UTF-8" method="get">
+      <label class="form-control input-sm header-search-wrapper p-0 header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center js-chromeless-input-container">
+        <input type="text"
+          class="form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+          data-hotkey="s,/"
+          name="q"
+          value=""
+          placeholder="Search or jump to…"
+          data-unscoped-placeholder="Search or jump to…"
+          data-scoped-placeholder="Search or jump to…"
+          autocapitalize="off"
+          aria-autocomplete="list"
+          aria-controls="jump-to-results"
+          aria-label="Search or jump to…"
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations"
+          spellcheck="false"
+          autocomplete="off"
+          >
+          <input type="hidden" value="bSFIkeY5F0STtcg0TqEAR8JFSReScl10QzzWAED6d3buWOdxZHbj+DPOXORLsNbzHEZzjHFk/EOwEu94Ksxy7A==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
+          <input type="hidden" class="js-site-search-type-field" name="type" >
+            <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
+
+            <div class="Box position-absolute overflow-hidden d-none jump-to-suggestions js-jump-to-suggestions-container">
+              
+<ul class="d-none js-jump-to-suggestions-template-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-suggestion" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0013 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 000-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+</ul>
+
+<ul class="d-none js-jump-to-no-results-template-container">
+  <li class="d-flex flex-justify-center flex-items-center f5 d-none js-jump-to-suggestion p-2">
+    <span class="text-gray">No suggested jump to results</span>
+  </li>
+</ul>
+
+<ul id="jump-to-results" role="listbox" class="p-0 m-0 js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-scoped-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0013 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 000-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-global-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0013 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 000-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+
+    <li class="d-flex flex-justify-center flex-items-center p-0 f5 js-jump-to-suggestion">
+      <img src="https://github.githubassets.com/images/spinners/octocat-spinner-128.gif" alt="Octocat Spinner Icon" class="m-2" width="28">
+    </li>
+</ul>
+
+            </div>
+      </label>
+</form>  </div>
+</div>
+
+
+    <nav class="d-flex" aria-label="Global">
+
+  <a class="js-selected-navigation-item Header-link py-lg-3  mr-3" data-hotkey="g p" data-ga-click="Header, click, Nav menu - item:pulls context:user" aria-label="Pull requests you created" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls" href="/pulls">
+    Pull requests
+</a>
+  <a class="js-selected-navigation-item Header-link py-lg-3  mr-3" data-hotkey="g i" data-ga-click="Header, click, Nav menu - item:issues context:user" aria-label="Issues you created" data-selected-links="/issues /issues/assigned /issues/mentioned /issues" href="/issues">
+    Issues
+</a>
+
+    <div class="mr-3">
+      <a class="js-selected-navigation-item Header-link py-lg-3 d-inline-block" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-octo-click="marketplace_click" data-octo-dimensions="location:nav_bar" data-selected-links=" /marketplace" href="/marketplace">
+        Marketplace
+</a>      
+
+    </div>
+
+  <a class="js-selected-navigation-item Header-link py-lg-3  mr-3" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="/explore">
+    Explore
+</a>
+
+</nav>
+
+  </div>
+
+
+  <div class="Header-item">
+    
+
+    <a aria-label="You have no unread notifications" class="Header-link notification-indicator position-relative tooltipped tooltipped-sw js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:read" data-channel="notification-changed:61506491" href="/notifications">
+        <span class="js-indicator-modifier mail-status "></span>
+        <svg class="octicon octicon-bell" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"></path></svg>
+</a>
+  </div>
+
+
+  <div class="Header-item position-relative">
+    <details class="details-overlay details-reset">
+  <summary class="Header-link"
+      aria-label="Create new…"
+      data-ga-click="Header, create new, icon:add">
+    <svg class="octicon octicon-plus" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"></path></svg> <span class="dropdown-caret"></span>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw mt-n2">
+    
+<a role="menuitem" class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+<a role="menuitem" class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+  New gist
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+  <div role="none" class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="NovelCOVID/API">This repository</span>
+  </div>
+    <a role="menuitem" class="dropdown-item" href="/NovelCOVID/API/issues/new/choose" data-ga-click="Header, create new issue" data-skip-pjax>
+      New issue
+    </a>
+
+
+  </details-menu>
+</details>
+
+  </div>
+
+  <div class="Header-item position-relative mr-0">
+    
+  <details class="details-overlay details-reset js-feature-preview-indicator-container" data-feature-preview-indicator-src="/users/happybee9494/feature_preview/indicator_check">
+
+  <summary class="Header-link"
+    aria-label="View profile and more"
+    data-ga-click="Header, show menu, icon:avatar">
+    <img
+  alt="@happybee9494"
+  width="20"
+  height="20"
+  src="https://avatars1.githubusercontent.com/u/61506491?s=60&amp;v=4"
+  class="avatar avatar-user " />
+
+      <span class="feature-preview-indicator js-feature-preview-indicator" hidden></span>
+    <span class="dropdown-caret"></span>
+  </summary>
+  <details-menu class="dropdown-menu dropdown-menu-sw mt-n2" style="width: 180px">
+    <div class="header-nav-current-user css-truncate"><a role="menuitem" class="no-underline user-profile-link px-3 pt-2 pb-2 mb-n2 mt-n1 d-block" href="/happybee9494" data-ga-click="Header, go to profile, text:Signed in as">Signed in as <strong class="css-truncate-target">happybee9494</strong></a></div>
+    <div role="none" class="dropdown-divider"></div>
+
+      <div class="pl-3 pr-3 f6 user-status-container js-user-status-context pb-1" data-url="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1">
+        
+<div class="js-user-status-container
+    user-status-compact rounded-1 px-2 py-1 mt-2
+    border
+  " data-team-hovercards-enabled>
+  <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
+    <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit "
+      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:61817610,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:61506491,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;}}" data-hydro-click-hmac="53d58143d11de8219608ae3ced08f92cc3e83e508c4b8ffd1d2d1c8ae8b1b45a">
+      <div class="d-flex">
+        <div class="f6 lh-condensed user-status-header
+          d-inline-block v-align-middle
+            user-status-emoji-only-header circle
+            pr-2
+"
+            style="max-width: 29px"
+          >
+          <div class="user-status-emoji-container flex-shrink-0 mr-1 mt-1 lh-condensed-ultra v-align-bottom" style="">
+            <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.81 12.81a6.72 6.72 0 01-2.17 1.45c-.83.36-1.72.53-2.64.53-.92 0-1.81-.17-2.64-.53-.81-.34-1.55-.83-2.17-1.45a6.773 6.773 0 01-1.45-2.17A6.59 6.59 0 011.21 8c0-.92.17-1.81.53-2.64.34-.81.83-1.55 1.45-2.17.62-.62 1.36-1.11 2.17-1.45A6.59 6.59 0 018 1.21c.92 0 1.81.17 2.64.53.81.34 1.55.83 2.17 1.45.62.62 1.11 1.36 1.45 2.17.36.83.53 1.72.53 2.64 0 .92-.17 1.81-.53 2.64-.34.81-.83 1.55-1.45 2.17zM4 6.8v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2H5.2C4.53 8 4 7.47 4 6.8zm5 0v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2h-.59C9.53 8 9 7.47 9 6.8zm4 3.2c-.72 1.88-2.91 3-5 3s-4.28-1.13-5-3c-.14-.39.23-1 .66-1h8.59c.41 0 .89.61.75 1z"></path></svg>
+          </div>
+        </div>
+        <div class="
+          d-inline-block v-align-middle
+          
+          
+           css-truncate css-truncate-target 
+           user-status-message-wrapper f6"
+           style="line-height: 20px;" >
+          <div class="d-inline-block text-gray-dark v-align-text-top text-left">
+              <span class="text-gray ml-2">Set status</span>
+          </div>
+        </div>
+      </div>
+    </summary>
+    <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="4rChaq37xQsjSfS+05+YJ3v1WoQkKouLTjxC37ruHCcS1oKfdYHkzn6vSa+MpKq/ZfK8G+qLUPDg3issGNRARQ==" />
+        <div class="Box-header bg-gray border-bottom p-3">
+          <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
+            <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+          </button>
+          <h3 class="Box-title f5 text-bold text-gray-dark">Edit status</h3>
+        </div>
+        <input type="hidden" name="emoji" class="js-user-status-emoji-field" value="">
+        <input type="hidden" name="organization_id" class="js-user-status-org-id-field" value="">
+        <div class="px-3 py-2 text-gray-dark">
+          <div class="js-characters-remaining-container position-relative mt-2">
+            <div class="input-group d-table form-group my-0 js-user-status-form-group">
+              <span class="input-group-button d-table-cell v-align-middle" style="width: 1%">
+                <button type="button" aria-label="Choose an emoji" class="btn-outline btn js-toggle-user-status-emoji-picker btn-open-emoji-picker p-0">
+                  <span class="js-user-status-original-emoji" hidden></span>
+                  <span class="js-user-status-custom-emoji"></span>
+                  <span class="js-user-status-no-emoji-icon" >
+                    <svg class="octicon octicon-smiley" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm4.81 12.81a6.72 6.72 0 01-2.17 1.45c-.83.36-1.72.53-2.64.53-.92 0-1.81-.17-2.64-.53-.81-.34-1.55-.83-2.17-1.45a6.773 6.773 0 01-1.45-2.17A6.59 6.59 0 011.21 8c0-.92.17-1.81.53-2.64.34-.81.83-1.55 1.45-2.17.62-.62 1.36-1.11 2.17-1.45A6.59 6.59 0 018 1.21c.92 0 1.81.17 2.64.53.81.34 1.55.83 2.17 1.45.62.62 1.11 1.36 1.45 2.17.36.83.53 1.72.53 2.64 0 .92-.17 1.81-.53 2.64-.34.81-.83 1.55-1.45 2.17zM4 6.8v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2H5.2C4.53 8 4 7.47 4 6.8zm5 0v-.59c0-.66.53-1.19 1.2-1.19h.59c.66 0 1.19.53 1.19 1.19v.59c0 .67-.53 1.2-1.19 1.2h-.59C9.53 8 9 7.47 9 6.8zm4 3.2c-.72 1.88-2.91 3-5 3s-4.28-1.13-5-3c-.14-.39.23-1 .66-1h8.59c.41 0 .89.61.75 1z"></path></svg>
+                  </span>
+                </button>
+              </span>
+              <text-expander keys=": @" data-mention-url="/autocomplete/user-suggestions" data-emoji-url="/autocomplete/emoji">
+                <input
+                  type="text"
+                  autocomplete="off"
+                  data-no-org-url="/autocomplete/user-suggestions"
+                  data-org-url="/suggestions?mention_suggester=1"
+                  data-maxlength="80"
+                  class="d-table-cell width-full form-control js-user-status-message-field js-characters-remaining-field"
+                  placeholder="What's happening?"
+                  name="message"
+                  value=""
+                  aria-label="What is your current status?">
+              </text-expander>
+              <div class="error">Could not update your status, please try again.</div>
+            </div>
+            <div style="margin-left: 53px" class="my-1 text-small label-characters-remaining js-characters-remaining" data-suffix="remaining" hidden>
+              80 remaining
+            </div>
+          </div>
+          <include-fragment class="js-user-status-emoji-picker" data-url="/users/status/emoji"></include-fragment>
+          <div class="overflow-auto ml-n3 mr-n3 px-3 border-bottom" style="max-height: 33vh">
+            <div class="user-status-suggestions js-user-status-suggestions collapsed overflow-hidden">
+              <h4 class="f6 text-normal my-3">Suggestions:</h4>
+              <div class="mx-3 mt-2 clearfix">
+                  <div class="float-left col-6">
+                      <button type="button" value=":palm_tree:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="palm_tree" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f334.png">🌴</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          On vacation
+                        </div>
+                      </button>
+                      <button type="button" value=":face_with_thermometer:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="face_with_thermometer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f912.png">🤒</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Out sick
+                        </div>
+                      </button>
+                  </div>
+                  <div class="float-left col-6">
+                      <button type="button" value=":house:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="house" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3e0.png">🏠</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Working from home
+                        </div>
+                      </button>
+                      <button type="button" value=":dart:" class="d-flex flex-items-baseline flex-items-stretch lh-condensed f6 btn-link link-gray no-underline js-predefined-user-status mb-1">
+                        <div class="emoji-status-width mr-2 v-align-middle js-predefined-user-status-emoji">
+                          <g-emoji alias="dart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3af.png">🎯</g-emoji>
+                        </div>
+                        <div class="d-flex flex-items-center no-underline js-predefined-user-status-message ws-normal text-left" style="border-left: 1px solid transparent">
+                          Focusing
+                        </div>
+                      </button>
+                  </div>
+              </div>
+            </div>
+            <div class="user-status-limited-availability-container">
+              <div class="form-checkbox my-0">
+                <input type="checkbox" name="limited_availability" value="1" class="js-user-status-limited-availability-checkbox" data-default-message="I may be slow to respond." aria-describedby="limited-availability-help-text-truncate-true-compact-true" id="limited-availability-truncate-true-compact-true">
+                <label class="d-block f5 text-gray-dark mb-1" for="limited-availability-truncate-true-compact-true">
+                  Busy
+                </label>
+                <p class="note" id="limited-availability-help-text-truncate-true-compact-true">
+                  When others mention you, assign you, or request your review,
+                  GitHub will let them know that you have limited availability.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="d-inline-block f5 mr-2 pt-3 pb-2" >
+  <div class="d-inline-block mr-1">
+    Clear status
+  </div>
+
+  <details class="js-user-status-expire-drop-down f6 dropdown details-reset details-overlay d-inline-block mr-2">
+    <summary class="f5 btn-link link-gray-dark border px-2 py-1 rounded-1" aria-haspopup="true">
+      <div class="js-user-status-expiration-interval-selected d-inline-block v-align-baseline">
+        Never
+      </div>
+      <div class="dropdown-caret"></div>
+    </summary>
+
+    <ul class="dropdown-menu dropdown-menu-se pl-0 overflow-auto" style="width: 220px; max-height: 15.5em">
+      <li>
+        <button type="button" class="btn-link dropdown-item js-user-status-expire-button ws-normal" title="Never">
+          <span class="d-inline-block text-bold mb-1">Never</span>
+          <div class="f6 lh-condensed">Keep this status until you clear your status or edit your status.</div>
+        </button>
+      </li>
+      <li class="dropdown-divider" role="none"></li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-04-24T20:53:41+08:00">
+            in 30 minutes
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-04-24T21:23:41+08:00">
+            in 1 hour
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-04-25T00:23:41+08:00">
+            in 4 hours
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="today" value="2020-04-24T23:59:59+08:00">
+            today
+          </button>
+        </li>
+        <li>
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="this week" value="2020-04-26T23:59:59+08:00">
+            this week
+          </button>
+        </li>
+    </ul>
+  </details>
+  <input class="js-user-status-expiration-date-input" type="hidden" name="expires_at" value="">
+</div>
+
+          <include-fragment class="js-user-status-org-picker" data-url="/users/status/organizations"></include-fragment>
+        </div>
+        <div class="d-flex flex-items-center flex-justify-between p-3 border-top">
+          <button type="submit" disabled class="width-full btn btn-primary mr-2 js-user-status-submit">
+            Set status
+          </button>
+          <button type="button" disabled class="width-full js-clear-user-status-button btn ml-2 ">
+            Clear status
+          </button>
+        </div>
+</form>    </details-dialog>
+  </details>
+</div>
+
+      </div>
+      <div role="none" class="dropdown-divider"></div>
+
+    <a role="menuitem" class="dropdown-item" href="/happybee9494" data-ga-click="Header, go to profile, text:your profile">Your profile</a>
+
+    <a role="menuitem" class="dropdown-item" href="/happybee9494?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories">Your repositories</a>
+
+    <a role="menuitem" class="dropdown-item" href="/happybee9494?tab=projects" data-ga-click="Header, go to projects, text:your projects">Your projects</a>
+
+    <a role="menuitem" class="dropdown-item" href="/happybee9494?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">Your stars</a>
+      <a role="menuitem" class="dropdown-item" href="https://gist.github.com/mine" data-ga-click="Header, your gists, text:your gists">Your gists</a>
+
+
+
+
+
+    <div role="none" class="dropdown-divider"></div>
+      
+<div id="feature-enrollment-toggle" class="hide-sm hide-md feature-preview-details position-relative">
+  <button
+    type="button"
+    class="dropdown-item btn-link"
+    role="menuitem"
+    data-feature-preview-trigger-url="/users/happybee9494/feature_previews"
+    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}"
+    data-feature-preview-close-hmac="1d415afe56b5aa08b8adc481dfcb4d68e2dba0fa295f769daa01638045c79ba7"
+    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}"
+    data-hydro-click-hmac="fac4d63add695be09ab5fa774e2d0cd0ae9fd0e35a87ff7954c132b91286a509"
+  >
+    Feature preview
+  </button>
+    <span class="feature-preview-indicator js-feature-preview-indicator" hidden></span>
+</div>
+
+    <a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a>
+    <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="opwbWptNLMWSWmG8oOfiE5bKzn5UgbyUlwYC/42Zfjn6QffVA+2QYhC3GqadrubuCwS1kqhUW53lnJEH2ceyYg==" />
+      
+      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
+        Sign out
+      </button>
+      <input type="text" name="required_field_7fe4" hidden="hidden" class="form-control" /><input type="hidden" name="timestamp" value="1587731021506" class="form-control" /><input type="hidden" name="timestamp_secret" value="21cad022b07a796bb7953e04160570a1c45eb1e6a14600e3b7795b26d53a43d7" class="form-control" />
+</form>  </details-menu>
+</details>
+
+  </div>
+
+</header>
+
+        
+
+    </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+
+
+
+    <div id="js-flash-container">
+
+
+  <template class="js-flash-template">
+    <div class="flash flash-full  js-flash-template-container">
+  <div class="container-lg px-2" >
+    <button class="flash-close js-flash-close" type="button" aria-label="Dismiss this message">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+    
+      <div class="js-flash-template-message"></div>
+
+  </div>
+</div>
+  </template>
+</div>
+
+
+      
+
+  <include-fragment class="js-notification-shelf-include-fragment" data-base-src="https://github.com/notifications/beta/shelf"></include-fragment>
+
+
+
+
+  <div class="application-main " data-commit-hovercards-enabled>
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <main id="js-repo-pjax-container" data-pjax-container >
+      
+
+  
+
+
+      <div class="border-bottom shelf intro-shelf js-notice mb-0 pb-4">
+  <div class="width-full container">
+    <div class="width-full mx-auto shelf-content">
+      <h2 class="shelf-title">Learn Git and GitHub without any code!</h2>
+      <p class="shelf-lead">
+          Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+      </p>
+      <a class="btn btn-primary shelf-cta" target="_blank" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;READ_GUIDE&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="81932b85dc131ed97a0d71fac189413b94d0d5a12129cfd6195466eedb66790d" href="https://guides.github.com/activities/hello-world/">Read the guide</a>
+    </div>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="shelf-dismiss js-notice-dismiss" action="/dashboard/dismiss_bootcamp" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="WaHSgn3Az96w8x7b2NbtMzaQtEpfJ1EJklBknNnXMdQ5jQSEhsAoWuWWzUvmrELjk3wHg8xQCaG5U+e5Irs4TA==" />
+      <button name="button" type="submit" class="mr-1 close-button tooltipped tooltipped-w" aria-label="Hide this notice forever" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;DISMISS_BANNER&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="52638eaaeab7a0ad375a2fbfd473a6e7e563f46a86fb92b657b163a13ebe68e2">
+        <svg aria-label="Hide this notice forever" class="octicon octicon-x v-align-text-top" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+</button></form>  </div>
+</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  <div class="pagehead repohead hx_repohead readability-menu bg-gray-light pb-0 pt-3">
+
+    <div class="d-flex container-lg mb-4 px-3">
+
+      <div class="flex-auto min-width-0 width-fit mr-3">
+        <h1 class="public  d-flex flex-wrap flex-items-center break-word float-none ">
+  <span class="flex-self-stretch" style="margin-top: -2px;">
+      <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+  </span>
+  <span class="author ml-2 flex-self-stretch" itemprop="author">
+    <a class="url fn" rel="author" data-hovercard-type="organization" data-hovercard-url="/orgs/NovelCOVID/hovercard" href="/NovelCOVID">NovelCOVID</a>
+  </span>
+  <span class="path-divider flex-self-stretch">/</span>
+  <strong itemprop="name" class="mr-2 flex-self-stretch">
+    <a data-pjax="#js-repo-pjax-container" href="/NovelCOVID/API">API</a>
+  </strong>
+  
+</h1>
+
+
+      </div>
+
+      <ul class="pagehead-actions flex-shrink-0 " >
+
+
+
+
+  <li>
+    
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="C8LC9Mu28hMz5/SY49sTKAeVjtbBMBkvpBR8ZjVugBfhhbrr7Qydb03TV/0XkAF8x+bLMvjeZq9ljbXJwWUMSQ==" />      <input type="hidden" name="repository_id" value="245077032">
+
+      <details class="details-reset details-overlay select-menu float-left">
+        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="1ec17bda4cb5c17f6d469cf3beb83da42442ba062d950454593cf802ffa86337" data-ga-click="Repository, click Watch settings, action:files#disambiguate">          <span data-menu-button>
+              <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+              Watch
+          </span>
+</summary>        <details-menu
+          class="select-menu-modal position-absolute mt-5"
+          style="z-index: 99;">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notifications</span>
+          </div>
+          <div class="select-menu-list">
+            <button type="submit" name="do" value="included" class="select-menu-item width-full" aria-checked="true" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Not watching</span>
+                <span class="description">Be notified only when participating or @mentioned.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents>
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Watch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="release_only" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Releases only</span>
+                <span class="description">Be notified of new releases, and when participating or @mentioned.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents>
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Unwatch releases
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="subscribed" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Watching</span>
+                <span class="description">Be notified of all conversations.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents>
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                  Unwatch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="ignore" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Ignoring</span>
+                <span class="description">Never be notified.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents>
+                  <svg class="octicon octicon-mute v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"></path></svg>
+                  Stop ignoring
+                </span>
+              </div>
+            </button>
+          </div>
+        </details-menu>
+      </details>
+        <a class="social-count js-social-count"
+          href="/NovelCOVID/API/watchers"
+          aria-label="63 users are watching this repository">
+          63
+        </a>
+</form>
+  </li>
+
+  <li>
+      <div class="js-toggler-container js-social-container starring-container ">
+    <form class="starred js-social-form" action="/NovelCOVID/API/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="PGsXp11qJ7HxJE1fjXfBQlWySilguevxbAp4spKds9ase2X5bHK2azdyezcyreKWTMIZkMCfeVzXEglljMw2Nw==" />
+      <input type="hidden" name="context" value="repository"></input>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar NovelCOVID/API" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="9681181fd739c96961263e1046a49a5f1b3610210707314c14d00107eb3a099e" data-ga-click="Repository, click unstar button, action:files#disambiguate; text:Unstar">        <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+
+        Unstar
+</button>        <a class="social-count js-social-count" href="/NovelCOVID/API/stargazers"
+           aria-label="1790 users starred this repository">
+           1.8k
+        </a>
+</form>
+    <form class="unstarred js-social-form" action="/NovelCOVID/API/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="8jejVgTwFYiMdkDAUgzsI2yUSH+9uvIQGQwaJlLUnqZ7ge5YlUf1ZgyCqoWHU5X/z1E7wp2OlGEIflvS45gsUg==" />
+      <input type="hidden" name="context" value="repository"></input>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star NovelCOVID/API" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="5630ec30403a43c5a4fb136007318a6c20c0dc5468decdac79be9b39f4e9f60a" data-ga-click="Repository, click star button, action:files#disambiguate; text:Star">        <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+
+        Star
+</button>        <a class="social-count js-social-count" href="/NovelCOVID/API/stargazers"
+           aria-label="1790 users starred this repository">
+          1.8k
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/NovelCOVID/API/fork" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="jSlEQHu3m2HSgtzMhqvnQhWmfAE5G/TVVP8ir6VTAPRBHwmZWP9VWQiEh+XUMoV9xu1hAjrlcXy/ibc4Ozjpkw==" />
+            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="a5d83baba08ee907382bac38085e891e91c754a402c1298f1ee1cefb5d9afac6" data-ga-click="Repository, show fork modal, action:files#disambiguate; text:Fork" type="submit" title="Fork your own copy of NovelCOVID/API to your account" aria-label="Fork your own copy of NovelCOVID/API to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+              Fork
+</button></form>
+    <a href="/NovelCOVID/API/network/members" class="social-count"
+       aria-label="473 users forked this repository">
+      473
+    </a>
+  </li>
+</ul>
+
+    </div>
+      
+<nav class="hx_reponav reponav js-repo-nav js-sidenav-container-pjax clearfix container-lg px-3"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+    aria-label="Repository"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a class="js-selected-navigation-item selected reponav-item" itemprop="url" data-hotkey="g c" aria-current="page" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /NovelCOVID/API" href="/NovelCOVID/API">
+      <div class="d-inline"><svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path></svg></div>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /NovelCOVID/API/issues" href="/NovelCOVID/API/issues">
+        <div class="d-inline"><svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 011.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></div>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">2</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a data-hotkey="g p" data-skip-pjax="true" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /NovelCOVID/API/pulls" href="/NovelCOVID/API/pulls">
+      <div class="d-inline"><svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0010 15a1.993 1.993 0 001-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 00-1 3.72v6.56A1.993 1.993 0 002 15a1.993 1.993 0 001-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg></div>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">1</span>
+      <meta itemprop="position" content="4">
+</a>  </span>
+
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement" class="position-relative float-left">
+      <a data-hotkey="g w" data-skip-pjax="true" class="js-selected-navigation-item reponav-item" data-selected-links="repo_actions /NovelCOVID/API/actions" href="/NovelCOVID/API/actions">
+        <div class="d-inline"><svg class="octicon octicon-play" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 8A7 7 0 110 8a7 7 0 0114 0zm-8.223 3.482l4.599-3.066a.5.5 0 000-.832L5.777 4.518A.5.5 0 005 4.934v6.132a.5.5 0 00.777.416z"></path></svg></div>
+        Actions
+</a>
+    </span>
+
+    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /NovelCOVID/API/projects" href="/NovelCOVID/API/projects">
+      <div class="d-inline"><svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"></path></svg></div>
+      Projects
+      <span class="Counter">1</span>
+</a>
+    <a class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /NovelCOVID/API/wiki" href="/NovelCOVID/API/wiki">
+      <div class="d-inline"><svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"></path></svg></div>
+      Wiki
+</a>
+    <a data-skip-pjax="true" class="js-selected-navigation-item reponav-item" data-selected-links="security overview alerts policy token_scanning code_scanning /NovelCOVID/API/security" href="/NovelCOVID/API/security">
+      <div class="d-inline"><svg class="octicon octicon-shield" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2l7-2 7 2v6.02C14 12.69 8.69 16 7 16c-1.69 0-7-3.31-7-7.98V2zm1 .75L7 1l6 1.75v5.268C13 12.104 8.449 15 7 15c-1.449 0-6-2.896-6-6.982V2.75zm1 .75L7 2v12c-1.207 0-5-2.482-5-5.985V3.5z"></path></svg></div>
+      Security
+          <span class="Counter js-security-tab-count" data-url="/NovelCOVID/API/security/overall-count" hidden></span>
+</a>
+    <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph dependabot_updates pulse people /NovelCOVID/API/pulse" href="/NovelCOVID/API/pulse">
+      <div class="d-inline"><svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"></path></svg></div>
+      Insights
+</a>
+
+</nav>
+
+
+  </div>
+
+
+<div class="container-lg clearfix new-discussion-timeline  px-3">
+  <div class="repository-content ">
+
+    
+    
+  
+
+
+      <div class="">  <div class="f4">
+        <span class="text-gray-dark mr-2" itemprop="about">
+          API for Current cases and more stuff about COVID-19 or the Novel Coronavirus Strain
+        </span>
+  </div>
+</div>
+
+    <div class="repository-topics-container mt-2 mb-3 js-topics-list-container">  <div class="list-topics-container f6">
+      <a class="topic-tag topic-tag-link " href="/topics/corona" title="Topic: corona" data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:corona">
+  corona
+</a>
+
+      <a class="topic-tag topic-tag-link " href="/topics/covid19" title="Topic: covid19" data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:covid19">
+  covid19
+</a>
+
+      <a class="topic-tag topic-tag-link " href="/topics/api" title="Topic: api" data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:api">
+  api
+</a>
+
+      <a class="topic-tag topic-tag-link " href="/topics/covid" title="Topic: covid" data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:covid">
+  covid
+</a>
+
+      <a class="topic-tag topic-tag-link " href="/topics/disease" title="Topic: disease" data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:disease">
+  disease
+</a>
+
+      <a class="topic-tag topic-tag-link " href="/topics/redis" title="Topic: redis" data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:redis">
+  redis
+</a>
+
+      <a class="topic-tag topic-tag-link " href="/topics/discord" title="Topic: discord" data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:discord">
+  discord
+</a>
+
+      <a class="topic-tag topic-tag-link " href="/topics/postman" title="Topic: postman" data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:postman">
+  postman
+</a>
+
+      <a class="topic-tag topic-tag-link " href="/topics/discord-server" title="Topic: discord-server" data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:discord-server">
+  discord-server
+</a>
+
+  </div>
+</div>
+
+
+
+      <div class="overall-summary border-bottom-0 mb-0 rounded-bottom-0">
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax href="/NovelCOVID/API/commits/master">
+            <svg class="octicon octicon-git-commit" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.86 7c-.45-1.72-2-3-3.86-3-1.86 0-3.41 1.28-3.86 3H0v2h3.14c.45 1.72 2 3 3.86 3 1.86 0 3.41-1.28 3.86-3H14V7h-3.14zM7 10.2c-1.22 0-2.2-.98-2.2-2.2 0-1.22.98-2.2 2.2-2.2 1.22 0 2.2.98 2.2 2.2 0 1.22-.98 2.2-2.2 2.2z"></path></svg>
+            <span class="num text-emphasized">
+              916
+            </span>
+            commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax href="/NovelCOVID/API/branches">
+          <svg class="octicon octicon-git-branch" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 00-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 00-1-3.72C.88 1 0 1.89 0 3a2 2 0 001 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+          <span class="num text-emphasized">
+            16
+          </span>
+          branches
+        </a>
+      </li>
+
+        <li>
+          <a data-pjax href="/NovelCOVID/API/packages" data-ga-click="Repository, packages click, location:repo overview">
+            <svg class="octicon octicon-package" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M1 4.27v7.47c0 .45.3.84.75.97l6.5 1.73c.16.05.34.05.5 0l6.5-1.73c.45-.13.75-.52.75-.97V4.27c0-.45-.3-.84-.75-.97l-6.5-1.74a1.4 1.4 0 00-.5 0L1.75 3.3c-.45.13-.75.52-.75.97zm7 9.09l-6-1.59V5l6 1.61v6.75zM2 4l2.5-.67L11 5.06l-2.5.67L2 4zm13 7.77l-6 1.59V6.61l2-.55V8.5l2-.53V5.53L15 5v6.77zm-2-7.24L6.5 2.8l2-.53L15 4l-2 .53z"></path></svg>
+            <span class="num text-emphasized">
+              0
+            </span>
+            packages
+          </a>
+
+        </li>
+
+      <li>
+        <a href="/NovelCOVID/API/releases">
+          <svg class="octicon octicon-tag" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.73 1.73C7.26 1.26 6.62 1 5.96 1H3.5C2.13 1 1 2.13 1 3.5v2.47c0 .66.27 1.3.73 1.77l6.06 6.06c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 000-1.41L7.73 1.73zM2.38 7.09c-.31-.3-.47-.7-.47-1.13V3.5c0-.88.72-1.59 1.59-1.59h2.47c.42 0 .83.16 1.13.47l6.14 6.13-4.73 4.73-6.13-6.15zM3.01 3h2v2H3V3h.01z"></path></svg>
+          <span class="num text-emphasized">
+            0
+          </span>
+          releases
+        </a>
+      </li>
+
+        <li  data-contributors-hovercards-enabled >
+            <a href="/NovelCOVID/API/graphs/contributors" data-hovercard-type="contributors" data-hovercard-url="/NovelCOVID/API/community_contributors/hovercard">
+  <svg class="octicon octicon-organization" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 12.999c0 .439-.45 1-1 1H7.995c-.539 0-.994-.447-.995-.999H1c-.54 0-1-.561-1-1 0-2.634 3-4 3-4s.229-.409 0-1c-.841-.621-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.442.58 2.5 3c.058 2.41-.159 2.379-1 3-.229.59 0 1 0 1s1.549.711 2.42 2.088C9.196 9.369 10 8.999 10 8.999s.229-.409 0-1c-.841-.62-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.437.581 2.495 3c.059 2.41-.158 2.38-1 3-.229.59 0 1 0 1s3.005 1.366 3.005 4z"></path></svg>
+    <span class="num text-emphasized">
+      41
+    </span>
+    contributors
+</a>
+        </li>
+
+        <li>
+          <a href="/NovelCOVID/API/blob/master/LICENSE">
+            <svg class="octicon octicon-law" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 4c-.83 0-1.5-.67-1.5-1.5S6.17 1 7 1s1.5.67 1.5 1.5S7.83 4 7 4zm7 6c0 1.11-.89 2-2 2h-1c-1.11 0-2-.89-2-2l2-4h-1c-.55 0-1-.45-1-1H8v8c.42 0 1 .45 1 1h1c.42 0 1 .45 1 1H3c0-.55.58-1 1-1h1c0-.55.58-1 1-1h.03L6 5H5c0 .55-.45 1-1 1H3l2 4c0 1.11-.89 2-2 2H2c-1.11 0-2-.89-2-2l2-4H1V5h3c0-.55.45-1 1-1h4c.55 0 1 .45 1 1h3v1h-1l2 4zM2.5 7L1 10h3L2.5 7zM13 10l-1.5-3-1.5 3h3z"></path></svg>
+              GPL-3.0
+          </a>
+        </li>
+    </ul>
+  </div>
+
+    <details class="details-reset">
+      <summary title="Click for language details" data-ga-click="Repository, language bar stats toggle, location:repo overview">
+        <div class="d-flex repository-lang-stats-graph">
+            <span class="language-color" aria-label="JavaScript 86.1%" style="width:86.1%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
+            <span class="language-color" aria-label="CSS 7.0%" style="width:7.0%; background-color:#563d7c;" itemprop="keywords">CSS</span>
+            <span class="language-color" aria-label="HTML 6.8%" style="width:6.8%; background-color:#e34c26;" itemprop="keywords">HTML</span>
+            <span class="language-color" aria-label="Dockerfile 0.1%" style="width:0.1%; background-color:#384d54;" itemprop="keywords">Dockerfile</span>
+        </div>
+      </summary>
+      <div class="repository-lang-stats">
+        <ol class="repository-lang-stats-numbers">
+          <li>
+              <a href="/NovelCOVID/API/search?l=javascript"  data-ga-click="Repository, language stats search click, location:repo overview">
+                <span class="color-block language-color" style="background-color:#f1e05a;"></span>
+                <span class="lang">JavaScript</span>
+                <span class="percent">86.1%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/NovelCOVID/API/search?l=css"  data-ga-click="Repository, language stats search click, location:repo overview">
+                <span class="color-block language-color" style="background-color:#563d7c;"></span>
+                <span class="lang">CSS</span>
+                <span class="percent">7.0%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/NovelCOVID/API/search?l=html"  data-ga-click="Repository, language stats search click, location:repo overview">
+                <span class="color-block language-color" style="background-color:#e34c26;"></span>
+                <span class="lang">HTML</span>
+                <span class="percent">6.8%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/NovelCOVID/API/search?l=dockerfile"  data-ga-click="Repository, language stats search click, location:repo overview">
+                <span class="color-block language-color" style="background-color:#384d54;"></span>
+                <span class="lang">Dockerfile</span>
+                <span class="percent">0.1%</span>
+              </a>
+          </li>
+        </ol>
+      </div>
+    </details>
+
+
+
+
+
+  <div class="mt-2">
+    <include-fragment src="/NovelCOVID/API/show_partial?partial=tree%2Frecently_touched_branches_list"></include-fragment>
+  </div>
+
+<div class="file-navigation in-mid-page mb-2 d-flex flex-items-start">
+  
+<details class="details-reset details-overlay branch-select-menu " id="branch-select-menu">
+  <summary class="btn css-truncate btn-sm"
+           data-hotkey="w"
+           title="Switch branches or tags">
+    <i>Branch:</i>
+    <span class="css-truncate-target" data-menu-button>master</span>
+    <span class="dropdown-caret"></span>
+  </summary>
+
+  <details-menu class="SelectMenu SelectMenu--hasFilter" src="/NovelCOVID/API/refs/master?source_action=disambiguate&amp;source_controller=files" preload>
+    <div class="SelectMenu-modal">
+      <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
+        <svg class="octicon octicon-octoface anim-pulse" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
+      </include-fragment>
+    </div>
+  </details-menu>
+</details>
+
+
+        <a class="btn btn-sm new-pull-request-btn ml-2" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;NEW_PULL_REQUEST_BUTTON&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="5be84bce5fdf02f9836631ca0d3486c8a0f31cd48ccac02d24a51e97d1f3cdfd" data-ga-click="Repository, new pull request, location:repo overview" data-pjax="true" href="/NovelCOVID/API/pull/new/master">New pull request</a>
+
+  <div class="breadcrumb flex-auto">
+    
+  </div>
+
+    <div class="BtnGroup ml-2">
+        
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="BtnGroup-parent" action="/NovelCOVID/API/new/master" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="tatnkG2n8/WB7tVCBl/jCO+hKvzBmk9tp7BYoxTpOAKNHjBukuibKSTVurf0tas790BCeQ2cYS9QktDYnoK0vg==" />
+      <button class="btn btn-sm BtnGroup-item" type="submit" data-disable-with="Creating file…">
+        Create new file
+      </button>
+</form>
+
+        
+    <a href="/NovelCOVID/API/upload/master" class="btn btn-sm BtnGroup-item">
+      Upload files
+    </a>
+
+
+      <a class="btn btn-sm empty-icon float-right BtnGroup-item" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="242258c64e80116fc7d41222061cc1fe534fa230e5bdd9337e38f53dc3773383" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" data-pjax="true" href="/NovelCOVID/API/find/master">Find file</a>
+    </div>
+
+
+    <span class="d-flex">
+        
+
+        
+<get-repo-controller>
+  <details class="position-relative details-overlay details-reset" data-action="toggle:get-repo-controller#onDetailsToggle">
+    <summary class="btn btn-sm ml-2 btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;repository_id&quot;:245077032,&quot;target&quot;:&quot;CLONE_OR_DOWNLOAD_BUTTON&quot;,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="45e6a43b8438f970dc4bb95c5d3723f843f648dd4292f7fe324ac49ec5c25fec">
+        Clone or download
+      <span class="dropdown-caret"></span>
+</summary>    <div class="position-relative">
+      <div class="get-repo-modal dropdown-menu dropdown-menu-sw pb-0 js-toggler-container " data-target="get-repo-controller.modal">
+  
+        <div class="get-repo-modal-options">
+            <div class="clone-options https-clone-options">
+                <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" action="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=clone" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="uDwI28T2XabmdECym3mRNoh4afTdYxuBPlYE3a1ae5hADWf62DmcCgoehxkIHT/t+NF71m6Ald0nBgp8IZrbrA==" /><button name="button" type="submit" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;USE_SSH&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="29012f160da7bb22bf8c82229d7f05a36e80788d0bf0e281c2f659ab12965e8f" class="btn-link btn-change-protocol js-toggler-target float-right">Use SSH</button></form>
+  
+              <h4 class="mb-1">
+                Clone with HTTPS
+                <a class="muted-link" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank" title="Which remote URL should I use?">
+                  <svg class="octicon octicon-question" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 10h2v2H6v-2zm4-3.5C10 8.64 8 9 8 9H6c0-.55.45-1 1-1h.5c.28 0 .5-.22.5-.5v-1c0-.28-.22-.5-.5-.5h-1c-.28 0-.5.22-.5.5V7H4c0-1.5 1.5-3 3-3s3 1 3 2.5zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 011.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"></path></svg>
+                </a>
+              </h4>
+              <p class="mb-2 get-repo-decription-text">
+                Use Git or checkout with SVN using the web URL.
+              </p>
+  
+              <div class="input-group">
+  <input type="text" class="form-control input-monospace input-sm" data-autoselect value="https://github.com/NovelCOVID/API.git" aria-label="Clone this repository at https://github.com/NovelCOVID/API.git" readonly>
+  <div class="input-group-button">
+    <clipboard-copy value="https://github.com/NovelCOVID/API.git" aria-label="Copy to clipboard" class="btn btn-sm" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;COPY_URL&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="cd5269b232e045f5e2d4b56e84f9df23d02ed1606b0020069b4e27a9e88fab3a"><svg class="octicon octicon-clippy" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg></clipboard-copy>
+  </div>
+</div>
+
+            </div>
+  
+            <div class="clone-options ssh-clone-options">
+                <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" action="/users/set_protocol?protocol_selector=https&amp;protocol_type=clone" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="yi0/unRznqiEPsq0zaRYbF66E4z5xfsuNG5GxTaPPyIyHFCbaLxfBGhUDR9ewPa3LhMBrkomdXItPkhkuk+fFg==" /><button name="button" type="submit" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;USE_HTTPS&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="0e97396f5e8faf0d0b13f70d98fe72d17719eb6c6a6fca5ef695093aaa9759e7" class="btn-link btn-change-protocol js-toggler-target float-right">Use HTTPS</button></form>
+                <h4 class="mb-1">
+                  Clone with SSH
+                  <a class="muted-link" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank" title="Which remote URL should I use?">
+                    <svg class="octicon octicon-question" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6 10h2v2H6v-2zm4-3.5C10 8.64 8 9 8 9H6c0-.55.45-1 1-1h.5c.28 0 .5-.22.5-.5v-1c0-.28-.22-.5-.5-.5h-1c-.28 0-.5.22-.5.5V7H4c0-1.5 1.5-3 3-3s3 1 3 2.5zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 011.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"></path></svg>
+                  </a>
+                </h4>
+  
+                  <div class="flash flash-warn my-3">
+                    You don't have any public SSH keys in your GitHub account.
+                    You can <a href="/settings/ssh/new">add a new public key</a>, or try cloning this repository via <button class="btn-link js-toggler-target">HTTPS.</button>
+                  </div>
+  
+                <p class="mb-2 get-repo-decription-text">
+                    Use a password protected SSH key.
+                </p>
+  
+                <div class="input-group">
+  <input type="text" class="form-control input-monospace input-sm" data-autoselect value="git@github.com:NovelCOVID/API.git" aria-label="Clone this repository at git@github.com:NovelCOVID/API.git" readonly>
+  <div class="input-group-button">
+    <clipboard-copy value="git@github.com:NovelCOVID/API.git" aria-label="Copy to clipboard" class="btn btn-sm" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;COPY_URL&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="cd5269b232e045f5e2d4b56e84f9df23d02ed1606b0020069b4e27a9e88fab3a"><svg class="octicon octicon-clippy" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg></clipboard-copy>
+  </div>
+</div>
+
+            </div>
+          <div class="mt-2 d-flex">
+            <a class="btn btn-outline get-repo-btn tooltipped tooltipped-s tooltipped-multiline js-remove-unless-platform" aria-label="Clone NovelCOVID/API to your computer and use it in GitHub Desktop." data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;OPEN_IN_DESKTOP&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="57850f3f7b0c24335e99e91f287db2266afdc7d7d278cdb8b40288cbf2860e6e" data-platforms="windows,mac" data-action="click:get-repo-controller#showDownloadMessage" href="https://desktop.github.com">Open in Desktop</a>
+
+<a class="flex-1 btn btn-outline get-repo-btn" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;DOWNLOAD_ZIP&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:245077032,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}" data-hydro-click-hmac="40c0465e1b66354eb8fe713ec7e5faea598d5dfa746c5c92f05b86a5cee6f365" data-ga-click="Repository, download zip, location:repo overview" data-open-app="link" href="/NovelCOVID/API/archive/master.zip">Download ZIP</a>
+
+          </div>
+        </div>
+  
+  
+        <div class="py-2 px-3" data-target="get-repo-controller.platforms" data-platform="mac" hidden>
+          <h4 class="lh-condensed mb-3">Launching GitHub Desktop<span class="AnimatedEllipsis"></span></h4>
+          <p class="text-gray">If nothing happens, <a href="https://desktop.github.com/">download GitHub Desktop</a> and try again.</p>
+          <p><button class="btn-link" data-action="click:get-repo-controller#onDetailsToggle">Go back</button></p>
+        </div>
+  
+        <div class="py-2 px-3" data-target="get-repo-controller.platforms" data-platform="windows" hidden>
+          <h4 class="lh-condensed mb-3">Launching GitHub Desktop<span class="AnimatedEllipsis"></span></h4>
+          <p class="text-gray">If nothing happens, <a href="https://desktop.github.com/">download GitHub Desktop</a> and try again.</p>
+          <p><button class="btn-link" data-action="click:get-repo-controller#onDetailsToggle">Go back</button></p>
+        </div>
+  
+        <div class="py-2 px-3" data-target="get-repo-controller.platforms" data-platform="xcode" hidden>
+          <h4 class="lh-condensed mb-3">Launching Xcode<span class="AnimatedEllipsis"></span></h4>
+          <p class="text-gray">If nothing happens, <a href="https://developer.apple.com/xcode/">download Xcode</a> and try again.</p>
+          <p><button class="btn-link" data-action="click:get-repo-controller#onDetailsToggle">Go back</button></p>
+        </div>
+  
+        <div class="py-2 px-3" data-target="get-repo-controller.platforms" data-platform="visual-studio" hidden>
+          <h4 class="lh-condensed mb-3">Launching Visual Studio<span class="AnimatedEllipsis"></span></h4>
+          <p class="text-gray">If nothing happens, <a href="https://visualstudio.github.com/">download the GitHub extension for Visual Studio</a> and try again.</p>
+          <p><button class="btn-link" data-action="click:get-repo-controller#onDetailsToggle">Go back</button></p>
+        </div>
+  
+      </div>
+    </div>
+  </details>
+</get-repo-controller>
+
+
+    </span>
+
+    
+</div>
+
+
+
+
+<div class="Box mb-3 Box--condensed">
+  <div class="Box-header Box-header--blue position-relative "
+    style="margin-bottom:-1px;">
+    <h2 class="sr-only">Latest commit</h2>
+    <div class="commit-tease js-details-container Details d-flex rounded-top-1 flex-auto" data-issue-and-pr-hovercards-enabled>
+        
+    
+<div class="AvatarStack flex-self-start ">
+  <div class="AvatarStack-body" aria-label="puf17640">
+        <a class="avatar avatar-user" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/users/puf17640/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/puf17640">
+          <img height="20" width="20" alt="@puf17640" src="https://avatars3.githubusercontent.com/u/17516174?s=60&amp;u=ff1971d74a68b04d443a78d0630f69b42965c47e&amp;v=4" class=" avatar-user" />
+</a>  </div>
+</div>
+
+    <div class="flex-auto f6 mr-3">
+      
+      <a href="/NovelCOVID/API/commits?author=puf17640"
+     class="commit-author tooltipped tooltipped-s user-mention"
+     aria-label="View all commits by puf17640">puf17640</a>
+
+
+  
+
+
+        <a data-pjax="true" title="Merge pull request #589 from puf17640/master
+
+added metatags" class="message text-inherit" href="/NovelCOVID/API/commit/49e173bef11545a07d039ee9831851be572ebc12">Merge pull request</a> <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="606186760" data-permission-text="Title is private" data-url="https://github.com/NovelCOVID/API/issues/589" data-hovercard-type="pull_request" data-hovercard-url="/NovelCOVID/API/pull/589/hovercard" href="https://github.com/NovelCOVID/API/pull/589">#589</a> <a data-pjax="true" title="Merge pull request #589 from puf17640/master
+
+added metatags" class="message text-inherit" href="/NovelCOVID/API/commit/49e173bef11545a07d039ee9831851be572ebc12">from puf17640/master</a>
+          <span class="hidden-text-expander inline">
+            <button type="button" class="ellipsis-expander js-details-target" aria-expanded="false">&hellip;</button>
+          </span>
+
+        <div class="commit-desc"><pre class="text-small">added metatags</pre></div>
+    </div>
+    <div class="no-wrap d-flex flex-self-start flex-items-baseline">
+        <span class="mr-2 flex-self-center">
+          <include-fragment accept="text/fragment+html" src="/NovelCOVID/API/commit/49e173bef11545a07d039ee9831851be572ebc12/rollup?direction=w" class="d-inline"></include-fragment>
+        </span>
+      <span class="mr-1">Latest commit</span>
+      <a class="commit-tease-sha mr-1" href="/NovelCOVID/API/commit/49e173bef11545a07d039ee9831851be572ebc12" data-pjax>
+        49e173b
+      </a>
+      <span itemprop="dateModified"><relative-time datetime="2020-04-24T09:50:27Z" class="no-wrap">Apr 24, 2020</relative-time></span>
+    </div>
+    </div>
+  </div>
+  <h2 id="files"  class="sr-only">Files</h2>
+  
+
+
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/NovelCOVID/API/tree/49e173bef11545a07d039ee9831851be572ebc12">Permalink</a>
+
+    <table class="files js-navigation-container js-active-navigation-container " data-pjax>
+      <thead>
+        <tr>
+          <th><span class="sr-only">Type</span></th>
+          <th><span class="sr-only">Name</span></th>
+          <th><span class="sr-only">Latest commit message</span></th>
+          <th><span class="sr-only">Commit time</span></th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+        <tr class="warning include-fragment-error">
+          <td class="icon"><svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></td>
+          <td class="content" colspan="3">Failed to load latest commit information.</td>
+        </tr>
+
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="directory" class="octicon octicon-file-directory" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="This path skips through empty directories" id="812567e6c1916614728dd37787c921b2-a6d1fe5a7d60591c8edf7c7775caa6691d8af2eb" href="/NovelCOVID/API/tree/master/.github/workflows"><span class="text-gray-light">.github/</span>workflows</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="adjust timing" class="link-gray" href="/NovelCOVID/API/commit/2c3d90ab9ed163b94d043386b8f2edeb376052dc">adjust timing</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-13T04:23:15Z" class="no-wrap">Apr 13, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="directory" class="octicon octicon-file-directory" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="public" id="4c9184f37cff01bcdc32dc486ec36961-6bf428f4bb5236e75fd33e673f01a15362985827" href="/NovelCOVID/API/tree/master/public">public</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="Merge branch &#39;master&#39; into master" class="link-gray" href="/NovelCOVID/API/commit/abc00ca2a3e60032818525cd692cfc939b60772f">Merge branch 'master' into master</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-24T09:49:12Z" class="no-wrap">Apr 24, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="directory" class="octicon octicon-file-directory" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="routes" id="1755347e5f6a762b84a3f6512a3e4e53-4bda8c41afd8939b6dcf89577be09abd39d8881e" href="/NovelCOVID/API/tree/master/routes">routes</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="refactor" class="link-gray" href="/NovelCOVID/API/commit/27541c3318c2d391c764b02cd8009402c6307a90">refactor</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-20T09:14:49Z" class="no-wrap">Apr 20, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="directory" class="octicon octicon-file-directory" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="scrapers" id="15e891f8c07c35db813007e6be9e7bbb-d517e07998cd82b222e0baa02cf29110303ab76d" href="/NovelCOVID/API/tree/master/scrapers">scrapers</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="switch jhu logger position" class="link-gray" href="/NovelCOVID/API/commit/b7c328c41eba1c500db0d66a07ae6786eeef057f">switch jhu logger position</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-19T00:47:30Z" class="no-wrap">Apr 19, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="directory" class="octicon octicon-file-directory" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="tests" id="b61a6d542f9036550ba9c401c80f00ef-4bc6d1ed779ad390946c24a3f03a533540819a4e" href="/NovelCOVID/API/tree/master/tests">tests</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="testing every continents properties now" class="link-gray" href="/NovelCOVID/API/commit/7721a4a6ee20db9dfd82ce8ea1599b3cbcba697f">testing every continents properties now</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-20T10:15:15Z" class="no-wrap">Apr 20, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="directory" class="octicon octicon-file-directory" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="utils" id="2b3583e6e17721c54496bd04e57a0c15-f3a359a2b868e8c0de24032a2acb6feda32419f0" href="/NovelCOVID/API/tree/master/utils">utils</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="changed how we serve flags img" class="link-gray" href="/NovelCOVID/API/commit/0513f14c798569ca38888e0c107a86fa5f6f6546">changed how we serve flags img</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-22T05:23:46Z" class="no-wrap">Apr 22, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title=".all-contributorsrc" id="c47fb5a6d4fde805d2706fc934e8d354-a5feffa997d04c640ac61eb10c8c51a68ff604dd" href="/NovelCOVID/API/blob/master/.all-contributorsrc">.all-contributorsrc</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="docs: update .all-contributorsrc [skip ci]" class="link-gray" href="/NovelCOVID/API/commit/1728859d61cd268ab6317047fec37ecf25e8e7cc">docs: update .all-contributorsrc [skip ci]</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-19T12:37:04Z" class="no-wrap">Apr 19, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title=".eslintrc.json" id="df39304d828831c44a2b9f38cd45289c-9c5949a4631599e12f91ae04797bb33217866cf4" href="/NovelCOVID/API/blob/master/.eslintrc.json">.eslintrc.json</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="fix up eslintconfig" class="link-gray" href="/NovelCOVID/API/commit/152156105e7eb04e56abbbcef001e6d0a96944e8">fix up eslintconfig</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-03-28T19:00:15Z" class="no-wrap">Mar 29, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title=".gitignore" id="a084b794bc0759e7a6b77810e01874f2-0621bbd73dfa4b82f25aae8e63155bf9b69932c6" href="/NovelCOVID/API/blob/master/.gitignore">.gitignore</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="Merge branch &#39;master&#39; into master" class="link-gray" href="/NovelCOVID/API/commit/6715d10d8633336fb2db57c583c51af715bcda2c">Merge branch 'master' into master</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-03-21T23:14:44Z" class="no-wrap">Mar 22, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="Dockerfile" id="3254677a7917c6c01f55212f86c57fbf-9de9d2a999dd63c94050bcb3d8f206bc319f3652" href="/NovelCOVID/API/blob/master/Dockerfile">Dockerfile</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="Create Dockerfile" class="link-gray" href="/NovelCOVID/API/commit/219c479e57ed518713995385323cdb85b68875c6">Create Dockerfile</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-03-19T03:23:45Z" class="no-wrap">Mar 19, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="FETCH_HEAD" id="882cb8fa0a33d396ec805621f0ee27d3-e69de29bb2d1d6434b8b29ae775ad8c2e48c5391" href="/NovelCOVID/API/blob/master/FETCH_HEAD">FETCH_HEAD</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="add countries field to testing" class="link-gray" href="/NovelCOVID/API/commit/e26b53d9fc15e3ae4ac5a8257f0bfd4c90e80a92">add countries field to testing</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-17T19:00:01Z" class="no-wrap">Apr 18, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="LICENSE" id="9879d6db96fd29134fc802214163b95a-c9633983ac0f9d7c0cd5fb56cd636500127b7897" itemprop="license" href="/NovelCOVID/API/blob/master/LICENSE">LICENSE</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="Update LICENSE" class="link-gray" href="/NovelCOVID/API/commit/63ed15bd55ed72ffa59a8c428fb365ec199c7a36">Update LICENSE</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-03-24T06:57:44Z" class="no-wrap">Mar 24, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="README.md" id="04c6e90faac2675aa89e2176d2eec7d8-28de60d69cb83529e594289ec6fcac6d781ee0d1" href="/NovelCOVID/API/blob/master/README.md">README.md</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="Merge pull request #579 from renanbastos93/patch-1
+
+WIP: Add showcase" class="link-gray" href="/NovelCOVID/API/commit/d0688cfc3508689d655185a7dd525c3db7a1845d">Merge pull request</a> <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="605076984" data-permission-text="Title is private" data-url="https://github.com/NovelCOVID/API/issues/579" data-hovercard-type="pull_request" data-hovercard-url="/NovelCOVID/API/pull/579/hovercard" href="https://github.com/NovelCOVID/API/pull/579">#579</a> <a data-pjax="true" title="Merge pull request #579 from renanbastos93/patch-1
+
+WIP: Add showcase" class="link-gray" href="/NovelCOVID/API/commit/d0688cfc3508689d655185a7dd525c3db7a1845d">from renanbastos93/patch-1</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-23T16:16:39Z" class="no-wrap">Apr 24, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="TERMS.md" id="2f973741fc1aa672fbcc05b97b6d9d61-7abe732d02476df92f4f7b354d4fafb272811bb5" href="/NovelCOVID/API/blob/master/TERMS.md">TERMS.md</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="Update TERMS.md" class="link-gray" href="/NovelCOVID/API/commit/be9264c152df509bf48cec0f8d650f8fdba14381">Update TERMS.md</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-23T06:51:47Z" class="no-wrap">Apr 23, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="config.example.json" id="55587a4496721b5abbba188fa44de898-dce125b4663e71738866a479ae34d167ee98abb2" href="/NovelCOVID/API/blob/master/config.example.json">config.example.json</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="fix merge conlicts from master" class="link-gray" href="/NovelCOVID/API/commit/907a9338357d16eb79d479679c82312bb4d67ab0">fix merge conlicts from master</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-17T00:52:34Z" class="no-wrap">Apr 17, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="config.keys.json" id="347da067c407876ee90c46bd2a7a05eb-edd16afe69ca24bbdca283cb6aba99d4cc54ca67" href="/NovelCOVID/API/blob/master/config.keys.json">config.keys.json</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="more PR feedback" class="link-gray" href="/NovelCOVID/API/commit/b8f7c18b351f982ddb7b19eef3f645a38f8301b3">more PR feedback</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-16T05:57:48Z" class="no-wrap">Apr 16, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="docker-compose.yml" id="4e5e90c6228fd48698d074241c2ba760-94bb1d2fb144ad883c203a3764b95abc6434046e" href="/NovelCOVID/API/blob/master/docker-compose.yml">docker-compose.yml</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="Add docker-compose and edit the csse_covid_19_time_series resources" class="link-gray" href="/NovelCOVID/API/commit/3cd9df6c7a2ba89059024cdc63a89cec6aa63d54">Add docker-compose and edit the csse_covid_19_time_series resources</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-03-26T17:26:15Z" class="no-wrap">Mar 27, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="package-lock.json" id="32607347f8126e6534ebc7ebaec4853d-103a99ca738c6e07165960ffcace855a6bbcc327" href="/NovelCOVID/API/blob/master/package-lock.json">package-lock.json</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="added this sentry stuff from ravy" class="link-gray" href="/NovelCOVID/API/commit/da1448356c551cae1dc5cdf7c056b6baaf4791a6">added this sentry stuff from ravy</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-22T12:39:58Z" class="no-wrap">Apr 22, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="package.json" id="b9cfc7f2cdf78a7f4b91a753d10865a2-b47450ff59a848201201a9a024f9e18652578ad4" href="/NovelCOVID/API/blob/master/package.json">package.json</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="added this sentry stuff from ravy" class="link-gray" href="/NovelCOVID/API/commit/da1448356c551cae1dc5cdf7c056b6baaf4791a6">added this sentry stuff from ravy</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-22T12:39:58Z" class="no-wrap">Apr 22, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="privacy.md" id="18d05a63a1c8d7ed973cc51838494e41-e972d029ca8a8867c767a34afbed5baaace0d5bb" href="/NovelCOVID/API/blob/master/privacy.md">privacy.md</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="Create privacy.md" class="link-gray" href="/NovelCOVID/API/commit/4091fde7c15ee06861cf56a1cce0eef15a69972d">Create privacy.md</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-03-21T11:16:55Z" class="no-wrap">Mar 21, 2020</time-ago></span>
+            </td>
+          </tr>
+          <tr class="js-navigation-item">
+            <td class="icon">
+              <svg aria-label="file" class="octicon octicon-file" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"></path></svg>
+              <img width="16" height="16" class="spinner" alt="" src="https://github.githubassets.com/images/spinners/octocat-spinner-32.gif" />
+            </td>
+            <td class="content">
+              <span class="css-truncate css-truncate-target"><a class="js-navigation-open " title="server.js" id="78c12f5adc1848d13b1c6f07055d996e-2db25875c081c0303912a12df9ecd49dea4e78a2" href="/NovelCOVID/API/blob/master/server.js">server.js</a></span>
+            </td>
+            <td class="message">
+              <span class="css-truncate css-truncate-target">
+                    <a data-pjax="true" title="lint" class="link-gray" href="/NovelCOVID/API/commit/e4dfefa83eea49b10c2b78e9a8821d6850d586e6">lint</a>
+              </span>
+            </td>
+            <td class="age">
+              <span class="css-truncate css-truncate-target"><time-ago datetime="2020-04-22T15:46:02Z" class="no-wrap">Apr 22, 2020</time-ago></span>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+</div>
+
+  <div id="readme" class="Box md js-code-block-container Box--condensed">
+    <div class="Box-header d-flex flex-items-center flex-justify-between ">
+      <h2 class="Box-title pr-3">
+        <svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"></path></svg>
+        README.md
+      </h2>
+    </div>
+        <div class="Popover anim-scale-in js-tagsearch-popover"
+     hidden
+     data-tagsearch-url="/NovelCOVID/API/find-symbols"
+     data-tagsearch-ref="master"
+     data-tagsearch-path="README.md"
+     data-tagsearch-lang="Markdown"
+     data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.click_on_symbol&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;click_on_symbol&quot;,&quot;repository_id&quot;:245077032,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Markdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/NovelCOVID/API&quot;,&quot;user_id&quot;:61506491}}"
+     data-hydro-click-hmac="386ceab15049a6aa5f72561c9bc3cf852a93f3cc995b4c26917c6d3bb528b79d">
+  <div class="Popover-message Popover-message--large Popover-message--top-left TagsearchPopover mt-1 mb-4 mx-auto Box box-shadow-large">
+    <div class="TagsearchPopover-content js-tagsearch-popover-content overflow-auto" style="will-change:transform;">
+    </div>
+  </div>
+</div>
+
+      <div class="Box-body p-5">
+        <article class="markdown-body entry-content" itemprop="text"><p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/ae2e8db31839b2566c3c35a434324ef4e96a4eb0/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f636f6e7472696275746f72732d616e6f6e2f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765"><img src="https://camo.githubusercontent.com/ae2e8db31839b2566c3c35a434324ef4e96a4eb0/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f636f6e7472696275746f72732d616e6f6e2f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765" alt="GitHub contributors" data-canonical-src="https://img.shields.io/github/contributors-anon/novelcovid/api?style=for-the-badge" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/f9b4b7e286cb19e0a25ae06f9ef6c4e99f4df285/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f776f726b666c6f772f7374617475732f4e6f76656c434f5649442f4150492f45736c696e743f6c6162656c3d45534c696e74267374796c653d666f722d7468652d6261646765"><img src="https://camo.githubusercontent.com/f9b4b7e286cb19e0a25ae06f9ef6c4e99f4df285/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f776f726b666c6f772f7374617475732f4e6f76656c434f5649442f4150492f45736c696e743f6c6162656c3d45534c696e74267374796c653d666f722d7468652d6261646765" alt="ESLint" data-canonical-src="https://img.shields.io/github/workflow/status/NovelCOVID/API/Eslint?label=ESLint&amp;style=for-the-badge" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/3a9b2b1d909d730adbe3324de675a7039c1dabb6/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f776f726b666c6f772f7374617475732f4e6f76656c434f5649442f4150492f556e6974746573743f6c6162656c3d5465737473267374796c653d666f722d7468652d6261646765"><img src="https://camo.githubusercontent.com/3a9b2b1d909d730adbe3324de675a7039c1dabb6/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f776f726b666c6f772f7374617475732f4e6f76656c434f5649442f4150492f556e6974746573743f6c6162656c3d5465737473267374796c653d666f722d7468652d6261646765" alt="Tests" data-canonical-src="https://img.shields.io/github/workflow/status/NovelCOVID/API/Unittest?label=Tests&amp;style=for-the-badge" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/0ee341fa778cecd513cc651a1405221a9116e916/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f746f702f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765"><img src="https://camo.githubusercontent.com/0ee341fa778cecd513cc651a1405221a9116e916/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c616e6775616765732f746f702f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765" alt="GitHub top language" data-canonical-src="https://img.shields.io/github/languages/top/novelcovid/api?style=for-the-badge" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/53bc61ae404f8e1e8b7108741bd4618ae8de75c8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765"><img src="https://camo.githubusercontent.com/53bc61ae404f8e1e8b7108741bd4618ae8de75c8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765" alt="GitHub issues" data-canonical-src="https://img.shields.io/github/issues/novelcovid/api?style=for-the-badge" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/39b193a5c21adafb6ece936c63b0cebdc7eb7e43/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d636c6f7365642f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765"><img src="https://camo.githubusercontent.com/39b193a5c21adafb6ece936c63b0cebdc7eb7e43/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d636c6f7365642f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765" alt="GitHub closed issues" data-canonical-src="https://img.shields.io/github/issues-closed/novelcovid/api?style=for-the-badge" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/4d6b978901f773b41aacf6b9f10f54afa9aef496/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d70722f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765"><img src="https://camo.githubusercontent.com/4d6b978901f773b41aacf6b9f10f54afa9aef496/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d70722f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765" alt="GitHub pull requests" data-canonical-src="https://img.shields.io/github/issues-pr/novelcovid/api?style=for-the-badge" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/476e08eb1decdbd801842e925ff8138776dec237/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d70722d636c6f7365642f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765"><img src="https://camo.githubusercontent.com/476e08eb1decdbd801842e925ff8138776dec237/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732d70722d636c6f7365642f6e6f76656c636f7669642f6170693f7374796c653d666f722d7468652d6261646765" alt="GitHub closed pull requests" data-canonical-src="https://img.shields.io/github/issues-pr-closed/novelcovid/api?style=for-the-badge" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/1f810154ce4921dfb90c632b7e4af99b4c6abdce/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3638393533353533363933343831333832333f7374796c653d666f722d7468652d6261646765"><img src="https://camo.githubusercontent.com/1f810154ce4921dfb90c632b7e4af99b4c6abdce/68747470733a2f2f696d672e736869656c64732e696f2f646973636f72642f3638393533353533363933343831333832333f7374796c653d666f722d7468652d6261646765" alt="Discord" data-canonical-src="https://img.shields.io/discord/689535536934813823?style=for-the-badge" style="max-width:100%;"></a></p>
+<h1><a id="user-content-join-our-server" class="anchor" aria-hidden="true" href="#join-our-server"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Join our Server!</h1>
+<p><a href="https://discord.gg/EvbMshU" rel="nofollow"><img src="https://camo.githubusercontent.com/b07b4a035feba30e78f0b45f2e312c35b120667a/68747470733a2f2f646973636f72646170702e636f6d2f6170692f6775696c64732f3638393533353533363933343831333832332f656d6265642e706e673f7374796c653d62616e6e657234" alt="Discord server" data-canonical-src="https://discordapp.com/api/guilds/689535536934813823/embed.png?style=banner4" style="max-width:100%;"></a></p>
+<h1><a id="user-content-api" class="anchor" aria-hidden="true" href="#api"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h1>
+<p>API for Current cases and more stuff about COVID-19 or the Novel Coronavirus Strain
+<a href="https://corona.lmao.ninja/" rel="nofollow">https://corona.lmao.ninja/</a></p>
+<h1><a id="user-content-recommended-by-postman" class="anchor" aria-hidden="true" href="#recommended-by-postman"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recommended by Postman</h1>
+<p>NovelCovid API is recommended by Postman <a href="https://covid-19-apis.postman.com/" rel="nofollow">here</a></p>
+<h1><a id="user-content-documentation" class="anchor" aria-hidden="true" href="#documentation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Documentation</h1>
+<p>NovelCovid/API Documentation can be found <a href="https://corona.lmao.ninja/docs/" rel="nofollow">here</a></p>
+<h2><a id="user-content-installation" class="anchor" aria-hidden="true" href="#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<h4><a id="user-content-redis" class="anchor" aria-hidden="true" href="#redis"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Redis</h4>
+<ol>
+<li>Download redis from <a href="https://redis.io/topics/quickstart" rel="nofollow">https://redis.io/topics/quickstart</a></li>
+<li>Start redis server using <code>redis-server</code></li>
+</ol>
+<h4><a id="user-content-project" class="anchor" aria-hidden="true" href="#project"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Project</h4>
+<ol>
+<li>Fork and clone git repository</li>
+<li>In root project folder, create a new file called <code>config.json</code></li>
+<li>Copy contents for <code>config.example.json</code> to new <code>config.json</code> file</li>
+<li>Replace password field with <code>""</code> and port field to whatever localhost port you want.</li>
+<li>From root of project, run <code>npm start</code></li>
+<li>In your browser, go to <code>localhost:{port}</code> to test your local changes</li>
+</ol>
+<h2><a id="user-content-run-with-docker-compose" class="anchor" aria-hidden="true" href="#run-with-docker-compose"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run with docker-compose.</h2>
+<ol>
+<li>Fork and clone git repository</li>
+<li>In root project folder, make a new file called <code>config.json</code></li>
+<li>Copy contents for <code>config.example.json</code> to new <code>config.json</code> file</li>
+<li>Replace password field with <code>"yourpassword"</code> and port field same within <code>docker-compose.yml</code>.</li>
+<li>Replace redis host "localhost" with "redis".</li>
+<li>Run command <code>docker-compose up --build -d</code>.</li>
+</ol>
+<h2><a id="user-content-npm-package" class="anchor" aria-hidden="true" href="#npm-package"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NPM Package</h2>
+
+<a href="https://www.npmjs.com/package/novelcovid" rel="nofollow">
+    <img src="https://camo.githubusercontent.com/6cba4d921efc356001f32424fde402b991074e21/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f6e6f76656c636f7669643f6c6f676f3d6e706d267374796c653d666f722d7468652d6261646765" alt="Version" data-canonical-src="https://img.shields.io/npm/v/novelcovid?logo=npm&amp;style=for-the-badge" style="max-width:100%;">
+</a>
+<a href="https://www.npmjs.com/package/novelcovid" rel="nofollow">
+	<img src="https://camo.githubusercontent.com/62e482a2c37456bedad3d6f43c82c08cbec9c26e/68747470733a2f2f696d672e736869656c64732e696f2f62756e646c6570686f6269612f6d696e2f6e6f76656c636f7669643f636f6c6f723d726564266c6162656c3d53495a45266c6f676f3d6e706d267374796c653d666f722d7468652d6261646765" alt="Size" data-canonical-src="https://img.shields.io/bundlephobia/min/novelcovid?color=red&amp;label=SIZE&amp;logo=npm&amp;style=for-the-badge" style="max-width:100%;">
+</a>
+<a href="https://www.npmjs.com/package/novelcovid" rel="nofollow">
+<img src="https://camo.githubusercontent.com/06d564103beb937a80418861556caa7f621ac162/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f64772f6e6f76656c636f7669643f6c6f676f3d6e706d267374796c653d666f722d7468652d6261646765" alt="Downloads" data-canonical-src="https://img.shields.io/npm/dw/novelcovid?logo=npm&amp;style=for-the-badge" style="max-width:100%;">
+</a>
+
+<p>We suggest you load the module via <code>require</code>, considering ES modules in Node.js are not yet stable.</p>
+<p>Executing a method will return a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" rel="nofollow">Promise</a>.
+The examples here utilise <a href="https://javascript.info/async-await" rel="nofollow">async/await</a> to access the data.</p>
+<p>JavaScript:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> { <span class="pl-c1">NovelCovid</span> } <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>novelcovid<span class="pl-pds">'</span></span>);</pre></div>
+<p>TypeScript:</p>
+<div class="highlight highlight-source-ts"><pre><span class="pl-k">import</span> { <span class="pl-smi">NovelCovid</span> } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>novelcovid<span class="pl-pds">'</span></span>;</pre></div>
+<h3><a id="user-content-methods" class="anchor" aria-hidden="true" href="#methods"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<p>Everything is listed on the <a href="https://www.npmjs.com/package/novelcovid" rel="nofollow">npm</a> site.</p>
+<h2><a id="user-content-note" class="anchor" aria-hidden="true" href="#note"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>Note</strong></h2>
+<p>Since <code>data.updated</code> returns milliseconds, you can do <code>new Date(data.updated)</code> as it returns an <strong>ISO Date</strong></p>
+<p>You can read more about <strong>new Date()</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" rel="nofollow">here</a></p>
+<blockquote>
+<p>For further support, you can join our discord server! More Tutorials can be found there too!
+<a href="https://discord.gg/EvbMshU" rel="nofollow">https://discord.gg/EvbMshU</a></p>
+</blockquote>
+<h3><a id="user-content-sources" class="anchor" aria-hidden="true" href="#sources"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sources:</h3>
+<blockquote>
+<p><a href="https://www.worldometers.info/coronavirus/" rel="nofollow">https://www.worldometers.info/coronavirus/</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series">https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/nytimes/covid-19-data">https://github.com/nytimes/covid-19-data</a></p>
+</blockquote>
+<h2><a id="user-content-contributors-" class="anchor" aria-hidden="true" href="#contributors-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contributors <g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji></h2>
+<p>Thanks goes to these wonderful people (<a href="https://allcontributors.org/docs/en/emoji-key" rel="nofollow">emoji key</a>):</p>
+
+
+
+<table>
+  <tbody><tr>
+    <td align="center"><a href="https://github.com/EliteDaMyth"><img src="https://avatars2.githubusercontent.com/u/28687771?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>EliteDaMyth</b></sub></a><br><a href="https://github.com/NovelCOVID/API/commits?author=EliteDaMyth" title="Code"><g-emoji class="g-emoji" alias="computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png">💻</g-emoji></a></td>
+    <td align="center"><a href="https://github.com/ebwinters"><img src="https://avatars0.githubusercontent.com/u/4297028?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>Ethan Winters</b></sub></a><br><a href="https://github.com/NovelCOVID/API/issues?q=author%3Aebwinters" title="Bug reports"><g-emoji class="g-emoji" alias="bug" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png">🐛</g-emoji></a> <a href="https://github.com/NovelCOVID/API/commits?author=ebwinters" title="Code"><g-emoji class="g-emoji" alias="computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png">💻</g-emoji></a></td>
+    <td align="center"><a href="https://github.com/dicedtomatoreal"><img src="https://avatars0.githubusercontent.com/u/35403473?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>dicedtomato</b></sub></a><br><a href="https://github.com/NovelCOVID/API/commits?author=dicedtomatoreal" title="Code"><g-emoji class="g-emoji" alias="computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png">💻</g-emoji></a></td>
+    <td align="center"><a href="https://404discord.xyz/" rel="nofollow"><img src="https://avatars0.githubusercontent.com/u/41652412?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>apollyon600</b></sub></a><br><a href="https://github.com/NovelCOVID/API/commits?author=apollyon600" title="Documentation"><g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji></a></td>
+    <td align="center"><a href="https://jshelley.uk" rel="nofollow"><img src="https://avatars0.githubusercontent.com/u/22616014?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>James Shelley</b></sub></a><br><a href="https://github.com/NovelCOVID/API/pulls?q=is%3Apr+reviewed-by%3AJamesShelley" title="Reviewed Pull Requests"><g-emoji class="g-emoji" alias="eyes" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png">👀</g-emoji></a></td>
+    <td align="center"><a href="http://RyanHarlow.com" rel="nofollow"><img src="https://avatars2.githubusercontent.com/u/42226213?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>Ryan Harlow</b></sub></a><br><a href="https://github.com/NovelCOVID/API/issues?q=author%3ARyanHarlow" title="Bug reports"><g-emoji class="g-emoji" alias="bug" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png">🐛</g-emoji></a></td>
+    <td align="center"><a href="https://github.com/alitas"><img src="https://avatars1.githubusercontent.com/u/1144691?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>Ali Tas</b></sub></a><br><a href="https://github.com/NovelCOVID/API/issues?q=author%3Aalitas" title="Bug reports"><g-emoji class="g-emoji" alias="bug" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png">🐛</g-emoji></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/buster95"><img src="https://avatars0.githubusercontent.com/u/15637669?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>Walter Corrales</b></sub></a><br><a href="https://github.com/NovelCOVID/API/commits?author=buster95" title="Code"><g-emoji class="g-emoji" alias="computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png">💻</g-emoji></a></td>
+    <td align="center"><a href="https://AhmadAwais.com" rel="nofollow"><img src="https://avatars1.githubusercontent.com/u/960133?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>Ahmad Awais <g-emoji class="g-emoji" alias="zap" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png">⚡️</g-emoji></b></sub></a><br><a href="https://github.com/NovelCOVID/API/commits?author=ahmadawais" title="Documentation"><g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji></a></td>
+    <td align="center"><a href="https://discord.gg/rk7cVyk" rel="nofollow"><img src="https://avatars1.githubusercontent.com/u/39545629?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>MrAugu</b></sub></a><br><a href="https://github.com/NovelCOVID/API/issues?q=author%3AMrAugu" title="Bug reports"><g-emoji class="g-emoji" alias="bug" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png">🐛</g-emoji></a></td>
+    <td align="center"><a href="http://chroventer.github.io" rel="nofollow"><img src="https://avatars2.githubusercontent.com/u/34645569?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>Ayyan Lewis</b></sub></a><br><a href="https://github.com/NovelCOVID/API/issues?q=author%3Achroventer" title="Bug reports"><g-emoji class="g-emoji" alias="bug" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png">🐛</g-emoji></a></td>
+    <td align="center"><a href="http://bensommer.co.uk" rel="nofollow"><img src="https://avatars0.githubusercontent.com/u/39101651?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>Ben Sommer</b></sub></a><br><a href="https://github.com/NovelCOVID/API/issues?q=author%3Abenjamin-sommer" title="Bug reports"><g-emoji class="g-emoji" alias="bug" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png">🐛</g-emoji></a> <a href="https://github.com/NovelCOVID/API/commits?author=benjamin-sommer" title="Code"><g-emoji class="g-emoji" alias="computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png">💻</g-emoji></a></td>
+    <td align="center"><a href="https://github.com/nibble-4bits"><img src="https://avatars1.githubusercontent.com/u/38052706?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>Luis De Anda</b></sub></a><br><a href="https://github.com/NovelCOVID/API/commits?author=nibble-4bits" title="Documentation"><g-emoji class="g-emoji" alias="book" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png">📖</g-emoji></a></td>
+    <td align="center"><a href="https://coviddetail.com" rel="nofollow"><img src="https://avatars0.githubusercontent.com/u/17516174?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>puf17640</b></sub></a><br><a href="https://github.com/NovelCOVID/API/issues?q=author%3Apuf17640" title="Bug reports"><g-emoji class="g-emoji" alias="bug" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png">🐛</g-emoji></a> <a href="https://github.com/NovelCOVID/API/commits?author=puf17640" title="Code"><g-emoji class="g-emoji" alias="computer" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png">💻</g-emoji></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://olukadeno@gmail.com" rel="nofollow"><img src="https://avatars1.githubusercontent.com/u/37341054?v=4" width="100px;" alt="" style="max-width:100%;"><br><sub><b>Oluka Denis</b></sub></a><br><a href="https://github.com/NovelCOVID/API/issues?q=author%3AOlukaDenis" title="Bug reports"><g-emoji class="g-emoji" alias="bug" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png">🐛</g-emoji></a></td>
+  </tr>
+</tbody></table>
+
+
+
+<h1><a id="user-content-showcases-awesome-novelcovid" class="anchor" aria-hidden="true" href="#showcases-awesome-novelcovid"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Showcases (Awesome-NovelCOVID)</h1>
+<p>Did you build a project with our API? We now offer an "awesome-list" for you to add your projects into so people can find out about them!</p>
+<h4><a id="user-content-you-can-find-it-here" class="anchor" aria-hidden="true" href="#you-can-find-it-here"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>You can find it <a href="https://github.com/puf17640/awesome-novelcovid">here</a>.</h4>
+<h1><a id="user-content-donating" class="anchor" aria-hidden="true" href="#donating"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Donating</h1>
+<p><a href="https://www.buymeacoffee.com/covidapi/shop" rel="nofollow"><img src="https://camo.githubusercontent.com/9cbdff8be935878f0989c6b5016702c2ab990e2f/68747470733a2f2f63646e2e6275796d6561636f666665652e636f6d2f627574746f6e732f64656661756c742d626c61636b2e706e67" alt="Buy Me A Coffee" width="217" height="50" data-canonical-src="https://cdn.buymeacoffee.com/buttons/default-black.png" style="max-width:100%;"></a></p>
+<h1><a id="user-content-license" class="anchor" aria-hidden="true" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h1>
+<p><a href="https://app.fossa.io/projects/git%2Bgithub.com%2FNovelCOVID%2FAPI?ref=badge_large" rel="nofollow"><img src="https://camo.githubusercontent.com/81e537dbb7001c66bcb74216861a7948efe8163a/68747470733a2f2f6170702e666f7373612e696f2f6170692f70726f6a656374732f6769742532426769746875622e636f6d2532464e6f76656c434f5649442532464150492e7376673f747970653d6c61726765" alt="FOSSA Status" data-canonical-src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FNovelCOVID%2FAPI.svg?type=large" style="max-width:100%;"></a></p>
+</article>
+      </div>
+  </div>
+
+
+
+
+  </div>
+</div>
+
+    </main>
+  </div>
+  
+
+  </div>
+
+        
+<div class="footer container-lg width-full px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">&copy; 2020 GitHub, Inc.</li>
+        <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
+        <li class="mr-3"><a href="https://githubstatus.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com">Help</a></li>
+
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mx-lg-4" href="https://github.com">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+   <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+        <li class="mr-3"><a href="https://github.com/pricing" data-ga-click="Footer, go to Pricing, text:Pricing">Pricing</a></li>
+      <li class="mr-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+        <li class="mr-3"><a href="https://github.blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" async="async" integrity="sha512-WcQmT2vhcClFVOaaAJV/M+HqsJ2Gq/myvl6F3gCVBxykazXTs+i5fvxncSXwyG1CSfcrqmLFw/R/bmFYzprX2A==" type="application/javascript" id="js-conditional-compat" data-src="https://github.githubassets.com/assets/compat-bootstrap-59c4264f.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-GJ+rI3xS8ODYKKEFc+HfawMZf5+hyokJaDIrfJyxTm69Gaxw/2nUP8ZYS7hoLGgn+6ZO9augKURQ+xj+yYykUg==" type="application/javascript" src="https://github.githubassets.com/assets/environment-bootstrap-189fab23.js"></script>
+      <script crossorigin="anonymous" async="async" integrity="sha512-JfA9c00QqdFAVbQaARMl2BJ+QwABPJ247GKHsBbdm7xq2P00Z6cmwPG7cFFXV0SVHPlKz8EqPiJeZDOZZTRFww==" type="application/javascript" src="https://github.githubassets.com/assets/vendor-25f03d73.js"></script>
+      <script crossorigin="anonymous" async="async" integrity="sha512-eWd2P+dR32x2wrP6wRHabQGmKVm9UQkNvyrnD8Kh/HavXqs3y0vULsz5exwjQOygebBXfSTrbaKHp0CA081JqQ==" type="application/javascript" src="https://github.githubassets.com/assets/frameworks-7967763f.js"></script>
+    
+    <script crossorigin="anonymous" async="async" integrity="sha512-KtYRLblHP1RWI1DQ9p2s9lAGhwXDcxQlzrxpMrapLPy1GQKfbFL7hscNsKVspcvdTmcyFy3jzDjY7fEtz+vLSQ==" type="application/javascript" src="https://github.githubassets.com/assets/github-bootstrap-2ad6112d.js"></script>
+    
+    
+    
+  <div class="js-stale-session-flash flash flash-warn flash-banner" hidden
+    >
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 000 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 00.01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg>
+    <span class="js-stale-session-flash-signed-in" hidden>You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="js-stale-session-flash-signed-out" hidden>You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <template id="site-details-dialog">
+  <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark hx_rsm" open>
+    <summary role="button" aria-label="Close dialog"></summary>
+    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast hx_rsm-dialog hx_rsm-modal">
+      <button class="Box-btn-octicon m-0 btn-octicon position-absolute right-0 top-0" type="button" aria-label="Close dialog" data-close-dialog>
+        <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+      </button>
+      <div class="octocat-spinner my-6 js-details-dialog-spinner"></div>
+    </details-dialog>
+  </details>
+</template>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+
+  </body>
+</html>
+

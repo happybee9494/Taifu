@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>
+      Particle Web IDE
+    </title>
+    <meta content="Write and flash code to your Particle devices" name="description">
+
+    <!-- Typography and favicon -->
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6107112/665726/css/fonts.css" />
+    <link rel="shortcut icon" href="/blue.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" media="all" href="/assets/application-1e940b859762c83a99c7cfd359e305553558609517ae3ccdf1b5aa113a8e93cf.css" />
+    <script src="/assets/application-8178fc9fa8e469d48bd14bacf9ff93e55c033402257421188d80accb0c75398a.js"></script>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="W7O6EXgwkjAO1JWTKvI5/cbstgPRL53M15Q6cerG6VGlf20CBrqfXK/Laiu5F4i6cJnvYok/dgNdxt3orNX1QA==" />
+
+  </head>
+  <body>
+    <script type='text/x-handlebars'>
+        {{#if showSidebar}}
+          {{ render "sidebar" }}
+        {{/if}}
+
+        {{ outlet "modal" }}
+
+        {{ outlet }}
+    </script>
+
+    <script type="text/javascript">
+      window.emberEnabled = true;
+    </script>
+
+
+    <script src="https://www.promisejs.org/polyfills/promise-6.1.0.js"></script>
+    <script type="text/javascript">
+      window.api_base_uri="https://api.particle.io";
+      window.go_base_uri="https://go.particle.io";
+    </script>
+    <script type="text/javascript">
+    window.segmentWriteKey = "23Qh3zwfY9";
+    window.buildSegmentWriteKey = "urJpnRlkIKUq4v4FAZOtMb15vZs4F7S8";
+    window.blacklistURL = "store.particle.io";
+    window.cookieDomain = ".particle.io";
+    window.sentryDSN = "https://f3e376a4261d4aa6984b47bbe714e9ad@app.getsentry.com/48999";
+    Raven.config(window.sentryDSN).install();
+    </script>
+  </body>
+</html>

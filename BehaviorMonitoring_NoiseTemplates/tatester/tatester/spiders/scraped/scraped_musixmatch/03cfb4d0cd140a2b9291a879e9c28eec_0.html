@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:og="http://ogp.me/ns#" class="contribute-page" >
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# musixmatch: http://ogp.me/ns/fb/musixmatch#">
+
+
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    window._mxm_ga_firstLoad = true; //flag page tracked on first load
+    ga('create', 'UA-16453829-10', 'auto');
+    ga('require', '');
+    ga('send', 'pageview');
+  </script>
+
+  <script>
+    window.__prebidAdUnits = [];
+    (function() {
+      var d = document, pbs = d.createElement('script'), pro = d.location.protocol;
+      pbs.async = true;
+      pbs.src = '//s.mxmcdn.net/site/js/prebid_0.34.0a.js';
+      var target = document.getElementsByTagName('head')[0];
+      target.insertBefore(pbs, target.firstChild);
+    })();
+  </script>
+
+  <script>
+    var cssua=function(n,l,p){var q=/\s*([\-\w ]+)[\s\/\:]([\d_]+\b(?:[\-\._\/]\w+)*)/,r=/([\w\-\.]+[\s\/][v]?[\d_]+\b(?:[\-\._\/]\w+)*)/g,s=/\b(?:(blackberry\w*|bb10)|(rim tablet os))(?:\/(\d+\.\d+(?:\.\w+)*))?/,t=/\bsilk-accelerated=true\b/,u=/\bfluidapp\b/,v=/(\bwindows\b|\bmacintosh\b|\blinux\b|\bunix\b)/,w=/(\bandroid\b|\bipad\b|\bipod\b|\bwindows phone\b|\bwpdesktop\b|\bxblwp7\b|\bzunewp7\b|\bwindows ce\b|\bblackberry\w*|\bbb10\b|\brim tablet os\b|\bmeego|\bwebos\b|\bpalm|\bsymbian|\bj2me\b|\bdocomo\b|\bpda\b|\bchtml\b|\bmidp\b|\bcldc\b|\w*?mobile\w*?|\w*?phone\w*?)/,
+    x=/(\bxbox\b|\bplaystation\b|\bnintendo\s+\w+)/,k={parse:function(b,d){var a={};d&&(a.standalone=d);b=(""+b).toLowerCase();if(!b)return a;for(var c,e,g=b.split(/[()]/),f=0,k=g.length;f<k;f++)if(f%2){var m=g[f].split(";");c=0;for(e=m.length;c<e;c++)if(q.exec(m[c])){var h=RegExp.$1.split(" ").join("_"),l=RegExp.$2;if(!a[h]||parseFloat(a[h])<parseFloat(l))a[h]=l}}else if(m=g[f].match(r))for(c=0,e=m.length;c<e;c++)h=m[c].split(/[\/\s]+/),h.length&&"mozilla"!==h[0]&&(a[h[0].split(" ").join("_")]=h.slice(1).join("-"));
+    w.exec(b)?(a.mobile=RegExp.$1,s.exec(b)&&(delete a[a.mobile],a.blackberry=a.version||RegExp.$3||RegExp.$2||RegExp.$1,RegExp.$1?a.mobile="blackberry":"0.0.1"===a.version&&(a.blackberry="7.1.0.0"))):x.exec(b)?(a.game=RegExp.$1,c=a.game.split(" ").join("_"),a.version&&!a[c]&&(a[c]=a.version)):v.exec(b)&&(a.desktop=RegExp.$1);a.intel_mac_os_x?(a.mac_os_x=a.intel_mac_os_x.split("_").join("."),delete a.intel_mac_os_x):a.cpu_iphone_os?(a.ios=a.cpu_iphone_os.split("_").join("."),delete a.cpu_iphone_os):a.cpu_os?
+    (a.ios=a.cpu_os.split("_").join("."),delete a.cpu_os):"iphone"!==a.mobile||a.ios||(a.ios="1");a.opera&&a.version?(a.opera=a.version,delete a.blackberry):t.exec(b)?a.silk_accelerated=!0:u.exec(b)&&(a.fluidapp=a.version);a.edge&&(delete a.applewebkit,delete a.safari,delete a.chrome,delete a.android);if(a.applewebkit)a.webkit=a.applewebkit,delete a.applewebkit,a.opr&&(a.opera=a.opr,delete a.opr,delete a.chrome),a.safari&&(a.chrome||a.crios||a.fxios||a.opera||a.silk||a.fluidapp||a.phantomjs||a.mobile&&
+    !a.ios?(delete a.safari,a.vivaldi&&delete a.chrome):a.safari=a.version&&!a.rim_tablet_os?a.version:{419:"2.0.4",417:"2.0.3",416:"2.0.2",412:"2.0",312:"1.3",125:"1.2",85:"1.0"}[parseInt(a.safari,10)]||a.safari);else if(a.msie||a.trident)if(a.opera||(a.ie=a.msie||a.rv),delete a.msie,delete a.android,a.windows_phone_os)a.windows_phone=a.windows_phone_os,delete a.windows_phone_os;else{if("wpdesktop"===a.mobile||"xblwp7"===a.mobile||"zunewp7"===a.mobile)a.mobile="windows desktop",a.windows_phone=9>+a.ie?
+    "7.0":10>+a.ie?"7.5":"8.0",delete a.windows_nt}else if(a.gecko||a.firefox)a.gecko=a.rv;a.rv&&delete a.rv;a.version&&delete a.version;return a},format:function(b){var d="",a;for(a in b)if(a&&b.hasOwnProperty(a)){var c=a,e=b[a],c=c.split(".").join("-"),g=" ua-"+c;if("string"===typeof e){for(var e=e.split(" ").join("_").split(".").join("-"),f=e.indexOf("-");0<f;)g+=" ua-"+c+"-"+e.substring(0,f),f=e.indexOf("-",f+1);g+=" ua-"+c+"-"+e}d+=g}return d},encode:function(b){var d="",a;for(a in b)a&&b.hasOwnProperty(a)&&
+    (d&&(d+="\x26"),d+=encodeURIComponent(a)+"\x3d"+encodeURIComponent(b[a]));return d}};k.userAgent=k.ua=k.parse(l,p);l=k.format(k.ua)+" js";n.className=n.className?n.className.replace(/\bno-js\b/g,"")+l:l.substr(1);return k}(document.documentElement,navigator.userAgent,navigator.standalone);
+  </script>
+
+  <script async src="//radar.cedexis.com/1/15221/radar.js"></script>
+  
+        <link rel="stylesheet" type="text/css" href="//s.mxmcdn.net/site/css/styles-5a0fce2318fcb1b87c6b.css">
+        <link rel="stylesheet" type="text/css" href="//s.mxmcdn.net/site/css/styles-33a319ce6b3ca31dd5c0.css">
+  <script>__mxmStatusCode = 200;__mxmSession = {"userCountry":{"code":"SG","name":"Singapore","continentCode":"AS"}};__mxmHeaders = {};</script>
+  <meta name='yandex-verification' content='5381b8eb344dfaa4' />
+  <meta name="google" content="notranslate" />
+  <title>Musixmatch - Song Lyrics and Translations</title><meta charSet="utf-8"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge; chrome=1"/><meta name="description" content="Musixmatch is the world&#x27;s largest catalog of song lyrics and translations"/><meta name="identifier" content="https://www.musixmatch.com"/><meta name="keywords" content="lyrics, video, meaning, writer, music video, top songs lyrics, synced lyrics, music player, artist, karaoke"/><meta name="google-site-verification" content="_8faEqn-rAfu0zKe0faUhuSHMNf6SN9dudWkxouG_us"/><meta name="baidu-site-verification" content="m6xTItKX2q"/><meta name="yandex-verification" content="42d34374a1270f3e"/><link href="//s.mxmcdn.net" rel="dns-prefetch"/><link href="//www.google-analytics.com" rel="dns-prefetch"/><link href="//d2b1xqaw2ss8na.cloudfront.net" rel="dns-prefetch"/><link href="//platform.twitter.com" rel="dns-prefetch"/><link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Musixmatch"/><link rel="canonical"/><link rel="shortcut icon" href="//s.mxmcdn.net/site/images/favicon.png"/><link rel="publisher" href="https://plus.google.com/+musiXmatch"/><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><meta name="msapplication-TileImage" content="//s.mxmcdn.net/site/images/win_tile_144.png"/><meta name="msapplication-TileColor" content="#ff6600"/><link rel="apple-touch-icon" sizes="72x72" href="//s.mxmcdn.net/site/images/mxm_icn_72.png"/><link rel="apple-touch-icon" sizes="114x114" href="//s.mxmcdn.net/site/images/mxm_icn_114.png"/><link rel="apple-touch-icon" href="//s.mxmcdn.net/site/images/mxm_icn_57.png"/><meta property="fb:app_id" content="131314396964274"/><meta property="fb:admins" content="688442030"/><meta name="p:domain_verify" content="4f6d74a840fa7f3f5fe34b553ebbb4dc"/><link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/gfenjblodoldnbiddmggcbkcapiolbig"/><meta http-equiv="content-language" content="en"/>
+
+<script>
+    var pbjs = pbjs || {};
+    pbjs.que = pbjs.que || [];
+    pbjs.bidderSettings = {
+        rubicon: {
+            bidCpmAdjustment: function (bidCpm) {
+                return bidCpm * 0.85 * 0.84;
+            }
+        },
+        appnexusAst: {
+            bidCpmAdjustment: function (bidCpm) {
+                return bidCpm * 0.85;
+            }
+        },
+        indexExchange: {
+            bidCpmAdjustment: function (bidCpm) {
+                return bidCpm * 0.85;
+            }
+        }
+    };
+</script>
+<script>
+    var PREBID_TIMEOUT = 1000;
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    googletag.cmd.push(function () {
+        googletag.pubads().disableInitialLoad();
+    });
+
+    var priceGranularity = {
+        buckets: [{
+            min: 0,
+            max: 31.49,
+            increment: 0.01
+        }]
+    };
+
+    pbjs.que.push(function () {
+        pbjs.enableAnalytics([{
+            provider: 'ga'
+        }]);
+        pbjs.setConfig({
+            bidderSequence: 'random',
+            enableSendAllBids: true,
+            priceGranularity: priceGranularity
+        })
+        pbjs.addAdUnits(__prebidAdUnits);
+        pbjs.requestBids({
+            bidsBackHandler: sendAdserverRequest
+        });
+    });
+
+    function sendAdserverRequest() {
+        if (pbjs.adserverRequestSent) return;
+        pbjs.adserverRequestSent = true;
+        googletag.cmd.push(function () {
+            pbjs.que.push(function () {
+                pbjs.setTargetingForGPTAsync();
+                googletag.pubads().refresh();
+            });
+        });
+    }
+
+    setTimeout(function () {
+        sendAdserverRequest();
+    }, PREBID_TIMEOUT);
+
+</script> 
+<script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') +
+            '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+</script>
+<script type='text/javascript'>
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    googletag.cmd.push(function () {
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().disableInitialLoad();
+        googletag.pubads().collapseEmptyDivs();
+        var campaign = getParameterByName('utm_campaign');
+        if (campaign) {
+            googletag.pubads().setTargeting('utm_campaign', campaign);
+        }
+        googletag.enableServices();
+    });
+</script>
+
+</head>
+
+<body spellcheck="false" class="">
+    <div id="fb-root"></div>
+    <div id='site'><div id="contribute" class="" data-reactroot=""><div class="navbar" id="header" role="banner"><nav class="top-bar desktop-bar" data-topbar="true"><section class="top-bar-section"><ul class="title-area"><li class="name"><h1><a href="/" id="logo"><img alt="Musixmatch" width="40" src="//s.mxmcdn.net/site/images/logo_icon.svg"/></a></h1></li></ul><ul class="search-nav" role="search"><li class="search has-form"><form><div id="search-bar"><input type="text" id="search-input" placeholder="Type song title, artist or lyrics" value="" autoComplete="off"/><button id="search-button" class="button-icon"><i class="icon icon-search"></i></button></div></form></li></ul><div class="top-bar-right"><ul class="site-nav" role="navigation"><li><a href="/explore">Top lyrics</a></li><li><a href="/community">Community</a></li><li><a href="/contribute">Contribute</a></li><li><a href="https://about.musixmatch.com/business/overview">Business</a></li></ul><ul class="user-nav"><li><ul class="user-nav-items loggedOut"><li id="sign-in"><a data-external-link="true" href="/sign-in">Sign in</a></li><li id="sign-up"><a data-external-link="true" href="/sign-up">Sign up</a></li></ul></li></ul></div></section></nav><nav class="top-bar mobile-top-bar"><ul class="title-area"><li class="offcanvas-toggler"><a href="#"><i class="icon icon-list"></i></a></li><li class="name"><h1><a href="/"><img alt="Musixmatch" src="//s.mxmcdn.net/site/images/logo_icon.svg"/></a></h1></li><li class="toggle-search-bar"><a href="#"><span><i class="icon icon-search"></i></span></a></li><li class="search has-form"><form><div id="search-bar"><input type="text" id="search-input" placeholder="Type song title, artist or lyrics" value="" autoComplete="off"/><button id="search-button" class="button-icon"><i class="icon icon-search"></i></button></div><button class="button button-link search-bar-cancel"><i class="icon icon-cross"></i></button></form></li></ul></nav><noscript></noscript></div><div id="content" role="main"><div id="contribute" class="main-wrapper"><div class="side-panel"><div id="profile-nav" class="box box-style-plain"><div class="box-content"><div></div><div><div><div class="section-header"><ul class="tabs"><li id="add" class="selected"><a href="/contribute/add"><i class="icon icon-addlyrics-icon"></i>Add lyrics</a></li><li id="review" class=""><a href="/contribute/review"><i class="icon icon-review-icon"></i>Review lyrics</a></li></ul></div></div></div></div></div></div><div class="main-panel"><div id="profile-nav" class="box box-style-plain"><div class="box-content"><div></div><div><div><div class="section-header"><ul class="tabs vertical"><li id="add" class="selected"><a href="/contribute/add"><i class="icon icon-addlyrics-icon"></i>Add lyrics</a></li><li id="review" class=""><a href="/contribute/review"><i class="icon icon-review-icon"></i>Review lyrics</a></li></ul></div></div></div></div></div><div><div id="add-status" class="badge-status"><img class="badge" src="//s.mxmcdn.net/site/images/badges/add_badge.png"/><h2 class="title">Add lyrics</h2><p class="description">Help build the world&#x27;s biggest lyrics catalog</p></div><div class="suggested-lyrics-box is-open box box-style-plain collapsible"><div class="box-header undefined"><div class="box-header-icon"><i class="icon icon-cd"></i></div><div class="box-header-title"><h2 class="box-title">Suggested lyrics to add</h2><h3 class="box-subtitle">Lyrics to add based on your activity</h3></div><div class="box-header-toggler"><button class="button button-ghost button-icon"><i class="icon icon-arrow-up3"></i></button></div></div><div class="box-content-child"><div class="box-content"><div><div class="message"><h4>Sign in to get your suggested lyrics to add</h4><a class="button ghost-button" href="/sign-in">Sign in</a></div></div></div></div></div><div id="new-releases" class=" is-open box box-style-plain collapsible"><div class="box-header undefined"><div class="box-header-icon"><i class="icon icon-hot"></i></div><div class="box-header-title"><h2 class="box-title">New releases without lyrics</h2><h3 class="box-subtitle">Be the first to add the lyrics of the latest releases and earn more points</h3></div><div class="box-header-toggler"><button class="button button-ghost button-icon"><i class="icon icon-arrow-up3"></i></button></div></div><div class="box-content-child"><div class="box-content"><div class="page-loader"><div class="loader button-loader">Loading...</div></div></div></div></div></div></div></div></div><span></span><div id="footer"><div class="main-wrapper"><div class="footer-container"><div class="mxm-footer__sitemap"><div class="mxm-footer__sitemap-logo"><div class="mui-logo"><a href="/" class="mui-logo__link"><img class="mui-logo__img" src="//s.mxmcdn.net/site/images/logo.svg" alt="Musixmatch logo" width="176"/></a></div><a style="display:block;margin-top:20px;margin-bottom:50px" href="https://aws.amazon.com/it/eventi/?sc_channel=TA&amp;sc_campaign=musixmatch_IT&amp;sc_publisher=musixmatch&amp;sc_medium=website&amp;sc_content=IT_landingpage&amp;sc_country=IT"><img alt="Powered by Amazon Web Services" width="120" height="46" src="//s.mxmcdn.net/site/images/amazon-logo-black.png" srcSet="//s.mxmcdn.net/site/images/amazon-logo-black@2x.png 2x"/></a><div class="mxm-footer__language"><button id="language-menu" class="small button dropdown">English</button></div></div></div><div class="mxm-footer__sitemap-links"><h4>Company</h4><ul><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com">About us</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/careers">Careers</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/press">Press</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/contact">Contact</a></li><li><a data-external-link="true" target="_blank" href="https://blog.musixmatch.com">Blog</a></li></ul></div><div class="mxm-footer__sitemap-links"><h4>Products</h4><ul><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/business/overview">Business Solutions</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/apps">Apps</a></li><li><a data-external-link="true" target="_blank" href="https://developer.musixmatch.com">Developers</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/publishers/musixmatch-for-publishers">Musixmatch for Publishers</a></li></ul></div><div class="mxm-footer__sitemap-links"><h4>Community</h4><ul><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/community/overview">Overview</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/community/guidelines">Guidelines</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/artists/verified-artist">Verified Artists</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/community/become-a-curator">Become a Curator</a></li><li><a data-external-link="true" target="_blank" href="https://support.musixmatch.com">Help Center</a></li><li><a data-external-link="true" target="_blank" href="https://support.musixmatch.com/article/115-im-a-user-how-do-i-contact-other-members-of-the-musixmatch-community">Ask the Community</a></li></ul></div></div><div class="mxm-footer__footer-language"><button id="language-menu" class="small button dropdown">English</button></div><div class="mxm-footer__footnote"><div class="copyright"><span>Musixmatch </span><ul itemType="https://schema.org/Organization"><link itemProp="url" href="https://www.musixmatch.com"/><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/privacy-policy">Privacy Policy</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/cookie-policy">Cookie Policy</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/eula">EULA</a></li><li><a data-external-link="true" target="_blank" href="https://about.musixmatch.com/copyright">Copyright</a></li></ul></div><p>🇮🇹 Made with love &amp; passion in Italy.
+ 🌎 Enjoyed everywhere</p></div></div></div><span></span></div></div>
+    
+
+      <script async src="//s.mxmcdn.net/site/js/common-253df522f6103c961771.js"></script>
+    <script >window.___gcfg = {parsetags: 'explicit'};</script>
+</body>
+</html>
+

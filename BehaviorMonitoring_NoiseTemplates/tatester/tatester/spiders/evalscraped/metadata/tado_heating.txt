@@ -1,0 +1,2 @@
+20f0aa5647c5333c9d52ab7e290155fb = https://my.tado.com/app/en/main/home
+20f0aa5647c5333c9d52ab7e290155fb = https://my.tado.com/app/en/main/home

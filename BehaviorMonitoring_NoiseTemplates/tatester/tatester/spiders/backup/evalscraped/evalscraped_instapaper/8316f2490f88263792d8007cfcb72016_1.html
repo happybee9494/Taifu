@@ -1,0 +1,963 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Instapaper</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="description" content="A simple tool for saving web pages to read later on your iPhone, iPad, Android, computer, or Kindle." />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-itunes-app" content="app-id=288545208, affiliate-data=partnerId=30&amp;siteID=k1CkFsOh4nQ"/>
+<meta name="google-site-verification" content="YPyUA0fI5clMs9oCXKjOnUR2-n2mcEBOhViglEqLDJw" />
+<link rel="icon" href="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/favicon.png?v=3a43e0f358075f9c79f8e1c10d6e737a"/>
+<link rel="mask-icon" href="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/icon.svg?v=78c9511e60899ddf9ea9dc956286f1b9" color="black"/>
+<link rel="apple-touch-icon" sizes="57x57" href="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/apple-icon-57x57.png?v=a75d85bb1d6bb65c3b5f0f0ca760f365" />
+<link rel="apple-touch-icon" sizes="72x72" href="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/apple-icon-72x72.png?v=538cb15ac72dff614cee6f7f7e67741a" />
+<link rel="apple-touch-icon" sizes="114x114" href="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/apple-icon-114x114.png?v=e0a42f16853a5283d85455fe5750d28f" />
+<link rel="apple-touch-icon" sizes="144x144" href="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/apple-icon-144x144.png?v=eb55ac301a2b197f5af3f17e39ad2dd7" />
+
+
+<meta property="og:description" content="A simple tool for saving web pages to read later on your iPhone, iPad, Android, computer, or Kindle."/>
+<meta property="og:image" content="http://www.instapaper.com/static/img/insta_logo_large.png"/>
+<script nonce=cyPMbwuuRo type="text/javascript" src="//use.typekit.net/any5kzc.js"></script>
+<script nonce=cyPMbwuuRo type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script nonce=cyPMbwuuRo type="text/javascript" src="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/javascript/vendor.min.js?v=a52e38a762cb22f69a69cc1c51ad6ab7"></script>
+<script nonce=cyPMbwuuRo type="text/javascript" src="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/javascript/main.min.js?v=2ae24bdeb396495aba66abdcc144492d"></script>
+<style>html{visibility: hidden;opacity:0;}</style>
+<link rel="stylesheet" href="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/stylesheets/main.min.css?v=0f3248fc4add6d6cde0f1106cce07af1"/>
+
+</head>
+<body class="preload settings_mode  lightmode">
+
+<div id="page_header" class="page_header">
+
+<div class="container page_header_mobile hidden-lg hidden-md hidden-sm">
+<div class="row">
+
+
+<div class="col-xs-2">
+<nav class="js_mobile_menu_button mobile_menu_button">
+<i class="ipicon ipicon-hamburger"></i>
+</nav>
+</div>
+
+
+<div class="js_to_top col-xs-8 mobile_logo">
+
+<aside class="logo logo_mobile">Instapaper</aside>
+
+</div>
+<div class="js_to_top col-xs-2 mobile_edit_toggle">
+
+</div>
+
+<div class="mobile_section_title js_to_top col-xs-8">
+
+
+</div>
+
+<div class="mobile_right_button col-xs-2">
+
+
+</div>
+</div>
+</div>
+
+<div class="container-fluid container_fluid_content page_header_desktop">
+<div class="row page_header_normal_row">
+<div class="col-lg-2 hidden-md hidden-sm hidden-xs"></div>
+<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+<section class="header_action_bar">
+
+<div class="page_title hidden-xs">
+Settings
+</div>
+
+
+<div class="top_buttons text-right">
+<a href="/user/logout">Sign Out</a>
+</div>
+
+</section>
+</div>
+</div>
+
+<div id="side_column" class="side_column">
+<aside class="logo hidden-xs margin-left-10"><a href="/">Instapaper</a></aside>
+
+
+<div class="hidden-lg hidden-md hidden-sm">
+
+<nav id="side_nav" class="side_nav touch_device_scroll_y" aria-label="Navigation">
+<div class="scroller_y">
+<a id="unread_nav"
+class="side_item  droptarget" href="/u">
+<span class="ipicon ipicon-home"></span> Home
+</a>
+<a id="liked_nav" class="side_item " href="/liked">
+<span class="ipicon ipicon-liked-off"></span> Liked
+</a>
+<a id="archive_nav" class="side_item  droptarget" href="/archive">
+<span class="ipicon ipicon-archive"></span> Archive
+</a>
+<a id="videos_nav" class="side_item " href="/videos" draggable="false">
+<span class="ipicon ipicon-videos"></span> Videos
+</a>
+<a id="highlights_nav" class="side_item " href="/notes" draggable="false">
+<span class="ipicon ipicon-notes"></span> Notes
+</a>
+<a id="browse_nav" class="side_item " href="/browse" draggable="false">
+<span class="ipicon ipicon-browse"></span> Browse
+</a>
+
+
+<ul id="folders" class="folders" aria-label="Folders">
+
+</ul>
+<form action="/edit_folder" method="POST" id="folder_inline_add" class="side_item folder_inline_add">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<span class="ipicon ipicon-folder"></span>
+<input id="folder_inline_add_field"
+type="text"
+class="js_folder_inline_add_field folder_inline_add_field"
+name="folder[title]"
+placeholder="Add Folder"
+maxlength="200"
+aria-label="Add Folder">
+<input type="submit" value="Add">
+</form>
+<div class="side_nav_mobile">
+<div class="hr margin-bottom-10 margin-top-10"></div>
+<a class="side_item" href="/user">Settings</a>
+<a class="side_item" href="/user/logout">Sign Out</a>
+<div class="hr margin-bottom-10 margin-top-10"></div>
+<a class="side_item " href="/faq">Help &amp; FAQ</a>
+<a class="side_item " href="/apps">Apps</a>
+<a class="side_item " href="/save">How to Save</a>
+<a class="side_item" href="/premium">Premium</a>
+<a class="side_item" href="http://blog.instapaper.com" target="_blank">Blog <small class="muted">↗</small></a>
+<a class="side_item " href="/api">API</a>
+<a class="side_item " href="/press">Press</a>
+<a class="side_item " href="/publishers">Publishers</a>
+<a class="side_item " href="/terms">Privacy &amp; Terms</a>
+<div class="hr margin-bottom-10 margin-top-10"></div>
+<a class="side_item" href="http://twitter.com/instapaper" target="_blank">Twitter</a>
+<a class="side_item" href="https://www.facebook.com/instapaperholdings" target="_blank">Facebook</a>
+</div>
+</div>
+
+<img id="drag_image_article_one" class="drag_image" src="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/drag_proxy_one.png?v=1561926b9c139798779c61dd1e71b857">
+<img id="drag_image_article_two" class="drag_image" src="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/drag_proxy_two.png?v=bb12062f3917f8e6053abee7f7a1034d">
+<img id="drag_image_article_three" class="drag_image" src="https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/drag_proxy_three.png?v=444e3266b35839164cce697bebb68fa2">
+<div id="scroll_indicator_side_wrapper" class="iScrollVerticalScrollbar scroll_indicator_wrapper">
+<div id="scroll_indicator" class="iScrollIndicator scroll_indicator"></div>
+</div>
+</nav>
+
+
+</div>
+<div id="side_footer" class="side_footer" aria-hidden="true">
+<a href="/help">Help</a>
+<a href="http://blog.instapaper.com" target="_blank">Blog</a>
+<a href="javascript:void(0);"
+class="js_popover"
+data-target="#footer_help_menu"
+data-container="body"
+data-placement="top"
+data-bodystate="help_popover">
+More <span class="ipicon ipicon-triangle"></span>
+</a>
+<div id="footer_help_menu" class="popover_menu_wrapper">
+<div class="footer_help_popover popover_menu">
+<a class="menu_item" href="/apps">Apps</a>
+<a class="menu_item" href="/save">How to Save</a>
+<a class="menu_item" href="/premium">Premium</a>
+<a class="menu_item" href="/api">API</a>
+<a class="menu_item" href="/press">Press</a>
+<a class="menu_item" href="/publishers">Publishers</a>
+<a class="menu_item" href="/privacy">Privacy &amp; Terms</a>
+<div class="divider"></div>
+<a class="menu_item" href="http://twitter.com/instapaper" target="_blank">Twitter</a>
+<a class="menu_item" href="https://www.facebook.com/instapaperholdings" target="_blank">Facebook</a>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+<div id="main_container" class="container-fluid container_fluid_content main_container touch_device_scroll_y">
+<div class="row">
+<div class="col-lg-2 hidden-md hidden-sm hidden-xs"></div>
+
+
+<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+
+<div id="main_content" class="main_content">
+<div class="hidden-lg hidden-md hidden-sm visible-xs">
+
+<div class="page_title hidden-xs">
+Settings
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Account -->
+<div class="single_page_content">
+<section class="row settings_group">
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+<header class="margin-bottom-20">Account</header>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<div class="row single_line">
+<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+Email
+</div>
+<div class="col-lg-5 col-md-5 col-sm-4 col-xs-7">
+happybee9494@gmail.com
+</div>
+<div class="col-lg-4 col-md-4 col-sm-5 col-xs-5">
+<a href="javascript:void(0);" class="open_modal" data-modal="modal_email_change">Change Email</a>
+</div>
+</div>
+<div class="row single_line">
+<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+Password
+</div>
+<div class="col-lg-5 col-md-5 col-sm-4 col-xs-4">
+&bull; &bull; &bull; &bull; &bull; &bull; &bull; &bull;
+</div>
+<div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+<a href="javascript:void(0);" class="open_modal" data-modal="modal_password_change">Change Password</a>
+</div>
+</div>
+<div class="row single_line">
+<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+Premium
+</div>
+<div class="col-lg-5 col-md-5 col-sm-4 col-xs-7">
+
+Not Subscribed
+
+</div>
+<div class="col-lg-4 col-md-4 col-sm-5 col-xs-5">
+
+<a href="/premium">Learn More</a>
+
+</div>
+</div>
+</div>
+</section>
+<section class="row settings_group">
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+<header class="margin-bottom-20">Profile</header>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<div class="row single_line hidden-xs">
+<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+Avatar
+</div>
+<div class="col-lg-5 col-md-5 col-sm-4 col-xs-7 profile_picture_container">
+<img class="settings_profile_picture" src="/static/img/profile_picture.png" alt="profile picture"></img>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-5 col-xs-5">
+<a id="profile_image_import_link" href="#profile_image_import">Change Avatar</a>
+<form action="/user/upload_profile_image" enctype="multipart/form-data" class="hidden" id="profile_image_import_form" method="post">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<input type="file" name="image" id="profile_image_import"/></input>
+</form>
+</div>
+</div>
+<div class="row single_line">
+<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+Display Name
+</div>
+<div class="col-lg-5 col-md-5 col-sm-4 col-xs-5">
+happybee9494
+</div>
+<div class="col-lg-4 col-md-4 col-sm-5 col-xs-7">
+<a href="javascript:void(0);" class="open_modal" data-modal="modal_displayname_change">Change Display Name</a>
+</div>
+</div>
+<div class="row single_line">
+<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+Username
+</div>
+<div class="col-lg-5 col-md-5 col-sm-4 col-xs-6">
+
+<span class="muted">Not Registered</span>
+
+</div>
+<div class="col-lg-4 col-md-4 col-sm-5 col-xs-6">
+<a href="javascript:void(0);" class="open_modal" data-modal="modal_url_change">
+
+Register Username
+
+</a>
+</div>
+</div>
+<div class="row single_line">
+<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+Profile
+</div>
+<div class="col-lg-5 col-md-5 col-sm-4 col-xs-7">
+
+Public
+
+</div>
+<div class="col-lg-4 col-md-4 col-sm-5 col-xs-5">
+<a href=/user/privacy_toggle?form_key=1XrOO4CLDWCaggB4ccYI>
+
+Make Private
+
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Sharing -->
+
+
+
+<section class="row settings_group">
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+<header class="margin-bottom-20">Connected Accounts</header>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<form id="sharing_preferences"
+action=""
+method="POST"
+class="js_reveal_submit_onchange"
+data-show="#save_sharing_preferences"
+data-animate="true">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<table class="table table_settings">
+<thead>
+<tr>
+<th><span class="hidden-xs">SHARE</span></th>
+<th width="25"><i class="js_tooltip ipicon ipicon-liked-on" data-placement="top" data-title="Likes"></i></td>
+<th width="22"><i class="js_tooltip ipicon ipicon-notes" data-placement="top" data-title="Notes"></i></td>
+<th><!-- username or service name --></td>
+<td><!-- action --></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><i class="icon-facebook"></i></td>
+<td>
+<input disabled="disabled" id="user_send_starred_to_facebook" name="user[send_starred_to_facebook]" type="checkbox" value="1" />
+</td>
+<td>
+<input disabled="disabled" id="user_send_highlights_to_facebook" name="user[send_highlights_to_facebook]" type="checkbox" value="1" />
+</td>
+<td>
+
+Facebook
+
+</td>
+<td>
+
+<a class="link" href="/user/facebook_oauth_authorize">Connect</a>
+
+</td>
+</tr>
+<tr>
+<td><i class="icon-twitter"></i></td>
+<td>
+<input disabled="disabled" id="user_send_starred_to_twitter" name="user[send_starred_to_twitter]" type="checkbox" value="1" />
+</td>
+<td>
+<input disabled="disabled" id="user_send_highlights_to_twitter" name="user[send_highlights_to_twitter]" type="checkbox" value="1" />
+</td>
+<td>
+
+Twitter
+
+</td>
+<td>
+
+<a class="link" href="/user/twitter_oauth_authorize">Connect</a>
+
+</td>
+</tr>
+<tr>
+<td><i class="icon-pinterest"></i></td>
+<td>
+<input disabled="disabled" id="user_send_starred_to_pinterest" name="user[send_starred_to_pinterest]" type="checkbox" value="1" />
+</td>
+<td>
+<input disabled="disabled" id="user_send_highlight_to_pinterest" name="user[send_highlights_to_pinterest]" type="checkbox" value="1" />
+</td>
+<td>
+
+Pinterest
+
+</td>
+<td>
+
+<a class="link" href="/user/pinterest_oauth_authorize">Connect</a>
+
+</td>
+</tr>
+<tr>
+<td><i class="icon-pinboard"></i></td>
+<td>
+<input disabled="disabled" id="user_send_starred_to_pinboard" name="user[send_starred_to_pinboard]" type="checkbox" value="1" />
+</td>
+<td>
+<input disabled="disabled" id="user_send_highlights_to_pinboard" name="user[send_highlights_to_pinboard]" type="checkbox" value="1" />
+</td>
+<td>
+
+Pinboard
+
+</td>
+<td>
+
+<a class="link" href="/user/pinboard">Connect</a>
+
+</td>
+</tr>
+<tr>
+<td><i class="icon-evernote"></i></td>
+<td>
+<input disabled="disabled" id="user_send_starred_to_evernote" name="user[send_starred_to_evernote]" type="checkbox" value="1" />
+</td>
+<td>
+<input disabled="disabled" id="user_send_highlights_to_evernote" name="user[send_highlights_to_evernote]" type="checkbox" value="1" />
+</td>
+<td>
+
+Evernote
+
+</td>
+<td>
+
+<a class="link" href="/user/evernote">Connect</a>
+
+</td>
+</tr>
+<tr>
+<td><i class="icon-tumblr"></i></td>
+<td>
+<input disabled="disabled" id="user_send_starred_to_tumblr" name="user[send_starred_to_tumblr]" type="checkbox" value="1" />
+</td>
+<td>
+<input disabled="disabled" id="user_send_highlights_to_tumblr" name="user[send_highlights_to_tumblr]" type="checkbox" value="1" />
+</td>
+<td>
+
+Tumblr
+
+</td>
+<td>
+
+<a class="link" href="/user/tumblr_oauth_authorize">Connect</a>
+
+</td>
+</tr>
+
+</tbody>
+</table>
+<button id="save_sharing_preferences" type="submit" class="button_black_outline button_block_one_column margin-top-20 hidden">Save Sharing Settings</button>
+</form>
+</div>
+</section>
+<!-- Email Settings -->
+<section class="row settings_group">
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+<header class="margin-bottom-20">Email Settings</header>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<form action="/user/email_settings"
+method="POST"
+class="js_reveal_submit_onchange"
+data-show="#save_email_preferences_button"
+data-animate="true">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<div class="checkbox_line">
+<input checked="checked" id="daily_weekly" name="daily_weekly" type="checkbox" value="1" />
+<label for="daily_weekly">
+Instapaper Weekly
+<em>The week's most popular stories. Delivered each Sunday.</em>
+</label>
+</div>
+<div class="checkbox_line">
+<input checked="checked" id="marketing" name="marketing" type="checkbox" value="1" />
+<label for="marketing">
+Product Updates
+<em>Periodic emails from Instapaper about new features and products.</em>
+</label>
+</div>
+<div class="checkbox_line">
+<input checked="checked" id="account" name="account" type="checkbox" value="1" />
+<label for="account">
+Account Updates
+<em>Email notifications when there are important changes to your account.</em>
+</label>
+</div>
+
+<button id="save_email_preferences_button" type="submit" class="button_black_outline button_block_one_column margin-top-10 hidden">Save Email Preferences</button>
+</form>
+</div>
+</section>
+<!-- Kindle -->
+<section class="row settings_group">
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+<header class="margin-bottom-20">Kindle</header>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<form action="/user/kindle"
+class="js_reveal_submit_onchange"
+data-show="#kindle_save_preferences_button"
+data-animate="true"
+method="POST"
+id="kindle_form">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<div id="kindle_setup_email" class="">
+<strong>Setup Your Kindle</strong>
+<ol>
+<li>Go to <a href="https://www.amazon.com/gp/digital/fiona/manage?&#pdocSettings" target="_blank">Kindle Personal Document Settings</a></li>
+<li>Add the following email to your Approved Personal Document E-mail List: <input type="text" class="input_text_inline input_select_all js_select_all" value="kindle.g8tig@instapaper.com" readonly></li>
+<li>Find the email for your Kindle under Send-to-Kindle Email Settings, and add it below:</li>
+</ol>
+</div>
+<div id="kindle_setup_email_done_header" class="hidden margin-bottom-5">
+<strong>Your Kindle Email Address</strong>
+<span class="mini margin-left-10">
+<a href="javascript:void"
+class="js_show_hide"
+data-show="#kindle_setup_email"
+data-hide="#kindle_setup_email_done_header"
+data-animate="true">what's this?</a>
+</span>
+</div>
+<div class="kindle_email_line">
+<input type="text" id="kindle_email_address"
+name="kindle_email_address"
+value=""
+placeholder="Send-to-Kindle Email">
+<select name="kindle_email_domain" id="kindleSelector">
+<option value="kindle.com" >@kindle.com</option>
+<option value="free.kindle.com" >@free.kindle.com</option>
+<option value="kindle.cn" >@kindle.cn</option>
+</select>
+</div>
+
+<div class="margin-top-10">
+<button id="kindle_save_preferences_button" type="submit" class="button_black_outline button_block_one_column hidden">Save Kindle Preferences</button>
+</div>
+</form>
+<div id="kindle_setup_send_immediately" class="hidden">
+<div class="hr margin-top-20 margin-bottom-20"></div>
+<div class="margin-bottom-10">
+<strong>Send Articles to Kindle Immediately</strong>
+</div>
+<form class="simple_form clearfix" action="/user/kindle_send_now" method="POST" id="kindle_send_now_form">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<button class="float_left button_black_outline button_block_one_column" type="submit" name="submit" id="submit_send_now" value="1">Send Articles Now</button>
+<button class="open_modal float_left margin-left-10 button_black_outline button_block_one_column ios_hide"
+data-modal="kindle_bookmarklet_modal">Get Kindle Bookmarklet</button>
+</form>
+<div class="hr margin-top-20 margin-bottom-20"></div>
+</div>
+<div class="settings_footnote">
+Instapaper assumes no responsibility for 3rd party data service charges incurred by your use of Kindle features.
+<a href="/faq">More Info</a>
+</div>
+</div>
+</section>
+<!-- Import -->
+<section class="row settings_group hidden-xs">
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+<header class="margin-bottom-20">Import</header>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<!-- Pocket -->
+<section class="margin-bottom-5">
+<a id="pocket-link" href="#pocket-import">Import from Pocket</a>
+<form action="/import/pocket" enctype="multipart/form-data" class="hidden" id="pocket_import_form" method="post">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<div class="file_line">
+<input type="file" name="pocket_file" id="pocket_file"/>
+<input type="submit" class="text_button" value="Import" id="pocket_button"/>
+</div>
+</form>
+</section>
+<section class="margin-bottom-5">
+<a id="instapaper_import_link" href="#instapaper-import">Import from Instapaper CSV</a>
+<form action="/import/instapaper" enctype="multipart/form-data" class="hidden" id="instapaper_import_form" method="post">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<div class="file_line">
+<input type="file" name="instapaper_file" id="instapaper_file" />
+<input type="submit" class="text_button" value="Import" id="instapaper_button"/>
+</div>
+</form>
+</section>
+<!-- Highly -->
+
+<!-- Findings -->
+
+</div>
+</section>
+<!-- Export -->
+<section class="row settings_group hidden-xs">
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+<header class="margin-bottom-20">Export</header>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<div class="description">Generate a list of your saved articles.</div>
+<section class="margin-bottom-5">
+<form id="export_csv" action="/export/csv" method="post">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<button class="text_button" type="submit" id="download_csv_button">Download .CSV file</button>
+</form>
+</section>
+<section>
+<form id="export_html" action="/export/html" method="post">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<button class="text_button" type="submit" id="download_html_button">Download .HTML file</button>
+</form>
+</section>
+</div>
+</section>
+<!-- Delete -->
+<section class="row settings_group">
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+<header class="margin-bottom-20">Delete Account</header>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<!-- disabled delete account for now -->
+<form action="/user/delete" method="post">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<a class="js_show_hide text_button delete_account_button"
+id="delete_account_link"
+data-show="#delete_confirm"
+data-hide="#delete_account_link"
+data-animate="true">I would like to delete my account</a>
+<div class="hidden" id="delete_confirm">
+<div class="margin-bottom-10">
+This will completely delete your account and <em>all</em> of your
+saved articles. This absolutely cannot be undone and your account can not be recovered
+after deletion.
+</div>
+<div class="checkbox_line margin-bottom-10">
+<input id="confirm" name="confirm" type="checkbox" value="1" />
+<label for="confirm">I understand this cannot be undone.</label>
+</div>
+<button type="submit" class="button_black_outline button_block_one_column" name="submit">Permanently Delete Account</button>
+</div>
+</form>
+</div>
+</section>
+</div>
+
+</div>
+</div>
+
+<div class="col-lg-2 hidden-md hidden-sm hidden-xs">
+
+</div>
+
+</div>
+</div>
+
+<div id="bookmarklet_explain" class="bookmarklet_explain">&uarr; &nbsp; Click &amp; drag up to your Bookmarks Bar.</div>
+
+<!-- Modal Windows go here -->
+<div id="mobile_cover" class="mobile_cover"></div>
+<div id="modal_backer" class="modal_backer" class="modal_backer"></div>
+
+
+<div id="modal_email_change" class="modal modal_wide modal_email_change">
+<div class="modal_name">Change Email</div>
+<div class="modal_close">&#10005;</div>
+<div class="modal_group">
+<form action="/user/username" method="POST" class="modal_form">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<div class="form_line_inline">
+<input type="email" name="username" id="username" value="happybee9494@gmail.com" placeholder="you@example.com" />
+<input type="submit" value="Update">
+</div>
+</form>
+</div>
+</div>
+
+<div id="modal_password_change" class="modal modal_password_change">
+<div class="modal_name">Change Password</div>
+<div class="modal_close">&#10005;</div>
+<div class="modal_group">
+<form action="/user/password" method="POST" class="modal_form">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<div class="form_line_wide_labeled">
+<label for="current_password">Current Password</label>
+<input type="password" name="current_password" id="current_password" value=""/>
+</div>
+<div class="form_line_wide_labeled">
+<label for="password">New Password</label>
+<input type="password" name="password" id="password" value=""/>
+</div>
+<div class="form_line_wide_labeled">
+<label for="password2">Confirm Password</label>
+<input type="password" name="password2" id="password2" value=""/>
+</div>
+<div class="form_line_submit">
+<input type="submit" value="Set New Password">
+</div>
+</form>
+</div>
+</div>
+
+<div id="modal_displayname_change" class="modal modal_displayname_change">
+<div class="modal_name">Change Display Name</div>
+<div class="modal_close">&#10005;</div>
+<div class="modal_group">
+<form action="/user/displayname" method="POST" class="modal_form">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<div class="form_line_inline">
+<input type="text" name="username" id="username" value="happybee9494" placeholder="Name" />
+<input type="submit" value="Update">
+</div>
+</form>
+</div>
+</div>
+
+<div id="modal_url_change" class="modal modal_url_change">
+<div class="modal_name">Change Username</div>
+<div class="modal_close">&#10005;</div>
+<div class="modal_group">
+<form action="/user/vanity_url" method="POST" class="modal_form">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<div class="form_line_labeled">
+<label for="username">instapaper.com/p/</label>
+<input type="text" name="username" id="username" value="" />
+</div>
+<div class="form_line_submit">
+<div class="form_input_limits muted margin-top-5" style="float:left;">
+<span class="muted margin-top-10">Letters and numbers only</span><br/>
+<span class="muted margin-top-10">15 character limit</span>
+</div>
+<input type="submit" value=Register>
+</div>
+</form>
+</div>
+</div>
+
+<div id="kindle_bookmarklet_modal" class="modal modal_kindle_bookmarklet">
+<div class="modal_name">Send to Kindle Bookmarklet</div>
+<div class="modal_close">&#10005;</div>
+<div class="modal_group clearfix">
+<div class="modal_aside text-center">
+
+<a href="javascript:function iprl5(){var d=document,z=d.createElement('scr'+'ipt'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='(Saving...) '+d.title;z.setAttribute('src',l.protocol+'//www.instapaper.com/j/a3qYz1XHIGlB?a=send-to-kindle&u='+encodeURIComponent(l.href)+'&t='+(new Date().getTime()));b.appendChild(z);}catch(e){alert('Please wait until the page has loaded.');}}iprl5();void(0)"
+class="js_bookmarklet button button_block">Send to Kindle</a>
+
+<h2>&uarr; &nbsp; Click &amp; Drag &nbsp; &uarr;</h2>
+
+</div>
+<p>
+Send an article directly to your Kindle in one click,
+<strong>without</strong> saving it to your Instapaper account.
+</p>
+<ul class="padding-left-25">
+
+<li>Install by dragging the button to your bookmarks bar.</li>
+
+<li>Click it to send the current webpage to your Kindle.</li>
+</ul>
+</div>
+</div>
+
+<div id="modal_highly_token" class="modal modal_highly_token">
+<div class="modal_name">Import from Highly</div>
+<div class="modal_close">&#10005;</div>
+<div class="modal_group">
+<form action="/user/highly" method="POST" class="modal_form">
+<input id="form_key" name="form_key" type="hidden" value="1XrOO4CLDWCaggB4ccYI" />
+<div class="form_line_inline">
+<input type="text" name="highly_token" id="highly_token" placeholder="Highly Access Token" />
+<input type="submit" value="Import">
+</div>
+</form>
+</div>
+</div>
+<script nonce=cyPMbwuuRo>
+document.getElementById("pocket-link").addEventListener("click", function() {
+$('#pocket_file').trigger('click');
+});
+document.getElementById("profile_image_import_link").addEventListener("click", function() {
+$('#profile_image_import').trigger('click');
+});
+document.getElementById("profile_image_import").addEventListener("change", function() {
+document.getElementById('profile_image_import_form').submit();
+});
+document.getElementById("pocket_file").addEventListener("change", function() {
+document.getElementById('pocket_import_form').submit()
+});
+document.getElementById("export_csv").addEventListener("submit", function(evt) {
+if (!confirm('This may take a minute. Ready?')) {
+evt.preventDefault();
+}
+});
+document.getElementById("export_html").addEventListener("submit", function(evt) {
+if (!confirm('This may take a minute. Ready?')) {
+evt.preventDefault();
+}
+});
+document.getElementById("instapaper_import_link").addEventListener("click", function() {
+$('#instapaper_file').trigger('click');
+});
+document.getElementById("instapaper_file").addEventListener("change", function() {
+document.getElementById('instapaper_import_form').submit();
+});
+
+</script>
+
+
+<div id="subscriber_modal" class="modal modal_subscriber">
+<div class="modal_name">Upgrade to Premium</div>
+<div class="modal_close js_galog" data-bins="unread,subscription_close">&#10005;</div>
+<div class="modal_group">
+<div>Upgrade today to access Premium features. See a full list <a href="/premium">here</a>.</div>
+<div class="premium_features clearfix">
+<span class="premium_row">
+<div class="premium_feature clearfix">
+<div class="premium_img premium_img_search"></div>
+<div class="text">
+<div class="title">Full-Text Search</div>
+<div class="description">Search through all of the articles you've saved to Instapaper, even ones you've archived.</div>
+</div>
+</div>
+<div class="premium_feature clearfix">
+<div class="premium_img premium_img_notes"></div>
+<div class="text">
+<div class="title">Unlimited Notes</div>
+<div class="description">Never worry about the 5-note monthly limit again.</div>
+</div>
+</div>
+</span>
+<span class="premium_row">
+<div class="premium_feature clearfix">
+<div class="premium_img premium_img_playlist"></div>
+<div class="text">
+<div class="title">Text-to-Speech Playlists</div>
+<div class="description">
+Create a playlist of saved articles, turn up the volume, and relax. <span class="premium_mobile">(iOS &amp; Android only)</span>
+</div>
+</div>
+</div>
+<div class="premium_feature clearfix">
+<div class="premium_img premium_img_speed"></div>
+<div class="text">
+<div class="title">Speed Reading</div>
+<div class="description">
+Get the full speed reading experience with unlimited usage.
+</div>
+</div>
+</div>
+</span>
+</div>
+
+<div class="group">
+
+<form id="stripe_form" class="stripe_form" action="/stripe/process" method="POST">
+<script nonce=cyPMbwuuRo src="https://checkout.stripe.com/checkout.js"></script>
+
+<button id="stripe_monthly_button"
+name="monthly"
+class="premium_hero_button stripe_monthly_button js_galog"
+data-bins="premium,premium_button">
+<span class="price">$2.99</span> per month
+</button>
+<button id="stripe_yearly_button"
+name="yearly"
+class="premium_hero_button stripe_yearly_button js_galog"
+data-bins="premium,premium_button">
+<span class="price">$29.99</span> per year
+</button>
+
+<script nonce=cyPMbwuuRo type="text/javascript">
+$('.stripe_monthly_button').unbind().click(function(){
+var token = function(res){
+var $monthly = $('<input type=hidden name=monthly />').val('1');
+$('#stripe_form').append($monthly)
+var $input = $('<input type=hidden name=stripeToken />').val(res.id);
+$('#stripe_form').append($input).submit();
+};
+StripeCheckout.open({
+key: "pk_live_gPvYgUPWeaqkdudBAxwa3lyN",
+email: "happybee9494@gmail.com",
+amount: "299",
+name: "Instapaper Premium",
+
+description: "Monthly Plan",
+
+image: "https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/insta_logo_med.png?v=80a76b40257eb61e280a58d44e172ad4",
+token: token,
+
+});
+return false;
+});
+
+$('.stripe_yearly_button').unbind().click(function() {
+var token = function(res){
+var $yearly = $('<input type=hidden name=yearly />').val('1');
+$('#stripe_form').append($yearly)
+var $input = $('<input type=hidden name=stripeToken />').val(res.id);
+$('#stripe_form').append($input).submit();
+};
+StripeCheckout.open({
+key: "pk_live_gPvYgUPWeaqkdudBAxwa3lyN",
+email: "happybee9494@gmail.com",
+amount: "2999",
+name: "Instapaper Premium",
+description: "Yearly Plan",
+image: "https://staticinstapaper.s3.dualstack.us-west-2.amazonaws.com/img/insta_logo_med.png?v=80a76b40257eb61e280a58d44e172ad4",
+token: token
+});
+return false;
+});
+
+</script>
+</form>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="scroll_indicator_wrapper" class="iScrollVerticalScrollbar scroll_indicator_wrapper">
+<div id="scroll_indicator" class="iScrollIndicator scroll_indicator"></div>
+</div>
+
+
+<script nonce=cyPMbwuuRo>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-43497209-1', 'instapaper.com');
+ga('send', 'pageview');
+</script>
+</body>
+</html>

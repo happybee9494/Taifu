@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Particle Console | Build your connected product</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+
+    
+<meta name="pconsole/config/environment" content="%7B%22modulePrefix%22%3A%22pconsole%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22API_CLIENT_ID%22%3A%22fleet-management-4926%3A95b56822dfbd9fd0f63878ec12f94ce377813c42%22%2C%22API_ENDPOINT%22%3A%22https%3A//api.particle.io%22%2C%22API_VERSION%22%3A%221.2.0%22%2C%22BUILD_URL%22%3A%22https%3A//build.particle.io%22%2C%22CELLULAR_DEVICE_CLOUD_SELF_SERVICE_PLAN_SLUG%22%3A%22DeviceCloudCellularSelfServePlan%22%2C%22COOKIE_DOMAIN%22%3A%22.particle.io%22%2C%22DEFAULT_DEVICE_GROUP_COLOR_NAME%22%3A%22wet-asphalt%22%2C%22GOOGLE_CLOUD_PUB_SUB_SERVICE_ACCOUNT_EMAIL%22%3A%22particle-public@particle-public.iam.gserviceaccount.com%22%2C%22GOOGLE_MAPS_INTEGRATION_DEFAULT_EVENT_NAME%22%3A%22deviceLocator%22%2C%22LAST_HANDSHAKE_TOOLTIP_TEXT%22%3A%22The%20last%20time%20the%20device%20started%20a%20new%20secure%20session%20with%20the%20Particle%20Cloud.%20Note%20that%20this%20is%20different%20from%20the%20last%20time%20the%20device%20communicated%20with%20the%20cloud%2C%20which%20occurs%20repeatedly%20over%20the%20life%20of%20a%20secure%20connection.%22%2C%22SINGLE_SIGN_ON_URL%22%3A%22https%3A//login.particle.io%22%2C%22USE_SINGLE_SIGN_ON%22%3Atrue%2C%22WIFI_DEVICE_CLOUD_SELF_SERVICE_PLAN_SLUG%22%3A%22DeviceCloudWifiSelfServePlan%22%2C%22name%22%3A%22pconsole%22%2C%22version%22%3A%224.30.0+3520c7cd%22%7D%2C%22ember-simple-auth%22%3A%7B%22routeAfterAuthentication%22%3A%22user.index%22%7D%2C%22launchDarkly%22%3A%7B%22id%22%3A%2259945fac297a9d0c3fa3d7de%22%7D%2C%22mapbox%22%3A%7B%22accessToken%22%3A%22pk.eyJ1IjoicGF0cmljay1wYXJ0aWNsZSIsImEiOiJjazVyZjEzamUwY2syM2ttNjVsZnYzeHEwIn0.AWo5KU0FTIgMV9B8MmixoA%22%7D%2C%22segment%22%3A%7B%22LOG_EVENT_TRACKING%22%3Afalse%2C%22WRITE_KEY%22%3A%22dU6Oejn3KlcaDBtfwhTHrL30qmPhV6NQ%22%7D%2C%22sentry%22%3A%7B%22cdn%22%3A%22https%3A//cdn.ravenjs.com/2.2.0/raven.min.js%22%2C%22development%22%3Afalse%2C%22dsn%22%3A%22https%3A//3dde9d3e30ed4715a2ce1dbdd391768e@app.getsentry.com/70176%22%7D%2C%22stripe%22%3A%7B%22publishableKey%22%3A%22pk_BnSmAEal5BJCyYnQGBmtbDoM1rktn%22%7D%2C%22something%22%3A%22test%22%2C%22contentSecurityPolicy%22%3A%7B%22style-src%22%3A%22%27self%27%20%27unsafe-inline%27%20%27unsave-eval%27%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22resizeServiceDefaults%22%3A%7B%22widthSensitive%22%3Atrue%2C%22heightSensitive%22%3Atrue%2C%22debounceTimeout%22%3A200%2C%22injectionFactories%22%3A%5B%22view%22%2C%22component%22%5D%7D%7D" />
+
+    <link integrity="" rel="stylesheet" href="/assets/vendor-ede235fe5e72a49e12c4a4fcb0ffc91e.css">
+    <link integrity="" rel="stylesheet" href="/assets/pconsole-6435a5d367fbc4553c6e2a05dde66102.css">
+    <link rel="shortcut icon" href="/blue.ico" type="image/x-icon" />
+    <!-- Link to Spark Fonts -->
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6107112/665726/css/fonts.css" />
+    <!-- IcoMoon — “Dashboard” font (for icons) -->
+    <link rel="stylesheet" href="https://s3.amazonaws.com/icomoon.io/49057/Dashboard/style.css?bqtllm">
+    
+  </head>
+  <body>
+    <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+    <script src="https://cdn.statuspage.io/se-v2.js"></script>
+    <script crossorigin="anonymous" src="https://app.launchdarkly.com/snippet/ldclient.min.js"></script>
+    <script src="/assets/vendor-466effb85d846b55f3fbb42f56837e7d.js" integrity="sha256-oPgcFLo9nXuBOtluTe5l+mEa51ZvkLd+vH7KqSZ2+7g= sha512-SKdsq6jUB4D9r7rt8H5aOCOTql+U5/6LqgT9DbCGnxVeLN5a4eNxO9E6+DNmxYJQJiCgg4pm9YKkmjR2j3bCmw==" ></script>
+    <script src="/assets/pconsole-dcea8ad9cf9193716207ad8710a40291.js" integrity="sha256-suZyIZwAjRGgyGJYJjJzFCBqZ1ASCHa7R9eDwJT8o9c= sha512-p2PPNueVefa4TLXnbMMYssp6UhyZMkv538rs6IWCLSfMyGJffuREopblJDhoqXZ+KYO7ZO2pAEFSHrvJYOE8zw==" ></script>
+    <script type="text/javascript">!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";analytics.load("dU6Oejn3KlcaDBtfwhTHrL30qmPhV6NQ");}}();</script>
+<script src="https://cdn.ravenjs.com/2.2.0/raven.min.js"></script>
+<div id="ember-basic-dropdown-wormhole"></div>
+  </body>
+</html>

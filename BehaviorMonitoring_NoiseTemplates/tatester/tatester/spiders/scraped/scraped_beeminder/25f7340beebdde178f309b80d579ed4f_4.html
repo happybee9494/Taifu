@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Beeminder
+  </title>
+  <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link rel="apple-touch-icon-precomposed" href="/images/small_logo_bee_256.png">
+  <meta name="msapplication-TileColor" content="#f5bd27">
+  <meta name="msapplication-TileImage" content="/images/small_logo_bee_256.png">
+  <meta content="akrasia, self-binding, goal tracking, incentives" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+  <meta property="fb:app_id" content="208127512622250">
+  <meta property="og:type"          content="website" />
+  <meta property="og:site_name"     content="Beeminder"/>
+
+  <meta name="apple-itunes-app" content="app-id=551869729">
+  
+  <script type="text/javascript"
+          src="https://www.google.com/jsapi?key=ABQIAAAAOa-RFkKAwduJA0bwi01kRBTCuJY-e-yhy9Frd0u60DKsVj9RQBSizo_DrtDPclb_pgY9C9HGVoizIw"></script>
+
+<!-- //! remember to correct link to css files -->
+
+<link rel="stylesheet" media="screen" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" media="all" href="/assets/application-2b305ca7396c6645642908fe1cd7e7fc4b812713d1fb13386b06d8f2a9368df1.css" data-turbolinks-track="true" />
+
+<script>
+  window.beemApi = {};
+  // autod stuff called by other files
+  beemApi.stripePublishableKey = "pk_live_2EhbxY9XN4LejUgtuhrdF3ew";
+  beemApi.currentIsPayer = false;
+    beemApi.accessToken     = "31ra4szlotd5i5jfk0e0kzmjr";
+    beemApi.currentUsername = "happybee9494";
+    beemApi.currentEmail    = "happybee9494@gmail.com";
+    beemApi.currentUTCoff   = 28800;
+    beemApi.hasFreebees     = true;
+    beemApi.golCount        = 0;
+    /* tryanyway = try reloading graphs on not-mine goals */
+    beemApi.tryanyway       = false;
+</script>
+
+<script src="https://js.stripe.com/v1/"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+//<![CDATA[
+Stripe.setPublishableKey('pk_live_2EhbxY9XN4LejUgtuhrdF3ew');
+//]]>
+</script>
+<script src="https://js.braintreegateway.com/web/3.6.3/js/client.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.6.3/js/paypal.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.6.3/js/data-collector.min.js"></script>
+
+
+<script src="/assets/application-67dcc2f479665bd0485bf0fde9ff6b1733f9d1f1305ab3176522fb0f282dec0a.js" data-turbolinks-track="true"></script>
+
+
+
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Ygbirz81IPSHAz6VFZIfYOYpX0CSLlR8pOxWIeakqLAxGbh4hugDodLQi70KKnpjGRQD/PbAxSiqlVifSk834g==" />
+  <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||
+[]);
+mixpanel.init("fcf247309f6907760126754500f885f6", {'loaded':function(){
+  $("#new_user #mixpanel_distinct_id").val(mixpanel.get_distinct_id());
+}});</script><!-- end Mixpanel -->
+
+  <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1139630139405951');
+  //fbq('addPixel', '314586222206152');
+  fbq('track', "PageView");
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=314586222206152&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-54HKBK6');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54HKBK6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <div id="user-timezone-hours" style="display: none; width: 0px; height: 0px;">+0800</div>
+    <div id="user-timezone-offset" style="display: none; width: 0px; height: 0px;">28800</div>
+  <div id="flash-js" class="row no-gutters">
+    <a href="#" class="hide-flash col-1">
+      <div class="mega-octicon octicon-x"></div>
+    </a>
+    <div class="message col-10"></div>
+    <div class="col-1"></div>
+  </div>
+  <div id="fb-root"></div>
+
+  <div id="header">
+    <div class="row justify-content-around">
+      <div class="col-12 col-md-4 masthead">
+        <a href="/home"><div class="logo"></div></a>
+        <div class="tagline">Damoclean goal tracking</div>
+      </div>
+      <div class="main-nav col-12 col-md-8">
+  <div class="row justify-content-end no-gutters">
+    <div class="col-12 col-sm-10 links">
+        <div class="link">
+          <a href="https://www.beeminder.com/happybee9494">happybee9494</a>
+        </div>
+      <div class="link"><a href="/premium">Premium</a></div>
+      <div class="link">
+      <a title="A gallery of things people are beeminding for you to be inspired by." href="https://www.beeminder.com/featured">Featured</a>
+      </div>
+      <div class="link">
+      <a title="Feature announcements, press roundups, PSAs, and guest posts. Even some fairly scientific articles on behavioral economics and the psychology of akrasia." href="http://blog.beeminder.com/">Blog</a>
+      </div>
+      <div class="link">
+      <a title="Includes a Newbee section for asking questions if you&#39;re confused." href="https://forum.beeminder.com">Forum</a>
+      </div>
+    </div>
+    <div class="main-nav user-nav">
+        <div class="menu">
+          <div class="drop-down-anchor">
+  <a href="#">
+    <img class="avatar" src="https://secure.gravatar.com/avatar/5d0b4d4df7869de76e520ab7f0e22d4f?size=256&amp;default=https%3A%2F%2Fbeeminder.com%2Fimages%2Ffallback%2F_avatar0.png" alt="5d0b4d4df7869de76e520ab7f0e22d4f?size=256&amp;default=https%3a%2f%2fbeeminder.com%2fimages%2ffallback%2f avatar0" />
+    <span class="octicon octicon-triangle-down"></span>
+</a></div>
+<div class="popup">
+  <a class="clear-elf" href="/new">New Goal</a>
+  <a href="/happybee9494/gallery">Gallery</a>
+  <a href="/settings/account">Account Settings</a>
+  <a href="/reminders/happybee9494">Reminders</a>
+  <a href="/breaks/happybee9494">Breaks</a>
+  <a href="/payment">Payments</a>
+  <a class="last signout" rel="nofollow" data-method="delete" href="/users/sign_out">Log out</a>
+</div>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+    <div class="trial-banner">
+    <span id="add-text">
+      Beeminder can't be a credible threat unless you
+      <a href="#" data-toggle="modal" data-target="#pick-payment">add a payment method</a>.
+    </span>
+    <span class="hidden" id="loading-text">Loading payment form...</span>
+  </div>
+  <div class="modal fade" id="pick-payment" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add payment method</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          Beeminder is a motivational tool that allows you to pledge money to stay
+          on track towards a goal.
+        </div>
+        <div class="form-row">
+          If you go off track, we charge you the amount you're pledging on that goal.
+        </div>
+        <div class="form-row buttons">
+          <button class="add-cc bbtn">
+            Add a credit card
+          </button>
+        </div>
+        <div class="form-row">
+          Can't use a credit card?
+          You can
+          <a class="add-paypal" 
+            role="button" href="#">use PayPal</a>,
+          if you must.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!--[if lt IE 9]>
+<div id="flash-ie" class="flash_container flash-error">
+  <a href="#" class="close" data-dismiss="alert">x</a>
+  <div>
+    <h2>Uh oh, you seem to be using an out-of-date Internet Explorer...</h2>
+    <p>
+    Beeminder is
+    pretty broken on IE&lt;9. Do you have Firefox or Chrome or Safari or
+    Opera or IE10+ or <a href="http://whatbrowser.org">anything else at all</a>?
+    </p><p>
+    As a token of our deep shame for being the kind of developers who don't
+    support IE, here's an ewok dressed like a bee!
+    </p>
+    <div id="kitteh">
+      <img src="/assets/beecat-5d0ab471e4a311e154596ec78ae9ff6e43fc231841b5521c39765d5dfbc770e2.jpg">
+    </div>
+  </div>
+</div>
+<![endif]-->
+
+<div class="clear"></div>
+
+
+      <div class="content container-fluid ">
+        
+        <div class="panel ">
+            <div class="row justify-content-center">
+<div class="col-12" id="faq">
+<h1>Beeminder FAQ</h1>
+<div>
+<ul>
+<li class="qst"><a href="#qnam">
+Why the name Beeminder?
+</a></li><li class="qst"><a href="#qset">
+How do I set up a goal?
+</a></li><li class="qst"><a href="#qser">
+What services and gadgets do you integrate with?
+</a></li><li class="qst"><a href="#qent">
+How do I enter data?
+</a></li><li class="qst"><a href="#qcom">
+How do the commitment contracts work?
+</a></li><li class="qst"><a href="#qtm">
+When exactly do I derail from not reporting?
+</a></li><li class="qst"><a href="#qfrz">
+What exactly happens when I derail?
+</a></li><li class="qst"><a href="#qeli5">
+I&#8217;m confused. Can you explain like I&#8217;m 5?
+</a></li><li class="qst"><a href="#qdel">
+How do I delete a goal?
+</a></li><li class="qst"><a href="#qret">
+What does Retroratchet do?
+</a></li><li class="qst"><a href="#qtrk">
+What if I don&#8217;t know exactly what I want my goal to be yet, but I want to get started tracking?
+</a></li><li class="qst"><a href="#qinf">
+What if I want to do something less often than daily?
+</a></li><li class="qst"><a href="#qtwo">
+Why can I only change two of the parameters at the bottom of my graph and one is grayed out?
+</a></li>
+<!--
+<li class="qst"><a href="#qbuz">
+What does it mean that the bot "buzzes off"?
+</li>
+-->
+<li class="qst"><a href="#qexm">
+What are people beeminding?
+</li><li class="qst"><a href="#qttm">
+How do I automatically mind my time with TagTime?
+</a></li><li class="qst"><a href="#qkyoom">
+What does &#8216;auto-summing&#8217; mean?
+</a></li><li class="qst"><a href="#qcut">
+Any shortcuts for entering data?
+</a></li>
+<!--
+<li class="qst"><a href="#qday">
+What if I can't report my data daily?
+</a></li>
+-->
+<li class="qst"><a href="#qdat">
+What if just the day of the month could be ambiguous?
+</a></li><li class="qst"><a href="#qimp">
+How do I import and export data?
+</a></li><li class="qst"><a href="#qsec">
+What does consecutive days of data have to do with the width of the road?
+</a></li><li class="qst"><a href="#qedt">
+Can I edit past datapoints?
+</a></li><li class="qst"><a href="#qodo">
+What if my odometer (or &#8220;odometer&#8221;) gets reset?
+</a></li><li class="qst"><a href="#qnft">
+What about non-fitness-related goals?
+</a></li><li class="qst"><a href="#qfwl">
+How fast can I lose weight?
+</a></li><li class="qst"><a href="#qflx">
+What if I derail due to natural fluctuation in my weight?
+</a></li><li class="qst"><a href="#qstk">
+Why should I use Beeminder instead of StickK?
+</a></li><li class="qst"><a href="#qben">
+Can I specify a beneficiary of my commitment contract?
+</a></li><li class="qst"><a href="#qcoi">
+You make money from people failing at their goals?
+</a></li><li class="qst"><a href="#qemb">
+What if I want to beemind something embarrassing?
+</a></li><li class="qst"><a href="#qmon">
+Can I just pay a monthly fee instead of this commitment contract craziness?
+</a></li><li class="qst"><a href="#qpal">
+Can I use PayPal instead of a credit card?
+</a></li><li class="qst"><a href="#qchg">
+I entered in my credit card info and now there&#8217;s a $1 charge on my account! What&#8217;s up with that?
+</a></li><li class="qst"><a href="#qdcl">
+What happens if my credit card is declined?
+</a></li><li class="qst"><a href="#qwlk">
+What happens if I decide to walk away (while still on my yellow brick road)?
+</a></li><li class="qst"><a href="#qany">
+Can I pledge any amount I want?
+</a></li><li class="qst"><a href="#qdub">
+Why not just double the amount pledged each time?
+</a></li><li class="qst"><a href="#qvar">
+What is the &#8220;90% Variance&#8221; in the goal stats?
+</a></li><li class="qst"><a href="#qhon">
+What makes Beeminder users so honest?
+</a></li><li class="qst"><a href="#qjar">
+Do you have a glossary for all this jargon?
+</a></li><li class="qst"><a href="#qra">
+I have what is apparently a Rarely Asked Question. Where can I ask it?
+</a></li><li class="qst"><a href="#qrd">
+So much to read! Where should I start?
+</a></li>
+</ul>
+<hr>
+<ul>
+
+
+  <h2 class="qst" id="qnam">
+  <a href="#qnam">Q:</a>
+  Why the name Beeminder?
+  </h2>
+  <p>
+  Beeminder reminds you and binds you.
+  It&#8217;s Beeminder, the
+  <a href="http://blog.beeminder.com/akrasia" title="Inaugural blog post: 'How To Do What You Want: Akrasia and Self-Binding'">me-binder</a>.
+  It&#8217;s reminders with a sting.
+  Mind your goals, and be minded.
+  Oh, and our esteemed co-founder,
+  <a href="http://beesoule.com" title="CTO and Queen Bee">Bethany Soule</a>,
+  goes by &#8220;Bee&#8221;.
+  </p>
+  <p>
+  For the full story, including the story of our previous name, Kibotzer, check out our blog:
+  <a href="http://blog.beeminder.com/beenamer" title="Also discusses our CEO's onomastic manifesto, 'Nominology', if you really like geeking out about names">blog.beeminder.com/beenamer</a>.
+  </p>
+
+
+  <h2 class="qst" id="qset">
+  <a href="#qset">Q:</a>
+  How do I set up a goal?
+  </h2>
+  <p>
+  Click the red New Goal button.
+  The key choice to make when creating a goal is the initial weekly rate.
+  That&#8217;s the steepness of your Yellow Brick Road, how much you&#8217;re committing to do per week, in whatever units you&#8217;ll be reporting in.
+  For example, for weight loss, if you want to lose half a pound a week, that&#8217;s a weekly rate of -0.5.
+  For 3 workouts per week where you&#8217;ll enter a 1 for every workout (a Do More goal) that&#8217;s a weekly rate of 3.
+  For 30 minutes of exercise per day, that&#8217;s 210 minutes per week, or 3.5 if you&#8217;ll be reporting hours, which is probably
+  <a href="#qcut" title="Jump to the FAQ item for data entry shortcuts">more convenient</a>.
+  We recommend picking a very conservative rate at first because you can adjust the steepness as you go with the
+  <a href="#qtwo" title="Jump to the FAQ item about the road dial">Road Dial</a>
+  beneath your graph.
+  For more on this you might like the
+  <a href="http://beeminder.com/home" title="Queen Bee describes Beeminder">how-to video on our front page</a>.
+  </p>
+
+  <h2 class="qst" id="qser">
+  <a href="#qser">Q:</a>
+  What services and gadgets do you integrate with?
+  </h2>
+  <p>
+  Those are all listed on the front page of beeminder.com!
+  And
+  <a href="http://forum.beeminder.com/t/hard-committing-to-the-next-batch-of-autodata-integrations/420" title="Forum post: hard-committing to the next batch of autodata integrations">in the forum</a>
+  we list third-party integrations, integrations you can set up via IFTTT/Zapier, and upcoming integrations.
+  </p>
+
+<h2 class="qst" id="qent">
+<a href="#qent">Q:</a>
+How do I enter data?
+</h2>
+<p>
+Enter data on your dashboard (click the the '&gt;' arrow next to the goal for the data entry form).
+You can also enter your data next to your graph on the graph page.
+Or you can answer the emails from bot@beeminder.com or
+<a href="http://blog.beeminder.com/textbot" title="'Buzzing BeeBot'">text (SMS) your data to the bot</a>.
+You can enter multiple datapoints at once and you can reply to any email from the bot with data for any day, or multiple days.
+Finally, we&#8217;re adding more and more devices and apps that can automatically send data to Beeminder.
+Stay tuned!
+</p><p>
+We even have
+<a href="http://blog.beeminder.com/api" title="Blog post announcing our API, with lots of examples of cool things people are doing with it">an API</a>
+which many people use to automate their beeminding in
+<a href="http://blog.beeminder.com/box" title="'Beeminding Outside the Box'">creative ways</a>.
+</p>
+
+
+  <h2 class="qst" id="qcom">
+  <a href="#qcom">Q:</a>
+  How do the commitment contracts work?
+  </h2>
+  <p>
+  Check out our
+  <a href="http://beeminder.com/money" title="Also includes a list of pointers to questions here in the FAQ that are about money">pricing page</a>
+  and our
+  <a href="http://beeminder.com/contract" title="We spent a ton of time on this in the early days and now find that pretty much no one pays attention to it at all...">standard contract template</a>.
+  The short answer: you keep all your datapoints on your yellow brick road and if you ever don&#8217;t then we collect the amount you pledged.
+  By default we also automatically put you back on the hook at a higher pledge amount but with time to opt out of that.
+  </p>
+
+
+  <h2 class="qst" id="qtm">
+  <a href="#qtm">Q:</a>
+  When exactly do I derail from not reporting?
+  </h2>
+  <p>
+  That&#8217;s what &#8220;safe days&#8221; or the &#8220;safety buffer&#8221; is telling you.
+  You should try to keep your datapoints on the road at all times but if you start the day on the wrong side of the road (in the red) you have until
+  <a href="http://blog.beeminder.com/deadlines" title="You can change the deadline from midnight if you choose">midnight that night</a>
+  to get back on.
+  We call that a &#8220;beemergency&#8221;.
+  </p>
+
+
+  <h2 class="qst" id="qfrz">
+  <a href="#qfrz">Q:</a>
+  What exactly happens when I derail?
+  </h2>
+  <p>
+  You get an email asking if the derailment was legit.
+  If you had money pledged, the charge will automatically go through 24 hours later.
+  </p><p>
+  By default (you can customize this in Goal Settings) you will then be automatically rerailed at a higher pledge amount (up to whatever pledge cap you set) and with a week of safety buffer.
+  That&#8217;s enough time to adjust the amount at risk.
+  </p><p>
+  At any point you can hit Archive on a goal to cry uncle.
+  That takes a week to take effect but if you happen to derail while the archiving is pending then the goal will freeze, i.e., not automatically rerail.
+  (And then when the actual archiving happens, the goal will disappear from your gallery.)
+  </p>
+
+
+  <h2 class="qst" id="qeli5">
+  <a href="#qeli5">Q:</a>
+  I&#8217;m confused. Can you explain like I&#8217;m 5?
+  </h2>
+  <p>
+  We can do that
+  <a href="http://www.youtube.com/watch?v=jB62AyZ6gHk" title="These are the kids of the Beeminder founders, explaining Beeminder">very literally</a>.
+  We also have this
+  <a href="http://blog.beeminder.com/newbees" title="If you're a veteran, you may still be interested in the collection of links to further reading at the bottom">Guide For Newbees</a>.
+  </p>
+
+  <h2 class="qst" id="qdel">
+  <a href="#qdel">Q:</a>
+  How do I delete a goal?
+  </h2>
+  <p>
+  Click the Archive button, which will get the goal out of your gallery and stop any bot reminders, with a one-week delay.
+  It&#8217;s by design that Beeminder doesn&#8217;t make it easy to get rid of goals.
+  We&#8217;re all about <i>committing</i> to goals.
+  (Though in the first week, the Archive button is actually a Delete button, so you can try out new goals with impunity.)
+  </p><p>
+  If something went wrong with a goal or needs to be permanently or immediately deleted, definitely
+  <a href="https://www.beeminder.com/contact" title="Say nice things about our mother, please. She reads all of these.">let us know</a>
+  and we&#8217;ll delete it for you manually.
+  </p>
+
+
+  <h2 class="qst" id="qret">
+  <a href="#qret">Q:</a>
+  What does Retroratchet do?
+  </h2>
+  <p>
+  It makes your yellow brick road jump to where your current datapoint is, erasing your safety buffer.
+  (You can also read about
+  <a href="http://blog.beeminder.com/glossary/#retroratchet" title="Direct link to the 'retroratchet' entry in the Beeminder glossary">retroratchet</a>
+  in our
+  <a href="#qjar" title="Jump to the FAQ item about the glossary">glossary</a>.)
+  </p>
+
+
+  <h2 class="qst" id="qtrk">
+  <a href="#qtrk">Q:</a>
+  What if I don&#8217;t know exactly what I want my goal to be yet, but I want to get started tracking?
+  </h2>
+  <p>
+  Beeminder is great for that!
+  Set up a goal and pick something ridiculously easy as your initial rate.
+  For example, -0.001 pounds per week for weight loss &#8212; essentially flat.
+  Or one workout every other week (weekly rate 0.5).
+  Then when you get a sense of what&#8217;s realistic you can dial up the steepness of your road.
+  </p>
+
+
+  <h2 class="qst" id="qinf">
+  <a href="#qinf">Q:</a>
+  What if I want to do something less often than daily?
+  </h2>
+  <p>
+  Beeminder works well for things that you do in bursts or infrequent chunks.
+  Check out our blog post &mdash;
+  <a href="http://blog.beeminder.com/chunky" title="Yet another link to our blog. We're exceedingly proud of blog. You should read the whole thing.">Chunky Time</a>
+  &mdash; about this.
+  The short version is: once you do one session, you&#8217;ll be far above the road with plenty of safety buffer to get to your next session.
+  If you can&#8217;t do one session within the next day or two, check the box to start with a flat spot on your yellow brick road.
+  </p>
+
+
+  <h2 class="qst" id="qtwo">
+  <a href="#qtwo">Q:</a>
+  Why can I only change two of the parameters at the bottom of my graph and one is grayed out?
+  </h2>
+  <p>
+  Those three fields comprise what we call the
+  <a href="http://blog.beeminder.com/dial" title="'The Road Dial and the Akrasia Horizon'">Road Dial</a>.
+  It&#8217;s how you change the steepness of your yellow brick road, i.e., how you make the goal easier or harder.
+  </p>
+  <p>
+  The reason one field &mdash; goal date, goal value, or rate &mdash; is grayed out is that specifying two implies the third.
+  Specifying an amount and a date implies a necessary rate to get there in time.
+  Likewise rate & date imply amount, and amount & rate imply date.
+  It&#8217;s math, yo.
+  We only let you give two at a time and Beeminder figures out the third for you to make sure your goal is self-consistent.
+  You choose which one Beeminder infers by exing/graying it out.
+  </p>
+  <p>
+  It&#8217;s especially handy if you&#8217;re not sure what you want to commit to.
+  You can experiment, for example, like this:
+  &#8220;If I lose a pound a week till Christmas I&#8217;ll weigh&#8230; 160 pounds?
+  What if I want to weigh 140 pounds by Christmas? Two pounds per week?
+  That&#8217;s too much, but how long till I hit 140 at -1.5 per week?
+  March 15. Ok, what if I just go for 140 by <em>next</em> Christmas?&#8221;
+  Etc.
+  </p>
+
+
+  <h2 class="qst" id="qexm">
+  <a href="#qexm">Q:</a>
+  What are people beeminding?
+  </h2>
+  <p>
+  Find a list of sample goals on the
+  <a href="https://www.beeminder.com/overview">overview page</a>, and some real life examples in our <a href="https://www.beeminder.com/featured">featured gallery</a>.
+  Also check out the
+  <a href="http://forum.beeminder.com" title="It's a Discourse.org forum and is super nice if we do say so ourselves (actually the niceness is all due to the Discourse.org folks)">Beeminder Forum</a> (especially the
+  <a href="http://forum.beeminder.com/c/life">Life category</a> of the forum).
+  </p>
+
+
+  <h2 class="qst" id="qttm">
+  <a href="#qttm">Q:</a>
+  How do I automatically mind my time with 
+  <a href="http://doc.beeminder.com/tagtime" title="A placeholder page with pointers to different implementations of TagTime">TagTime</a>?
+  </h2>
+  <p>
+  <a href="http://messymatters.com/tagtime" title="Stochastic time tracking for space cadets">TagTime</a>
+  is really &uuml;bernerds-only for now but the idea is you can randomly sample yourself to see where your time is going &mdash; a box pops up at random times asking what you&#8217;re doing Right Now and you gradually build up a statistically significant picture of where your time goes.
+  (For many things
+  <a href="http://rescuetime.com" title="We love these guys">RescueTime</a>
+  works beautifully and Beeminder has a nice normal-person-friendly
+  <a href="http://beeminder.com/rescuetime">RescueTime integration</a>.
+  You should definitely set up RescueTime before messing with Tagtime!)
+  But for the doubly nerdy you can set up TagTime to automatically update a Beeminder graph by following all the instructions in the 
+  <a href="https://github.com/tagtime/TagTime" title="TagTime on GitHub">README on GitHub</a>.
+  See also
+  <a href="http://mind.tagti.me" title="Our esteemed cofounder, dreeves, made this for edge skaters">TagTime Minder</a>.
+  </p>
+
+
+  <h2 class="qst" id="qkyoom">
+  <a href="#qkyoom">Q:</a>
+  What does &#8216;auto-summing&#8217; mean?
+  </h2>
+  <p>
+  Datapoints on these graphs are automatically summed and it&#8217;s the cumulative total that&#8217;s plotted.
+  If today is the 28th and you enter 28 2 and later 28 3, that&#8217;s the same as entering 28 5 one time.
+  Do More goals and Do Less goals are auto-summing.
+  (You can also read about
+  <a href="http://blog.beeminder.com/glossary/#autosum" title="Direct link to the 'auto-summing' entry in the Beeminder glossary">auto-summing</a>
+  in our
+  <a href="#qjar" title="Jump to the FAQ item about the glossary">glossary</a>.)
+  </p>
+
+
+  <h2 class="qst" id="qcut">
+  <a href="#qcut">Q:</a>
+  Any shortcuts for entering data?
+  </h2>
+  <p>
+  Normally you enter the day of the month followed by the value for that day.
+  If you find it annoying to remember what day of the month it is, you can use a caret to mean &#8220;today&#8221; and a double-caret for &#8220;yesterday&#8221; (any number of carets work, in fact):
+  <pre>
+  ^^ 200
+   ^ 199 "lost a pound since yesterday!"
+  </pre>
+  Note that you can enter as many datapoints at a time as you like, one per line.
+  (Also, spacing doesn&#8217;t matter. But the quotation marks do.)
+  </p><p>
+  There are also a couple shortcuts for entering the values.
+  If you&#8217;re recording amounts of time you can enter, for example, 1:30 and it will be translated as 1.5.
+  Similarly for amounts of time as H:M:S.
+  And if you&#8217;re British you can enter a weight as, for example, 10st5 and it will be recorded as 145.
+  If you&#8217;re not British then you now think Brits are even more bizarre than you thought previously!
+  </p><p>
+  All of these shortcuts &mdash; carets, colons, and stones &mdash; are just that:
+  shortcuts for entering data.
+  Beeminder receives your datapoint as if you had entered the equivalent
+  <em>day-of-month</em> <em>number</em> version.
+  </p>
+
+
+  <h2 class="qst" id="qdat">
+  <a href="#qdat">Q:</a>
+  What if just the day of the month could be ambiguous? Can I specify the whole date, like “2014 06 28” instead of just “28”?
+  </h2>
+  <p>
+  You can but the format we support is in flux right now so we&#8217;d rather you stick to just entering the day of the month, as in the initial example datapoint.
+  Beeminder intelligently disambiguates, almost always correctly guessing the year and month you must have meant.
+  <!-- In fact, we challenge you to break it! -->
+  (If you're importing data, or have more than, say, a week's worth of data to add, see the next question about importing data.)
+  </p>
+
+
+<h2 class="qst" id="qimp">
+<a href="#qimp">Q:</a>
+Can I export my data? How about importing existing data?
+</h2>
+<p>
+Yes and yes. 
+(Well, you can only import data to manual entry goals.)
+This is a big deal to us and has been available from day one.
+Go to the Data tab for your goal and look for the Export section toward the very bottom to export your data as CSV or TSV.
+We even offer <em>streaming</em> export so every datapoint that Beeminder gets it will immediately make a callback to a URL of your choosing (set it in advanced settings) so you can keep a realtime mirror of your data.
+You can also get your data as JSON via
+<a href="http:/beeminder.com/api" title="We have an API! Code things!">our API</a>.
+</p><p>
+You can paste as much data as you like into the Advanced Entry form next to your graph (see the Import Data section in the Data tab below your graph for details).
+</p>
+
+
+  <h2 class="qst" id="qsec">
+  <a href="#qsec">Q:</a>
+  What does consecutive days of data have to do with the width of the road?
+  </h2>
+  <p>
+  This is in flux but here&#8217;s the current answer:
+  You need to have consecutive days of data for the road width algorithm to be as lenient as possible.
+  Road width is how we account for random fluctuations while still keeping you on track to your ultimate goal.
+  See our blog post for more details on this:
+  <a href="http://blog.beeminder.com/roadwidth" title="'The Magical Widening Yellow Brick Road'">blog.beeminder.com/roadwidth</a>.
+  </p>
+
+
+  <h2 class="qst" id="qedt">
+  <a href="#qedt">Q:</a>
+  Can I edit past datapoints?
+  </h2>
+  <p>
+  Yes, click on the list icon to the upper-right of your graph.
+  (It&#8217;s also available as the Data tab in your goal settings.)
+  </p>
+
+
+  <h2 class="qst" id="qodo">
+  <a href="#qodo">Q:</a>
+  What if my odometer (or &#8220;odometer&#8221;) gets reset?
+  </h2>
+  <p>
+  Ok, this is a rarely asked question, but it comes up, and Beeminder has a clever solution!
+  (Note that this is only for Odometer goals.)
+  Just enter a datapoint with a value of zero and Beeminder will take that to mean an accidental odometer reset and continue tracking your cumulative total despite the drop in your reported values.
+  </p><p>
+  This is also handy if you&#8217;re beeminding the number of pages you read.
+  Just report your current page number and, when you reach the end of one book, report a 0 before you start reporting your current page number in the next book.
+  That way Beeminder keeps tracking your total pages without you needing to do any mental arithmetic.
+  </p>
+
+
+  <h2 class="qst" id="qnft">
+  <a href="#qnft">Q:</a>
+  What about non-fitness-related goals?
+  </h2>
+  <p>
+  If you can quantify it, you can beemind it!
+  </p>
+
+
+  <h2 class="qst" id="qfwl">
+  <a href="#qfwl">Q:</a>
+  How fast can I lose weight?
+  </h2>
+  <p>
+  The maximum healthy rate we recommend &mdash; and this is far from easy &mdash; is one percent of your bodyweight per week.
+  We recommend starting with a more modest 0.33% per week.
+  That corresponds, for example, to half a pound per week if you weigh 150 pounds, or a deficit of 250 calories per day.
+  Since you want to target a percentage of your current weight, that means as you lose weight you want the steepness of your yellow brick road to decrease.
+  </p>
+
+
+<h2 class="qst" id="qflx">
+<a href="#qflx">Q:</a>
+What if I derail due to natural fluctuation in my weight?
+</h2>
+<p>
+When you create a weight loss goal we ask you for the most your weight can 
+fluctuate in a day and start you with that much leeway.
+From then on it's up to you to maintain as much safety buffer as you need to make sure a natural fluctuation in your weight does derail you.
+</p><p>
+We&#8217;ve done our best to strike the right balance between allowing for natural fluctuation vs making sure that you can&#8217;t deceive yourself that you&#8217;re making progress when you&#8217;re really not.
+It&#8217;s a tricky problem and we&#8217;re eager for more feedback on this but we have enough success stories that we believe that &mdash; if you pay attention to where you are on the yellow brick road every day &mdash; that derailing truly means you were not following the path you set for yourself.
+</p>
+
+  <h2 class="qst" id="qstk">
+  <a href="#qstk">Q:</a>
+  Why should I use Beeminder instead of <a href="http://stickk.com" title="Our esteemed competitor">StickK</a>?
+  </h2>
+  <p>
+  Beeminder is, in our humble opinions, far superior to StickK for graphable goals.
+  And it&#8217;s not just our pretty graphs or our data import/export or bot reminders.
+  More fundamentally it&#8217;s that Beeminder understands that commitment contracts suck.
+  You&#8217;ve probably noticed that you often (ironically) procrastinate on using them, even when you see the clear need.
+  What sucks is the loss of flexibility &mdash; maybe losing weight will be more painful than you think, maybe something will come up at work.
+  So many unknowns.
+  Committing is scary (and rationally so!).
+  </p><p>
+  Beeminder offers the the best of both worlds:
+  <a href="http://blog.beeminder.com/flexbind" title="'Flexible Self-Control'">meaningful commitment with maximal flexibility</a>.
+  Beeminding means committing to
+  <a href="http://blog.beeminder.com/roadwidth" title="'The Magical Widening Yellow Brick Road'">keep your datapoints on your yellow brick road</a>,
+  but the steepness of the road is under your control, with a one-week delay.
+  </p><p>
+  Why a week?
+  <a href="http://en.wikipedia.org/wiki/Akrasia" title="">Akrasia</a>
+  (<a href="http://en.wikipedia.org/wiki/Dynamic_inconsistency" title="Wikipedia's take on Dynamic Inconsistency">dynamic inconsistency</a>,
+  <a href="http://en.wikipedia.org/wiki/Hyperbolic_discounting" title="Wikipedia's take on Hyperbolic Discounting">hyperbolic discounting</a>)
+  means over-weighting immediate consequences, so to beat akrasia you only need to bind yourself for whatever the horizon on &#8220;immediate&#8221; is.
+  Based on a study of grocery-buying habits &mdash; when buying groceries online for delivery tomorrow people buy a lot more ice cream and a lot fewer vegetables than when they&#8217;re ordering for delivery next week &mdash; and raw guesswork (so far), we&#8217;re taking that Akrasia Horizon to be one week.
+  </p>
+  <p>
+  In short: Don&#8217;t dogmatically stickK to your goals, beemind them!
+  </p>
+
+
+  <h2 class="qst" id="qben">
+  <a href="#qben">Q:</a>
+  Can I specify a beneficiary of my commitment contract?
+  </h2>
+  <p>
+  No, collecting the fees is our business model.
+  Of course, that was
+  <a href="http://stickk.com" title="Our esteemed competitor">StickK.com</a>&#8217;s
+  original plan and they concluded that people wouldn&#8217;t go for that so they now let you specify beneficiaries of your contract.
+  We may need to do the same, and we&#8217;re definitely eager to
+  <a href="http://beeminder.com/contact" title="Our contact form, with various ways to reach us, including just emailing support@beeminder.com">hear feedback about that</a>.
+  But our thinking is: <br/>
+  1. The <a href="http://beeminder.com/money" title="Also includes a list of pointers to questions here in the FAQ that are about money">exponential fee schedule</a>
+  makes a big difference.
+  In addition to removing the difficult choice about how much to pledge, it makes it feel more reasonable for Beeminder to be the beneficiary.
+  You&#8217;re starting with a small amount pledged after you&#8217;ve already gotten value out of Beeminder.<br/>
+  2. We think we&#8217;re fundamentally providing more value than StickK because of the pretty graphs and storing your data &mdash; another justification for us being the beneficiary of the contracts.
+  <br/>
+  3. We do have a charity option as part of our most expensive <a href="https://www.beeminder.com/premium" title="The plans are Infinibee, Bee Plus, and Beemium">premium plan</a>.
+  </p><p>
+  We now have many thousands of goals with money pledged and it seems to be universally true that whenever someone actually pays a pledge, they got at least that much value out of Beeminder up until that point.
+  If you have a counterexample,
+  <a href="contact" title="Our contact form, with various ways to reach us, including just emailing support@beeminder.com">we want to hear about it</a>!
+  </p>
+
+
+  <h2 class="qst" id="qcoi">
+  <a href="#qcoi">Q:</a>
+  You make money from people failing at their goals?
+  </h2>
+  <p>
+  Yes, but we make you fail <i>less</i>!
+  Actually we don&#8217;t even think that&#8217;s a fair way to put it, despite how
+  <a href="http://blog.beeminder.com/perverse" title="Beeminder blog post about our seemingly perverse incentives and why it's not like that baby we swear it">perverse our incentives seem</a>.
+  We force you to toe the line at least for a while so that when/if you do fall off your yellow brick road then the motivation it provided up until that point still seems worth it.
+  Everything we&#8217;ve worked on in building Beeminder has been with the objective of making people succeed and we&#8217;d have to be very myopic for it to be otherwise.
+  </p><p>
+  It&#8217;s very important to us that no one ever derail on a technicality.
+  We want to make money by making you more awesome, and we&#8217;re convinced that&#8217;s what&#8217;s happening.
+  But don&#8217;t take our word for it. Try it and see.
+  <a href="http://beeminder.com/money" title="Also includes a list of pointers to questions here in the FAQ that are about money">The first attempt is free.</a>
+  </p>
+
+  <h2 class="qst" id="qemb">
+  <a href="#qemb">Q:</a>
+  What if I want to beemind something embarrassing?
+  </h2>
+  <p>
+  Either name your goal cryptically/euphemistically or check the box to make it secret/private in your goal settings.
+  We don&#8217;t encourage the secrecy option because
+  (1) public accountability adds motivation,
+  (2) it&#8217;s nice to be able to show friends and family your progress by pointing them to your URL, and
+  (3) realistically, no one is going to stumble upon your goal unless you give the URL anyway.
+  </p>
+
+
+  <h2 class="qst" id="qmon">
+  <a href="#qmon">Q:</a>
+  Can I just pay a monthly fee instead of this commitment contract craziness?
+  </h2>
+  <p>
+  Sort of! Check out
+  <a href="http://beeminder.com/premium" title="We call our premium plans 'Infinibee', 'Bee Plus', and 'Beemium'">beeminder.com/premium</a>.
+  The Beemium plan may be for you, but, as you&#8217;ll see, commitment contracts are pretty fundamental to Beeminder even for premium users.
+  </p>
+
+
+<h2 class="qst" id="qpal">
+<a href="#qpal">Q:</a>
+Can I use PayPal instead of a credit card?
+</h2>
+<p>
+Yes, as of 2017 you finally can!
+</p>
+
+
+  <h2 class="qst" id="qchg">
+  <a href="#qchg">Q:</a>
+  I entered in my credit card info and now there&#8217;s a $1 charge on my account! What&#8217;s up with that?
+  </h2>
+  <p>
+  Stay calm and carry on beeminding!
+  You are not getting charged a dollar.
+  The $1 is an authorization request sent by our credit card processor to your bank when we store a credit card for use later.
+  If it does show up as a charge it will be automatically reversed.
+  <a href="https://support.stripe.com/questions/why-does-my-customer-see-a-1-charge-when-their-payment-failed" title="This is a similar FAQ item from our credit card processor, Stripe.com">Details here.</a>
+  </p>
+
+
+  <h2 class="qst" id="qdcl">
+  <a href="#qdcl">Q:</a>
+  What happens if my credit card is declined?
+  </h2>
+  <p>
+  If a charge is declined we send you an email to alert you and throw a flag on your account that limits the functionality.
+  We still accept new data to goals and send out reminders, etc, but the graphs are hidden in the main gallery and you can&#8217;t create new goals.
+  We try the charge again in 24 hours and then again when you update your credit card info.
+  Once a charge succeeds the flag is lifted from your account.
+  </p>
+  <p>
+  (This is slightly embarrassing but for the sake of googlability/greppability, we&#8217;ll also mention that we call this the &#8220;deadbeat flag&#8221;.
+  But it&#8217;s not like that, baby, we swear it!
+  We know credit cards fail for a million reasons.)
+  </p>
+
+
+  <h2 class="qst" id="qwlk">
+  <a href="#qwlk">Q:</a>
+  What happens if I decide to walk away (while still on my yellow brick road)?
+  Do I still have to pay the $5 or whatever commitment I made?
+  </h2>
+  <p>
+  You can always walk away for free, with
+  <a href="http://blog.beeminder.com/flexbind" title="'Flexible Self-Control'">one week notice</a>.
+  Either change the end date of your goal to be one week from now, or just hit Archive.
+  </p>
+
+
+  <h2 class="qst" id="qany">
+  <a href="#qany">Q:</a>
+  Can I pledge any amount I want?
+  </h2>
+  <p>
+  Not quite.
+  There&#8217;s a specific exponential pledge schedule:
+  <h3><center>$5, $10, $30, $90, $270, $810, $2430, &#8230;</center></h3>
+  <br/>
+  Though not required, we recommend you follow that exponential schedule so that you can quickly find the amount of money that motivates you to reach your goal.
+  In any case, you do always have to pledge one of the above amounts.
+  See our blog for more on moving up and down the pledge schedule:
+  <a href="http://blog.beeminder.com/shortcircuit" title="'Pledge Short-Circuiting'">blog.beeminder.com/shortcircuit</a>.
+  </p>
+
+
+  <h2 class="qst" id="qdub">
+  <a href="#qdub">Q:</a>
+  Why not just double the amount pledged each time?
+  </h2>
+  <p>
+  The idea is that you want to very quickly reach an amount that motivates you to take your yellow brick road seriously.
+  At first we thought we&#8217;d just double the amount each time but then realized that that means that by the time you&#8217;ve found your Motivation Point, you&#8217;ve actually wasted approximately that same amount in previously paid fees.
+  That sucks since by definition the Motivation Point is a scary amount that you definitely don&#8217;t want to lose.
+  Yet by the time that amount is motivating you, you&#8217;ve accumulated that much in losses!
+  So we wanted it to increase more steeply.
+  With the above schedule you&#8217;ll never waste more than half of the amount that eventually motivates you to stay on track.
+  </p>
+
+
+  <h2 class="qst" id="qvar">
+  <a href="#qvar">Q:</a>
+  What is the &#8220;90% Variance&#8221; in the goal stats?
+  </h2>
+  <p>
+  Think of this as how wide the Yellow Brick Road should be so that
+  if your true values were all right on the centerline, 90% of your actual
+  values (with random fluctuations) would be on the road.
+  Technically: This is the 90% quantile of the
+  rate-adjusted daily absolute variations in your data.
+  (E.g., if the delta between two consecutive days is equal to the
+  delta of the road itself, that&#8217;s a rate-adjusted delta of 0.
+  And, yes, &#8220;90% variance&#8221; isn&#8217;t a thing.
+  We mean variance as in how much your values vary, relative to the road,
+  day-to-day, in the 90% worst case.)
+  </p>
+
+
+  <h2 class="qst" id="qhon">
+  <a href="#qhon">Q:</a>
+  What makes Beeminder users so honest?
+  </h2>
+  <p>
+  Self-selection!
+  If you were the type who would falsify your data to weasel out of paying what you pledged on your yellow brick road then you would&#8217;ve rolled your eyes and walked away several paragraphs ago.
+  See also:
+  <a href="http://blog.beeminder.com/cheating" title="Longer list of reasons why Beeminder users don't cheat and how to keep from falling into that trap">Combatting Cheating</a>.
+  </p>
+
+
+  <h2 class="qst" id="qjar">
+  <a href="#qjar">Q:</a>
+  Do you have a glossary for all this jargon?
+  </h2>
+  <p>
+  Voila! <a href="http://blog.beeminder.com/glossary" title="Definitions for all the crazy word we made up">blog.beeminder.com/glossary</a>
+  </p>
+
+
+<h2 class="qst" id="qra">
+<a href="#qra">Q:</a>
+I have what is apparently a Rarely Asked Question. Where can I ask it?
+</h2>
+<p>
+So many places!
+Start with 
+<a href="http://help.beeminder.com" title="Collection of articles and documentation for Beeminder">help.beeminder.com</a>.
+Then try the
+<a href="http://forum.beeminder.com" title="Uses the Discourse.org forum software">Beeminder Forum</a>,
+especially the
+<a href="http://forum.beeminder.com/c/newbee" title="Most discussion happens in the Akrasia category but the Newbee category is a good place to start">Newbee category</a>.
+We also respond to comments on the
+<a href="http://blog.beeminder.com" title="Lots of behavioral science and rationality techniques discussed on our blog">Beeminder blog</a> (you can often find posts related to your question by simply googling some keywords plus &#8220;beeminder&#8221;).
+If your question is super concise, try
+<a href="http://twitter.com/bmndr" title="Yes, our Twitter name is the consonantal subset of 'beeminder'">@bmndr</a> on Twitter.
+If you don&#8217;t want to ask publicly, definitely feel free to email support@beeminder.com or even founders@beeminder.com.
+</p><p>
+For completeness, or in case listing them here is self-fulfilling, here are other places to find Beeminder on the internet even though many of these don&#8217;t see much activity currently:
+<a href="http://trello.com/beeminder" title="We still use Trello a lot but mostly our personal Trello boards now">Trello</a>,
+<a href="http://github.com/beeminder" title="You can use GitHub Issues to ask things">GitHub</a>,
+<a href="http://reddit.com/r/beeminder" title="Would be great to see more activity here">Subreddit</a>,
+<a href="https://plus.google.com/118275811754025086770/posts" title="We've kind of given up on Google+">Google+ profile</a>,
+<a href="https://plus.google.com/communities/118226695073742284301" title="This is definitely overshadowed by our Discourse forum and we really don't recommend this">Google+ community</a>,
+<a href="http://facebook.com/Beeminder" title="Our Facebook page is not that cool. You know what's cool? A billion dollars. And also our Discourse forum.">Facebook</a>,
+<a href="http://www.linkedin.com/company/beeminder" title="Pretty much nothing happens here that we don't also tweet">Linkedin</a>,
+<a href="http://angel.co/beeminder" title="Out of date and inactive">AngelList</a>,
+<a href="http://app.net/beeminder" title="Mirrors Twitter, sort of, but barely used">App.net</a>,
+<a href="http://pinterest.com/beeminder" title="Couple half-hearted submissions">Pinterest</a>, and
+<a href="http://beeminder.tumblr.com" title="Couple half-hearted submissions">Tumblr</a>.
+</p>
+
+<h2 class="qst" id="qrd">
+<a href="#qrd">Q:</a>
+So much to read! Where should I start?
+</h2>
+<p>
+Again, start with
+<a href="http://help.beeminder.com" title="Collection of articles and documentation for Beeminder">help.beeminder.com</a>.
+If you want to dive deeper, we&#8217;ve tagged our very favorite (dare we say classic) blog posts
+&#8220;<a href="http://blog.beeminder.com/tag/best-of/" title="Can you tell we're super proud of our blog?">best-of</a>&#8221;.
+If you&#8217;re <i>really</i> excited and want to read our whole blog (some people beemind that) we&#8217;ve tagged everything that&#8217;s even possibly still relevant with the
+&#8220;<a href="http://blog.beeminder.com/tag/bee-all/" title="All the news that's still fit to print?">bee-all</a>&#8221; tag.
+Or check out other tags in the sidebar of the blog like &#8220;rationality&#8221; or &#8220;science&#8221;.
+</p>
+
+  </ul>
+  </div>
+  <div class="clearing"></div>
+  </div>
+</div>
+
+          <div class="clear"></div>
+        </div>
+      </div>
+
+
+  <div id="footer_section">
+    <div class="footer">
+  <div class="help">
+      <a href="http://help.beeminder.com/">HELP DOCS</a>
+  </div>
+  <div class="links row">
+    <div class="link">
+      <a href="https://www.beeminder.com/overview">About</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/aboutus">team</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/contact">contact</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/jobs">jobs</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/faq">faq</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/money">pricing</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/api">api</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/changelog">changelog</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/terms">terms</a>
+    </div>
+    <div class="link">
+      <a href="https://www.beeminder.com/donate">donate</a>
+    </div>
+  </div>
+  <div class="app-badges">
+    <a class="android" href='https://play.google.com/store/apps/details?id=com.beeminder.beeminder'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+    <a class="ios" href="https://itunes.apple.com/us/app/beeminder/id551869729"><img src="/assets/AppStore-25178aeef6eb6b83b96f5f2d004eda3bffbb37122de64afbaef7107b384a4132.svg" alt="Appstore" /></a>  </div>
+  <div class="social">
+    <a href="https://twitter.com/bmndr">
+      <img height="32px" width="32px" src="/assets/logo_twitter_square_32@2-5673ab86695ada32b20059c64d8665471ab2f3146c1f0725e0be2f1c0a49de01.png" alt="Logo twitter square 32@2" />
+    </a>
+    <a href="https://facebook.com/beeminder">
+      <img height="32px" width="32px" src="/assets/logo_facebook_square_32@2-2aa6cb00f83b9d60bfb26570827146746bc1e7872d20785a1db9017d9ed13f42.png" alt="Logo facebook square 32@2" />
+    </a>
+    <a href="https://www.instagram.com/beeminder/">
+      <img height="32px" width="32px" src="/assets/logo_instagram_64px-f8e3cfddebe72340990b08c596a6056147a4151a7953d185236c1556d5389822.png" alt="Logo instagram 64px" />
+    </a>
+    <a href="https://www.linkedin.com/company/beeminder?trk=recent-update_see-all#updates">
+      <img height="32px" src="/assets/logo_linkedin_34px-f13fc8de8d18741fcab086f7d6c40952e8d8f95073031d80046507250b50eeee.png" alt="Logo linkedin 34px" />
+    </a>
+
+  </div>
+  <div class="copyright">
+    &copy; Beeminder 2011&ndash;2020
+<!--
+Danny and Bee and Andy argue about automatically setting the copyright year to 2020:
+
+D: boo to automatically filling in copyright! that's how we prove we're still at the wheel :)
+A: it only proves that if it's publicly visible how the copyright is being created
+A: like if beeminder were open source. otherwise no one can tell the difference
+D: actually i think when the copyright changes at a random time in january, that's a good signal that you're at the wheel...
+D: if it changes at the stroke of midnight then obviously you cheated and could all be dead or on a beach somewhere
+B: but everyone cheats
+B: so it can only be an indicator in our absence
+D: boo to cheaters
+bystander: it's the best way to score GitHub points too: open `2017` -> `2018` pull requests
+A: but who is going around checking exactly when copyrights change??
+A: bots, that's who
+A: okay nevermind I'm on board with this as a precaution to confuse future overlords
+B: anyhow, it also makes us look stupid. like we don't know how to use string format, and causes people to write us emails like "Umm. so your copyright is out of date. I don't know what language you guys use, but in php it's really easy you.."
+A: maybe that's a positive, identify users who can write code
+A: "oh, thanks! here's another nerd sniping problem. can you rewrite beebrain?"
+D: clearly the optimal solution is to set it to `year(now-random(5,10)*86400)` :)
+D: (simulates a fairly attentive human at the wheel updating the copyright 5-10 days after new years)
+D: i can't tell what fraction serious i am about doing it manually. i guess if, counterfactually, we ever weren't at the wheel it would be lies and that feels icky
+D: like there's something inherently dishonest about literally being like "copyright... uh, whatever year it is when you're reading this!"
+B: ok, so part of the checklist for shuttering beeminder is "update footer copyright date"
+B: you clearly didn't understand my argument for why we're doing this, because you seem to remain unconvinced. go read my email again and then i'm putting you in timeout so you can think about what you've done.
+D: [pastes this in the html source so we can show it to people in 2021 who see "2020" and think we don't know how to insert a dynamic date]
+PS: Bee's argument in the email with the user who called us out:
+I think Danny had some convoluted reasoning for why we shouldn't just make that programmatic, like "it's a signal that the site is still active", but I think that's kind of incorrect -- anyone writing a website can make the copyright date be programmatically generated, so it doesn't actually serve as any indicator of currency, it can only serve as a anti-activity signal by going out of date.
+-->
+  </div>
+</div> 
+
+  </div>
+    
+
+
+<div class="modal fade" id="hook-check" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Goals review</h2>
+        <button type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-hidden="true">&times;</button>
+
+      </div>
+      <div class="modal-body">
+        <p>
+           Your payment method will be used for all of your active goals once you <a class="dark" title="Or click the blue New Goal button in your dashboard or gallery" href="https://www.beeminder.com/new">create some</a>!
+                  </p>
+
+        <div class="modal-buttons">
+          <p style="padding-bottom: 15px;"><em>You can archive a goal any time using the Archive button on the Stop/Pause tab</em><p>
+          <button type="button"
+                  class="bbtn"
+                  data-dismiss="modal">Sounds good</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    <script type="text/javascript">
+      $(document).ready(function() {
+        mixpanel.identify("happybee9494");
+        mixpanel.name_tag("happybee9494");
+        mixpanel.people.set({"username": "happybee9494"})
+      });
+    </script>
+
+  <script> // facebook js sdk
+    window.fbAsyncInit = function(){FB.init({appId:'362719670519679', xfbml:true, version:'v2.0'})}
+    ;(function(d,s,id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'))
+  </script>
+
+<script> // facebook js sdk
+  window.fbAsyncInit = function(){FB.init({appId:'208127512622250', xfbml:true, version:'v2.0'})}
+  ;(function(d,s,id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'))
+</script>
+
+ <!-- end /useronboard script block -->
+
+<!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o0ga1');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+
+</body>
+</html>

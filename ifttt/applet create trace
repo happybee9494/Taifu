@@ -1,0 +1,448 @@
+/usr/bin/python3.8 /home/kulani/Projects/ImpTATester/Taifu/Phase1AppletGeneration/TestCaseGeneration_EVAL.py
+trigger URL:
+########### testingggggggggggg 1
+https://buffalo-android.ifttt.com/grizzly/me/account
+<Response [204]>
+########### select trigger service: 
+trigger URL:
+{'data': {'channel': {'triggers': [{'description': 'This Trigger fires every '
+                                                   'time you are tagged you in '
+                                                   'a new photo. NOTE: '
+                                                   'Facebook privacy settings '
+                                                   'may block IFTTT’s access '
+                                                   'to some photos you are '
+                                                   'tagged in.',
+                                    'full_module_name': 'facebook.you_are_tagged_in_a_photo',
+                                    'id': '50462358',
+                                    'name': 'You are tagged in a photo',
+                                    'trigger_fields': []},
+                                   {'description': 'A Trigger that monitors '
+                                                   'changes in your Facebook '
+                                                   'profile information. It '
+                                                   'works with these Facebook '
+                                                   'profile fields: Name, '
+                                                   'Profile picture, Location, '
+                                                   'Website, and Bio.',
+                                    'full_module_name': 'facebook.your_profile_changes_fb',
+                                    'id': '357548221',
+                                    'name': 'Your profile changes',
+                                    'trigger_fields': [{'field_ui_type': 'collection_select',
+                                                        'helper_text': None,
+                                                        'hideable': True,
+                                                        'label': 'Profile '
+                                                                 'field to '
+                                                                 'watch',
+                                                        'name': 'field_to_watch',
+                                                        'required': True,
+                                                        'shareable': True}]},
+                                   {'description': 'This Trigger fires every '
+                                                   'time you create a new '
+                                                   'plain text status message '
+                                                   'on Facebook with a '
+                                                   'specific hashtag.',
+                                    'full_module_name': 'facebook.new_hashtag_message_by_you',
+                                    'id': '575730117',
+                                    'name': 'New status message by you with '
+                                            'hashtag',
+                                    'trigger_fields': [{'field_ui_type': 'text_field',
+                                                        'helper_text': 'e.g. '
+                                                                       '#hashtag ',
+                                                        'hideable': True,
+                                                        'label': 'Hashtag',
+                                                        'name': 'hashtag',
+                                                        'required': True,
+                                                        'shareable': True}]},
+                                   {'description': 'This Trigger fires every '
+                                                   'time you post a new public '
+                                                   'photo on Facebook at a '
+                                                   'location you specify. ',
+                                    'full_module_name': 'facebook.new_photo_from_you_at_location_fb',
+                                    'id': '728397209',
+                                    'name': 'New photo post by you in area',
+                                    'trigger_fields': [{'field_ui_type': 'location_radius',
+                                                        'helper_text': '',
+                                                        'hideable': True,
+                                                        'label': 'Locate an '
+                                                                 'area',
+                                                        'name': 'location',
+                                                        'required': True,
+                                                        'shareable': True}]},
+                                   {'description': 'This Trigger fires every '
+                                                   'time you post on Facebook '
+                                                   'at a location you '
+                                                   'specify. ',
+                                    'full_module_name': 'facebook.new_post_by_you_at_location_fb',
+                                    'id': '879497180',
+                                    'name': 'Any new post by you in area',
+                                    'trigger_fields': [{'field_ui_type': 'location_radius',
+                                                        'helper_text': '',
+                                                        'hideable': True,
+                                                        'label': 'Locate an '
+                                                                 'area',
+                                                        'name': 'location',
+                                                        'required': True,
+                                                        'shareable': True}]},
+                                   {'description': 'This Trigger fires every '
+                                                   'time you post a new photo '
+                                                   'on Facebook.',
+                                    'full_module_name': 'facebook.new_photo_from_you',
+                                    'id': '1020252108',
+                                    'name': 'New photo post by you',
+                                    'trigger_fields': []},
+                                   {'description': 'This Trigger fires every '
+                                                   'time you create a new link '
+                                                   'post on Facebook.',
+                                    'full_module_name': 'facebook.new_link_from_you',
+                                    'id': '1436553201',
+                                    'name': 'New link post by you',
+                                    'trigger_fields': []},
+                                   {'description': 'This Trigger fires every '
+                                                   'time you create a new '
+                                                   'plain text status message '
+                                                   'on Facebook.',
+                                    'full_module_name': 'facebook.new_status_message_by_you',
+                                    'id': '1731453387',
+                                    'name': 'New status message by you',
+                                    'trigger_fields': []},
+                                   {'description': 'This Trigger fires every '
+                                                   'time you post a new photo '
+                                                   'on Facebook with a '
+                                                   'specific hashtag.',
+                                    'full_module_name': 'facebook.new_hashtag_photo_from_you',
+                                    'id': '1932290649',
+                                    'name': 'New photo post by you with '
+                                            'hashtag',
+                                    'trigger_fields': [{'field_ui_type': 'text_field',
+                                                        'helper_text': 'e.g. '
+                                                                       '#hashtag ',
+                                                        'hideable': True,
+                                                        'label': 'Hashtag',
+                                                        'name': 'hashtag',
+                                                        'required': True,
+                                                        'shareable': True}]},
+                                   {'description': 'This Trigger fires every '
+                                                   'time you create a new link '
+                                                   'post on Facebook with a '
+                                                   'specific hashtag.',
+                                    'full_module_name': 'facebook.new_hashtag_link_from_you',
+                                    'id': '2078130733',
+                                    'name': 'New link post by you with hashtag',
+                                    'trigger_fields': [{'field_ui_type': 'text_field',
+                                                        'helper_text': 'e.g. '
+                                                                       '#hashtag ',
+                                                        'hideable': True,
+                                                        'label': 'Hashtag',
+                                                        'name': 'hashtag',
+                                                        'required': True,
+                                                        'shareable': True}]}]}}}
+https://ifttt.com/api/v3/graph
+<Response [200]>
+########### select trigger: 
+{'data': {'trigger': {'trigger_fields': [{'name': 'field_to_watch',
+                                          'options': [{'group': None,
+                                                       'label': 'All',
+                                                       'value': 'all'},
+                                                      {'group': None,
+                                                       'label': 'Full name',
+                                                       'value': 'full_name'},
+                                                      {'group': None,
+                                                       'label': 'Profile '
+                                                                'picture',
+                                                       'value': 'profile_picture'},
+                                                      {'group': None,
+                                                       'label': 'Location',
+                                                       'value': 'location'},
+                                                      {'group': None,
+                                                       'label': 'Website',
+                                                       'value': 'website'},
+                                                      {'group': None,
+                                                       'label': 'Bio',
+                                                       'value': 'bio'}]}]}}}
+https://ifttt.com/api/v3/graph
+<Response [200]>
+########### select action service: 
+{'data': {'channel': {'actions': [{'action_fields': [{'field_ui_type': 'text_field',
+                                                      'helper_text': 'e.g. Can '
+                                                                     'You Feel '
+                                                                     'The Love '
+                                                                     'Tonight',
+                                                      'hideable': True,
+                                                      'label': 'Enter a song '
+                                                               'title',
+                                                      'name': 'query',
+                                                      'required': False,
+                                                      'shareable': True}],
+                                   'description': 'This Action will play a '
+                                                  'song you specify on your '
+                                                  'Android device. The music '
+                                                  'played depends on your '
+                                                  'device and setup.',
+                                   'full_module_name': 'android_device.play_song',
+                                   'id': '102524243',
+                                   'name': 'Play a specific song'},
+                                  {'action_fields': [{'field_ui_type': 'collection_select',
+                                                      'helper_text': '',
+                                                      'hideable': True,
+                                                      'label': 'Vibrate',
+                                                      'name': 'vibrate',
+                                                      'required': True,
+                                                      'shareable': True}],
+                                   'description': 'This action will mute your '
+                                                  "Android device's ringtone. "
+                                                  'If your device is already '
+                                                  'muted, it will remain '
+                                                  'muted.',
+                                   'full_module_name': 'android_device.mute_device',
+                                   'id': '247854737',
+                                   'name': 'Mute ringtone'},
+                                  {'action_fields': [{'field_ui_type': 'text_field',
+                                                      'helper_text': '',
+                                                      'hideable': True,
+                                                      'label': 'Image URL',
+                                                      'name': 'photo_url',
+                                                      'required': True,
+                                                      'shareable': True}],
+                                   'description': 'This Action will update the '
+                                                  'wallpaper on your Android '
+                                                  'device from the image URL '
+                                                  'you specify.',
+                                   'full_module_name': 'android_device.set_wallpaper',
+                                   'id': '454560676',
+                                   'name': 'Update device wallpaper'},
+                                  {'action_fields': [{'field_ui_type': 'collection_select',
+                                                      'helper_text': '',
+                                                      'hideable': True,
+                                                      'label': 'Volume',
+                                                      'name': 'volume',
+                                                      'required': True,
+                                                      'shareable': True}],
+                                   'description': 'This Action will set the '
+                                                  'ringtone volume of your '
+                                                  'Android device.',
+                                   'full_module_name': 'android_device.set_device_volume',
+                                   'id': '455799954',
+                                   'name': 'Set ringtone volume'},
+                                  {'action_fields': [],
+                                   'description': 'This Action will turn on '
+                                                  "your Android device's "
+                                                  'Bluetooth.',
+                                   'full_module_name': 'android_device.bluetooth_on',
+                                   'id': '690616101',
+                                   'name': 'Turn on Bluetooth'},
+                                  {'action_fields': [],
+                                   'description': 'This Action will play music '
+                                                  'on your Android device. The '
+                                                  'music played depends on '
+                                                  'your device and setup.',
+                                   'full_module_name': 'android_device.play_best_song',
+                                   'id': '1320238571',
+                                   'name': 'Play music'},
+                                  {'action_fields': [],
+                                   'description': 'This Action will turn off '
+                                                  "your Android device's "
+                                                  'Bluetooth.',
+                                   'full_module_name': 'android_device.bluetooth_off',
+                                   'id': '1692378328',
+                                   'name': 'Turn off Bluetooth'},
+                                  {'action_fields': [{'field_ui_type': 'collection_select',
+                                                      'helper_text': '',
+                                                      'hideable': True,
+                                                      'label': 'Navigation '
+                                                               'type',
+                                                      'name': 'navigation_method',
+                                                      'required': False,
+                                                      'shareable': True},
+                                                     {'field_ui_type': 'text_field',
+                                                      'helper_text': 'e.g. San '
+                                                                     'Francisco',
+                                                      'hideable': True,
+                                                      'label': 'Enter a '
+                                                               'destination',
+                                                      'name': 'query',
+                                                      'required': False,
+                                                      'shareable': True}],
+                                   'description': 'This Action will launch '
+                                                  'Google Maps Navigation on '
+                                                  'your Android device and '
+                                                  'begin turn-by-turn guidance '
+                                                  'to the destination you '
+                                                  'specify.',
+                                   'full_module_name': 'android_device.start_navigation',
+                                   'id': '1815019504',
+                                   'name': 'Launch Google Maps Navigation'}]}}}
+https://ifttt.com/api/v3/graph
+<Response [200]>
+########### select action: 
+{'data': {'action': {'defaults_for_trigger': '{"volume":""}'},
+          'trigger': {'channel': {'brand_color': '3B579D',
+                                  'lrg_monochrome_image_url': 'https://assets.ifttt.com/images/channels/36996033/icons/monochrome_large.png',
+                                  'name': 'Facebook'},
+                      'ingredients': [{'id': '1174344485',
+                                       'is_hidden': False,
+                                       'name': 'FullName',
+                                       'normalized_name': 'Facebook.yourProfileChangesFb.FullName',
+                                       'value_type': 'string'},
+                                      {'id': '797150248',
+                                       'is_hidden': False,
+                                       'name': 'ProfilePictureUrl',
+                                       'normalized_name': 'Facebook.yourProfileChangesFb.ProfilePictureUrl',
+                                       'value_type': 'string'},
+                                      {'id': '852132573',
+                                       'is_hidden': False,
+                                       'name': 'Location',
+                                       'normalized_name': 'Facebook.yourProfileChangesFb.Location',
+                                       'value_type': 'string'},
+                                      {'id': '6115837',
+                                       'is_hidden': False,
+                                       'name': 'Website',
+                                       'normalized_name': 'Facebook.yourProfileChangesFb.Website',
+                                       'value_type': 'string'},
+                                      {'id': '648402111',
+                                       'is_hidden': False,
+                                       'name': 'Bio',
+                                       'normalized_name': 'Facebook.yourProfileChangesFb.Bio',
+                                       'value_type': 'string'}],
+                      'name': 'Your profile changes'}}}
+https://ifttt.com/api/v3/graph
+<Response [200]>
+########### preview: 
+{'data': {'statementPreview': {'errors': None,
+                               'normalized_applet': {'brand_color': '#3b579d',
+                                                     'can_push_enable': True,
+                                                     'name': 'If Your profile '
+                                                             'changes '
+                                                             'watching: '
+                                                             'profile_picture '
+                                                             'on Wijitha '
+                                                             'Rathna’s '
+                                                             'profile, then '
+                                                             'Set ringtone '
+                                                             'volume to 60%',
+                                                     'service_slug': 'facebook'}}}}
+https://ifttt.com/api/v3/graph
+<Response [200]>
+########### finish: 
+{'data': {'diyAppletCreate': {'errors': None,
+                              'normalized_applet': {'applet_feedback_by_user': None,
+                                                    'archived': False,
+                                                    'author': 'happybee0999',
+                                                    'author_tier': 'pro',
+                                                    'background_images': {'background_image_url_1x': None,
+                                                                          'background_image_url_2x': None},
+                                                    'brand_color': '#3b579d',
+                                                    'by_service_owner': False,
+                                                    'can_push_enable': True,
+                                                    'channels': [{'brand_color': '3B579D',
+                                                                  'call_to_action': None,
+                                                                  'connected': True,
+                                                                  'description_html': '<p>Manage '
+                                                                                      'your '
+                                                                                      'profile, '
+                                                                                      'posting, '
+                                                                                      'photos '
+                                                                                      'and '
+                                                                                      'more '
+                                                                                      'with '
+                                                                                      'Facebook '
+                                                                                      'Applets '
+                                                                                      'that '
+                                                                                      'work '
+                                                                                      'with '
+                                                                                      'the '
+                                                                                      'world&#39;s '
+                                                                                      'largest '
+                                                                                      'social '
+                                                                                      'networking '
+                                                                                      'site.</p>\n',
+                                                                  'id': '36996033',
+                                                                  'is_hidden': None,
+                                                                  'lrg_monochrome_image_url': 'https://assets.ifttt.com/images/channels/36996033/icons/monochrome_large.png',
+                                                                  'module_name': 'facebook',
+                                                                  'monochrome_image_url': 'https://assets.ifttt.com/images/channels/36996033/icons/monochrome_regular.png',
+                                                                  'name': 'Facebook',
+                                                                  'organization': {'tier': 'unknown'},
+                                                                  'requires_user_authentication': True,
+                                                                  'short_name': 'Facebook'},
+                                                                 {'brand_color': '8CC251',
+                                                                  'call_to_action': {'link': 'https://play.google.com/store/apps/details?id=com.ifttt.ifttt&referrer=utm_source%3DIFTTT%26utm_medium%3DService_Page%26utm_term%3DDownload_App%26utm_content%3DButton',
+                                                                                     'text': 'Download'},
+                                                                  'connected': True,
+                                                                  'description_html': '<p>Android '
+                                                                                      'powers '
+                                                                                      'devices '
+                                                                                      'that '
+                                                                                      'are '
+                                                                                      'beautiful '
+                                                                                      'and '
+                                                                                      'available '
+                                                                                      'in '
+                                                                                      'many '
+                                                                                      'shapes '
+                                                                                      'and '
+                                                                                      'sizes. '
+                                                                                      'Unlock '
+                                                                                      'new '
+                                                                                      'functionality '
+                                                                                      'for '
+                                                                                      'each '
+                                                                                      'of '
+                                                                                      'your '
+                                                                                      'devices '
+                                                                                      'with '
+                                                                                      'the '
+                                                                                      'Android '
+                                                                                      'Device '
+                                                                                      'service. '
+                                                                                      'This '
+                                                                                      'service '
+                                                                                      'requires '
+                                                                                      'the '
+                                                                                      'IFTTT '
+                                                                                      'app '
+                                                                                      'for '
+                                                                                      'Android.</p>\n',
+                                                                  'id': '1089090894',
+                                                                  'is_hidden': None,
+                                                                  'lrg_monochrome_image_url': 'https://assets.ifttt.com/images/channels/1089090894/icons/monochrome_large.png',
+                                                                  'module_name': 'android_device',
+                                                                  'monochrome_image_url': 'https://assets.ifttt.com/images/channels/1089090894/icons/monochrome_regular.png',
+                                                                  'name': 'Android '
+                                                                          'Device',
+                                                                  'organization': {'tier': 'unknown'},
+                                                                  'requires_user_authentication': False,
+                                                                  'short_name': 'Android '
+                                                                                'Device'}],
+                                                    'config_type': 'static',
+                                                    'configurations': [],
+                                                    'created_at': '2020-11-19 '
+                                                                  '04:38:58 '
+                                                                  '-0800',
+                                                    'description': '',
+                                                    'id': 'i65ZyBEs',
+                                                    'installs_count': 0,
+                                                    'last_run': None,
+                                                    'monochrome_icon_url': 'https://assets.ifttt.com/images/channels/36996033/icons/monochrome_large.png',
+                                                    'name': 'If Your profile '
+                                                            'changes watching: '
+                                                            'profile_picture '
+                                                            'on Wijitha '
+                                                            'Rathna’s profile, '
+                                                            'then Set ringtone '
+                                                            'volume to 60%',
+                                                    'pro_features': False,
+                                                    'published': False,
+                                                    'push_enabled': False,
+                                                    'run_count': None,
+                                                    'service_name': 'Facebook',
+                                                    'speed': 'Polling Applets '
+                                                             'usually run '
+                                                             'within 5 minutes',
+                                                    'status': 'enabled_for_user',
+                                                    'type': 'applet',
+                                                    'underlying_applet': {'live_applet': {'live_applet_triggers': [{'statement_id': '118910969'}]}}}}}}
+https://ifttt.com/api/v3/graph
+<Response [200]>
+start here
+
+Process finished with exit code 0
+
