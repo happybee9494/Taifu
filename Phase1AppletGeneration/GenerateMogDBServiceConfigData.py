@@ -2,7 +2,7 @@ import xlrd
 from pymongo import MongoClient
 
 # Workbook location
-loc = ('/home/kulani/Projects/ImpTATester/ServiceWebScraping/Phase1AppletGeneration/servicexls/SERVICE_CONFIGURATION details.xls')
+loc = (.../SERVICE_CONFIGURATION details.xls')
 
 # Open Workbook
 wb = xlrd.open_workbook(loc)
