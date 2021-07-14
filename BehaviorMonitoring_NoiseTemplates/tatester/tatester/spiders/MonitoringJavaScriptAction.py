@@ -49,9 +49,9 @@ NAME = 'fitbit'
 LOGIN_URL = 'https://accounts.fitbit.com/login'
 DOMAIN = 'fitbit.com'
 USERNAME_KEY = 'email'
-USERNAME = 'kulanitharaka@gmail.com'
+USERNAME = '******@gmail.com'
 PASSWORD_KEY = 'password'
-PASSWORD = '3me3@UTOWn'
+PASSWORD = '********'
 ########################################################################################################################
 pageHashdict = {}
 urlencounter = {}
@@ -265,8 +265,7 @@ def monitoring(default_start_no, default_end_no,action_services_to_monitor):
             ####################### open login page ##
             if serviceID == 'coqon':  # or serviceID =='google_sheets' :serviceID == 'coqon'or
                 continue
-            # if (serviceID != 'google_docs') or (serviceID !='google_sheets') or serviceID !='google_calender':
-            #     continue
+
             clusterbynamedict, crawledTotalForEachCount = check(serviceID)
             if crawledTotalForEachCount:
                 if (num not in crawledTotalForEachCount.keys()) and len(crawledTotalForEachCount) != (num + 1):
@@ -281,26 +280,6 @@ def monitoring(default_start_no, default_end_no,action_services_to_monitor):
             stop = timeit.default_timer()
             print('Time taken: ', stop - start)
             print(scrappedDetails)
-#             if isConnected:
-#                 print(str(num) + ' run:')
-#                 run_spider(LoginSpider, num, browser)
-#                 if num == default_start_no:
-#                     scrappedDetails[serviceID] = 1
-#                 else:
-#                     scrappedDetails[serviceID] = scrappedDetails[serviceID] + 1
-#             else:
-#                 print('service not connected')
-#
-#         if num == (default_end_no - 1):
-#             stop = timeit.default_timer()
-#             print('Time taken: ', stop - start)
-#             print(scrappedDetails)
-# #################################### Read Database and for each service login and scrape ###############################
 
-# action_services_to_monitor = ['diigo', 'narro', 'pocket', 'airtable', 'google_calendar', 'google_docs', 'google_sheets', 'coqon', 'github', 'particle', 'maker_webhooks', 'fitbit', 'reddit', 'twitter']
-# default_start_no = 1
-# default_end_no = 2
-# temp_list = ['google_docs']
-# action_services_to_monitor = temp_list
 
 
