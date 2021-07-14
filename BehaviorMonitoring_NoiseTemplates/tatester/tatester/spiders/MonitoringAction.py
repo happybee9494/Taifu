@@ -27,9 +27,9 @@ NAME = 'fitbit'
 LOGIN_URL = 'https://accounts.fitbit.com/login'
 DOMAIN = 'fitbit.com'
 USERNAME_KEY = 'email'
-USERNAME = 'kulanitharaka@gmail.com'
+USERNAME = '********@gmail.com'
 PASSWORD_KEY = 'password'
-PASSWORD = '3me3@UTOWn'
+PASSWORD = '********'
 
 pageHashdict = {}
 urlencounter = {}
