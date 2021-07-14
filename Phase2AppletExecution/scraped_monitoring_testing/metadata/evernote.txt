@@ -1,2 +1,0 @@
-de791e98a076527bf49355929fdda9c1 = https://www.evernote.com/client/web?login=true#?an=true&n=81929783-441b-46ec-b071-4895e3d90a36&
-4482a9b6b80c5bf1a49fae02a97aa085 = https://www.evernote.com/client/web?login=true#?an=true&n=6a627bd0-3802-a47e-6798-a253c7457b46&
