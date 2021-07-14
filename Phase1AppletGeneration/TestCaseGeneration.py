@@ -126,7 +126,7 @@ def getValue(cluster_label, field_label):
     if cluster_label == 'day':
         return  'Tuesday'
     if cluster_label == 'email':
-        return  'happybee9494@gmail.com'
+        return  '*****@gmail.com'
 
 def updateDBOrDeleteDuplication(appletcollection,applet_title,applet_id,applet_desc,trigger_service,trigger,trigger_desc,trigger_fields,action_service,action,action_desc,action_fields):
     appletFound = appletcollection.find({'applet_title': applet_title})
