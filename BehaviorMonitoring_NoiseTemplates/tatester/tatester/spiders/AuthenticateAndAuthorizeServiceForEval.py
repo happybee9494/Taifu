@@ -960,7 +960,7 @@ def func_div_input_process(inputs, buttons, page,list,isusernameset ):
 def func_process_google_login(div_input, button, list):
     global browserr
     browser = browserr
-    list = ['happybee9494@gmail.com', 'happyBEE@94qwer']
+    list = ['*******@gmail.com', '*********']
     ##########################################
     updateEvalAuth({"formtype": "googleForm"})
     email_filled = False
@@ -1143,9 +1143,9 @@ def authentication(browser,data_list, service,attempt):
         googlediv = browser.find_element_by_class_name('kHn9Lb')
         if googlediv.text == 'Sign in with Google':
             google_text = True
-            #list = ['happybee9494@gmail.com', 'happyBEE@94qwer']
+            #list = ['********@gmail.com', '*********']
             collection.update({'service_idnetifier': service},
-                              {'$set': {'username': 'happybee9494@gmail.com', 'password': 'happyBEE@94qwer'}})
+                              {'$set': {'username': '*******@gmail.com', 'password': ******'}})
     except NoSuchElementException:
         pass
     ######## ORRRRRRRRRR
@@ -1153,9 +1153,8 @@ def authentication(browser,data_list, service,attempt):
         googledivv = browser.find_element_by_class_name('Y4dIwd')
         if 'Continue to'  in googledivv.text or 'continue to' in googledivv.text or 'Use your Google' in googledivv.text:
             google_text = True
-            #list = ['happybee9494@gmail.com', 'happyBEE@94qwer']
+            #list = ['********@gmail.com', '*******']
             collection.update({'service_idnetifier': service},
-                              {'$set': {'username': 'happybee9494@gmail.com', 'password': 'happyBEE@94qwer'}})
     except NoSuchElementException:
         pass
 
