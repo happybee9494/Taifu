@@ -9,18 +9,11 @@ import timeit
 from threading import Thread
 import time
 ###########################################################################
-#token = '0dfb5edac5e2201a9ece7b3908dcfd04d57522b6' #  #1b004674987164ecf6ed87c30146aa90b4c21024 #0dfb5edac5e2201a9ece7b3908dcfd04d57522b6 #c2436a9ef37d65910c1c05f6d137dbb7d79260d4
-#remember_token=b9c969f8fc4d28c3207ef1b3838c75233e8246c3
 token = 'b9c969f8fc4d28c3207ef1b3838c75233e8246c3'
 header = {'Authorization': 'Token token="' + token + '"'}
 post_header = {'Authorization': 'Token token="' + token + '"', 'Content-Type':'application/json; charset=utf-8'}
 ###########################################################################
-# 1) facebook - New photo post by you with hashtag
-# 2) instagram - Any new photo by you
-# 3) foursquare - New check-in with photo (applets failed before execution of the trigger)
-# 4) android_photos - Any new photo
-# 5) twitter - New tweet by you
-# 6) flickr - Any new public photo
+
 current_trigger_service = 'flickr'
 current_trigger = 'Any new public photo' #'New status message by you'
 applet_folder_name = 'applets_'+current_trigger_service+'_1'
@@ -42,74 +35,7 @@ appletcollection = dbClient.get_collection(applet_folder_name)
 errorcollection = dbClient.get_collection(applet_folder_name+'_errors')
 
 
-###############################################################
-#################################################################
-##################################################################
-# request2 = 'https://buffalo-android.ifttt.com/grizzly/me/account'  # POST
-# request2_body = { "login":"happybee0999"}
-# print('trigger URL:')
-# r = requests.put(request2, data=json.dumps(request2_body), headers=post_header)
-# #js_dict = r.json()
-# #pprint(js_dict)
-# print('########### testingggggggggggg 1')
-# print(request2)
-# print(r)
-########################################################################
-# print('########### select trigger service: ')
-#
-# request2 = 'https://ifttt.com/api/v3/graph'  # POST
-# #request2_body = { "query": "query {\\n  channel(module_name: \"facebook\") {\\n triggers {\\n id \\n name \\n description \\n full_module_name \\n trigger_fields {\\n name \\n   label \\n field_ui_type \\n required \\n helper_text \\n shareable \\n  hideable \\n } \\n } \\n   } \\n  }"}
-# request2_body = {"query":"        query {\n            channel(module_name: \"facebook\") {\n                triggers {\n                    id\nname\ndescription\nfull_module_name\n                    trigger_fields {\n                        name\nlabel\nfield_ui_type\nrequired\nhelper_text\nshareable\nhideable\n                    }\n                }\n            }\n        }"}
-# print('trigger URL:')
-# r = requests.post(request2, data=json.dumps(request2_body), headers=post_header)
-# js_dict = r.json()
-# pprint(js_dict)
-# print(request2)
-# print(r)
-############################################################################
-# print('########### select trigger: ')
-# request3_body = {"query":"        query {\n            trigger(module_name: \"facebook.your_profile_changes_fb\") {\n                trigger_fields {\n                    name\noptions {\n    label\n    value\n    group\n}\n                }\n            }\n        }"}
-#
-# r = requests.post(request2, data=json.dumps(request3_body), headers=post_header)
-# js_dict = r.json()
-# pprint(js_dict)
-# print(request2)
-# print(r)
-############################################################################
-# print('########### select action service: ')
-# request4_body = {"query":"        query {\n            channel(module_name: \"android_device\") {\n                actions {\n                    id\nname\ndescription\nfull_module_name\n                    action_fields {\n                        name\nlabel\nfield_ui_type\nrequired\nhelper_text\nshareable\nhideable\n                    }\n                }\n            }\n        }"}
-# r = requests.post(request2, data=json.dumps(request4_body), headers=post_header)
-# js_dict = r.json()
-# pprint(js_dict)
-# print(request2)
-# print(r)
-############################################################################
-# print('########### select action: ')
-# request5_body =  {"query":"            query {\n                action(module_name: \"android_device.set_device_volume\") {\n                    defaults_for_trigger(trigger_module_name: \"facebook.your_profile_changes_fb\") \n                }\n                \n                \n                \n                trigger(module_name: \"facebook.your_profile_changes_fb\") {\n                    channel {\n    brand_color\n    name\n    lrg_monochrome_image_url\n}\nname\ningredients {\n    id\n    name\n    is_hidden\n    normalized_name\n    value_type\n}\n                }\n            }"}
-# r = requests.post(request2, data=json.dumps(request5_body), headers=post_header)
-# js_dict = r.json()
-# pprint(js_dict)
-# print(request2)
-# print(r)
-############################################################################
-#print('########### preview: ')
-# request6_body =  {"query":"mutation {\n  statementPreview(input:{\n    stored_fields: \"{\\\"trigger\\\":\\\"facebook.your_profile_changes_fb\\\",\\\"action\\\":\\\"android_device.set_device_volume\\\",\\\"trigger_fields\\\":{\\\"field_to_watch\\\":\\\"profile_picture\\\"},\\\"action_fields\\\":{\\\"volume\\\":\\\"{\\\\\\\"volume_level\\\\\\\":0.6,\\\\\\\"name\\\\\\\":\\\\\\\"60%\\\\\\\"}\\\"}}\",\n  }) {\n    normalized_applet {\n      name\n      brand_color\n      service_slug\n      can_push_enable\n    }\n    errors {\n        attribute\n        message\n    }\n  }\n}\n"}
-# r = requests.post(request2, data=json.dumps(request6_body), headers=post_header)
-# js_dict = r.json()
-# pprint(js_dict)
-# print(request2)
-# #print(js_dict)
-# print(r)
 
-############################################################################
-print('########### finish: ')
-# request7_body =  {"query":"            mutation {\n                diyAppletCreate(input:{\n                    name: \"If Your profile changes watching: profile_picture on Wijitha Rathna’s profile, then Set ringtone volume to 60%\",\n                    push_enabled: false,\n                    channel_id: 36996033,\n                    trigger: {\nchannel_id: 36996033,\nstep_identifier: \"facebook.your_profile_changes_fb\",\nfields: [{name: \"field_to_watch\",hidden: true, value: \"\\\"profile_picture\\\"\"}]\n}\n,\n                    queries: [],\n                    actions: [{\nchannel_id: 1089090894,\nstep_identifier: \"android_device.set_device_volume\",\nfields: [{name: \"volume\",hidden: true, value: \"\\\"{\\\\\\\"volume_level\\\\\\\":0.6,\\\\\\\"name\\\\\\\":\\\\\\\"60%\\\\\\\"}\\\"\"}]\n}\n]\n                }) {\n                            normalized_applet {\n                          id\n        name\n        description\n        brand_color\n        monochrome_icon_url\n        author\n        status\n        installs_count\n        push_enabled\n        type\n        created_at\n        last_run\n        run_count\n        speed\n        config_type\n        by_service_owner\n        background_images {\n            background_image_url_1x\n            background_image_url_2x\n        }\n        configurations {\n            title\nslug\ndescription\nicon_url\nrequired\nlive_configurations {\n    id\n    disabled\n}\n        }\n        applet_feedback_by_user\n        can_push_enable\n        published\n        archived\n        author_tier\n        pro_features\n        service_name\n        channels {\n            id\nmodule_name\nshort_name\nname\ndescription_html\nbrand_color\nmonochrome_image_url\nlrg_monochrome_image_url\nis_hidden\nconnected\nrequires_user_authentication\ncall_to_action {\n    text\n    link\n}\norganization {\n    tier\n}\n        }\n          underlying_applet {\n            live_applet {\n                live_applet_triggers {\n                    statement_id\n                }\n            }\n          }\n        }\n        errors {\n          attribute\n          message\n        }\n                }\n            }"}
-# r = requests.post(request2, data=json.dumps(request7_body), headers=post_header)
-# js_dict = r.json()
-# pprint(js_dict)
-# print(request2)
-#print(js_dict)
-#print(r)
 ############################################################################
 ############################################################################
 ########################## SERVICE #########################################
@@ -163,11 +89,11 @@ def getValue(cluster_label, field_label):
     if cluster_label == 'short description':
         return  'a brief desc of the event'
     if cluster_label == 'phonenumber':
-        return  '+6594864587'
+        return  '+*****'
     if cluster_label == 'folder':
         return  'myfolder'
     if cluster_label == 'address':
-        return  '120607'
+        return  'e12334'
     if cluster_label == 'brightness':
         return  '800'
     if cluster_label == 'duration':
@@ -181,7 +107,7 @@ def getValue(cluster_label, field_label):
     if cluster_label == 'threshold':
         return  '50'
     if cluster_label == 'username':
-        return  'wijitha.mahadewa@gmail.com'
+        return  '****@gmail.com'
     if cluster_label == 'command':
         return  'turn on light'
     if cluster_label == 'code or token':
@@ -215,7 +141,7 @@ def getValue(cluster_label, field_label):
     if cluster_label == 'day':
         return  'Tuesday'
     if cluster_label == 'email':
-        return  'happybee9494@gmail.com'
+        return  '****@gmail.com'
 
 def updateDBOrDeleteDuplication(appletcollection,applet_title,applet_id,applet_desc,trigger_service,trigger,trigger_desc,trigger_fields,action_service,action,action_desc,action_fields):
     appletFound = appletcollection.find({'applet_title': applet_title})
