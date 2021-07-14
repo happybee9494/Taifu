@@ -25,18 +25,6 @@ authDB= client.get_database('services')
 #authcollection = authDB.get_collection('authdetails')
 collection =  authDB.get_collection('newevalauthdetails')
 selectedservices = authDB.get_collection('selected')
-
-# for tdb in tempDB.collection_names():
-#     print(tdb)
-#     if tdb == 'system.indexes':
-#         continue
-#     counter = 0
-#     for rec in tempDB.get_collection(tdb).find({}):
-#         counter = counter + 1
-#         print (rec)
-#         #if counter == 1:
-#             #tempDB.get_collection(tdb).delete_one(rec)
-
 ########################################################################################################################
 ############################################## SERVICE RELATED SETTINGS ################################################
 FOLDER_NAME = 'evalscraped' #scraped
@@ -541,46 +529,7 @@ def repeaPageGetSameSizeSummaryListsNew(pageSummary, pageName):
     return dictSummaryBySize
 def analyzeReatedPageInsertions(insertedSum):
     print('TODO: IF necessary')
-    ## currently seems no major insertions happens when no actions there
-    ##
-    # for page, inSummary in insertedSum.items():
-    #     print(page)
-    #     if inSummary.__len__() > 0:
-    #         ### Find possible clusters of the same page crawlings
-    #         print(inSummary)
-    #         pageInSummaryClusters = repeaPageGetSameSizeSummaryLists(inSummary)
-    #         ### Find smmary similarities to find the templates
-    #         for ckey, sumCluster in pageInSummaryClusters.items():
-    #             print(sumCluster)
-    #             if sumCluster.__len__() > 1:
-    #                 baseDictionary = sumCluster[0]
-    #                 counterS = 0
-    #                 intc = 0
-    #                 for summaryDict in sumCluster:
-    #                     intc = intc + 1 # to avoid the basdict compare with basedict
-    #                     if intc != 1:
-    #                         if compareSummaryDict(baseDictionary, summaryDict) != 0:
-    #                             print('same')
-    #                             counterS = counterS + 1
-    #                         else:
-    #                             #### get common elements in the two dictionaries as the template
-    #                             commonDict = getSimilarItemsFromTwoDict(baseDictionary, summaryDict)
-    #                             pageData = {}
-    #                             pageData[page] = commonDict
-    #                             tempcollection.update(pageData, pageData, upsert=True)
-    #                             print('SUMMARY INSERT ONLY SUCCESSFULL: ' + str(page))
-    #
-    #                 if counterS == (sumCluster.__len__()-1): ## since remove (0,0) case
-    #                     pageData = {}
-    #                     pageData[page] = baseDictionary
-    #                     tempcollection.update(pageData, pageData, upsert=True)
-    #                     print('SUMMARY INSERT ONLY SUCCESSFULL: ' + str(page))
-    #             else:
-    #                 pageData = {}
-    #                 pageData[page] = baseDictionary
-    #                 tempcollection.update(pageData, pageData, upsert=True)
-    #                 # tempcollection.insert_one(pageData)  ##########json.dump(x, sys.stdout)
-    #                 print('SUMMARY INSERT ONLY SUCCESSFULL: ' + str(page))
+
 def analyzeRepeatedPages(summary,insertedSum,tempcollection):
     if insertedSum:
         analyzeReatedPageInsertions(insertedSum)
