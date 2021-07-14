@@ -12,16 +12,6 @@ import time
 from multiprocessing import Process, Queue
 #https://github.com/scrapy/scrapy
 
-# Twitter Settings
-# NAME = onenote
-# URL = 'http://mobile.twitter.com'
-# LOGIN_URL = 'https://mobile.twitter.com/login'
-# DOMAIN = 'mobile.twitter.com'
-# USERNAME_KEY = 'session[username_or_email]'
-# USERNAME = '*******@gmail.com'
-# PASSWORD_KEY = 'session[password]'
-# PASSWORD = '********'
-
 # Fitbit Settings
 NAME = 'fitbit'
 LOGIN_URL = 'https://accounts.fitbit.com/login'
