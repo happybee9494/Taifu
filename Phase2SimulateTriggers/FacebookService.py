@@ -29,7 +29,7 @@ post_header = {
 #     'dpr':'1.2000000476837158',
 #     'locale':'en_US'}
 
-data = {'email':'wijitha.mahadewa@gmail.com','pass':'wdwmahadewa'}
+data = {'email':'****@gmail.com','pass':'*****'}
 
 URL_for_trigger_data = "https://www.facebook.com/login/device-based/regular/login/"
 
@@ -42,32 +42,7 @@ pprint(r)
 print(brotli.decompress(r.content))
 
 #######################################################
-# post_header = {
-#     'Content-Type':'application/x-www-form-urlencoded',
-#     'Connection':'keep-alive',
-#     'Postman-Token':'1b61a07e-0dd3-448c-90f6-78eb034f46b2',
-#    'Host': 'www.facebook.com',
-#     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0',
-#     'Accept': '*/*',
-#     'Accept-Language': 'en-US,en;q=0.5',
-#     'Accept-Encoding': 'gzip, deflate, br',
-#     'Referer': 'https://www.facebook.com/profile.php?id=100010002395463',
-#     'Content-Length': 2235,
-#     'Origin': 'https://www.facebook.com'
-# }
-#
-#
-# cookiess = {
-#     'sb':'hDnzXDiwuPQP9nJYZWU1Oaxm',
-#     'datr':'ijnzXGFYkXL4hJYkKZUL6DLF',
-#     'fr':'08PGQfY3RR9MXltYj.AWXAhlBzhjx0i3q5I372SwugCCs.Bc8zY2.u_.F3N.0.0.Bd3Mv9.AWUl1w36',
-#     'wd':'972x488',
-#     'dpr':'1.25',
-#     'c_user':'100010002395463',
-#     'xs':'46%3Al9lNS5xGbXxJaQ%3A2%3A1573735230%3A-1%3A-1',
-#     'presence': 'EDvF3EtimeF1574751288EuserFA21B1B2395463A2EstateFDutF1574751288073CEchFDp_5f1B1B2395463F1CC',
-#     'act': '1574751237376%2F0',
-#     'spin':'r.1001473079_b.trunk_t.1574751225_s.1_v.2_'}
+
 #
 #
 data = {
