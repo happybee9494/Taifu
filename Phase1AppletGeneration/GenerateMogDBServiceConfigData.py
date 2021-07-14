@@ -14,13 +14,7 @@ client = MongoClient(uri)
 db = client['services']
 collection = db.get_collection('serviceconfigdetails')
 collection.remove({})
-#######################
-# Set up Mongo DB Cloud
-# client = MongoClient('mongodb+srv://ifttt:ifttt@cluster0-b5sb3.mongodb.net/test?retryWrites=true&w=majority')
-# db = client.get_database('services')
-# collection = db.get_collection('authdetails')
-# c2 = db.get_collection('authdetails')
-# c2.remove({})
+
 ###########################################################################
 #  value(row no, column no)
 for i in range(sheet.nrows):
