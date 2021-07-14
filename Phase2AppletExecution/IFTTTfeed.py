@@ -95,41 +95,7 @@ def updateAppletExecutionHistory(feed, successCol, failedCol):
 
     return succeed
 
-########################################################################################################################
 
-
-##################################################################################
-##################################################################################
-## 2) IFT 1 didnt work due to the removal of feed by the server
-##################################################################################
-# actions_to_monitor2 = []
-# for succApplets in scollection.find({}):
-#     applet_details = appletcollection.find({'applet_id': succApplets['applet_id']})
-#     for adetaisl in applet_details:
-#         adata = {}
-#         adata['applet'] =  succApplets['applet_id']
-#         adata['action_service'] = adetaisl['action_service']
-#         adata['action'] = adetaisl['action']
-#         adata['action_desc'] = adetaisl['action_desc']
-#         actions_to_monitor2.append(adata)
-# print(actions_to_monitor2)
-
-##################################################################################
-##################################################################################
-# ### Next call the action monitoring module
-# headless_can_use = []
-# list_need_headless_false = []
-# headlessFalse = ['dropbox','pocket','office_365_mail','office_365_contacts','deezer','twitter','evernote','wordpress','amazonclouddrive','musixmatch','cisco_spark','email']
-#
-# for action in actions_to_monitor:
-#     if action in headlessFalse:
-#         list_need_headless_false.append(action['action_service'])
-#     else:
-#         headless_can_use.append(action['action_service'])
-# print('headless_can_use')
-# print(headless_can_use)
-####################################################################################
-# ### Next call the action monitoring module
 successList = ['diigo', 'google_docs', 'cisco_spark', 'fitbit', 'narro', 'google_calendar', 'wordpress', 'pocket', 'email', 'particle', 'strava', 'google_sheets', 'twitter']
 
 def monitorfeed(actions_to_monitor):
