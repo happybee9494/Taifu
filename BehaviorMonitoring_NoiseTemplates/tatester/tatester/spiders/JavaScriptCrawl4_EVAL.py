@@ -27,11 +27,7 @@ import timeit
 from threading import Thread
 from multiprocessing.pool import ThreadPool
 import time
-# Scrapy:  https://github.com/scrapy/scrapy # https://blog.scrapinghub.com/2016/03/23/scrapy-tips-from-the-pros-march-2016-edition
-# Splash: http://scrapingauthority.com/scrapy-javascript # Docs:https://splash.readthedocs.io/en/stable/api.html
-# http://devdoc.net/python/scrapy-splash.html
-# https://stackoverflow.com/questions/45886068/scrapy-crawlspider-splash-how-to-follow-links-through-linkextractor
-# Selenium: http://mroseman.com/scraping-dynamic-pages/#integration
+
 ########################################################################################################################
 ############################################## DATABASE CONNECTION #####################################################
 uri = 'mongodb://127.0.0.1:27017'
@@ -41,32 +37,7 @@ db = client['services']
 #collection = db.get_collection('evalauthdetails')# use a new collection for evaluation of 105 services
 collection =  db.get_collection('newevalauthdetails')
 all_auth_details = collection.find({})
-############# reset scarped details ##########
-# for x in collection.find({'service_idnetifier': 'youtube'}):
-#     collection.find_one_and_update({'service_idnetifier': x['service_idnetifier']}, {
-#         "$set": {'scraped_hash': {'0': [],'1': [], '2':[]},
-#                  'scraped_urls': [],
-#                  'scraped_urls_dic': {'0': [], '1': [], '2': []},
-#                  'scraped_hash_url_map': {},
-#                  'login_result': ''
-#                  }
-#     }, upsert=True)  # upsert true will create a new document if not exist
 
-############## IF REQUIRE TO DELETE A DOCUMENT ##############################################################
-# for x in collection.find({'service_idnetifier': 'medium'}):
-#     print('deleting')
-#     print(x['_id'])
-#     print(type(x['_id']))
-#     if x['_id'] == ObjectId("5e94c9344a9fd89cdb62b06d"):
-#         print('deleted')
-#         collection.delete_one(x)
-
-#######################
-# client = MongoClient('mongodb+srv://ifttt:ifttt@cluster0-b5sb3.mongodb.net/test?retryWrites=true&w=majority')
-# db = client.get_database('services')
-# collection = db.get_collection('authdetails')
-# all_auth_details = collection.find({})
-# all_credentials_in_db = {}
 ########################################################################################################################
 ########################################################################################################################
 options = Options()
@@ -76,15 +47,7 @@ cap["marionette"] = False
 #serv = Service(r'/root/Tools/Firefox/geckodriver')
 #browser = webdriver.Firefox(capabilities=cap, service=serv, options=options)
 ########################################################################################################################
-########################################################################################################################
-# chrome_options = ChromeOptions()
-# chrome_options.add_argument('--headless')
-# #chrome_options.add_argument('--no-sandbox')
-# chrome_options.add_argument('--disable-dev-shm-usage')
-# browser = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=chrome_options)
-#browser = webdriver.Firefox(capabilities=cap, service=serv, options=options)
-########################################################################################################################
-########################################################################################################################
+
 pageHashdict = {}
 urlencounter = {}
 
@@ -158,28 +121,6 @@ class LoginSpider(CrawlSpider):
             print(self.browser.current_url)
             self.writeToFile(self.browser.loginurl, self.browser.page_source)
             yield SplashRequest(url=self.loginurl, callback=self.after_no_login, endpoint='render.html')
-        # elif self.authcookies != '':
-        #     ### check if cookies set at authdetails ####################################################################
-        #     print(self.authcookies)
-        #     print('have cookies...')
-        #     self.browser.get(self.after_login())
-        #     time.sleep(1)
-        #     try:
-        #         for cookie in self.authcookies:
-        #             print(cookie)
-        #             #self.browser.add_cookie(cookie)
-        #             self.browser.add_cookie({k: cookie[k] for k in ('name', 'value', 'domain', 'path')})#, 'expiry'
-        #     except Exception as ex:
-        #         ################### check exception details ####################################################
-        #         template = "An exception of type {0} occurred. Arguments:\n{1!r}"
-        #         message = template.format(type(ex).__name__, ex.args)
-        #         print (message)
-        #         print('exception caught')
-        #
-        #     #self.browser.get(self.afterloginurl)
-        #     print(self.browser.current_url)
-        #     self.writeToFile(self.current_url, self.browser.page_source)
-        #     yield SplashRequest(url=self.afterloginurl, callback=self.after_login_with_cookies, endpoint='render.html',cookies=self.authcookies,args={'lua_source':self.lua_script,'wai':3})#,args={'wait:0.1'} endpoint='render.html'
         else:
             print('Need to login...')
             has_credentials = True
@@ -208,11 +149,7 @@ class LoginSpider(CrawlSpider):
                     collection.update({'_id': self.authObj['_id']}, {
                         '$set': {'cookies': self.browser.get_cookies(), 'afterloginurl': self.browser.current_url,
                                  'login_time': loginTime}})
-                    # ################################# commented for cutting the crawled content
-                    # yield SplashRequest(url=self.browser.current_url, callback=self.after_login,
-                    #                     endpoint='render.html',
-                    #                     cookies=self.browser.get_cookies())
-                    ##############################################################################
+
                 else:
                     print('problem in login')
                     print(self.loginurl)
