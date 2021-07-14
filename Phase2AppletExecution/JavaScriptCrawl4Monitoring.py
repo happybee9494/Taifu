@@ -24,11 +24,7 @@ import timeit
 from threading import Thread
 from multiprocessing.pool import ThreadPool
 import time
-# Scrapy:  https://github.com/scrapy/scrapy # https://blog.scrapinghub.com/2016/03/23/scrapy-tips-from-the-pros-march-2016-edition
-# Splash: http://scrapingauthority.com/scrapy-javascript # Docs:https://splash.readthedocs.io/en/stable/api.html
-# http://devdoc.net/python/scrapy-splash.html
-# https://stackoverflow.com/questions/45886068/scrapy-crawlspider-splash-how-to-follow-links-through-linkextractor
-# Selenium: http://mroseman.com/scraping-dynamic-pages/#integration
+
 ########################################################################################################################
 ############################################## DATABASE CONNECTION #####################################################
 uri = 'mongodb://127.0.0.1:27017'
@@ -36,13 +32,7 @@ client = MongoClient(uri)
 db = client['services']
 collection = db.get_collection('authdetails')
 all_auth_details = collection.find({})
-#######################
-# client = MongoClient('mongodb+srv://ifttt:ifttt@cluster0-b5sb3.mongodb.net/test?retryWrites=true&w=majority')
-# db = client.get_database('services')
-# collection = db.get_collection('authdetails')
-# all_auth_details = collection.find({})
-# all_credentials_in_db = {}
-########################################################################################################################
+#####################################################################################
 ########################################################################################################################
 options = Options()
 #options.add_argument('--headless')
@@ -134,16 +124,6 @@ class LoginSpider(CrawlSpider):
             print(self.browser.current_url)
             self.writeToFile(self.browser.loginurl, self.browser.page_source)
             yield SplashRequest(url=self.loginurl, callback=self.after_no_login, endpoint='render.html')
-        # elif self.authcookies != '':
-        #     ### check if cookies set at authdetails ####################################################################
-        #     print(self.authcookies)
-        #     print('have cookies...')
-        #     # for cookie in self.authcookies:
-        #     #     print(cookie)
-        #     #     self.browser.add_cookie({k: cookie[k] for k in ('name','value','domain','path','expiry')})
-        #     #.browser.get(self.afterloginurl)
-        #     # self.writeToFile(self.afterloginurl, self.browser.page_source)
-        #     yield SplashRequest(url=self.afterloginurl, callback=self.after_login_with_cookies, endpoint='render.html',cookies=self.authcookies,args={'lua_source':self.lua_script,'wai':3})#,args={'wait:0.1'} endpoint='render.html'
         else:
             print('Need to login...')
             has_credentials = True
@@ -341,23 +321,7 @@ threads = []
 s1 = timeit.default_timer()
 i = 0
 
-bloggerservicelist = ['go', 'android_device', 'narro', 'diigo', 'google_docs', 'dropbox', 'wordpress', 'tumblr', 'office_365_calendar', 'pocket', 'bitly', 'google_calendar', 'amazonclouddrive', 'google_sheets', 'google_drive', 'cisco_spark', 'telegram', 'coqon', 'google_contacts', 'office_365_contacts', 'onedrive', 'particle', 'strava', 'email', 'maker_webhooks', 'github', 'fitbit', 'office_365_mail', 'deezer', 'musixmatch', 'ios_calendar', 'soundcloud', 'spotify', 'newsblur', 'ios_reminders', 'ios_photos', 'evernote', 'flickr', 'sms', 'stockimo', 'twitter', 'beeminder', 'toodledo', 'reddit', 'sina_weibo', 'todoist']
-wordpresssericelist= ['pocket', 'office_365_calendar', 'cisco_spark', 'email', 'musixmatch', 'flickr', 'reddit', 'blogger', 'diigo', 'narro', 'google_calendar', 'amazonclouddrive', 'google_docs', 'google_drive', 'google_sheets', 'telegram', 'google_contacts', 'office_365_contacts', 'github', 'particle', 'office_365_mail', 'fitbit', 'strava', 'android_device', 'ios_calendar', 'deezer', 'spotify', 'evernote', 'sms', 'ios_photos', 'stockimo', 'twitter', 'todoist']
-androidphoto  = ['dropbox','blogger', 'diigo', 'narro', 'pocket', 'google_calendar', 'office_365_calendar', 'amazonclouddrive', 'google_docs', 'google_drive', 'google_sheets', 'cisco_spark', 'telegram', 'google_contacts', 'office_365_contacts', 'github', 'particle', 'email', 'office_365_mail', 'fitbit', 'strava', 'android_device', 'ios_calendar', 'deezer', 'musixmatch', 'spotify', 'evernote', 'sms', 'flickr', 'ios_photos', 'stockimo', 'reddit', 'twitter', 'todoist']
-facebook = ['blogger', 'diigo', 'narro', 'pocket', 'google_calendar', 'office_365_calendar', 'amazonclouddrive', 'dropbox', 'google_docs', 'google_drive', 'google_sheets', 'cisco_spark', 'telegram', 'google_contacts', 'office_365_contacts', 'github', 'particle', 'email', 'office_365_mail', 'fitbit', 'strava', 'android_device', 'ios_calendar', 'deezer', 'musixmatch', 'spotify', 'evernote', 'sms', 'flickr', 'ios_photos', 'stockimo', 'reddit', 'twitter', 'todoist', 'toodledo']
-dropbox = ['blogger', 'diigo', 'narro', 'pocket', 'google_calendar', 'office_365_calendar', 'amazonclouddrive', 'google_docs', 'google_drive', 'google_sheets', 'cisco_spark', 'telegram', 'google_contacts', 'office_365_contacts', 'github', 'particle', 'email', 'office_365_mail', 'fitbit', 'strava', 'android_device', 'ios_calendar', 'deezer', 'musixmatch', 'spotify', 'evernote', 'sms', 'flickr', 'ios_photos', 'stockimo', 'reddit', 'twitter', 'todoist', 'toodledo']
 
-headlesslist = []
-# setup options.add_argument('--headless')
-bloggerupdateservicelist = ['strava','narro', 'diigo', 'google_docs', 'pocket', 'google_calendar', 'google_sheets', 'google_drive', 'google_contacts', 'particle', 'github', 'fitbit', 'spotify', 'flickr', 'beeminder', 'reddit', 'todoist']
-wordpresssupdatedlist= ['pocket','reddit',  'diigo', 'narro', 'google_calendar', 'google_docs', 'google_drive', 'google_sheets','google_contacts', 'github', 'particle',  'fitbit', 'strava', 'spotify',   'flickr', 'todoist']
-
-# 'office_365_calendar',
-# comment options.add_argument('--headless')
-bloggerheadlessFalse = ['dropbox','office_365_mail','office_365_contacts','deezer','twitter','evernote','wordpress','amazonclouddrive','musixmatch','cisco_spark','email']
-wordpressrheadlessFalse = ['dropbox','office_365_mail','office_365_contacts','deezer','twitter','evernote','amazonclouddrive','musixmatch','cisco_spark','email','blogger']
-
-mobileSet = [ 'sms', 'flickr', 'ios_photos', 'stockimo','android_device', 'ios_calendar','toodledo']
 # narro, pocket,amazonclouddrive,toodledo
 # before: ============ default_start_no = 0,  default_end_no = 1
 # after: ============ default_start_no = 1,  default_end_no = 2
@@ -368,8 +332,6 @@ statusstring = 'after'
 # default_start_no = 0
 # default_end_no = 1
 # statusstring = 'before'
-successList = ['google_docs', 'google_sheets', 'dropbox', 'google_drive', 'flickr', 'amazonclouddrive', 'strava', 'cisco_spark', 'pocket', 'deezer', 'blogger', 'google_calendar', 'diigo', 'ios_photos', 'fitbit', 'telegram', 'evernote', 'narro']
-remaining =['blogger', 'amazonclouddrive', 'cisco_spark', 'office_365_contacts', 'email', 'office_365_mail', 'deezer', 'musixmatch', 'evernote', 'twitter']
 ####################################################################################################################
 for service in remaining: # //////// critical input!!!!!!!!!!!!!!!!!!!!!!!!!!!
     if service in mobileSet:
