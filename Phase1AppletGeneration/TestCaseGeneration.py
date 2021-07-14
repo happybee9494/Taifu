@@ -74,7 +74,7 @@ def getValue(cluster_label, field_label):
     if cluster_label == 'short description':
         return  'a brief desc of the event'
     if cluster_label == 'phonenumber':
-        return  '+6594864587'
+        return  '****'
     if cluster_label == 'folder':
         return  'myfolder'
     if cluster_label == 'address':
@@ -92,7 +92,7 @@ def getValue(cluster_label, field_label):
     if cluster_label == 'threshold':
         return  '50'
     if cluster_label == 'username':
-        return  'wijitha.mahadewa@gmail.com'
+        return  '******@gmail.com'
     if cluster_label == 'command':
         return  'turn on light'
     if cluster_label == 'code or token':
@@ -232,7 +232,8 @@ def triggerConfiguration(trigger,trigger_service):
                                                                   v['value']
                                             trigger_fields[field_set_key] = v['value']
                                             if f_required and v['value'] == "":
-                                                applet_creation_pause_by_trigger = True
+                                
+                                applet_creation_pause_by_trigger = True
 
                             except KeyError:
                                 print('no options to resolve')
