@@ -18,9 +18,9 @@ from multiprocessing import Process, Queue
 # LOGIN_URL = 'https://mobile.twitter.com/login'
 # DOMAIN = 'mobile.twitter.com'
 # USERNAME_KEY = 'session[username_or_email]'
-# USERNAME = 'anonymousbee94@gmail.com'
+# USERNAME = '*******@gmail.com'
 # PASSWORD_KEY = 'session[password]'
-# PASSWORD = 'sdrmalkanthi2'
+# PASSWORD = '********'
 
 # Fitbit Settings
 NAME = 'fitbit'
