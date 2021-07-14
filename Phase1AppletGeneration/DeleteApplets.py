@@ -29,8 +29,8 @@ all_applet_details = appletcollection.find({})
 # username = browser.find_element_by_id("user_username")
 # password = browser.find_element_by_id("user_password")
 #
-# username.send_keys("happybee9494@gmail.com")
-# password.send_keys("happyBEE@94")
+# username.send_keys("******@gmail.com")
+# password.send_keys("*****")
 #
 # browser.find_element_by_name("commit").click()
 
