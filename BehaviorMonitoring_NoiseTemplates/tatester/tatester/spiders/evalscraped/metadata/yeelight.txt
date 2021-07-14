@@ -1,2 +1,0 @@
-43b4625eeafbd2757c7769ea0bb0d41e = https://account.xiaomi.com/pass/auth/security/home?cUserId=-JquUe0_jvfWkviuyNZNbvoCAlQ&userId=6372769616
-43b4625eeafbd2757c7769ea0bb0d41e = https://account.xiaomi.com/pass/auth/security/home?cUserId=-JquUe0_jvfWkviuyNZNbvoCAlQ&userId=6372769616

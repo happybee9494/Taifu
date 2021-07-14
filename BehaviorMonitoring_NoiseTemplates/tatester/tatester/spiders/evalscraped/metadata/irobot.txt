@@ -1,2 +1,0 @@
-9d0cbdb252d5768a58c5b70ca51c4910 = https://store.irobot.com/default/account
-9d0cbdb252d5768a58c5b70ca51c4910 = https://store.irobot.com/default/account

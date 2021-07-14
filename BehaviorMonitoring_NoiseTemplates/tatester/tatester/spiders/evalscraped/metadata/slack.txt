@@ -1,2 +1,0 @@
-afb78eb679e516bacb46da5f7ba42648 = https://app.slack.com/client/T01212R2YV7/C01212R3A5P
-afb78eb679e516bacb46da5f7ba42648 = https://app.slack.com/client/T01212R2YV7/C01212R3A5P

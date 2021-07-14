@@ -1,2 +1,0 @@
-d33c5e7aecb6f85ba8171b5f918e95c1 = https://my.netatmo.com/app/station
-d33c5e7aecb6f85ba8171b5f918e95c1 = https://my.netatmo.com/app/station

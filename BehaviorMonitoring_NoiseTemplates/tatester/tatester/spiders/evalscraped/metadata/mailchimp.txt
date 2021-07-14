@@ -1,2 +1,0 @@
-2c5d5e8ec36a6502158cf93a68e270c4 = https://us19.admin.mailchimp.com/signup/new-user/welcome/?step=paywall
-2c5d5e8ec36a6502158cf93a68e270c4 = https://us19.admin.mailchimp.com/signup/new-user/welcome/?step=paywall

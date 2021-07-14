@@ -1,2 +1,0 @@
-42d4d354160bcbeef06530ccf4c37dba = https://site.ring.com/users/sign_in
-9209645f62c608700ed09f47219bcf6d = https://account.ring.com/account/dashboard
