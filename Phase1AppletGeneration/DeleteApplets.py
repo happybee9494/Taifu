@@ -17,35 +17,7 @@ dbClient = client['applets']
 appletcollection = dbClient.get_collection('appletcollection12')
 all_applet_details = appletcollection.find({})
 
-# ##########################################################################
-# options = Options()
-# options.add_argument('--headless')
-# cap = DesiredCapabilities().FIREFOX
-# cap["marionette"] = False
-# serv = Service(r'/root/Tools/Firefox/geckodriver')
-# browser = webdriver.Firefox(capabilities=cap, service=serv,options=options)
-# browser.get('https://ifttt.com/login?wp_=1')
-#
-# username = browser.find_element_by_id("user_username")
-# password = browser.find_element_by_id("user_password")
-#
-# username.send_keys("******@gmail.com")
-# password.send_keys("*****")
-#
-# browser.find_element_by_name("commit").click()
 
-##########################################################################
-
-# my_applets = 'https://ifttt.com/my_applets'
-# browser.get(my_applets)
-# time.sleep(10)
-# applets_page_response = browser.page_source
-# applets_page_content = BeautifulSoup(applets_page_response, "html.parser")
-#
-# applets_section = applets_page_content.find('section', {'class':'dashboard-applets'})
-# print(applets_section)
-#lists = applets_section.findChildren("li", {'class': 'my-web-applet-card enabled_for_user web-applet-card'}, recursive=True)
-#lists = applets_section.findChildren("li", {'class': 'my-web-applet-card web-applet-card'}, recursive=True)
 def deleteApplet(applet):
     try:
         # sending get request and saving the response as response object
