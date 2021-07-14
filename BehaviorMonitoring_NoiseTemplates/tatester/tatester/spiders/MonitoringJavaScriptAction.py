@@ -20,11 +20,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 from pymongo import MongoClient
 import timeit
-# Scrapy:  https://github.com/scrapy/scrapy # https://blog.scrapinghub.com/2016/03/23/scrapy-tips-from-the-pros-march-2016-edition
-# Splash: http://scrapingauthority.com/scrapy-javascript # Docs:https://splash.readthedocs.io/en/stable/api.html
-# http://devdoc.net/python/scrapy-splash.html
-# https://stackoverflow.com/questions/45886068/scrapy-crawlspider-splash-how-to-follow-links-through-linkextractor
-# Selenium: http://mroseman.com/scraping-dynamic-pages/#integration
+
 ########################################################################################################################
 ############################################## DATABASE CONNECTION #####################################################
 uri = 'mongodb://127.0.0.1:27017'
@@ -32,12 +28,6 @@ client = MongoClient(uri)
 db = client['services']
 collection = db.get_collection('authdetails')
 #all_auth_details = collection.find({})
-#######################
-# client = MongoClient('mongodb+srv://ifttt:ifttt@cluster0-b5sb3.mongodb.net/test?retryWrites=true&w=majority')
-# db = client.get_database('services')
-# collection = db.get_collection('authdetails')
-# all_auth_details = collection.find({})
-# all_credentials_in_db = {}
 ########################################################################################################################
 # Service Settings
 NAME = ''
