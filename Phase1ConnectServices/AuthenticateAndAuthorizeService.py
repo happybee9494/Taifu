@@ -21,7 +21,6 @@ from pymongo import MongoClient
 from selenium.webdriver.common.action_chains import ActionChains
 ########################################################################################################################
 ############################################## DATABASE CONNECTION #####################################################
-#client = MongoClient('mongodb+srv://ifttt:ifttt@cluster0-b5sb3.mongodb.net/test?retryWrites=true&w=majority')
 uri = 'mongodb://127.0.0.1:27017'
 client = MongoClient(uri)
 db = client.get_database('services')
