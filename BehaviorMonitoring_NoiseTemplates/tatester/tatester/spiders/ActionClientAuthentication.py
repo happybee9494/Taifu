@@ -22,7 +22,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 LOGIN_URL = ''
 ########################################################################################################################
 ############################################## DATABASE CONNECTION #####################################################
-client = MongoClient('mongodb+srv://ifttt:ifttt@cluster0-b5sb3.mongodb.net/test?retryWrites=true&w=majority')
+client = MongoClient('****')
 db = client.get_database('services')
 collection = db.get_collection('authdetails')
 all_auth_details = collection.find({})
