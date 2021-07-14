@@ -74,7 +74,6 @@ def getValue(cluster_label, field_label):
     if cluster_label == 'option':
         return 'NA'
     if cluster_label == 'url':
-        #return  'https://drive.google.com/file/d/16huU6aiQcppAqVG4td9XCNge7BnlYsJd/view?usp=sharing'
         return '{{PhotoUrl}}'
     if cluster_label == 'description':
         return  'a description of the event'
@@ -115,7 +114,7 @@ def getValue(cluster_label, field_label):
     if cluster_label == 'expression':
         return  '([A-Z])\w+/g'
     if cluster_label == 'attachment':
-        return  'https://drive.google.com/file/d/16huU6aiQcppAqVG4td9XCNge7BnlYsJd/view?usp=sharing'
+        return  'url to attachment'
     if cluster_label == 'speed':
         return  '20'
     if cluster_label == 'query':
@@ -627,69 +626,7 @@ def completeAppletGeneration(trigger_fields,trigger,trigger_service, trigger_mod
         errorcollection.update({'action_service': action_service},
         {'$set': {'preview_response': js_dict_prev, 'trigger_service': trigger_service,'trigger': trigger,'trigger_fields': trigger_fields,
                                             'action': action, 'action_fields': action_fields}}, upsert=True)
-    # request2 = 'https://buffalo-android.ifttt.com/grizzly/me/diy/preview'  # POST
-    # request2_body = {
-    #     "diy": {"action_fields": action_fields, "action_id": action_id,
-    #             "action_service_id": action_service_id,
-    #             "push_enabled": True, "trigger_fields": trigger_fields, "trigger_id": trigger_id,
-    #             "trigger_service_id": trigger_service_id}}
 
-    # # ////////////////////////////////////////////////////////////////////////
-    # print('request 2 ... post data for preview')
-    # r = requests.post(request2, data=json.dumps(request2_body), headers=post_header)
-    # js_response = r.json()  # preview description is available in the response
-    # print('########### completeAppletGeneration 3')
-    # print(request2)
-    # print(json.dumps(request2_body))
-    # pprint(js_response)
-    # print(r)
-
-    # if 'channel' in js_response:
-    #     if js_response['channel'] == ['channel not active for user']:
-    #         print('Channel not active for user.....')
-    #
-    # description = js_response['preview']  # required for request3
-
-    # # ////////////////////////////////////////////////////////////////////////
-    # print('request 3 ... post data with push enabled true')
-    # request3 = 'https://buffalo-android.ifttt.com/grizzly/me/diy'  # POST
-    # request3_body = {
-    #     "diy": {"action_fields": action_fields, "action_id": action_id,
-    #             "action_service_id": action_service_id,
-    #             "description": description, "push_enabled": True, "trigger_fields": trigger_fields,
-    #             "trigger_id": trigger_id, "trigger_service_id": trigger_service_id}}
-    #
-    # r = requests.post(request3, data=json.dumps(request3_body), headers=post_header)
-    # print('########### completeAppletGeneration 4')
-    # print(request3)
-    # print(json.dumps(request3_body))
-    # print(r.text)
-    #
-    # js_response = r.json()  # include applet details required for next request
-    # applet = js_response['applet']
-    # applet_id = applet['id']
-    # applet_title = applet['name']
-    # applet_desc = applet['description']
-    # applet_creation_response = applet['speed']
-    # f = open("../Phase1AppletGeneration/output_applets/response-" + str(applet_id) + ".txt", "w")
-    # f.write(r.text)
-    # f.close()
-    # ###############################################################################################################
-    # print('request 4 ... get the details of the applet created')
-    # request4 = 'https://buffalo-android.ifttt.com/grizzly/me/services/diy/applets/' + applet_id  # GET
-    # r = requests.get(request4, headers=header)
-    # js_dict = r.json()
-    # print('########### completeAppletGeneration 5')
-    # print(request4)
-    # pprint(js_dict)
-    # ############################################# Disable applet ###################################################
-    # print('request 5... disable the applet')
-    # URL_for_post_status = 'https://ifttt.com/api/v3/graph'
-    # enablebody = {
-    #     "query": 'mutation {\n          normalizedAppletDisable(input:{\n            applet_id: \"' + str(
-    #         applet_id) + '\",\n            name: \"\",\n            push_enabled: false,\n            dynamic_applet_configuration: false,\n            stored_fields: \"{}\",\n            metadata: \"{}\"\n          }) {\n            normalized_applet {\n                      id\nname\ndescription\nbrand_color\nmonochrome_icon_url\nauthor\nstatus\ninstalls_count\npush_enabled\ntype\ncreated_at\nlast_run\nrun_count\nspeed\nconfig_type\nby_service_owner\nbackground_images {\n    background_image_url_1x\n    background_image_url_2x\n}\nconfigurations {\n    title\n    icon_url\n}\napplet_feedback_by_user\ncan_push_enable\n        service_name\n        channels {\n            id\nmodule_name\nshort_name\nname\ndescription_html\nbrand_color\nmonochrome_image_url\nlrg_monochrome_image_url\nis_hidden\nconnected\nrequires_user_authentication\ncall_to_action {\n    text\n    link\n}\norganization {\n    tier\n}\n        }\n              underlying_applet {\n                live_applet {\n                    live_applet_triggers {\n                        statement_id\n                    }\n                }\n              }\n            }\n            user_token\n            errors {\n              attribute\n              message\n            }\n          }\n        }'}
-    # r2 = requests.post(URL_for_post_status, headers=post_header, json=enablebody)
-    #
 
 
     return applet_id,applet_desc,applet_title
@@ -703,12 +640,7 @@ def appletGeneration(trigger, trigger_service, action, action_service):
             trigger, trigger_service)
         action_fields, action_id, action_service_id, action_desc, action_module_name, applet_creation_pause_by_action,action_id,not_shearable_action_fields = actionConfiguration(
             action, action_service, trigger_module_name)
-        #
-        # if applet_creation_pause_by_trigger or applet_creation_pause_by_action:
-        #     print('applet creation paused due to required info not available')
-        # elif not action_id or not trigger_id:
-        #     print('Problem in trigger or action selection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111')
-        #else:
+
 
         applet_id, applet_desc, applet_title = completeAppletGeneration(trigger_fields, trigger, trigger_service_id,trigger_module_name, trigger_id, action_fields, action,  action_service_id,action_module_name,action_id,not_shearable_action_fields,not_shearable_trigger_fields)
 
@@ -730,16 +662,7 @@ print('start here')
 s1 = timeit.default_timer()
 threads = []
 attempt = 1
-# current_action_services =  ['tumblr','instagram','onedrive','strava', 'narro', 'diigo', 'google_docs',  'pocket', 'google_calendar',  'google_sheets', 'google_drive', 'google_contacts', 'particle','github', 'fitbit','spotify', 'flickr', 'beeminder', 'toodledo', 'reddit', 'todoist','dropbox','pocket','office_365_mail','office_365_contacts','deezer','twitter','evernote','blogger','amazonclouddrive','musixmatch','cisco_spark','email','office_365_calendar','ios_photos','sms','android_device','telegram','stockimo','ios_calendar']
-# #current_action_services = ['office_365_calendar','ios_photos','sms','android_device','telegram','stockimo','ios_calendar']
-# #current_action_services = ['dropbox'] #withings
-current_action_services = ['bitly','facebook','google_contacts','instapaper','slack','twitter','youtube','wordpress','withings','weebly',
-               'toodledo','todoist','tesco','strava','medium','musixmatch','pocket','reddit','google_docs','google_drive',
-               'google_sheets','instagram','fitbit','flickr','gmail','google_calendar','blogger','dropbox','diigo','evernote',
-                'ios_health', 'if_notifications','android_device', 'location','do_button', 'android_phone','android_messages', 'voip_calls','line', 'do_camera',
-                'ios_photos', 'ios_reading_list','foursquare', 'android_battery','android_photos', 'qualitytime','ios_reminders', 'ios_contacts','do_note']
-#current_action_services = ['weebly','google_calendar','line','gmail','todoist','toodledo']
-#current_action_servicess = ['slack']
+
 
 trigger_services_count = {}# for counting
 print(len(current_action_services))
