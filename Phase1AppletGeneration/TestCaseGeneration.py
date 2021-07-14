@@ -100,7 +100,7 @@ def getValue(cluster_label, field_label):
     if cluster_label == 'expression':
         return  '([A-Z])\w+/g'
     if cluster_label == 'attachment':
-        return  'https://drive.google.com/file/d/16huU6aiQcppAqVG4td9XCNge7BnlYsJd/view?usp=sharing'
+        return  '.....'
     if cluster_label == 'speed':
         return  '20'
     if cluster_label == 'query':
